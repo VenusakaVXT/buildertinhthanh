@@ -1,0 +1,633 @@
+<section class="py-8  bg-white">
+  <div class="container mx-auto px-4">
+    <div class="tabs tabs-btn">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
+        <div class="flex items-center gap-4">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">12</span> bất động sản</h2>
+        </div>
+        <div class="flex items-center justify-between gap-3">
+          <select class="select select-white">
+            <option value="">Mới nhất</option>
+            <option>Giá thấp đến cao</option>
+            <option>Giá cao đến thấp</option>
+            <option>Diện tích nhỏ đến lớn</option>
+            <option>Diện tích lớn đến nhỏ</option>
+            <option>Xem nhiều nhất</option>
+          </select>
+          <div class="tabs-menus flex items-center gap-1 border rounded-lg p-1">
+            <button data-tab="grid"
+              class="tab-menu ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 active">
+              <i data-lucide="grid3x3" class="h-4 w-4"></i>
+            </button>
+            <button data-tab="list"
+              class="tab-menu ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0">
+              <i data-lucide="list" class="h-4 w-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Estate Grid -->
+      <div class="tab-content active" data-tab-content="grid">
+        <div class="real-estate__grid">
+          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/1"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Căn hộ cao cấp Midtown Sakura Park" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="real-estate__badge focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 real-estate__badge--blue">
+                  Sắp bàn giao</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="real-estate__badge focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 real-estate__badge--hot">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="real-estate__card-body">
+              <div class="real-estate__card-stack">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/1">Căn hộ cao cấp Midtown Sakura Park</a>
+                  </h3>
+                  <p class="real-estate__location">
+                    <i data-lucide="map-pin" class="w-6 h-6 real-estate__location-icon"></i>
+                    <a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
+                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">75m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
+                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/11"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Căn hộ cao cấp Midtown Sakura Park" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Sắp bàn giao</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="real-estate__card-body">
+              <div class="real-estate__card-stack">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/11">Căn hộ cao cấp Midtown Sakura Park</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
+                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">75m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
+                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/2"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Nhà phố thương mại Golden Center City" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="real-estate__card-body">
+              <div class="real-estate__card-stack">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/2">Nhà phố thương mại Golden Center City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bến
+                      Cát, Bình Dương</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">120m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
+                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/12"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Nhà phố thương mại Golden Center City" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="real-estate__card-body">
+              <div class="real-estate__card-stack">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/12">Nhà phố thương mại Golden Center City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bến
+                      Cát, Bình Dương</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">120m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
+                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/3"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Biệt thự đơn lập Lavilla Green City" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Sắp mở bán</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="real-estate__card-body">
+              <div class="real-estate__card-stack">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/3">Biệt thự đơn lập Lavilla Green City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Tân
+                      Uyên, Bình Dương</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">200m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
+                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/13"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Biệt thự đơn lập Lavilla Green City" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Sắp mở bán</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="real-estate__card-body">
+              <div class="real-estate__card-stack">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/13">Biệt thự đơn lập Lavilla Green City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Tân
+                      Uyên, Bình Dương</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">200m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
+                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/4"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Đất nền dự án Eco City Premia" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/4">Đất nền dự án Eco City Premia</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bàu
+                      Bàng, Bình Dương</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">100m²</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative  overflow-hidden">
+              <a href="/bat-dong-san/14"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Đất nền dự án Eco City Premia" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/14">Đất nền dự án Eco City Premia</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bàu
+                      Bàng, Bình Dương</a>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">100m²</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Estate List -->
+      <div class="tab-content" data-tab-content="list">
+        <div class="space-y-6">
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/1"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Căn hộ cao cấp Midtown Sakura Park" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Sắp bàn giao</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/1">Căn hộ cao cấp Midtown Sakura Park</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
+                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">75m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
+                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/11"><img
+                  src="./../../assets/images/hero-bg.webp" alt="Căn hộ cao cấp Midtown Sakura Park"
+                  class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Sắp bàn giao</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/11">Căn hộ cao cấp Midtown Sakura Park</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
+                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">75m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
+                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/2"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Nhà phố thương mại Golden Center City" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/2">Nhà phố thương mại Golden Center City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bến Cát, Bình Dương</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">120m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
+                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/12"><img
+                  src="./../../assets/images/hero-bg.webp" alt="Nhà phố thương mại Golden Center City"
+                  class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/12">Nhà phố thương mại Golden Center City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bến Cát, Bình Dương</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">120m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
+                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/3"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Biệt thự đơn lập Lavilla Green City" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Sắp mở bán</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/3">Biệt thự đơn lập Lavilla Green City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Tân Uyên, Bình Dương</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">200m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
+                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/13"><img
+                  src="./../../assets/images/hero-bg.webp" alt="Biệt thự đơn lập Lavilla Green City"
+                  class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Sắp mở bán</div>
+              </div>
+              <div class="absolute top-3 right-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
+                  Hot</div>
+              </div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/13">Biệt thự đơn lập Lavilla Green City</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Tân Uyên, Bình Dương</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">200m²</div>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
+                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
+                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/4"><img src="./../../assets/images/hero-bg.webp"
+                  alt="Đất nền dự án Eco City Premia" class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/4">Đất nền dự án Eco City Premia</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bàu Bàng, Bình Dương</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">100m²</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
+            <div class="real-estate__list-media"><a href="/bat-dong-san/14"><img
+                  src="./../../assets/images/hero-bg.webp" alt="Đất nền dự án Eco City Premia"
+                  class="real-estate__image"></a>
+              <div class="absolute top-3 left-3">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
+                  Đang bán</div>
+              </div>
+              <div class="absolute top-3 right-3"></div>
+            </div>
+            <div class="p-4 flex-1">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="real-estate__title">
+                    <a href="/bat-dong-san/14">Đất nền dự án Eco City Premia</a>
+                  </h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
+                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
+                      class="hover:text-blue-600 transition-colors">Bàu Bàng, Bình Dương</a></p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
+                    <div class="text-sm text-gray-500">100m²</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-4">
+      <div class="text-sm text-gray-600">Hiển thị 1-8 trong tổng số 12 kết quả</div>
+      <div class="flex items-center gap-2">
+        <button
+          class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center gap-1"
+          disabled="">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          Trước
+        </button>
+        <div class="flex items-center gap-1"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-10">1</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-10">2</button>
+        </div>
+        <button
+          class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center gap-1">
+          Sau
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
