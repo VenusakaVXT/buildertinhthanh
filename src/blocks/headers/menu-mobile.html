@@ -1,0 +1,337 @@
+<!-- Mobile Menu Overlay -->
+<div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+  x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 lg:hidden hidden"
+  style="height: 100vh; height: 100dvh;">
+  <div class="fixed inset-0 bg-black/50" @click="closeMobileMenu()" style="height: 100vh; height: 100dvh;"></div>
+  <div class="mobile-menu-panel" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-100"
+    x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full" style="height: 100vh; height: 100dvh;">
+    <!-- Mobile Menu Header -->
+    <div class="mobile-menu-header">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold">Bình Dương</h2>
+          <p class="text-blue-100 text-sm">Tin Tức & Tiện Ích</p>
+        </div>
+        <button @click="closeMobileMenu()" class="text-white hover:text-gray-200 transition-colors">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Search -->
+    <div class="p-4 pb-0">
+      <div class="relative">
+        <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"></i>
+        <input id="mobileSearchInput" type="text" placeholder="Tìm kiếm..." class="input pl-10"
+          x-model="mobileSearchQuery">
+      </div>
+    </div>
+
+    <!-- Mobile Menu Items -->
+    <div class="flex-1 overflow-y-auto custom-scrollbar" style="max-height: calc(100vh - 280px);">
+      <div class="p-4 space-y-1">
+        <a href="/" class="mobile-menu-item">
+          <i data-lucide="home" class="w-5 h-5 text-gray-600"></i>
+          <span class="font-medium text-gray-900">Trang Chủ</span>
+        </a>
+
+        <!-- Bất Động Sản Mobile -->
+        <div x-data="{ expanded: false }">
+          <div @click="expanded = !expanded" class="mobile-menu-expandable">
+            <a href="/bat-dong-san" class="flex items-center space-x-3">
+              <i data-lucide="building" class="w-5 h-5 text-gray-600"></i>
+              <span class="font-medium text-gray-900">Bất Động Sản</span>
+            </a>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400 transition-transform"
+              :class="{ 'rotate-90': expanded }"></i>
+          </div>
+          <div x-show="expanded" x-transition class="ml-3 space-y-1 mt-1">
+            <div class="mobile-submenu-header">
+              <i data-lucide="handshake" class="w-4 h-4 mr-2"></i>
+              Giao Dịch
+            </div>
+            <div class="ml-4 space-y-1">
+              <div x-data="{ subExpanded: false }">
+                <div @click="subExpanded = !subExpanded" class="mobile-submenu-expandable">
+                  <a href="/bat-dong-san/mua-ban" class="flex items-center">
+                    <i data-lucide="home" class="w-3 h-3 mr-2"></i>
+                    <span>Mua Bán</span>
+                  </a>
+                  <i data-lucide="chevron-right" class="w-3 h-3 text-gray-400 transition-transform"
+                    :class="{ 'rotate-90': subExpanded }"></i>
+                </div>
+                <div x-show="subExpanded" x-transition class="ml-4 space-y-1 mt-1">
+                  <a href="/bat-dong-san/mua-ban/nha-dat" class="mobile-submenu-item">
+                    <i data-lucide="home" class="w-2 h-2 mr-2"></i>
+                    Nhà Đất
+                  </a>
+                  <a href="/bat-dong-san/mua-ban/can-ho" class="mobile-submenu-item">
+                    <i data-lucide="building" class="w-2 h-2 mr-2"></i>
+                    Căn Hộ
+                  </a>
+                  <a href="/bat-dong-san/mua-ban/dat-nen" class="mobile-submenu-item">
+                    <i data-lucide="map" class="w-2 h-2 mr-2"></i>
+                    Đất Nền
+                  </a>
+                </div>
+              </div>
+              <div x-data="{ subExpanded: false }">
+                <div @click="subExpanded = !subExpanded" class="mobile-submenu-expandable">
+                  <a href="/bat-dong-san/cho-thue" class="flex items-center">
+                    <i data-lucide="key" class="w-3 h-3 mr-2"></i>
+                    <span>Cho Thuê</span>
+                  </a>
+                  <i data-lucide="chevron-right" class="w-3 h-3 text-gray-400 transition-transform"
+                    :class="{ 'rotate-90': subExpanded }"></i>
+                </div>
+                <div x-show="subExpanded" x-transition class="ml-4 space-y-1 mt-1">
+                  <a href="/bat-dong-san/cho-thue/nha-rieng" class="mobile-submenu-item">
+                    <i data-lucide="home" class="w-2 h-2 mr-2"></i>
+                    Nhà Riêng
+                  </a>
+                  <a href="/bat-dong-san/cho-thue/can-ho" class="mobile-submenu-item">
+                    <i data-lucide="building-2" class="w-2 h-2 mr-2"></i>
+                    Căn Hộ
+                  </a>
+                  <a href="/bat-dong-san/cho-thue/phong-tro" class="mobile-submenu-item">
+                    <i data-lucide="bed" class="w-2 h-2 mr-2"></i>
+                    Phòng Trọ
+                  </a>
+                </div>
+              </div>
+              <a href="/bat-dong-san/du-an" class="mobile-submenu-item">
+                <i data-lucide="building-2" class="w-3 h-3 mr-2"></i>
+                Dự Án
+              </a>
+              <a href="/bat-dong-san/gia-bat-dong-san" class="mobile-submenu-item">
+                <i data-lucide="trending-up" class="w-3 h-3 mr-2"></i>
+                Giá BĐS
+              </a>
+            </div>
+
+            <div class="mobile-submenu-header">
+              <i data-lucide="info" class="w-4 h-4 mr-2"></i>
+              Thông Tin
+            </div>
+            <div class="ml-4 space-y-1">
+              <div x-data="{ subExpanded: false }">
+                <div @click="subExpanded = !subExpanded" class="mobile-submenu-expandable">
+                  <a href="/bat-dong-san/tin-tuc" class="flex items-center">
+                    <i data-lucide="newspaper" class="w-3 h-3 mr-2"></i>
+                    <span>Tin Tức BĐS</span>
+                  </a>
+                  <i data-lucide="chevron-right" class="w-3 h-3 text-gray-400 transition-transform"
+                    :class="{ 'rotate-90': subExpanded }"></i>
+                </div>
+                <div x-show="subExpanded" x-transition class="ml-4 space-y-1 mt-1">
+                  <a href="/bat-dong-san/tin-tuc/thi-truong" class="mobile-submenu-item">
+                    <i data-lucide="bar-chart" class="w-2 h-2 mr-2"></i>
+                    Thị Trường
+                  </a>
+                  <a href="/bat-dong-san/tin-tuc/chinh-sach" class="mobile-submenu-item">
+                    <i data-lucide="file-text" class="w-2 h-2 mr-2"></i>
+                    Chính Sách
+                  </a>
+                </div>
+              </div>
+              <a href="/bat-dong-san/tu-van" class="mobile-submenu-item">
+                <i data-lucide="help-circle" class="w-3 h-3 mr-2"></i>
+                Tư Vấn
+              </a>
+              <a href="/bat-dong-san/cong-cu" class="mobile-submenu-item">
+                <i data-lucide="calculator" class="w-3 h-3 mr-2"></i>
+                Công Cụ
+              </a>
+              <a href="/bat-dong-san/moi-gioi" class="mobile-submenu-item">
+                <i data-lucide="users" class="w-3 h-3 mr-2"></i>
+                Môi Giới
+              </a>
+              <a href="/bat-dong-san/lien-he" class="mobile-submenu-item">
+                <i data-lucide="phone" class="w-3 h-3 mr-2"></i>
+                Liên Hệ
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Việc Làm Mobile -->
+        <div x-data="{ expanded: false }">
+          <div @click="expanded = !expanded" class="mobile-menu-expandable">
+            <a href="/viec-lam" class="flex items-center space-x-3">
+              <i data-lucide="briefcase" class="w-5 h-5 text-gray-600"></i>
+              <span class="font-medium text-gray-900">Việc Làm</span>
+            </a>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400 transition-transform"
+              :class="{ 'rotate-90': expanded }"></i>
+          </div>
+          <div x-show="expanded" x-transition class="ml-3 space-y-1 mt-1">
+            <div class="mobile-submenu-header">
+              <i data-lucide="search" class="w-4 h-4 mr-2"></i>
+              Tìm Việc
+            </div>
+            <div class="ml-4 space-y-1">
+              <div x-data="{ subExpanded: false }">
+                <div @click="subExpanded = !subExpanded" class="mobile-submenu-expandable">
+                  <a href="/viec-lam/tim-viec" class="flex items-center">
+                    <i data-lucide="briefcase" class="w-3 h-3 mr-2"></i>
+                    <span>Theo Ngành</span>
+                  </a>
+                  <i data-lucide="chevron-right" class="w-3 h-3 text-gray-400 transition-transform"
+                    :class="{ 'rotate-90': subExpanded }"></i>
+                </div>
+                <div x-show="subExpanded" x-transition class="ml-4 space-y-1 mt-1">
+                  <a href="/viec-lam/tim-viec/it" class="mobile-submenu-item">
+                    <i data-lucide="code" class="w-2 h-2 mr-2"></i>
+                    Công Nghệ IT
+                  </a>
+                  <a href="/viec-lam/tim-viec/marketing" class="mobile-submenu-item">
+                    <i data-lucide="megaphone" class="w-2 h-2 mr-2"></i>
+                    Marketing
+                  </a>
+                  <a href="/viec-lam/tim-viec/ban-hang" class="mobile-submenu-item">
+                    <i data-lucide="shopping-bag" class="w-2 h-2 mr-2"></i>
+                    Bán Hàng
+                  </a>
+                </div>
+              </div>
+              <div x-data="{ subExpanded: false }">
+                <div @click="subExpanded = !subExpanded" class="mobile-submenu-expandable">
+                  <a href="/viec-lam/cap-bac" class="flex items-center">
+                    <i data-lucide="users" class="w-3 h-3 mr-2"></i>
+                    <span>Theo Cấp Bậc</span>
+                  </a>
+                  <i data-lucide="chevron-right" class="w-3 h-3 text-gray-400 transition-transform"
+                    :class="{ 'rotate-90': subExpanded }"></i>
+                </div>
+                <div x-show="subExpanded" x-transition class="ml-4 space-y-1 mt-1">
+                  <a href="/viec-lam/cap-bac/nhan-vien" class="mobile-submenu-item">
+                    <i data-lucide="user" class="w-2 h-2 mr-2"></i>
+                    Nhân Viên
+                  </a>
+                  <a href="/viec-lam/cap-bac/quan-ly" class="mobile-submenu-item">
+                    <i data-lucide="user-check" class="w-2 h-2 mr-2"></i>
+                    Quản Lý
+                  </a>
+                </div>
+              </div>
+              <a href="/viec-lam/viec-part-time" class="mobile-submenu-item">
+                <i data-lucide="clock" class="w-3 h-3 mr-2"></i>
+                Việc Part-time
+              </a>
+              <a href="/viec-lam/viec-remote" class="mobile-submenu-item">
+                <i data-lucide="wifi" class="w-3 h-3 mr-2"></i>
+                Việc Remote
+              </a>
+            </div>
+
+            <div class="mobile-submenu-header">
+              <i data-lucide="building" class="w-4 h-4 mr-2"></i>
+              Nhà Tuyển Dụng
+            </div>
+            <div class="ml-4 space-y-1">
+              <div x-data="{ subExpanded: false }">
+                <div @click="subExpanded = !subExpanded" class="mobile-submenu-expandable">
+                  <a href="/viec-lam/tuyen-dung" class="flex items-center">
+                    <i data-lucide="plus-circle" class="w-3 h-3 mr-2"></i>
+                    <span>Tuyển Dụng</span>
+                  </a>
+                  <i data-lucide="chevron-right" class="w-3 h-3 text-gray-400 transition-transform"
+                    :class="{ 'rotate-90': subExpanded }"></i>
+                </div>
+                <div x-show="subExpanded" x-transition class="ml-4 space-y-1 mt-1">
+                  <a href="/viec-lam/tuyen-dung/dang-tin" class="mobile-submenu-item">
+                    <i data-lucide="plus-circle" class="w-2 h-2 mr-2"></i>
+                    Đăng Tin
+                  </a>
+                  <a href="/viec-lam/tuyen-dung/quan-ly" class="mobile-submenu-item">
+                    <i data-lucide="settings" class="w-2 h-2 mr-2"></i>
+                    Quản Lý
+                  </a>
+                  <a href="/viec-lam/tuyen-dung/tim-ung-vien" class="mobile-submenu-item">
+                    <i data-lucide="user-search" class="w-2 h-2 mr-2"></i>
+                    Tìm Ứng Viên
+                  </a>
+                  <a href="/viec-lam/tuyen-dung/bao-cao" class="mobile-submenu-item">
+                    <i data-lucide="bar-chart-3" class="w-2 h-2 mr-2"></i>
+                    Báo Cáo
+                  </a>
+                </div>
+              </div>
+              <a href="/viec-lam/cong-ty" class="mobile-submenu-item">
+                <i data-lucide="building" class="w-3 h-3 mr-2"></i>
+                Công Ty
+              </a>
+              <a href="/viec-lam/ho-so" class="mobile-submenu-item">
+                <i data-lucide="file-text" class="w-3 h-3 mr-2"></i>
+                Hồ Sơ
+              </a>
+              <a href="/viec-lam/cv-builder" class="mobile-submenu-item">
+                <i data-lucide="edit" class="w-3 h-3 mr-2"></i>
+                Tạo CV
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links + Footer -->
+        <div class="p-4 border-t border-gray-200 bg-gray-50">
+          <template x-if="user">
+            <div class="flex items-center space-x-3 p-3 bg-white rounded-xl mb-3 border border-gray-200">
+              <img
+                :src="user.avatar || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAEElEQVR4nGLy8P0ACAAA//8CbgGIf795rQAAAABJRU5ErkJggg=='"
+                :alt="user.fullname" class="w-10 h-10 rounded-full border-2 border-gray-200">
+              <div class="flex-1">
+                <p class="font-medium text-gray-900" x-text="user.fullname"></p>
+                <p class="text-sm text-gray-500" x-text="user.email"></p>
+              </div>
+              <button aria-label="Logout" @click="logout()" class="text-red-600 hover:text-red-700 text-sm font-medium">
+                <i data-lucide="log-out" title="Logout" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </template>
+          <template x-if="!user">
+            <div class="flex space-x-3 mb-3">
+              <button @click="openAuthModal(); closeMobileMenu(); authTab = 'login'; errors = {}; isLoading = false"
+                class="flex-1 btn btn-outline">Đăng Nhập</button>
+              <button @click="openAuthModal(); closeMobileMenu(); authTab = 'register'; errors = {}; isLoading = false"
+                class="flex-1 btn btn-outline">Tạo Tài Khoản</button>
+            </div>
+          </template>
+          <button @click="handlePostClick()" class="w-full btn btn-primary">
+            <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+            Đăng Tin Tức
+          </button>
+        </div>
+        <div class="p-4 border-t text-xs text-gray-500 text-center">
+          <div class="flex items-center justify-center space-x-2">
+            <a href="#"
+              class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+              <i data-lucide="youtube" class="w-4 h-4"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+              <i data-lucide="twitter" class="w-4 h-4"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <p>Cổng Thông Tin Bình Dương</p>
+          <p>Email: info@binhduong.gov.vn</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

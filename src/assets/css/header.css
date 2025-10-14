@@ -1,0 +1,240 @@
+/* ========================================================================
+   HEADER.CSS - Header Component Styles
+   ======================================================================== */
+
+/* ========================================================================
+   @LAYER COMPONENTS - Header Specific Components
+   ======================================================================== */
+@layer components {
+
+    /* ========================================================================
+       HEADER LAYOUT GROUP: Các thuộc tính cho Header Layout
+       ======================================================================== */
+
+    /* Header root */
+    .header {
+        @apply bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm sticky top-0 z-50;
+    }
+
+    /* Header layout helpers */
+    .header__row {
+        @apply flex-between h-16;
+    }
+
+    .header__nav {
+        @apply hidden lg:flex items-center ml-16 space-x-8;
+    }
+
+    .header__search {
+        @apply hidden lg:flex items-center flex-1 max-w-md mx-8;
+    }
+
+    .header__actions {
+        @apply flex items-center space-x-0 xl:space-x-3;
+    }
+
+    .header__mobile-actions {
+        @apply lg:hidden flex items-center space-x-2 pl-2;
+    }
+
+    /* Brand area */
+    .header__brand {
+        @apply flex items-center space-x-2;
+    }
+
+    .header__brand-logo {
+        @apply w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex-center;
+    }
+
+    .header__brand-icon {
+        @apply w-5 h-5 text-white;
+    }
+
+    .header__brand-title {
+        @apply font-bold text-lg text-gray-900 one-line;
+    }
+
+    .header__brand-subtitle {
+        @apply text-xs text-gray-500 -mt-1 one-line;
+    }
+
+    /* ========================================================================
+       NAVIGATION GROUP: Các thuộc tính cho Navigation
+       ======================================================================== */
+
+    /* Navigation (desktop) */
+    .nav-link {
+        @apply text-gray-600 hover:text-blue-600 font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis;
+    }
+
+    .nav-dropdown {
+        @apply relative;
+    }
+
+    .nav-dropdown-trigger {
+        @apply flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis;
+    }
+
+    .nav-dropdown-menu {
+        @apply absolute top-full left-[-100%] mt-2 bg-white rounded-xl shadow-xl border border-gray-200 opacity-0 invisible transition-all duration-500 transform scale-90 z-50;
+        box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+        @apply opacity-100 visible scale-100;
+    }
+
+    .nav-dropdown-trigger:hover+.nav-dropdown-menu,
+    .nav-dropdown-menu:hover {
+        @apply opacity-100 visible scale-100;
+    }
+
+    .nav-dropdown-menu.single-col {
+        @apply w-56 py-3;
+    }
+
+    .nav-dropdown-menu.two-col {
+        @apply w-[520px] p-6;
+    }
+
+    .nav-dropdown-menu.three-col {
+        @apply w-[720px] p-6;
+    }
+
+    .nav-dropdown-item {
+        @apply block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 rounded-lg mx-2;
+    }
+
+    .dropdown-two-col {
+        @apply grid grid-cols-2 gap-6;
+    }
+
+    .dropdown-three-col {
+        @apply grid grid-cols-3 gap-6;
+    }
+
+    .dropdown-col {
+        @apply space-y-2;
+    }
+
+    .dropdown-col-header-with-icon {
+        @apply flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-wider mb-3 px-2 pb-2 border-b border-gray-100;
+    }
+
+    .dropdown-col-header-with-icon i {
+        @apply w-4 h-4 mr-2 text-blue-500;
+    }
+
+    .nav-submenu {
+        @apply relative;
+    }
+
+    .nav-submenu-menu {
+        @apply hidden absolute top-[-50%] left-[100%] w-52 bg-white rounded-xl shadow-xl border border-gray-200 py-3 opacity-0 invisible transition-all duration-300 z-50;
+        box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-submenu:hover .nav-submenu-menu {
+        @apply block opacity-100 visible;
+    }
+
+    .nav-submenu-item {
+        @apply block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 rounded-lg mx-2;
+    }
+
+    .nav-dropdown-item.has-submenu {
+        @apply flex items-center pr-8;
+        position: relative;
+    }
+
+    .nav-dropdown-item.has-submenu::after {
+        content: '';
+        @apply w-3 h-3 bg-gray-400 opacity-60;
+        mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5'/%3e%3c/svg%3e") no-repeat center;
+        mask-size: contain;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-dropdown-item.has-submenu:hover::after {
+        @apply bg-blue-500 opacity-100;
+    }
+
+    .nav-menu-divider {
+        @apply border-t border-gray-100 my-3 mx-2;
+    }
+
+    /* Visual separators for multi-column menus */
+    .nav-dropdown-menu.two-col .dropdown-two-col {
+        position: relative;
+    }
+
+    .nav-dropdown-menu.two-col .dropdown-two-col::before {
+        content: '';
+        @apply absolute top-0 left-1/2 transform -translate-x-px h-full w-px bg-gray-200;
+    }
+
+    .nav-dropdown-menu.three-col .dropdown-three-col {
+        position: relative;
+    }
+
+    .nav-dropdown-menu.three-col .dropdown-three-col::before {
+        content: '';
+        @apply absolute top-0 left-1/3 transform -translate-x-px h-full w-px bg-gray-200;
+    }
+
+    .nav-dropdown-menu.three-col .dropdown-three-col::after {
+        content: '';
+        @apply absolute top-0 left-2/3 transform -translate-x-px h-full w-px bg-gray-200;
+    }
+
+    /* Mobile menu */
+    .mobile-menu-item {
+        @apply flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 transition-colors;
+    }
+
+    .mobile-menu-expandable {
+        @apply flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer;
+    }
+
+    .mobile-submenu-item {
+        @apply flex items-center p-2 text-sm text-gray-600 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50;
+    }
+
+    .mobile-submenu-expandable {
+        @apply flex items-center justify-between p-2 text-sm text-gray-600 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 cursor-pointer;
+    }
+
+    .mobile-submenu-header {
+        @apply flex items-center text-xs font-bold text-gray-600 uppercase tracking-wider border-b border-gray-200 pb-2 pt-4 mb-2 px-2;
+    }
+
+    .mobile-menu-header {
+        @apply bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white;
+    }
+
+    .mobile-menu-panel {
+        @apply fixed right-0 top-0 h-screen w-80 bg-white shadow-xl;
+    }
+
+    /* Custom scrollbar for mobile menu */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f5f9;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 2px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+
+}

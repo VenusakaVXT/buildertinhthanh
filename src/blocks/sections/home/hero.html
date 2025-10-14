@@ -1,0 +1,163 @@
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-500 via-blue-600 to-purple-700 overflow-hidden"
+  x-data="heroSectionComponent()">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 bg-[url('./../../assets/images/hero-bg.webp')] bg-cover bg-center opacity-20">
+  </div>
+
+  <div class="container py-12 md:py-16 lg:py-24 relative">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Left Content -->
+      <div class="text-white space-y-6 text-center lg:text-left">
+        <div class="badge badge-primary bg-white/10 backdrop-blur-sm border-white/20 text-white px-4 py-2">
+          <i data-lucide="map-pin" class="size-4 mr-2"></i>
+          Cổng Thông Tin Tỉnh Bình Dương
+        </div>
+
+        <h1 class="text-responsive-xl font-bold leading-tight">
+          <span class="block">Việc Làm - Đất Đai</span>
+          <span
+            class="block text-gradient bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            Tỉnh Bình Dương
+          </span>
+        </h1>
+
+        <p class="text-responsive-md text-blue-100 leading-relaxed max-w-lg mx-auto lg:mx-0">
+          Cập nhật tin tức, bất động sản, việc làm và các tiện ích thiết yếu cho người dân
+          Bình Dương.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+          <button @click="handleExploreClick()" class="btn btn-lg btn-warning">
+            <i data-lucide="arrow-right" class="size-5 mr-2"></i>
+            Khám Phá Ngay
+          </button>
+          <button @click="handleNewsClick()"
+            class="btn btn-lg btn-ghost text-white border-white/30 hover:bg-white/10 hover:border-white/50 hover:text-white">
+            Xem Tin Tức
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Content - Feature Cards -->
+      <div class="feature-cards-grid" x-data="featureCardsComponent()">
+        <div class="feature-card">
+          <div class="feature-card-content">
+            <!-- Icon và Title trên cùng 1 dòng -->
+            <div class="feature-card-header">
+              <div class="feature-card-icon-container feature-card-icon-yellow">
+                <i data-lucide="newspaper" class="feature-card-icon"></i>
+              </div>
+              <h3 class="feature-card-title">Tin Tức</h3>
+            </div>
+            <!-- Description ở giữa -->
+            <div class="feature-card-description-container">
+              <p class="feature-card-description">Cập nhật tin tức mới nhất về tỉnh
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card feature-card-margin-top">
+          <div class="feature-card-content">
+            <!-- Icon và Title trên cùng 1 dòng -->
+            <div class="feature-card-header">
+              <div class="feature-card-icon-container feature-card-icon-orange">
+                <i data-lucide="home" class="feature-card-icon-white"></i>
+              </div>
+              <h3 class="feature-card-title">Bất Động Sản</h3>
+            </div>
+            <!-- Description ở giữa -->
+            <div class="feature-card-description-container">
+              <p class="feature-card-description">Thông tin mua bán, cho thuê</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card feature-card-margin-negative">
+          <div class="feature-card-content">
+            <!-- Icon và Title trên cùng 1 dòng -->
+            <div class="feature-card-header">
+              <div class="feature-card-icon-container feature-card-icon-blue">
+                <i data-lucide="briefcase" class="feature-card-icon-white"></i>
+              </div>
+              <h3 class="feature-card-title">Việc Làm</h3>
+            </div>
+            <!-- Description ở giữa -->
+            <div class="feature-card-description-container">
+              <p class="feature-card-description">Cơ hội nghề nghiệp tại địa phương
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card feature-card-margin-positive">
+          <div class="feature-card-content">
+            <!-- Icon và Title trên cùng 1 dòng -->
+            <div class="feature-card-header">
+              <div class="feature-card-icon-container feature-card-icon-pink">
+                <i data-lucide="map-pin" class="feature-card-icon-white"></i>
+              </div>
+              <h3 class="feature-card-title">Tiện Ích</h3>
+            </div>
+            <!-- Description ở giữa -->
+            <div class="feature-card-description-container">
+              <p class="feature-card-description">Dịch vụ công và tiện ích đời sống
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post Box -->
+    <div class="mt-12 md:mt-16" x-data="postBoxComponent()">
+      <div class="max-w-5xl mx-auto card bg-white/10 backdrop-blur-sm border-white/20">
+        <div class="card-content-no-header">
+          <div @click="handlePostClick()"
+            class="flex items-center gap-3 cursor-pointer hover:bg-white/20 transition-colors rounded-lg p-2">
+            <!-- Avatar -->
+            <div id="postBoxAvatar" class="size-10 bg-white/20 rounded-full flex-center flex-shrink-0">
+              <i data-lucide="user-pen" class="size-5 text-white"></i>
+            </div>
+
+            <!-- Text Input -->
+            <input id="postBoxText" type="text" readonly
+              class="input flex-1 bg-white/20 border-white/20 text-white placeholder-white/80 hover:bg-white/30 transition-colors backdrop-blur-sm"
+              placeholder="Nhập nội dung đăng tải..." />
+
+            <!-- Upload Icon -->
+            <div
+              class="size-10 bg-white/20 rounded-full flex-center flex-shrink-0 hover:bg-white/30 transition-colors backdrop-blur-sm">
+              <i data-lucide="upload" class="size-5 text-white"></i>
+            </div>
+          </div>
+
+          <div class="flex-center mt-4 pt-4 border-t border-white/20">
+            <p class="text-sm text-white/70">Chia sẻ tin tức, việc làm, bất động sản hoặc dịch vụ của bạn</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16 pt-12 md:pt-16 border-t border-white/20">
+      <div class="hero-stat">
+        <div class="hero-stat__title">35+</div>
+        <div class="hero-stat__value">Xã Phường</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat__title">1000+</div>
+        <div class="hero-stat__value">Tin Tức/Tháng</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat__title">500+</div>
+        <div class="hero-stat__value">Việc Làm</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat__title">2M+</div>
+        <div class="hero-stat__value">Dân Số</div>
+      </div>
+    </div>
+  </div>
+</section>

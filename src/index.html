@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bình Dương - Tin Tức & Tiện Ích</title>
+	<meta name="description"
+		content="Cổng thông tin tổng hợp về tỉnh Bình Dương, cung cấp tin tức, bất động sản, việc làm và các tiện ích thiết yếu.">
+	<script type="text/javascript">
+		const API_URL = "https://panel.dongnai.net/api/v2/";
+	</script>
+	<!-- all css -->
+	<link rel="stylesheet" href="assets/css/all_homes.css" />
+
+	<!-- 1. CAC THU VIEN CAN SU DUNG -->
+	<!-- Notification Library -->
+	<script src="assets/js/libs/notification.js" defer></script>
+	<!-- Initialize FastNotice -->
+	<script>
+		// Khởi tạo FastNotice với cấu hình tùy chỉnh sau khi DOM sẵn sàng
+		document.addEventListener('DOMContentLoaded', function () {
+			window.fastNotice = new FastNotice({
+				position: 'top-center',    // Vị trí mặc định
+				duration: 3000,              // Thời gian hiển thị (ms)
+				maxNotifications: 3          // Số notification tối đa
+			});
+		});
+	</script>
+	<!-- Lucide Icons - Custom Build -->
+	<script src="assets/js/lucide-custom.min.js" defer></script>
+	<!-- jModal manager -->
+	<script src="assets/js/libs/jmodal.1.1.0.js" defer></script>
+	<!-- Load BlazeSlider Library -->
+	<script src="assets/js/libs/blaze-slider.js" defer></script>
+	<!-- Libs Tabs JS Thuần -->
+	<script src="assets/js/libs/tabs.js" defer></script>
+	<!-- Image Fallback Utility -->
+	<script src="assets/js/libs/image-fallback.js" defer></script>
+
+
+	<!-- 2. CAC CODE JS TU VIET. -->
+
+	<!-- Header Component JS. Vi no goi Cart nen nam sau Cart -->
+	<script src="assets/js/header.js" defer></script>
+	<!-- Homepage Component JS -->
+	<script src="assets/js/home.js" defer></script>
+	<!-- Run BlazeSlider -->
+	<script src="assets/js/sliders.js" defer></script>
+
+	<!-- Alpine.js CDN. Nam duoi cung vi chay Defer va vi no AutoRun nen can load sau cung truoc -->
+	<script src="assets/js/libs/alpinejs.3.15.0.js" defer></script>
+
+</head>
+
+<body class="min-h-screen bg-white">
+	<!-- header -->
+	<!-- include:./blocks/header.html -->
+
+	<!-- Main Content Area -->
+	<main class="min-h-screen bg-gray-50" x-data="homepageComponent()">
+		<!-- Hero Section -->
+		<!-- include:blocks/sections/home/hero.html -->
+
+		<!-- News, Job, Real Estate Popular -->
+		<section class="py-12 md:py-16 bg-white home-hero">
+			<!-- Highlight Section -->
+			<!-- include:blocks/sections/common/highlight.html -->
+			<!-- Real Estate Popular Section -->
+			<!-- include:blocks/sections/common/real-estate-popular.html -->
+		</section>
+
+		<!-- Real Estate Location Section -->
+		<!-- include:blocks/sections/common/real-estate-location.html -->
+
+		<!-- Binh Duong News Section -->
+		<!-- include:blocks/sections/common/binh-duong-news.html -->
+
+		<!-- Job Category Section -->
+		<!-- include:blocks/sections/common/job-category.html -->
+
+		<!-- Job Suggestion Section -->
+		<!-- include:blocks/sections/common/job-suggestion.html -->
+
+		<!-- Service Section -->
+		<!-- include:blocks/sections/common/service.html -->
+
+		<!-- Company Section -->
+		<!-- include:blocks/sections/common/company.html -->
+
+		<!-- Online Public Services Section -->
+		<!-- include:blocks/sections/common/online-public-services.html -->
+
+		<!-- Phone Contact Section -->
+		<!-- include:blocks/sections/home/phone-contact.html -->
+
+		<!-- Stats Overview Section -->
+		<!-- include:blocks/sections/home/stats-overview.html -->
+
+	</main>
+
+	<!-- Footer -->
+	<!-- include:./blocks/footer.html -->
+</body>
+
+</html>

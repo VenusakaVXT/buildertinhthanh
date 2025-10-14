@@ -1,0 +1,417 @@
+<!-- Phone Contact -->
+<section class="py-8 md:py-12 bg-gradient-to-r from-blue-50 to-indigo-50" x-data="phoneContactToggle()">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-6">
+      <h2 class="text-xl md:text-2xl font-bold mb-2 title-section">Số Điện Thoại Liên Hệ</h2>
+      <p class="text-sm text-gray-600">Số khẩn cấp và cơ quan địa phương tỉnh Bình Dương</p>
+    </div>
+    <div class="grid phone-contact-grid">
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-red-500">
+              <i data-lucide="shield" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Cảnh sát</h3>
+                <div
+                  class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent badge bg-red-500 text-white text-xs px-1.5 py-0.5">
+                  !</div>
+              </div>
+              <div class="phone-contact-number">113</div>
+              <p class="phone-contact-desc">Báo cáo tội phạm, tai nạn</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-orange-500">
+              <i data-lucide="flame" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Cứu hỏa</h3>
+                <div
+                  class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent badge bg-red-500 text-white text-xs px-1.5 py-0.5">
+                  !</div>
+              </div>
+              <div class="phone-contact-number">114</div>
+              <p class="phone-contact-desc">Báo cháy, cứu hộ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-green-500">
+              <i data-lucide="heart" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Cấp cứu</h3>
+                <div
+                  class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent badge bg-red-500 text-white text-xs px-1.5 py-0.5">
+                  !</div>
+              </div>
+              <div class="phone-contact-number">115</div>
+              <p class="phone-contact-desc">Cấp cứu y tế</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-blue-500">
+              <i data-lucide="phone" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Khẩn cấp</h3>
+                <div
+                  class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent badge bg-red-500 text-white text-xs px-1.5 py-0.5">
+                  !</div>
+              </div>
+              <div class="phone-contact-number">112</div>
+              <p class="phone-contact-desc">Tổng đài khẩn cấp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-yellow-600">
+              <i data-lucide="car" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Cứu hộ</h3>
+                <div
+                  class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent badge bg-red-500 text-white text-xs px-1.5 py-0.5">
+                  !</div>
+              </div>
+              <div class="phone-contact-number">1022</div>
+              <p class="phone-contact-desc">Hỗ trợ giao thông</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-purple-500">
+              <i data-lucide="zap" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Điện lực</h3>
+                <div
+                  class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent badge bg-red-500 text-white text-xs px-1.5 py-0.5">
+                  !</div>
+              </div>
+              <div class="phone-contact-number">19001909</div>
+              <p class="phone-contact-desc">Sự cố điện</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-blue-600">
+              <i data-lucide="building" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">UBND tỉnh</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.841</div>
+              <p class="phone-contact-desc">Văn phòng UBND tỉnh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-red-600">
+              <i data-lucide="shield" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Công an tỉnh</h3>
+              </div>
+              <div class="phone-contact-number">0274.3823.608</div>
+              <p class="phone-contact-desc">Công an tỉnh Bình Dương</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-green-600">
+              <i data-lucide="heart" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Sở Y tế</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.845</div>
+              <p class="phone-contact-desc">Sở Y tế tỉnh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-indigo-600">
+              <i data-lucide="graduation-cap" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Sở Giáo dục</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.847</div>
+              <p class="phone-contact-desc">Sở GD&amp;ĐT tỉnh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-orange-600">
+              <i data-lucide="car" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Sở Giao thông</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.849</div>
+              <p class="phone-contact-desc">Sở GTVT tỉnh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-teal-600">
+              <i data-lucide="leaf" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Sở TN&amp;MT</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.851</div>
+              <p class="phone-contact-desc">Tài nguyên &amp; Môi trường</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-purple-600">
+              <i data-lucide="users" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Sở Lao động</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.853</div>
+              <p class="phone-contact-desc">Lao động TB&amp;XH</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-cyan-600">
+              <i data-lucide="trending-up" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Sở KH&amp;ĐT</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.855</div>
+              <p class="phone-contact-desc">Kế hoạch &amp; Đầu tư</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-yellow-600">
+              <i data-lucide="zap" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Điện lực BD</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.857</div>
+              <p class="phone-contact-desc">Công ty Điện lực</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-blue-500">
+              <i data-lucide="droplets" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Cấp nước BD</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.859</div>
+              <p class="phone-contact-desc">Công ty Cấp nước</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-green-500">
+              <i data-lucide="mail" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Bưu điện tỉnh</h3>
+              </div>
+              <div class="phone-contact-number">0274.3822.861</div>
+              <p class="phone-contact-desc">Bưu điện Bình Dương</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-emerald-500">
+              <i data-lucide="car" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Taxi Mai Linh</h3>
+              </div>
+              <div class="phone-contact-number">0274.3838.383</div>
+              <p class="phone-contact-desc">Taxi Mai Linh BD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-green-600">
+              <i data-lucide="car" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Grab Bình Dương</h3>
+              </div>
+              <div class="phone-contact-number">1900.1210</div>
+              <p class="phone-contact-desc">Dịch vụ Grab</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-red-500">
+              <i data-lucide="heart" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">BV Đa khoa BD</h3>
+              </div>
+              <div class="phone-contact-number">0274.3812.345</div>
+              <p class="phone-contact-desc">Bệnh viện Đa khoa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-pink-500">
+              <i data-lucide="heart" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Trung tâm Y tế</h3>
+              </div>
+              <div class="phone-contact-number">0274.3813.456</div>
+              <p class="phone-contact-desc">Y tế dự phòng</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-contact-card bg-card text-card-foreground group card-hover">
+        <div class="phone-contact-card-body">
+          <div class="phone-contact-card-row">
+            <div class="phone-contact-icon group-hover:scale-105 bg-indigo-500">
+              <i data-lucide="building" class="phone-contact-icon-svg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="phone-contact-title-row">
+                <h3 class="phone-contact-title">Ngân hàng Nhà nước</h3>
+              </div>
+              <div class="phone-contact-number">0274.3814.567</div>
+              <p class="phone-contact-desc">NHNN chi nhánh BD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6"><button @click="toggleExpanded()"
+        class="h-10 px-4 py-2 btn-secondary flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors"
+        :aria-expanded="isExpanded.toString()">
+        <span x-text="getButtonText()">Xem Thêm (14 số khác)</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"
+          :class="(isExpanded ? 'rotate-180' : '') + ' w-4 h-4 ml-2 transition-transform'">
+          <path d="m18 15-6-6-6 6"></path>
+        </svg></button><a href="/lien-he/so-dien-thoai"><button
+          class="justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary flex items-center">Danh
+          Sách Đầy Đủ<i data-lucide="external-link" class="w-4 h-4 ml-2"></i></button></a></div>
+    <div class="mt-4 text-center">
+      <p class="text-xs text-gray-500"><i data-lucide="phone" class="w-4 h-4 inline mr-1"></i>Nhấn để gọi trực tiếp
+      </p>
+    </div>
+  </div>
+</section>

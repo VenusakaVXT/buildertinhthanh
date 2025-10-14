@@ -1,0 +1,397 @@
+.blaze-slider {
+    --slides-to-show: 5;
+    --slide-gap: 16px;
+    direction: ltr;
+    position: relative;
+}
+
+.blaze-container {
+    position: relative
+}
+
+.blaze-track-container {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.blaze-track {
+    will-change: transform;
+    touch-action: pan-y;
+    display: flex;
+    gap: var(--slide-gap);
+    --slide-width: calc((100% - (var(--slides-to-show) - 1) * var(--slide-gap)) / var(--slides-to-show));
+    box-sizing: border-box
+}
+
+.blaze-track>* {
+    box-sizing: border-box;
+    width: var(--slide-width);
+    flex-shrink: 0
+}
+
+/* Custom styles for real estate slider */
+
+.blaze-slider .blaze-track>* {
+    padding: 0 8px;
+}
+
+/* Each slide contains a single card */
+.blaze-slide {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.blaze-slide>div {
+    width: 100%;
+}
+
+/* Pagination styles */
+.blaze-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    min-height: 10px;
+    margin-top: 24px;
+}
+
+.blaze-pagination button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.blaze-pagination button.active {
+    background-color: #3b82f6;
+}
+
+/* Navigation button styles */
+.blaze-prev,
+.blaze-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.blaze-prev {
+    left: -10px;
+}
+
+.blaze-next {
+    right: -10px;
+}
+
+.blaze-prev:hover,
+.blaze-next:hover {
+    background-color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.blaze-prev:disabled,
+.blaze-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: translateY(-50%);
+}
+
+.blaze-prev:disabled:hover,
+.blaze-next:disabled:hover {
+    transform: translateY(-50%);
+    background-color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .blaze-slider {
+        --slides-to-show: 1;
+        --slide-gap: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .blaze-slider {
+        --slides-to-show: 3;
+        --slide-gap: 16px;
+    }
+}
+
+/* =============================================================
+   CLS FIXES - Mirror JS config in src/assets/js/sliders.js
+   Declare CSS variables early so layout matches before JS runs
+   ============================================================= */
+
+/* bslider-6: 1 → 2 → 3 → 4 → 5 → 6 */
+.bslider-6.blaze-slider {
+    --slides-to-show: 1;
+    --slide-gap: 16px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .bslider-6.blaze-slider {
+        --slides-to-show: 2;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .bslider-6.blaze-slider {
+        --slides-to-show: 3;
+    }
+}
+
+@media (min-width: 1023px) and (max-width: 1360px) {
+    .bslider-6.blaze-slider {
+        --slides-to-show: 4;
+    }
+}
+
+@media (min-width: 1360px) and (max-width: 1590px) {
+    .bslider-6.blaze-slider {
+        --slides-to-show: 5;
+    }
+}
+
+@media (min-width: 1590px) {
+    .bslider-6.blaze-slider {
+        --slides-to-show: 6;
+    }
+}
+
+/* bslider-5: 1 → 2 → 3 → 4 → 5 */
+.bslider-5.blaze-slider {
+    --slides-to-show: 1;
+    --slide-gap: 16px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .bslider-5.blaze-slider {
+        --slides-to-show: 2;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .bslider-5.blaze-slider {
+        --slides-to-show: 3;
+    }
+}
+
+@media (min-width: 1023px) and (max-width: 1360px) {
+    .bslider-5.blaze-slider {
+        --slides-to-show: 4;
+    }
+}
+
+@media (min-width: 1360px) {
+    .bslider-5.blaze-slider {
+        --slides-to-show: 5;
+    }
+}
+
+/* bslider-4: 1 → 2 → 3 → 4 */
+.bslider-4.blaze-slider {
+    --slides-to-show: 1;
+    --slide-gap: 16px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .bslider-4.blaze-slider {
+        --slides-to-show: 2;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .bslider-4.blaze-slider {
+        --slides-to-show: 3;
+    }
+}
+
+@media (min-width: 1023px) {
+    .bslider-4.blaze-slider {
+        --slides-to-show: 4;
+    }
+}
+
+/* bslider-3: 1 → 2 (>=600) → 3 (>=1023) */
+.bslider-3.blaze-slider {
+    --slides-to-show: 1;
+    --slide-gap: 16px;
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    .bslider-3.blaze-slider {
+        --slides-to-show: 2;
+    }
+}
+
+@media (min-width: 1023px) {
+    .bslider-3.blaze-slider {
+        --slides-to-show: 3;
+    }
+}
+
+/* Job slider specific styles for wider cards */
+.job-slider .blaze-slide {
+    padding: 0 4px;
+}
+
+.job-slider .blaze-slide>div {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+/* Optimize job card layout for better width utilization */
+.job-slider .blaze-track {
+    gap: 8px;
+}
+
+.job-slider .blaze-container {
+    padding: 0 4px;
+}
+
+/* Ensure job cards take full available width */
+.job-slider .blaze-slide .grid,
+.job-slider .blaze-slide .slide-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.job-slider .blaze-slide .card-hover {
+    width: 100%;
+    min-height: 200px;
+}
+
+/* Prevent single card from stretching to fill container height */
+.job-slider .blaze-slide .grid>div,
+.job-slider .blaze-slide .slide-grid>div {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/* Service slider specific styles for 2-row layout */
+.service-slider .blaze-slide {
+    padding: 0 4px;
+}
+
+.service-slider .blaze-slide>div {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+/* Optimize dich vu card layout for better width utilization */
+.service-slider .blaze-track {
+    gap: 8px;
+}
+
+.service-slider .blaze-container {
+    padding: 0 4px;
+}
+
+/* Ensure dich vu cards take full available width */
+.service-slider .blaze-slide .grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-slider .blaze-slide .card-hover {
+    width: 100%;
+    min-height: 200px;
+}
+
+/* Prevent single card from stretching to fill container height */
+.service-slider .blaze-slide .grid>div {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/* Job category slider specific styles */
+.job-category-slider .blaze-slide {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 8px;
+}
+
+.job-category-slider .blaze-slide>div {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Reduce gap between job category cards */
+.job-category-slider .blaze-track {
+    gap: 0;
+}
+
+.job-category-slider .blaze-slide {
+    margin: 0 4px;
+    flex-shrink: 0;
+}
+
+/* Make job category cards more compact */
+.job-category-slider .blaze-container {
+    padding: 0 8px;
+}
+
+/* Company slider specific styles for 2-row layout */
+.company-slider .blaze-slide {
+    padding: 0 4px;
+}
+
+.company-slider .blaze-slide>div {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+/* Optimize company card layout for better width utilization */
+.company-slider .blaze-track {
+    gap: 8px;
+}
+
+.company-slider .blaze-container {
+    padding: 0 4px;
+}
+
+/* Ensure company cards take full available width */
+.company-slider .blaze-slide .grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.company-slider .blaze-slide .card-hover {
+    width: 100%;
+    min-height: 200px;
+}
+
+/* Prevent single card from stretching to fill container height */
+.company-slider .blaze-slide .grid>div {
+    flex: 0 0 auto;
+    /* Don't grow to fill available space */
+    width: 100%;
+}
