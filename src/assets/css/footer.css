@@ -13,11 +13,9 @@
     .footer {
         @apply bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 text-white;
     }
-
     .footer__container {
         @apply container mx-auto px-4 py-12;
     }
-
     .footer__grid {
         @apply grid grid-cols-2 lg:grid-cols-4 gap-8;
     }
@@ -28,27 +26,21 @@
     .footer__brand {
         @apply space-y-4 col-span-2 lg:col-span-1 col-start-1;
     }
-
     .footer__brand-link {
         @apply flex items-center space-x-2;
     }
-
     .footer__brand-logo {
         @apply w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-sm;
     }
-
     .footer__brand-icon {
         @apply w-6 h-6 text-gray-900;
     }
-
     .footer__brand-title {
         @apply font-bold text-xl;
     }
-
     .footer__brand-subtitle {
         @apply text-xs text-blue-200 -mt-1;
     }
-
     .footer__desc {
         @apply text-blue-200 text-sm leading-relaxed;
     }
@@ -59,7 +51,6 @@
     .footer__socials {
         @apply flex space-x-3;
     }
-
     .footer__social-btn {
         @apply w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer;
     }
@@ -70,11 +61,9 @@
     .footer__heading {
         @apply font-semibold text-lg mb-4;
     }
-
     .footer__list {
         @apply space-y-2 text-blue-200;
     }
-
     .footer__link {
         @apply hover:text-white transition-colors;
     }
@@ -85,23 +74,18 @@
     .footer__contact-col {
         @apply col-span-2 lg:col-span-1 col-start-1 lg:col-start-4;
     }
-
     .footer__contact-item {
         @apply flex items-center space-x-3;
     }
-
     .footer__contact-item-start {
         @apply flex items-start space-x-3;
     }
-
     .footer__contact-icon {
         @apply w-5 h-5 flex-shrink-0;
     }
-
     .footer__contact-icon-start {
         @apply w-5 h-5 mt-0.5 flex-shrink-0;
     }
-
     .footer__contact-text {
         @apply text-sm;
     }
@@ -112,7 +96,6 @@
     .footer__bottom {
         @apply border-t border-white/20 mt-12 pt-8 flex flex-col justify-between items-center text-blue-200 text-sm;
     }
-
     .footer__bottom-links {
         @apply flex space-x-6 mt-4;
     }

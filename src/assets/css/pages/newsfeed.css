@@ -1,0 +1,131 @@
+/* ===========================================
+  NEWSFEED DRAG FUNCTIONALITY STYLES
+=========================================== */
+
+/* Stories drag container */
+.cursor-grab {
+  cursor: grab;
+}
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+/* Prevent text selection during drag - Need vendor prefixes */
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Smooth scrolling for stories */
+.stories-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+/* Story item hover effects - Custom for better control */
+.story-item {
+  transition: transform 0.2s ease-in-out;
+}
+.story-item:hover {
+  transform: scale(1.05);
+}
+
+/* Drag feedback - Clear semantic naming */
+.dragging {
+  pointer-events: none;
+}
+
+/* Stories navigation buttons */
+.stories-nav-button {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  /* transform được set inline trong HTML để đảm bảo vị trí cố định */
+  transition: all 0.2s ease-in-out;
+}
+/* Story Modal Optimizations */
+.story-modal-content {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  /* Force hardware acceleration */
+}
+.story-progress-bar {
+  will-change: width;
+  transform: translateZ(0);
+  /* Force hardware acceleration */
+}
+.story-image,
+.story-video {
+  will-change: transform;
+  transform: translateZ(0);
+  /* Force hardware acceleration */
+}
+
+/* Story viewed state */
+.story-item.viewed .story-avatar-border {
+  border: 1px solid white;
+  position: relative;
+}
+.story-item.viewed .story-avatar-border::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: white;
+  border-radius: 50%;
+  z-index: 1;
+}
+.story-item.viewed .story-avatar-border img {
+  position: relative;
+  z-index: 2;
+}
+
+.stories-nav-button:hover {
+  transform: translateY(-50%) scale(1.05) !important;
+  /* Chỉ scale, giữ nguyên vị trí */
+}
+.stories-nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: translateY(-50%) !important;
+  /* Giữ nguyên vị trí khi disabled */
+}
+
+/* Force show buttons on mobile */
+@media (max-width: 768px) {
+  .stories-nav-button {
+    opacity: 1 !important;
+  }
+}
+
+/* Force show prev button when there's content */
+.stories-container:has(.story-item:nth-child(9)) .stories-nav-button[data-prev] {
+  opacity: 1 !important;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  .stories-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .story-item {
+    scroll-snap-align: start;
+  }
+
+  /* Show navigation buttons on mobile */
+  .stories-nav-button {
+    opacity: 1 !important;
+  }
+}

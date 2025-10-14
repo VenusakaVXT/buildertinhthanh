@@ -184,6 +184,25 @@ function headerComponent() {
             console.log('Header component initialized.');
             this.initializeAuth();
 
+            // Initialize jModal for auth modal so close/backdrop buttons work
+            this.$nextTick(() => {
+                if (window.jModal) {
+                    window.jModal.init('#authModal');
+                }
+
+                // Sync title with tabs.js changes
+                const modal = document.getElementById('authModal');
+                const tabsContainer = modal ? modal.querySelector('.tabs') : null;
+                if (tabsContainer) {
+                    tabsContainer.addEventListener('tabChanged', (ev) => {
+                        const name = ev?.detail?.newTabName;
+                        if (name === 'login' || name === 'register') {
+                            this.authTab = name;
+                        }
+                    });
+                }
+            });
+
             // Listen for auth modal open requests from other components
             window.addEventListener('open-auth-modal', (event) => {
                 this.authTab = event.detail.tab || 'login';
@@ -365,13 +384,16 @@ function headerComponent() {
             this.loginForm = { email: '', password: '', remember: false };
             this.registerForm = { fullname: '', username: '', email: '', password: '', confirmPassword: '', phone: '', agree: false };
             this.isLoading = false;
-            // Add hidden class back when closing modal
-            this.$nextTick(() => {
-                const modal = document.getElementById('authModal');
-                if (modal) {
-                    modal.classList.add('hidden');
-                }
-            });
+            // Close via jModal if available
+            if (window.jModal) {
+                window.jModal.close('authModal');
+            } else {
+                // Fallback
+                this.$nextTick(() => {
+                    const modal = document.getElementById('authModal');
+                    if (modal) modal.classList.add('hidden');
+                });
+            }
         },
 
         openAuthModal() {
@@ -382,11 +404,25 @@ function headerComponent() {
             if (!this.authTab) {
                 this.authTab = 'login';
             }
-            // Remove hidden class when opening modal
+            // Open modal via jModal and sync the desired tab
             this.$nextTick(() => {
+                if (window.jModal) {
+                    window.jModal.init('#authModal').open('authModal');
+                } else {
+                    const modal = document.getElementById('authModal');
+                    if (modal) modal.classList.remove('hidden');
+                }
+
+                // Switch tab using TabManager
                 const modal = document.getElementById('authModal');
-                if (modal) {
-                    modal.classList.remove('hidden');
+                const tabsContainer = modal ? modal.querySelector('.tabs') : null;
+                if (tabsContainer && window.tabManager) {
+                    const targetTab = this.authTab || 'login';
+                    try {
+                        window.tabManager.switchTabInContainer(tabsContainer, targetTab);
+                    } catch (e) {
+                        console.warn('Failed to switch tab in modal:', e);
+                    }
                 }
             });
         },

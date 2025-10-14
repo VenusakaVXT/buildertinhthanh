@@ -213,29 +213,6 @@ document.addEventListener('alpine:init', () => {
     }));
 
     // ===========================================
-    // NEWS FILTER COMPONENT
-    // ===========================================
-    Alpine.data('newsFilterComponent', () => ({
-        activeCategory: 'Tin Nổi Bật',
-
-        init() {
-            console.log('News Filter component initialized.');
-        },
-
-        selectCategory(categoryName) {
-            this.activeCategory = categoryName;
-        },
-
-        getButtonClass(categoryName) {
-            if (this.activeCategory === categoryName) {
-                return " active";
-            } else {
-                return " inactive";
-            }
-        },
-    }));
-
-    // ===========================================
     // PHONE CONTACT TOGGLE COMPONENT
     // ===========================================
     Alpine.data('phoneContactToggle', () => ({
