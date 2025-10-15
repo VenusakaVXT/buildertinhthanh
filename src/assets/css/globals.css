@@ -235,6 +235,10 @@
         @apply px-8 py-4 h-14 text-lg;
     }
 
+    .btn-cta {
+        @apply justify-center whitespace-nowrap text-sm font-medium transition-colors h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2;
+    }
+
     /* Border Styles */
     .border-primary {
         border-color: hsl(var(--primary));
@@ -299,7 +303,7 @@
 
     /* New: Select with white background, black text and black arrow icon */
     .select-white {
-        @apply bg-white text-black border-gray-300;
+        @apply bg-white text-black border-gray-300 focus:outline-none focus:ring-0 focus:ring-offset-0;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     }
 
@@ -1411,10 +1415,6 @@
     /* ========================================================================
        SERVICE CARD
        ======================================================================== */
-    .service-column {
-        @apply gap-4 md:gap-6;
-    }
-
     .service-card {
         @apply rounded-md border shadow-sm hover:shadow-lg transition-shadow bg-white;
     }
@@ -1835,7 +1835,7 @@
     }
 
     /* Image Wrap */
-    .img-wrap-grid-card {
+    .img-wrap, .img-wrap-grid-card {
         @apply relative overflow-hidden;
     }
 
@@ -1845,6 +1845,10 @@
 
     .img-wrap-badge {
         @apply absolute top-3 left-3 flex gap-1 flex-wrap;
+    }
+    
+    .img-wrap-badge-right {
+        @apply absolute top-3 right-3 flex gap-1 flex-wrap;
     }
 
     /* Layout Utilities */

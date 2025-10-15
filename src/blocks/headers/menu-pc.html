@@ -489,4 +489,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Mobile Menu -->
+  <div class="lg:hidden flex items-center space-x-2 pl-2">
+    <button @click="openMobileMenu(true)" class="btn btn-ghost btn-sm p-2 h-8 w-8">
+        <i data-lucide="search" class="w-6 h-6"></i>
+    </button>
+    <button @click="openMobileMenu()" class="btn btn-ghost btn-sm p-2 h-8 w-8">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
 </div>

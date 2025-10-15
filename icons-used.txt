@@ -63,10 +63,12 @@ heart
 plane
 plus
 log-in
+menu
 x
 chevron-right
 key
 newspaper
+star
 log-out
 facebook
 youtube
@@ -88,7 +90,6 @@ camera
 car
 credit-card
 circle-check-big
-star
 shield
 user-pen
 upload

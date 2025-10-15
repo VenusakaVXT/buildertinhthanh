@@ -1,3 +1,32 @@
 .services-grid__item {
   @apply border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg;
 }
+
+.service-grid__item-images {
+  @apply w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300
+}
+
+.service__item-body {
+  @apply p-3 sm:p-4;
+}
+
+.service__item-container {
+  @apply space-y-2 sm:space-y-3;
+}
+
+.service__item-grid-wrap-title {
+  @apply min-h-[60px] sm:min-h-[75px];
+}
+
+.service__item-list-wrap-title {
+  @apply min-h-[40px];
+}
+
+.service__item-title {
+  @apply font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base;
+}
+
+.service__item-header {
+  @apply space-y-1 sm:space-y-2;
+}
+

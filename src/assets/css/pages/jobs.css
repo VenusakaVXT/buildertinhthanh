@@ -6,7 +6,7 @@
   @apply flex border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg;
 }
 
-.jobs__item-body   {
+.jobs__item-body {
   @apply p-3 sm:p-4;
 }
 
