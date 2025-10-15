@@ -8,7 +8,7 @@
 @import "./header.css";
 /* Các thành phần Blaze Slider dùng chung all trang */
 @import "./blaze-slider.css";
-/* CSS cho cac thanh phan Jobs */
-@import "./pages/jobs.css";
+/* CSS cho cac thanh phan Locations */
+@import "./pages/location.css";
 /* Các thành phần cho Footer dùng chung all trang */
 @import "./footer.css";

@@ -3,15 +3,15 @@
     <div class="tabs tabs-btn">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
         <div class="flex items-center gap-4">
-          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">12</span> bất động sản</h2>
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">12</span> dịch vụ</h2>
         </div>
         <div class="flex items-center justify-between gap-3">
           <select class="select select-white">
             <option value="">Mới nhất</option>
             <option>Giá thấp đến cao</option>
             <option>Giá cao đến thấp</option>
-            <option>Diện tích nhỏ đến lớn</option>
-            <option>Diện tích lớn đến nhỏ</option>
+            <option>Đánh giá cao nhất</option>
+            <option>Nhiều đánh giá nhất</option>
             <option>Xem nhiều nhất</option>
           </select>
           <div class="tabs-menus flex items-center gap-1 border rounded-lg p-1">
@@ -27,301 +27,614 @@
         </div>
       </div>
 
-      <!-- Real Estate Grid -->
+      <!-- Services Grid -->
       <div class="tab-content active" data-tab-content="grid">
-        <div class="real-estate__grid">
-          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/1"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Căn hộ cao cấp Midtown Sakura Park" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Thiết kế website chuyên nghiệp"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
                 <div
-                  class="real-estate__badge focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 real-estate__badge--blue">
-                  Sắp bàn giao</div>
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Thiết kế web</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
               </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="real-estate__badge focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 real-estate__badge--hot">
-                  Hot</div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="real-estate__card-body">
-              <div class="real-estate__card-stack">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/1">Căn hộ cao cấp Midtown Sakura Park</a>
-                  </h3>
-                  <p class="real-estate__location">
-                    <i data-lucide="map-pin" class="w-6 h-6 real-estate__location-icon"></i>
-                    <a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
-                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a>
-                  </p>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/1">Thiết kế website chuyên nghiệp</a></h3>
                 </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">75m²</div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Văn A"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Nguyễn Văn A</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
-                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/11"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Căn hộ cao cấp Midtown Sakura Park" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Sắp bàn giao</div>
-              </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
-                  Hot</div>
-              </div>
-            </div>
-            <div class="real-estate__card-body">
-              <div class="real-estate__card-stack">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/11">Căn hộ cao cấp Midtown Sakura Park</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
-                    <a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
-                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
                   </p>
                 </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">75m²</div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">5 - 20 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
-                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/2"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Nhà phố thương mại Golden Center City" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
-              </div>
-              <div class="absolute top-3 right-3"></div>
-            </div>
-            <div class="real-estate__card-body">
-              <div class="real-estate__card-stack">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/2">Nhà phố thương mại Golden Center City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
-                    <a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bến
-                      Cát, Bình Dương</a>
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">120m²</div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">7-14 ngày</span>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
-                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/12"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Nhà phố thương mại Golden Center City" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
-              </div>
-              <div class="absolute top-3 right-3"></div>
-            </div>
-            <div class="real-estate__card-body">
-              <div class="real-estate__card-stack">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/12">Nhà phố thương mại Golden Center City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
-                    <a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bến
-                      Cát, Bình Dương</a>
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">120m²</div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
-                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/3"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Biệt thự đơn lập Lavilla Green City" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Sắp mở bán</div>
-              </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
-                  Hot</div>
-              </div>
-            </div>
-            <div class="real-estate__card-body">
-              <div class="real-estate__card-stack">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/3">Biệt thự đơn lập Lavilla Green City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
-                    <a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Tân
-                      Uyên, Bình Dương</a>
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">200m²</div>
-                  </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
-                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/13"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Biệt thự đơn lập Lavilla Green City" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Sắp mở bán</div>
-              </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
-                  Hot</div>
-              </div>
-            </div>
-            <div class="real-estate__card-body">
-              <div class="real-estate__card-stack">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/13">Biệt thự đơn lập Lavilla Green City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
-                    <a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Tân
-                      Uyên, Bình Dương</a>
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">200m²</div>
-                  </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
-                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__grid-item bg-card text-card-foreground group card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/4"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Đất nền dự án Eco City Premia" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
-              </div>
-              <div class="absolute top-3 right-3"></div>
-            </div>
-            <div class="p-4">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/4">Đất nền dự án Eco City Premia</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
-                    <a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bàu
-                      Bàng, Bình Dương</a>
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">100m²</div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Website</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Responsive</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      SEO</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
-            <div class="relative  overflow-hidden">
-              <a href="/bat-dong-san/14"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Đất nền dự án Eco City Premia" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ SEO tăng thứ hạng Google"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
                 <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Digital Marketing</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
               </div>
-              <div class="absolute top-3 right-3"></div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
             </div>
-            <div class="p-4">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/14">Đất nền dự án Eco City Premia</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
-                    <a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bàu
-                      Bàng, Bình Dương</a>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/2">Dịch vụ SEO tăng thứ hạng Google</a></h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Thị B"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Trần Thị B</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
                   </p>
                 </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">100m²</div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">3 - 15 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">30-60 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      SEO</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Google</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Marketing</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Chụp ảnh sản phẩm chuyên nghiệp"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Nhiếp ảnh</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/3">Chụp ảnh sản phẩm chuyên nghiệp</a></h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Văn C"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Lê Văn C</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">500k - 2 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">1-3 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Chụp ảnh</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Sản phẩm</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Studio</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Thiết kế logo và nhận diện thương hiệu"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Thiết kế đồ họa</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/4">Thiết kế logo và nhận diện thương hiệu</a></h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Phạm Thị D"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Phạm Thị D</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">Bến Cát</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">1 - 5 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">3-7 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Logo</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Branding</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Thiết kế</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ kế toán doanh nghiệp"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Kế toán</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/5">Dịch vụ kế toán doanh nghiệp</a></h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Hoàng Văn E"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Hoàng Văn E</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">2 - 8 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">Hàng tháng</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Kế toán</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Thuế</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Doanh nghiệp</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ quay phim sự kiện"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Quay phim</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/6">Dịch vụ quay phim sự kiện</a></h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Thị F"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Nguyễn Thị F</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">3 - 12 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">7-14 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Quay phim</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Sự kiện</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      4K</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ dọn dẹp nhà cửa"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Dọn dẹp</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/7">Dịch vụ dọn dẹp nhà cửa</a></h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Văn G"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Trần Văn G</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">Tân Uyên</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">200k - 1 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">Trong ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Dọn dẹp</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Vệ sinh</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Nhà cửa</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover">
+            <div class="img-wrap-grid-card">
+              <a href="/dich-vu-thanh-vien/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ sửa chữa điện tử"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3 flex gap-1 flex-wrap">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Sửa chữa</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/8">Dịch vụ sửa chữa điện tử</a></h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Thị H"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Lê Thị H</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">100k - 2 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">1-2 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Sửa chữa</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Điện tử</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Tại nhà</div>
                   </div>
                 </div>
               </div>
@@ -330,274 +643,622 @@
         </div>
       </div>
 
-      <!-- Real Estate List -->
+      <!-- Services List -->
       <div class="tab-content" data-tab-content="list">
-        <div class="space-y-6">
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/1"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Căn hộ cao cấp Midtown Sakura Park" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
+        <div class="space-y-3 sm:space-y-4 lg:space-y-6">
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Thiết kế website chuyên nghiệp"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
                 <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Sắp bàn giao</div>
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Thiết kế web</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
               </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
-                  Hot</div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/1">Căn hộ cao cấp Midtown Sakura Park</a>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/1">Thiết kế website chuyên nghiệp</a>
                   </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
-                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a></p>
                 </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">75m²</div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Văn A"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Nguyễn Văn A</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
-                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+                  </p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/11"><img
-                  src="./../../assets/images/hero-bg.webp" alt="Căn hộ cao cấp Midtown Sakura Park"
-                  class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Sắp bàn giao</div>
-              </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
-                  Hot</div>
-              </div>
-            </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/11">Căn hộ cao cấp Midtown Sakura Park</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/phú-hữu,-tp.-thủ-dầu-một"
-                      class="hover:text-blue-600 transition-colors">Phú Hữu, TP. Thủ Dầu Một</a></p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">2.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">75m²</div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">5 - 20 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>2 PN</span><span>2 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/căn-hộ"
-                        class="hover:text-blue-600 transition-colors">Căn hộ</a></span></div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/2"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Nhà phố thương mại Golden Center City" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
-              </div>
-              <div class="absolute top-3 right-3"></div>
-            </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/2">Nhà phố thương mại Golden Center City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bến Cát, Bình Dương</a></p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">120m²</div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">7-14 ngày</span>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
-                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/12"><img
-                  src="./../../assets/images/hero-bg.webp" alt="Nhà phố thương mại Golden Center City"
-                  class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
-              </div>
-              <div class="absolute top-3 right-3"></div>
-            </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/12">Nhà phố thương mại Golden Center City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bến-cát,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bến Cát, Bình Dương</a></p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">4.5 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">120m²</div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>3 PN</span><span>4 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/nhà-phố"
-                        class="hover:text-blue-600 transition-colors">Nhà phố</a></span></div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/3"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Biệt thự đơn lập Lavilla Green City" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Sắp mở bán</div>
-              </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
-                  Hot</div>
-              </div>
-            </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/3">Biệt thự đơn lập Lavilla Green City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Tân Uyên, Bình Dương</a></p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">200m²</div>
-                  </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
-                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/13"><img
-                  src="./../../assets/images/hero-bg.webp" alt="Biệt thự đơn lập Lavilla Green City"
-                  class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Sắp mở bán</div>
-              </div>
-              <div class="absolute top-3 right-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-red-500 text-white text-xs">
-                  Hot</div>
-              </div>
-            </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/13">Biệt thự đơn lập Lavilla Green City</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/tân-uyên,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Tân Uyên, Bình Dương</a></p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">8.2 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">200m²</div>
-                  </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-500"><span>4 PN</span><span>5 WC</span><span
-                      class="capitalize"><a href="/bat-dong-san/loai-hinh/biệt-thự"
-                        class="hover:text-blue-600 transition-colors">Biệt thự</a></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/4"><img src="./../../assets/images/hero-bg.webp"
-                  alt="Đất nền dự án Eco City Premia" class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
-              </div>
-              <div class="absolute top-3 right-3"></div>
-            </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/4">Đất nền dự án Eco City Premia</a>
-                  </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bàu Bàng, Bình Dương</a></p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">100m²</div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Website</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Responsive</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      SEO</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="real-estate__list-item bg-card text-card-foreground group card-hover">
-            <div class="real-estate__list-media"><a href="/bat-dong-san/14"><img
-                  src="./../../assets/images/hero-bg.webp" alt="Đất nền dự án Eco City Premia"
-                  class="real-estate__image"></a>
-              <div class="absolute top-3 left-3">
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ SEO tăng thứ hạng Google"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
                 <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-blue-100 text-blue-700 text-xs">
-                  Đang bán</div>
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Digital Marketing</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
               </div>
-              <div class="absolute top-3 right-3"></div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
             </div>
-            <div class="p-4 flex-1">
-              <div class="space-y-3">
-                <div>
-                  <h3 class="real-estate__title">
-                    <a href="/bat-dong-san/14">Đất nền dự án Eco City Premia</a>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/2">Dịch vụ SEO tăng thứ hạng Google</a>
                   </h3>
-                  <p class="text-sm text-gray-500 flex items-center mb-3"><i data-lucide="map-pin"
-                      class="w-4 h-4 mr-1"></i><a href="/bat-dong-san/khu-vuc/bàu-bàng,-bình-dương"
-                      class="hover:text-blue-600 transition-colors">Bàu Bàng, Bình Dương</a></p>
                 </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <div class="text-lg font-bold text-blue-600">1.8 tỷ VNĐ</div>
-                    <div class="text-sm text-gray-500">100m²</div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Thị B"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Trần Thị B</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">3 - 15 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">30-60 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      SEO</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Google</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Marketing</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Chụp ảnh sản phẩm chuyên nghiệp"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Nhiếp ảnh</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/3">Chụp ảnh sản phẩm chuyên nghiệp</a>
+                  </h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Văn C"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Lê Văn C</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">500k - 2 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">1-3 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Chụp ảnh</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Sản phẩm</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Studio</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Thiết kế logo và nhận diện thương hiệu"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Thiết kế đồ họa</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/4">Thiết kế logo và nhận diện thương hiệu</a>
+                  </h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Phạm Thị D"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Phạm Thị D</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">Bến Cát</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">1 - 5 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">3-7 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Logo</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Branding</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Thiết kế</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ kế toán doanh nghiệp"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Kế toán</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/5">Dịch vụ kế toán doanh nghiệp</a>
+                  </h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Hoàng Văn E"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Hoàng Văn E</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">2 - 8 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">Hàng tháng</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Kế toán</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Thuế</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Doanh nghiệp</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ quay phim sự kiện"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Quay phim</div>
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-orange-500 text-white text-xs whitespace-nowrap">
+                  Nổi bật</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/6">Dịch vụ quay phim sự kiện</a>
+                  </h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Thị F"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Nguyễn Thị F</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">3 - 12 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">7-14 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Quay phim</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Sự kiện</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      4K</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ dọn dẹp nhà cửa"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Dọn dẹp</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/7">Dịch vụ dọn dẹp nhà cửa</a>
+                  </h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Văn G"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Trần Văn G</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">Tân Uyên</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">200k - 1 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">Trong ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Dọn dẹp</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Vệ sinh</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Nhà cửa</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="services-grid__item group bg-card text-card-foreground card-hover flex">
+            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+              <a href="/dich-vu-thanh-vien/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ sửa chữa điện tử"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="img-wrap-badge">
+                <div
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700 text-xs whitespace-nowrap">
+                  Sửa chữa</div>
+              </div>
+              <div class="absolute top-3 right-3 flex gap-1 flex-wrap">
+                <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4 flex-1">
+              <div class="space-y-2 sm:space-y-3">
+                <div class="min-h-[40px] sm:min-h-[50px]">
+                  <h3
+                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    <a href="/dich-vu-thanh-vien/8">Dịch vụ sửa chữa điện tử</a>
+                  </h3>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                    <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Thị H"
+                      class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
+                      class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
+                        class="hover:text-blue-600 transition-colors">Lê Thị H</a></span>
+                    <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
+                  </div>
+                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div class="text-base sm:text-lg font-bold text-green-600">100k - 2 triệu VNĐ</div>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span class="line-clamp-1">1-2 ngày</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="min-h-[30px] sm:min-h-[40px]">
+                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Sửa chữa</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Điện tử</div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs whitespace-nowrap">
+                      Tại nhà</div>
                   </div>
                 </div>
               </div>

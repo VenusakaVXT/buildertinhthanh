@@ -147,28 +147,3 @@
 .history-item {
   @apply flex items-center gap-3 p-2 bg-gray-50 rounded-md;
 }
-
-/* ========================================================================
-  HOME PAGE - TABS AS BUTTONS (Scoped Variant)
-  - Giữ nguyên cấu trúc .tabs/.tabs-menus/.tab-menu/.tab-content
-  - Chỉ áp dụng khi container có thêm class `tabs-button`
-======================================================================== */
-.tabs.tabs-button .tabs-menus {
-  @apply bg-transparent p-0 gap-1 justify-start;
-}
-.tabs.tabs-button .tab-menu {
-  @apply px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all duration-200 bg-gray-100 text-gray-600 hover:bg-gray-200;
-}
-.tabs.tabs-button .tabs-menus>* {
-  @apply flex-none;
-  /* Không kéo dãn theo chiều ngang container */
-}
-.tabs.tabs-button .tab-menu.active,
-.tabs.tabs-button .tab-menu:focus-visible {
-  @apply bg-blue-500 text-white shadow-md;
-}
-@media (max-width: 640px) {
-  .tabs.tabs-button .tab-menu {
-    @apply flex-shrink-0 whitespace-nowrap;
-  }
-}

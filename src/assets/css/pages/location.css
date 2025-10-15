@@ -1,0 +1,17 @@
+.tabs.tabs-button .tab-menu.location__btn-filter {
+  @apply btn-outline-primary flex items-center gap-2 px-4 py-2 mr-2 rounded-lg text-sm font-medium transition-all;
+}
+
+.tabs.tabs-button .tab-menu.location__btn-filter:hover {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.tabs.tabs-button .tab-menu.location__btn-filter.active,
+.tabs.tabs-button .tab-menu:focus-visible.location__btn-filter {
+  @apply btn-primary;
+}
+
+.tab-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

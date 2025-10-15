@@ -1,0 +1,488 @@
+<div class="lg:col-span-1 space-y-6">
+  <div class="lg:hidden mb-4">
+    <button class="w-full flex items-center justify-between p-3 bg-gray-100 rounded-lg">
+      <span class="font-medium">Mục lục</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-menu w-5 h-5">
+        <line x1="4" x2="20" y1="12" y2="12"></line>
+        <line x1="4" x2="20" y1="6" y2="6"></line>
+        <line x1="4" x2="20" y1="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="lg:block hidden">
+    <div class="bg-white border rounded-lg p-4 sticky top-4">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-gray-900">Mục lục</h3>
+        <button class="lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-x w-5 h-5">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="relative mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input placeholder="Tìm kiếm..."
+          class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="text" value="">
+      </div>
+      <nav class="space-y-1 max-h-96 overflow-y-auto" x-data="tabNavigation()">
+        <button @click="scrollToSection('gioi-thieu')"
+          :class="isActive('gioi-thieu') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Giới thiệu
+        </button>
+        <button @click="scrollToSection('lich-su')"
+          :class="isActive('lich-su') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Lịch sử
+        </button>
+        <button @click="scrollToSection('dong-thoi-gian')"
+          :class="isActive('dong-thoi-gian') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Dòng thời gian
+        </button>
+        <button @click="scrollToSection('dia-ly')"
+          :class="isActive('dia-ly') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Địa lý
+        </button>
+        <button @click="scrollToSection('dan-so')"
+          :class="isActive('dan-so') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Dân số
+        </button>
+        <button @click="scrollToSection('hanh-chinh')"
+          :class="isActive('hanh-chinh') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Hành chính
+        </button>
+        <button @click="scrollToSection('danh-sach-khu-pho')"
+          :class="isActive('danh-sach-khu-pho') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Danh sách khu phố
+        </button>
+        <button @click="scrollToSection('kinh-te')"
+          :class="isActive('kinh-te') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Kinh tế
+        </button>
+        <button @click="scrollToSection('giao-thong')"
+          :class="isActive('giao-thong') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Giao thông
+        </button>
+        <button @click="scrollToSection('giao-duc')"
+          :class="isActive('giao-duc') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Giáo dục
+        </button>
+        <button @click="scrollToSection('danh-sach-truong-hoc')"
+          :class="isActive('danh-sach-truong-hoc') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Danh sách trường học
+        </button>
+        <button @click="scrollToSection('y-te')"
+          :class="isActive('y-te') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Y tế
+        </button>
+        <button @click="scrollToSection('van-hoa')"
+          :class="isActive('van-hoa') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Văn hóa - Xã hội
+        </button>
+        <button @click="scrollToSection('co-so-van-hoa')"
+          :class="isActive('co-so-van-hoa') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Cơ sở văn hóa
+        </button>
+        <button @click="scrollToSection('danh-nhan')"
+          :class="isActive('danh-nhan') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Danh nhân
+        </button>
+        <button @click="scrollToSection('xem-them')"
+          :class="isActive('xem-them') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Xem thêm
+        </button>
+        <button @click="scrollToSection('tham-khao')"
+          :class="isActive('tham-khao') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Tham khảo
+        </button>
+      </nav>
+      <div class="mt-6 pt-4 border-t space-y-2">
+        <button
+          class="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-share2 w-4 h-4">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+            <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+          </svg>
+          Chia sẻ
+        </button>
+        <button
+          class="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-download w-4 h-4">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" x2="12" y1="15" y2="3"></line>
+          </svg>
+          Tải PDF
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-50 border rounded-lg p-4 top-4">
+    <h3 class="font-bold text-lg text-gray-900 mb-4 text-center">Phường Tân Tiến</h3>
+    <div class="space-y-3 text-sm">
+      <div class="flex justify-between"><span class="text-gray-600">Thành lập:</span><span
+          class="font-medium">15/2/1999</span></div>
+      <div class="flex justify-between"><span class="text-gray-600">Diện tích:</span><span class="font-medium">4,2
+          km²</span></div>
+      <div class="flex justify-between"><span class="text-gray-600">Dân số:</span><span class="font-medium">45.678 người
+          (2019)</span></div>
+      <div class="flex justify-between"><span class="text-gray-600">Mật độ:</span><span class="font-medium">10.876
+          người/km²</span></div>
+      <div class="flex justify-between"><span class="text-gray-600">Số hộ:</span><span class="font-medium">12.456
+          hộ</span></div>
+      <div class="flex justify-between"><span class="text-gray-600">Mã bưu điện:</span><span
+          class="font-medium">76120</span></div>
+      <div class="flex justify-between"><span class="text-gray-600">Mã vùng:</span><span class="font-medium">0251</span>
+      </div>
+    </div>
+    <div class="mt-4 pt-4 border-t">
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-phone w-4 h-4">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+          </svg>
+          <span>UBND: 0251.123.4567</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-mail w-4 h-4">
+            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          <span>ubnd@phuong-tan-tien.gov.vn</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6 lg:block hidden">
+    <div class="bg-white border rounded-lg p-4">
+      <h3 class="font-semibold text-gray-900 mb-4">Phường/Xã lân cận</h3>
+      <div class="relative mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-map-pin absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4">
+          <path
+            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+          </path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <input placeholder="Tìm kiếm phường/xã..."
+          class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="text" value="">
+      </div>
+      <div class="space-y-1 ">
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-buu-hoa">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Bửu Hòa</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>2.8 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-buu-long">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Bửu Long</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>3.1 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-hoa-binh">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Hòa Bình</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>1.5 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-quyet-thang">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Quyết Thắng</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>0.8 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-tam-hiep">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Tam Hiệp</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>3.7 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-tam-hoa">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Tam Hòa</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>3.4 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-tan-hiep">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Tân Hiệp</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>2.3 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-tan-hoa">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Tân Hòa</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>2.1 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-thanh-binh">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Thạnh Bình</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>4.2 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="block p-2 rounded-lg text-sm transition-colors text-gray-700 hover:bg-gray-50"
+          href="/dia-diem/phuong-thong-nhat">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Phường Thống Nhất</div>
+              <div class="text-xs text-gray-500 flex items-center gap-1">
+                <span>Phường</span><span>•</span><span></span><span>•</span><span>1.2 km</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="mt-4 pt-3 border-t text-xs text-gray-500 text-center">Tổng cộng: 10 phường/xã lân cận</div>
+    </div>
+  </div>
+  <div class="bg-white border rounded-lg p-4">
+    <h3 class="font-semibold text-gray-900 mb-4">Thống kê nhanh</h3>
+    <div class="space-y-4">
+      <div>
+        <h4 class="font-medium text-gray-800 mb-2">Địa lý</h4>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-map-pin w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path
+                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+              </path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">4,2 km²</div>
+            <div class="text-xs text-gray-600">Diện tích</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-building w-4 h-4 mx-auto mb-1 text-blue-600">
+              <rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect>
+              <path d="M9 22v-4h6v4"></path>
+              <path d="M8 6h.01"></path>
+              <path d="M16 6h.01"></path>
+              <path d="M12 6h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M12 14h.01"></path>
+              <path d="M16 10h.01"></path>
+              <path d="M16 14h.01"></path>
+              <path d="M8 10h.01"></path>
+              <path d="M8 14h.01"></path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">15</div>
+            <div class="text-xs text-gray-600">Số khu phố</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-right w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">2,8 km</div>
+            <div class="text-xs text-gray-600">Chiều dài</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-right w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">1,5 km</div>
+            <div class="text-xs text-gray-600">Chiều rộng</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-medium text-gray-800 mb-2">Dân số</h4>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-users w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">45.678</div>
+            <div class="text-xs text-gray-600">Tổng dân số</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-house w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+              <path
+                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+              </path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">12.456</div>
+            <div class="text-xs text-gray-600">Số hộ gia đình</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-users w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">10.876 người/km²</div>
+            <div class="text-xs text-gray-600">Mật độ</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-heart w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path
+                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+              </path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">32,5 tuổi</div>
+            <div class="text-xs text-gray-600">Tuổi TB</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-medium text-gray-800 mb-2">Kinh tế - Xã hội</h4>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-dollar-sign w-4 h-4 mx-auto mb-1 text-blue-600">
+              <line x1="12" x2="12" y1="2" y2="22"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">85 triệu VNĐ</div>
+            <div class="text-xs text-gray-600">Thu nhập TB</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-shield w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+              </path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">96,8%</div>
+            <div class="text-xs text-gray-600">Tỷ lệ BHYT</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-graduation-cap w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path
+                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+              </path>
+              <path d="M22 10v6"></path>
+              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">99,2%</div>
+            <div class="text-xs text-gray-600">Tỷ lệ đi học</div>
+          </div>
+          <div class="text-center p-2 bg-gray-50 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-school w-4 h-4 mx-auto mb-1 text-blue-600">
+              <path d="M14 22v-4a2 2 0 1 0-4 0v4"></path>
+              <path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"></path>
+              <path d="M18 5v17"></path>
+              <path d="m4 6 8-4 8 4"></path>
+              <path d="M6 5v17"></path>
+              <circle cx="12" cy="9" r="2"></circle>
+            </svg>
+            <div class="text-xs font-medium text-gray-900">8</div>
+            <div class="text-xs text-gray-600">Số trường học</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+    <h3 class="font-semibold text-blue-900 mb-3">Thuộc về</h3>
+    <div class="space-y-2">
+      <a class="block p-2 rounded hover:bg-white hover:rounded-sm transition-colors" href="/dia-diem/bien-hoa">
+        <div class="font-medium text-blue-900">Thành phố Biên Hòa</div>
+        <div class="text-sm text-blue-700">Thành phố trực thuộc tỉnh</div>
+      </a>
+      <a class="block p-2 rounded hover:bg-white hover:rounded-sm transition-colors" href="/dia-diem/đồng-nai">
+        <div class="font-medium text-blue-900">Tỉnh Đồng Nai</div>
+        <div class="text-sm text-blue-700">Tỉnh trực thuộc trung ương</div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 		const API_URL = "https://panel.dongnai.net/api/v2/";
 	</script>
 	<!-- all css -->
-	<link rel="stylesheet" href="./assets/css/all_services.css" />
+	<link rel="stylesheet" href="assets/css/all_ward-detail.css" />
 
 	<!-- 1. CAC THU VIEN CAN SU DUNG -->
 	<!-- Notification Library -->
@@ -43,8 +43,10 @@
 
 	<!-- Header Component JS. Vi no goi Cart nen nam sau Cart -->
 	<script src="assets/js/header.js" defer></script>
-	<!-- Homepage Component JS -->
+  <!-- Homepage Component JS -->
 	<script src="assets/js/home.js" defer></script>
+	<!-- Ward Detail Component JS -->
+	<script src="assets/js/ward-detail.js" defer></script>
 	<!-- Run BlazeSlider -->
 	<script src="assets/js/sliders.js" defer></script>
 
@@ -58,27 +60,21 @@
 	<!-- include:./blocks/header.html -->
 
 	<!-- Main Content Area -->
-	<main class="min-h-screen bg-gray-50">
-		<!-- Hero Section -->
-		<!-- include:blocks/sections/services/hero.html -->
+	<main class="min-h-screen bg-white">
+    <!-- Breadcrumb Section -->
+    <!-- include:blocks/sections/ward-detail/breadcrumb.html -->
 
-		<!-- Breadcrumb Section --> 
-		<!-- include:blocks/sections/services/breadcrumb.html --> 
+    <!-- Hero Section -->
+    <!-- include:blocks/sections/ward-detail/hero.html -->
 
-    <!-- Service List Section -->
-    <!-- include:blocks/sections/services/list.html -->
-
-    <!-- Service Popular Section -->
-		<!-- include:blocks/sections/common/service.html -->
-
-		<!-- Job Suggestion Section -->
-		<!-- include:blocks/sections/common/job-suggestion.html -->
-
-		<!-- Binh Duong News Section -->
-		<!-- include:blocks/sections/common/binh-duong-news.html -->
-
-    <!-- CTA Section -->
-    <!-- include:blocks/sections/services/cta.html -->
+    <!-- Container Section -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- include:blocks/sections/ward-detail/sidebar-left.html -->
+         <!-- include:blocks/sections/ward-detail/main-content.html -->
+          <!-- include:blocks/sections/ward-detail/sidebar-right.html -->
+      </div>
+    </div>
 	</main>
 
 	<!-- Footer -->

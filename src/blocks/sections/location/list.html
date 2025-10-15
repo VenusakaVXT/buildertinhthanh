@@ -1,0 +1,788 @@
+<section class="tabs tabs-button bg-white">
+  <!-- Tabs Filter -->
+  <div class="py-6 bg-white border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+        <div class="tabs-menus">
+          <button class="location__btn-filter tab-menu active" data-tab="Tất cả">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Tất cả
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Cơ quan hành chính">
+            <i data-lucide="building-2" class="w-4 h-4"></i>
+            Cơ quan hành chính
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Y tế">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+            Y tế
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Giáo dục">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            Giáo dục
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Ăn uống">
+            <i data-lucide="utensils-crossed" class="w-4 h-4"></i>
+            Ăn uống
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Mua sắm">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            Mua sắm
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Du lịch">
+            <i data-lucide="camera" class="w-4 h-4"></i>
+            Du lịch
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Giao thông">
+            <i data-lucide="car" class="w-4 h-4"></i>
+            Giao thông
+          </button>
+          <button class="location__btn-filter tab-menu" data-tab="Ngân hàng">
+            <i data-lucide="credit-card" class="w-4 h-4"></i>
+            Ngân hàng
+          </button>
+        </div>
+        <div class="flex gap-3">
+          <select class="select select-white">
+            <option>Tên A-Z</option>
+            <option>Tên Z-A</option>
+            <option>Đánh giá cao</option>
+            <option>Đánh giá thấp</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location List -->
+  <div class="tab-content active" data-tab-content="Tất cả">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">9</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Sân bay Long Thành" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="car" class="w-3 h-3 mr-1"></i>
+                  Giao thông
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/7">Sân bay Long Thành</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Long Thành, Đồng Nai</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.8</span>
+                    </div>
+                    <div class="text-sm text-gray-500">24/7</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Sân bay quốc tế mới của Việt Nam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Khu du lịch Núi Chứa Chan" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="camera" class="w-3 h-3 mr-1"></i>
+                  Du lịch
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/5">Khu du lịch Núi Chứa Chan</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Xuân Lộc, Đồng Nai</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.6</span>
+                    </div>
+                    <div class="text-sm text-gray-500">6:00 - 18:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Khu du lịch sinh thái nổi tiếng</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Bệnh viện Đa khoa Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="heart" class="w-3 h-3 mr-1"></i>
+                  Y tế
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/2">Bệnh viện Đa khoa Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">409 Phạm Văn Thuận, Tân Mai, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.5</span>
+                    </div>
+                    <div class="text-sm text-gray-500">24/7</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Bệnh viện đa khoa hàng đầu tỉnh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Nhà hàng Sài Gòn - Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="utensils-crossed" class="w-3 h-3 mr-1"></i>
+                  Ăn uống
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/6">Nhà hàng Sài Gòn - Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">123 Võ Thị Sáu, Quyết Thắng, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.4</span>
+                    </div>
+                    <div class="text-sm text-gray-500">10:00 - 22:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Nhà hàng món Việt truyền thống</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Đại học Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
+                  Giáo dục
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/3">Đại học Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Km26, QL1A, Bình Hòa, Thuận An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.3</span>
+                    </div>
+                    <div class="text-sm text-gray-500">7:00 - 17:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Trường đại học công lập của tỉnh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/9"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Trường THPT Biên Hòa" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
+                  Giáo dục
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/9">Trường THPT Biên Hòa</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">234 Nguyễn Ái Quốc, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.3</span>
+                    </div>
+                    <div class="text-sm text-gray-500">6:30 - 17:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Trường trung học phổ thông công lập</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="UBND tỉnh Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="building-2" class="w-3 h-3 mr-1"></i>
+                  Cơ quan hành chính
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/1">UBND tỉnh Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">2 Nguyễn Ái Quốc, Tân Phong, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.2</span>
+                    </div>
+                    <div class="text-sm text-gray-500">7:30 - 11:30, 13:30 - 17:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Trụ sở chính quyền tỉnh Đồng Nai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Vietcombank Biên Hòa" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="credit-card" class="w-3 h-3 mr-1"></i>
+                  Ngân hàng
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/8">Vietcombank Biên Hòa</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">45 Phan Trung, Tân Mai, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.2</span>
+                    </div>
+                    <div class="text-sm text-gray-500">7:30 - 16:30</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Chi nhánh ngân hàng Vietcombank</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Chợ Tân Long" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="shopping-bag" class="w-3 h-3 mr-1"></i>
+                  Mua sắm
+                </span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/4">Chợ Tân Long</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Đường Tân Long, Tân Phong, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.1</span>
+                    </div>
+                    <div class="text-sm text-gray-500">5:00 - 18:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Chợ truyền thống lớn nhất thành phố</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Cơ quan hành chính">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="UBND tỉnh Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="building-2" class="w-3 h-3 mr-1"></i>
+                  Cơ quan hành chính
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/1">UBND tỉnh Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">2 Nguyễn Ái Quốc, Tân Phong, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.2</span>
+                    </div>
+                    <div class="text-sm text-gray-500">7:30 - 11:30, 13:30 - 17:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Trụ sở chính quyền tỉnh Đồng Nai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Y tế">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Bệnh viện Đa khoa Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="heart" class="w-3 h-3 mr-1"></i>
+                  Y tế
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/2">Bệnh viện Đa khoa Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">409 Phạm Văn Thuận, Tân Mai, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.5</span>
+                    </div>
+                    <div class="text-sm text-gray-500">24/7</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Bệnh viện đa khoa hàng đầu tỉnh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Giáo dục">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">2</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Đại học Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
+                  Giáo dục
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/3">Đại học Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Km26, QL1A, Bình Hòa, Thuận An</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.3</span>
+                    </div>
+                    <div class="text-sm text-gray-500">7:00 - 17:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Trường đại học công lập của tỉnh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/9"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Trường THPT Biên Hòa" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
+                  Giáo dục
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/9">Trường THPT Biên Hòa</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">234 Nguyễn Ái Quốc, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.3</span>
+                    </div>
+                    <div class="text-sm text-gray-500">6:30 - 17:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Trường trung học phổ thông công lập</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Ăn uống">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Nhà hàng Sài Gòn - Đồng Nai" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="utensils-crossed" class="w-3 h-3 mr-1"></i>
+                  Ăn uống
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/6">Nhà hàng Sài Gòn - Đồng Nai</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">123 Võ Thị Sáu, Quyết Thắng, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.4</span>
+                    </div>
+                    <div class="text-sm text-gray-500">10:00 - 22:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Nhà hàng món Việt truyền thống</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Mua sắm">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Chợ Tân Long" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="shopping-bag" class="w-3 h-3 mr-1"></i>
+                  Mua sắm
+                </span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/4">Chợ Tân Long</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Đường Tân Long, Tân Phong, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.1</span>
+                    </div>
+                    <div class="text-sm text-gray-500">5:00 - 18:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Chợ truyền thống lớn nhất thành phố</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Du lịch">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Khu du lịch Núi Chứa Chan" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="camera" class="w-3 h-3 mr-1"></i>
+                  Du lịch
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/5">Khu du lịch Núi Chứa Chan</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Xuân Lộc, Đồng Nai</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.6</span>
+                    </div>
+                    <div class="text-sm text-gray-500">6:00 - 18:00</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Khu du lịch sinh thái nổi tiếng</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Giao thông">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Sân bay Long Thành" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="car" class="w-3 h-3 mr-1"></i>
+                  Giao thông
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/7">Sân bay Long Thành</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">Long Thành, Đồng Nai</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.8</span>
+                    </div>
+                    <div class="text-sm text-gray-500">24/7</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Sân bay quốc tế mới của Việt Nam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" data-tab-content="Ngân hàng">
+    <div class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="border bg-card text-card-foreground shadow-sm group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg card-hover">
+            <div class="relative overflow-hidden">
+              <a href="/dia-diem/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Vietcombank Biên Hòa" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+              <div class="absolute top-3 left-3">
+                <span class="badge-primary">
+                  <i data-lucide="credit-card" class="w-3 h-3 mr-1"></i>
+                  Ngân hàng
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <i data-lucide="circle-check-big" class="w-5 h-5 text-blue-500 bg-white rounded-full"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors"><a href="/dia-diem/8">Vietcombank Biên Hòa</a></h3>
+                  <p class="text-sm text-gray-500 flex items-center mb-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                    <span class="line-clamp-1">45 Phan Trung, Tân Mai, Biên Hòa</span>
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                      <span class="text-sm font-medium text-gray-600">4.2</span>
+                    </div>
+                    <div class="text-sm text-gray-500">7:30 - 16:30</div>
+                  </div>
+                  <p class="text-gray-600 text-sm line-clamp-2">Chi nhánh ngân hàng Vietcombank</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

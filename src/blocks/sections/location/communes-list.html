@@ -1,0 +1,3177 @@
+<!-- Danh Sách Xã/Phường -->
+<section class="py-12 md:py-16 bg-gray-50" x-data="communesList()">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-xl md:text-2xl md:text-3xl font-bold title-section mb-4">Danh Sách Các Xã/Phường</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Khám phá 95 xã/phường thuộc tỉnh Đồng Nai với đầy đủ thông tin về
+        dân số và diện tích</p>
+      <p x-show="!showAllCommunes" class="text-gray-600 max-w-2xl mx-auto">(Hiển thị 12 xã đầu tiên)</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="bg-blue-50 rounded-lg p-4 text-center">
+        <p class="text-2xl font-bold text-blue-600">95</p>
+        <p class="text-sm text-gray-600">Tổng số xã/phường</p>
+      </div>
+      <div class="bg-green-50 rounded-lg p-4 text-center">
+        <p class="text-2xl font-bold text-green-600">31</p>
+        <p class="text-sm text-gray-600">Xã nông nghiệp</p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-4 text-center">
+        <p class="text-2xl font-bold text-purple-600">31</p>
+        <p class="text-sm text-gray-600">Xã công nghiệp</p>
+      </div>
+      <div class="bg-orange-50 rounded-lg p-4 text-center">
+        <p class="text-2xl font-bold text-orange-600">30</p>
+        <p class="text-sm text-gray-600">Xã dịch vụ</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-blue-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Biên Hòa</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-primary">Xã thành thị</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">45.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">125 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Long Khánh</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">38.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">98 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Cẩm Mỹ</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">25.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">156 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Định Quán</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã biên giới</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">22.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">134 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-red-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-red-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Long Thành</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-danger">Xã đặc biệt</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">52.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">142 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã A1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">48.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">109 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã B1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">35.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">91 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã C1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">44.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">150 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã D1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">21.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">149 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã E1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">15.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">113 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã F1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">15.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">147 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-first-12
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã G1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">29.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">127 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã H1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">54.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">143 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã I1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">46.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">96 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã J1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">35.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">122 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã K1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">20.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">97 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã L1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">36.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">178 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã M1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">30.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">121 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã N1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">15.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">137 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã O1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">33.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">115 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã P1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">37.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">116 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Q1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">20.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">159 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã R1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">47.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">128 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã S1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">27.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">110 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã T1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">43.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">105 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã U1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">37.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">114 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã V1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">49.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">139 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã W1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">52.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">161 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã X1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">38.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">158 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Y1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">49.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">107 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Z1</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">23.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">101 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã A2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">41.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">179 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã B2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">54.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">138 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã C2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">48.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">154 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã D2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">53.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">107 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã E2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">35.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">169 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã F2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">51.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">166 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã G2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">32.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">139 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã H2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">51.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">166 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã I2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">15.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">127 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã J2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">36.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">139 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã K2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">26.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">179 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã L2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">51.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">155 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã M2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">36.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">112 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã N2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">16.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">124 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã O2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">18.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">174 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã P2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">34.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">174 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Q2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">34.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">106 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã R2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">51.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">113 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã S2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">24.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">152 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã T2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">40.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">91 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã U2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">15.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">106 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã V2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">17.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">94 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã W2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">48.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">176 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã X2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">33.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">82 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Y2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">35.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">163 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Z2</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">24.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">172 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã A3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">51.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">123 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã B3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">38.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">176 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã C3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">39.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">115 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã D3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">16.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">162 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã E3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">27.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">165 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã F3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">50.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">162 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã G3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">40.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">115 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã H3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">19.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">173 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã I3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">27.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">174 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã J3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">27.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">133 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã K3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">43.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">150 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã L3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">32.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">167 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã M3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">22.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">126 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã N3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">47.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">131 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã O3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">32.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">92 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã P3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">48.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">163 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Q3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">17.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">115 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã R3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">45.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">167 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã S3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">52.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">134 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã T3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">36.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">87 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã U3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">52.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">164 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã V3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">26.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">108 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã W3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">46.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">142 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã X3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">21.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">121 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Y3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">39.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">112 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã Z3</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">51.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">88 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã A4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">53.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">101 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã B4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">22.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">164 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã C4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">43.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">135 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã D4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">25.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">143 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã E4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">33.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">155 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã F4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">40.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">172 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã G4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">34.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">149 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã H4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">48.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">126 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã I4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">30.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">124 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-green-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã J4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-success">Xã nông nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">35.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">98 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-purple-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã K4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-secondary">Xã công nghiệp</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">46.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">96 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow card-hover">
+        <div class="p-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 w-5 h-5 text-orange-600">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Xã L4</h3><span
+                class="text-xs px-2 py-1 rounded-full badge-warning">Xã dịch vụ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-gray-500">Dân số</p>
+              <p class="font-medium text-gray-900">29.000 người</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Diện tích</p>
+              <p class="font-medium text-gray-900">140 km²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <button @click="toggleCommunes()" class="btn btn-primary flex items-center mx-auto">
+        <span x-text="getCommunesButtonText()">Xem Tất Cả 95 Xã/Phường</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          :class="getCommunesButtonIconClass()">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
