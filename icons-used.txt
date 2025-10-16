@@ -105,6 +105,7 @@ download
 printer
 bell
 square-check-big
+play
 copy
 message-square
 cloud
@@ -112,9 +113,14 @@ lightbulb
 circle-check-big
 tag
 chevron-up
+bookmark
+circle-alert
+target
+award
+shield
+coffee
 utensils-crossed
 credit-card
-shield
 user-pen
 upload
 truck
@@ -125,5 +131,4 @@ leaf
 external-link
 thermometer
 sun
-award
 school
