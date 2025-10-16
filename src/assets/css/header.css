@@ -196,7 +196,7 @@
     }
 
     .mobile-menu-expandable {
-        @apply flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer;
+        @apply flex-between p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer;
     }
 
     .mobile-submenu-item {
@@ -204,7 +204,7 @@
     }
 
     .mobile-submenu-expandable {
-        @apply flex items-center justify-between p-2 text-sm text-gray-600 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 cursor-pointer;
+        @apply flex-between p-2 text-sm text-gray-600 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 cursor-pointer;
     }
 
     .mobile-submenu-header {

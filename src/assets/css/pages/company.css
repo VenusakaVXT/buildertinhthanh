@@ -1,0 +1,56 @@
+.company__grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6;
+}
+
+.company__list {
+  @apply space-y-3 sm:space-y-4 lg:space-y-6;
+}
+
+.company__item {
+  @apply border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg;
+}
+
+.company__list .company__item {
+  @apply flex;
+}
+
+.company__item-body {
+  @apply p-3 sm:p-4 flex flex-col;
+}
+
+.company__item-header {
+  @apply space-y-2 sm:space-y-3;
+}
+
+.company__list .company__item-body,
+.company__list .company__item-header {
+  @apply flex-1;
+}
+
+.company__item-wrap-title {
+  @apply min-h-[60px] sm:min-h-[6rem];
+}
+
+.company__item-title {
+  @apply font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base;
+}
+
+.company__item-location {
+  @apply text-xs sm:text-sm text-gray-500 flex items-center mb-2 sm:mb-3;
+}
+
+.company__item-rating {
+  @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2;
+}
+
+.company__item-pre-footer {
+  @apply space-y-1 sm:space-y-0;
+}
+
+.company__item-footer {
+  @apply flex-between mt-3 sm:mt-4;
+}
+
+.company__item-website {
+  @apply flex items-center text-xs sm:text-sm text-blue-600 hover:text-blue-700 transition-colors flex-shrink-0;
+}

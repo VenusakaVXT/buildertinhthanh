@@ -1,3 +1,13 @@
+/* Location Card */
+.location__item {
+  @apply shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg;
+}
+
+.location__item-image {
+  @apply w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300;
+}
+
+/* Location Filter Tabs */
 .tabs.tabs-button .tab-menu.location__btn-filter {
   @apply btn-outline-primary flex items-center gap-2 px-4 py-2 mr-2 rounded-lg text-sm font-medium transition-all;
 }

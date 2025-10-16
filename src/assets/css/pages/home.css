@@ -4,51 +4,67 @@
 .feature-cards-grid {
   @apply grid grid-cols-2 gap-3 md:gap-4 mt-8 lg:mt-0;
 }
+
 .feature-card {
   @apply card bg-white/10 backdrop-blur-sm border-white/20 text-white h-32 md:h-36;
 }
+
 .feature-card-content {
   @apply p-6 flex flex-col h-full p-4;
 }
+
 .feature-card-header {
   @apply flex items-center mb-3;
 }
+
 .feature-card-icon-container {
   @apply size-8 md:size-10 rounded-md flex-center mr-3;
 }
+
 .feature-card-icon-yellow {
   @apply bg-yellow-500;
 }
+
 .feature-card-icon-orange {
   @apply bg-orange-300;
 }
+
 .feature-card-icon-blue {
   @apply bg-blue-600;
 }
+
 .feature-card-icon-pink {
   @apply bg-pink-400;
 }
+
 .feature-card-icon {
   @apply size-4 md:size-5 text-gray-900;
 }
+
 .feature-card-icon-white {
   @apply size-4 md:size-5 text-white;
 }
+
 .feature-card-title {
   @apply font-semibold text-sm md:text-base;
 }
+
 .feature-card-description-container {
   @apply flex-1 flex items-center;
 }
+
 .feature-card-description {
   @apply text-blue-100 text-xs md:text-sm;
 }
+
 .feature-card-margin-top {
   @apply md:mt-8;
 }
+
 .feature-card-margin-negative {
   @apply md:-mt-4;
 }
+
 .feature-card-margin-positive {
   @apply md:mt-4;
 }
@@ -59,30 +75,39 @@
 .phone-contact-grid {
   @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4;
 }
+
 .phone-contact-card {
   @apply rounded-md border shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer;
 }
+
 .phone-contact-card-body {
   @apply p-3;
 }
+
 .phone-contact-card-row {
   @apply flex items-center gap-3;
 }
+
 .phone-contact-icon {
-  @apply w-10 h-10 rounded-md flex items-center justify-center flex-shrink-0 transition-transform;
+  @apply w-10 h-10 rounded-md flex-center flex-shrink-0 transition-transform;
 }
+
 .phone-contact-icon-svg {
   @apply w-4 h-4 text-white;
 }
+
 .phone-contact-title-row {
   @apply flex items-center gap-2 mb-1;
 }
+
 .phone-contact-title {
   @apply font-semibold text-gray-900 text-sm line-clamp-1;
 }
+
 .phone-contact-number {
   @apply text-base font-bold text-blue-600 mb-1;
 }
+
 .phone-contact-desc {
   @apply text-xs text-gray-500 line-clamp-1;
 }
@@ -95,21 +120,27 @@
 .stats-overview-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6;
 }
+
 .stats-overview-card {
   @apply rounded-md border shadow-sm hover:shadow-md transition-shadow;
 }
+
 .stats-overview-card-body {
   @apply p-4;
 }
+
 .stats-overview-row {
   @apply flex items-center gap-3;
 }
+
 .stats-overview-icon {
-  @apply w-10 h-10 rounded-md flex items-center justify-center flex-shrink-0;
+  @apply w-10 h-10 rounded-md flex-center flex-shrink-0;
 }
+
 .stats-overview-value {
   @apply text-lg font-bold text-gray-900;
 }
+
 .stats-overview-label {
   @apply text-sm text-gray-600;
 }
@@ -118,27 +149,33 @@
 .panel-card {
   @apply rounded-md border shadow-sm;
 }
+
 .panel-card-body {
   @apply p-4;
 }
+
 .panel-title-row {
   @apply font-semibold text-gray-900 mb-3 flex items-center;
 }
+
 .panel-title-icon {
   @apply w-4 h-4 mr-2;
 }
+
 /* Contact key/value grid */
 .panel-kv-grid {
   @apply grid grid-cols-2 md:grid-cols-4 gap-4 text-sm;
 }
+
 .panel-icon-lg {
-  @apply w-12 h-12 rounded-md flex items-center justify-center;
+  @apply w-12 h-12 rounded-md flex-center;
 }
 
 /* Weather layout helpers */
 .weather-summary-row {
   @apply flex items-center gap-4;
 }
+
 .weather-metrics-grid {
   @apply grid grid-cols-2 gap-4 mt-4 pt-4 border-t text-sm;
 }

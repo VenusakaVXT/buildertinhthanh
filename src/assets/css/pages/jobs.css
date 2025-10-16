@@ -26,7 +26,7 @@
   @apply min-h-[60px] sm:min-h-[75px];
 }
 
-.jobs__item-list-wrap-title {
+.jobs__item-list-wrap-title { 
   @apply min-h-[40px];
 }
 
@@ -59,7 +59,7 @@
 }
 
 .jobs__item-time-position {
-  @apply flex items-center justify-between;
+  @apply flex-between;
 }
 
 .jobs__item-tags {

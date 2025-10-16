@@ -2,7 +2,7 @@
 <div id="authModal" class="jmodal hidden">
     <div class="jmodal-content">
         <!-- Modal Header -->
-        <div class="flex items-center justify-between p-6 pb-0">
+        <div class="flex-between p-6 pb-0">
             <h3 class="text-xl font-bold text-gray-900">
                 <span x-show="authTab === 'login'">Đăng Nhập</span>
                 <span x-show="authTab === 'register'">Đăng Ký</span>
@@ -51,8 +51,8 @@
                                 class="text-red-500 text-xs mt-1.5 font-medium"></p>
                         </div>
 
-                        <div class="flex items-center justify-between">
-                            <label class="flex items-center">
+                        <div class="flex-between">
+                            <label class="flex-center-y">
                                 <input type="checkbox" x-model="loginForm.remember" class="checkbox">
                                 <span class="ml-2 text-sm text-gray-600">Ghi nhớ đăng nhập</span>
                             </label>
@@ -68,7 +68,7 @@
 
                         <button type="submit" :disabled="isLoading" class="w-full btn btn-primary btn-lg rounded-lg">
                             <span x-show="!isLoading">Đăng Nhập</span>
-                            <span x-show="isLoading" class="flex items-center">
+                            <span x-show="isLoading" class="flex-center-y">
                                 <div class="loading loading-sm mr-2"></div>
                                 Đang xử lý...
                             </span>
@@ -233,7 +233,7 @@
 
                         <button type="submit" :disabled="isLoading" class="w-full btn btn-primary btn-lg rounded-lg">
                             <span x-show="!isLoading">Tạo Tài Khoản</span>
-                            <span x-show="isLoading" class="flex items-center">
+                            <span x-show="isLoading" class="flex-center-y">
                                 <div class="loading loading-sm mr-2"></div>
                                 Đang xử lý...
                             </span>

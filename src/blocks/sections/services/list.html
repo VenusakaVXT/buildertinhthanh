@@ -1,11 +1,11 @@
-<section class="py-8  bg-white">
+<section class="py-8 bg-white">
   <div class="container mx-auto px-4">
     <div class="tabs tabs-btn">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
         <div class="flex items-center gap-4">
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">12</span> dịch vụ</h2>
         </div>
-        <div class="flex items-center justify-between gap-3">
+        <div class="flex-between gap-3">
           <select class="select select-white">
             <option value="">Mới nhất</option>
             <option>Giá thấp đến cao</option>
@@ -29,33 +29,30 @@
 
       <!-- Services Grid -->
       <div class="tab-content active" data-tab-content="grid">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+        <div class="service__grid">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Thiết kế website chuyên nghiệp"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Thiết kế website chuyên nghiệp" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Thiết kế web</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/1">Thiết kế website chuyên nghiệp</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/1">Thiết kế website chuyên nghiệp</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Văn A"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
@@ -63,567 +60,510 @@
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">5 - 20 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">7-14 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <p class="text-xs sm:text-sm text-gray-500 flex items-center">
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
                       <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
                       <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
                     </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Website</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Responsive</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       SEO</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ SEO tăng thứ hạng Google"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ SEO tăng thứ hạng Google" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Digital Marketing</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/2">Dịch vụ SEO tăng thứ hạng Google</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/2">Dịch vụ SEO tăng thứ hạng Google</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Thị B"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Trần Thị B</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">3 - 15 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">30-60 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       SEO</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Google</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Marketing</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Chụp ảnh sản phẩm chuyên nghiệp"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Chụp ảnh sản phẩm chuyên nghiệp" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Nhiếp ảnh</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/3">Chụp ảnh sản phẩm chuyên nghiệp</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/3">Chụp ảnh sản phẩm chuyên nghiệp</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Văn C"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Lê Văn C</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">500k - 2 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">1-3 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Chụp ảnh</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Sản phẩm</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Studio</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Thiết kế logo và nhận diện thương hiệu"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Thiết kế logo và nhận diện thương hiệu" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Thiết kế đồ họa</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/4">Thiết kế logo và nhận diện thương hiệu</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/4">Thiết kế logo và nhận diện thương hiệu</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Phạm Thị D"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Phạm Thị D</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">Bến Cát</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">1 - 5 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">3-7 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">Bến Cát</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Logo</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Branding</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Thiết kế</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ kế toán doanh nghiệp"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ kế toán doanh nghiệp" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Kế toán</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/5">Dịch vụ kế toán doanh nghiệp</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/5">Dịch vụ kế toán doanh nghiệp</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Hoàng Văn E"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Hoàng Văn E</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">2 - 8 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">Hàng tháng</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Kế toán</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Thuế</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Doanh nghiệp</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ quay phim sự kiện"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ quay phim sự kiện" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Quay phim</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/6">Dịch vụ quay phim sự kiện</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/6">Dịch vụ quay phim sự kiện</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Thị F"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Nguyễn Thị F</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">3 - 12 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">7-14 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Quay phim</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Sự kiện</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       4K</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ dọn dẹp nhà cửa"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ dọn dẹp nhà cửa" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Dọn dẹp</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/7">Dịch vụ dọn dẹp nhà cửa</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/7">Dịch vụ dọn dẹp nhà cửa</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Văn G"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Trần Văn G</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">Tân Uyên</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">200k - 1 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">Trong ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">Tân Uyên</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Dọn dẹp</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Vệ sinh</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Nhà cửa</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="services-grid__item group bg-card text-card-foreground card-hover">
+          <div class="service__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap-grid-card">
               <a href="/dich-vu-thanh-vien/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ sửa chữa điện tử"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ sửa chữa điện tử" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Sửa chữa</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
-                    <a href="/dich-vu-thanh-vien/8">Dịch vụ sửa chữa điện tử</a></h3>
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
+                    <a href="/dich-vu-thanh-vien/8">Dịch vụ sửa chữa điện tử</a>
+                  </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Thị H"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Lê Thị H</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">100k - 2 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">1-2 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Sửa chữa</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Điện tử</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Tại nhà</div>
                   </div>
                 </div>
@@ -635,619 +575,541 @@
 
       <!-- Services List -->
       <div class="tab-content" data-tab-content="list">
-        <div class="space-y-3 sm:space-y-4 lg:space-y-6">
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+        <div class="service__list">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Thiết kế website chuyên nghiệp"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Thiết kế website chuyên nghiệp" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Thiết kế web</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/1">Thiết kế website chuyên nghiệp</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Văn A"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Nguyễn Văn A</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">5 - 20 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">7-14 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Website</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Responsive</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       SEO</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ SEO tăng thứ hạng Google"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ SEO tăng thứ hạng Google" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Digital Marketing</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/2">Dịch vụ SEO tăng thứ hạng Google</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Thị B"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Trần Thị B</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">3 - 15 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">30-60 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       SEO</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Google</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Marketing</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Chụp ảnh sản phẩm chuyên nghiệp"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Chụp ảnh sản phẩm chuyên nghiệp" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Nhiếp ảnh</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/3">Chụp ảnh sản phẩm chuyên nghiệp</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Văn C"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Lê Văn C</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">500k - 2 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">1-3 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Chụp ảnh</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Sản phẩm</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Studio</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Thiết kế logo và nhận diện thương hiệu"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Thiết kế logo và nhận diện thương hiệu" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Thiết kế đồ họa</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/4">Thiết kế logo và nhận diện thương hiệu</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Phạm Thị D"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Phạm Thị D</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">Bến Cát</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">1 - 5 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">3-7 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">Bến Cát</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Logo</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Branding</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Thiết kế</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ kế toán doanh nghiệp"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ kế toán doanh nghiệp" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Kế toán</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/5">Dịch vụ kế toán doanh nghiệp</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Hoàng Văn E"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Hoàng Văn E</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">2 - 8 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">Hàng tháng</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Kế toán</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Thuế</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Doanh nghiệp</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ quay phim sự kiện"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ quay phim sự kiện" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Quay phim</div>
-                <div
-                  class="badge badge-featured">
+                <div class="badge badge-featured">
                   Nổi bật</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/6">Dịch vụ quay phim sự kiện</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nguyễn Thị F"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Nguyễn Thị F</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">3 - 12 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">7-14 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Quay phim</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Sự kiện</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       4K</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ dọn dẹp nhà cửa"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ dọn dẹp nhà cửa" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Dọn dẹp</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/7">Dịch vụ dọn dẹp nhà cửa</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Trần Văn G"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Trần Văn G</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">Tân Uyên</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">200k - 1 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">Trong ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">Tân Uyên</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Dọn dẹp</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Vệ sinh</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Nhà cửa</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="services-grid__item group bg-card text-card-foreground card-hover flex">
-            <div class="relative w-40 sm:w-48 md:w-60 flex-shrink-0 overflow-hidden">
+          <div class="service__item group bg-card text-card-foreground card-hover">
+            <div class="service__item-header">
               <a href="/dich-vu-thanh-vien/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Dịch vụ sửa chữa điện tử"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"></a>
+                  alt="Dịch vụ sửa chữa điện tử" class="service__item-image"></a>
               <div class="img-wrap-badge">
-                <div
-                  class="badge badge-primary">
+                <div class="badge badge-primary">
                   Sửa chữa</div>
               </div>
               <div class="img-wrap-badge-right">
                 <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex-1">
-              <div class="space-y-2 sm:space-y-3">
-                <div class="min-h-[40px] sm:min-h-[50px]">
-                  <h3
-                    class="font-semibold text-gray-900 mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+            <div class="service__item-body">
+              <div class="service__item-container">
+                <div class="service__item-wrap-title">
+                  <h3 class="service__item-title">
                     <a href="/dich-vu-thanh-vien/8">Dịch vụ sửa chữa điện tử</a>
                   </h3>
                 </div>
-                <div class="space-y-1 sm:space-y-2">
-                  <div class="flex items-center gap-2 mb-1 sm:mb-2">
+                <div class="service__item-author">
+                  <div class="service__item-author-name">
                     <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Lê Thị H"
                       class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0"><span
                       class="text-xs sm:text-sm text-gray-600 line-clamp-1 min-w-0"><a href="/u/undefined"
                         class="hover:text-blue-600 transition-colors">Lê Thị H</a></span>
                     <i data-lucide="shield" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 flex-shrink-0"></i>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-500 flex items-center">
-                    <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
-                    <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
-                  </p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                <div class="service__item-price-rating">
                   <div class="text-base sm:text-lg font-bold text-green-600">100k - 2 triệu VNĐ</div>
-                  <div class="flex items-center">
-                    <div class="flex items-center">
+                  <div class="flex-center-y">
+                    <div class="flex-center-y">
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
                       <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current opacity-50"></i>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-600 ml-1">()</span>
+                    <span class="service__item-price">()</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between text-xs sm:text-sm text-gray-500">
-                  <div class="flex items-center">
+                <div class="service__item-time-location">
+                  <div class="flex-center-y">
                     <i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
                     <span class="line-clamp-1">1-2 ngày</span>
                   </div>
-                  <div class="flex items-center">
-                    <i data-lucide="eye" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
-                    <span></span>
+                  <div class="flex-center-y">
+                    <p class="service__item-location">
+                      <i data-lucide="map-pin" class="w-3 h-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0"></i>
+                      <span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+                    </p>
                   </div>
                 </div>
-                <div class="min-h-[30px] sm:min-h-[40px]">
-                  <div class="flex flex-wrap gap-1 mt-1 sm:mt-2">
-                    <div
-                      class="badge badge-primary">
+                <div>
+                  <div class="service__item-tags">
+                    <div class="badge badge-primary">
                       Sửa chữa</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Điện tử</div>
-                    <div
-                      class="badge badge-primary">
+                    <div class="badge badge-primary">
                       Tại nhà</div>
                   </div>
                 </div>
@@ -1270,8 +1132,8 @@
           Trước
         </button>
         <div class="flex items-center gap-1"><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-10">1</button><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-10">2</button>
+            class="inline-flex-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-10">1</button><button
+            class="inline-flex-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-10">2</button>
         </div>
         <button
           class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center gap-1">

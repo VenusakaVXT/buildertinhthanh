@@ -1835,7 +1835,8 @@
     }
 
     /* Image Wrap */
-    .img-wrap, .img-wrap-grid-card {
+    .img-wrap,
+    .img-wrap-grid-card {
         @apply relative overflow-hidden;
     }
 
@@ -1846,12 +1847,20 @@
     .img-wrap-badge {
         @apply absolute top-3 left-3 flex gap-1 flex-wrap;
     }
-    
+
     .img-wrap-badge-right {
         @apply absolute top-3 right-3 flex gap-1 flex-wrap;
     }
 
     /* Layout Utilities */
+    .flex-center-x {
+        @apply flex justify-center;
+    }
+
+    .flex-center-y {
+        @apply flex items-center;
+    }
+
     .flex-center {
         @apply flex items-center justify-center;
     }

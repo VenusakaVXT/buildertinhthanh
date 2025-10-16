@@ -1,0 +1,19 @@
+/* ========================================================================
+   NEWS.CSS - News Page Specific Styles
+   ======================================================================== */
+
+/* ========================================================================
+   BADGE STYLES - All badges with primary blue background
+   ======================================================================== */
+@layer components {
+  /* Base badge with primary background */
+  .badge,
+  .badge-primary,
+  .badge-secondary,
+  .badge-new
+  .badge-trending,
+  .news-card .badge-pos-tr,
+  .news-card .badge-pos-tl {
+    @apply !bg-primary !text-white;
+  }
+}
