@@ -1,22 +1,37 @@
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-  <div class="bg-white rounded-lg max-w-3xl w-full p-6">
+<div id="scheduleVisitModal" class="jmodal hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+  x-data="realEstateDetailComponent()">
+  <div class="jmodal-content bg-white rounded-lg max-w-3xl w-full p-6">
     <div class="flex justify-between items-center mb-4">
-      <h3 class="text-lg font-semibold">Đặt lịch xem nhà</h3><button class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <h3 class="text-lg font-semibold">Đặt lịch xem nhà</h3>
+      <button @click="closeScheduleModal()" class="text-gray-400 hover:text-gray-600">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
     </div>
     <div class="mb-4 p-3 bg-blue-50 rounded-lg">
       <h4 class="font-medium text-blue-900 mb-1">Căn hộ cao cấp Midtown Sakura Park</h4>
-      <p class="text-sm text-blue-700 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>Đường Yersin, Phường Phú Hữu, TP. Thủ Dầu Một</p>
+      <p class="text-sm text-blue-700 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>Đường Yersin,
+        Phường Phú Hữu, TP. Thủ Dầu Một</p>
     </div>
-    <form class="space-y-4">
+    <form @submit.prevent="handleScheduleSubmit($event)" class="space-y-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            placeholder="Nhập họ và tên" required="" type="text" value=""></div>
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            placeholder="Nhập số điện thoại" required="" type="tel" value=""></div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên <span
+              class="text-red-500">*</span></label>
+          <input
+            class="flex h-10 rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
+            :class="errors.fullName ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-input bg-background'"
+            name="fullName" placeholder="Nhập họ và tên" type="text" value="">
+          <p x-show="errors.fullName" x-text="errors.fullName" class="text-red-500 text-xs mt-1"></p>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại <span
+              class="text-red-500">*</span></label>
+          <input
+            class="flex h-10 rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
+            :class="errors.phone ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-input bg-background'"
+            name="phone" placeholder="Nhập số điện thoại" type="tel" value="">
+          <p x-show="errors.phone" x-text="errors.phone" class="text-red-500 text-xs mt-1"></p>
+        </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div><label class="block text-sm font-medium text-gray-700 mb-1">Email</label><input
@@ -30,14 +45,24 @@
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Ngày xem <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            min="2025-09-27" required="" type="date" value=""></div>
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Giờ xem <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            placeholder="hh:mm am/pm (vd: 02:30 pm)" required="" type="time" value=""></div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Ngày xem <span
+              class="text-red-500">*</span></label>
+          <input
+            class="flex h-10 rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
+            :class="errors.visitDate ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-input bg-background'"
+            name="visitDate" :min="new Date().toISOString().split('T')[0]" type="date" value="">
+          <p x-show="errors.visitDate" x-text="errors.visitDate" class="text-red-500 text-xs mt-1"></p>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Giờ xem <span
+              class="text-red-500">*</span></label>
+          <input
+            class="flex h-10 rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
+            :class="errors.visitTime ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-input bg-background'"
+            name="visitTime" placeholder="hh:mm am/pm (vd: 02:30 pm)" type="time" value="">
+          <p x-show="errors.visitTime" x-text="errors.visitTime" class="text-red-500 text-xs mt-1"></p>
+        </div>
       </div>
       <div><label class="block text-sm font-medium text-gray-700 mb-2">Hình thức xem nhà</label>
         <div class="grid grid-cols-2 gap-3"><label
@@ -60,7 +85,8 @@
           class="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
           rows="3" placeholder="Yêu cầu đặc biệt hoặc câu hỏi..."></textarea></div>
       <div class="bg-yellow-50 p-3 rounded-lg">
-        <div class="flex items-start"><i data-lucide="clock" class="w-4 h-4 text-yellow-600 mt-0.5 mr-2 flex-shrink-0"></i>
+        <div class="flex items-start"><i data-lucide="clock"
+            class="w-4 h-4 text-yellow-600 mt-0.5 mr-2 flex-shrink-0"></i>
           <div class="text-sm text-yellow-800">
             <p class="font-medium mb-1">Lưu ý quan trọng:</p>
             <ul class="text-xs space-y-1">
@@ -71,92 +97,21 @@
           </div>
         </div>
       </div>
-      <div class="flex space-x-3"><button
+      <div class="flex space-x-3">
+        <button
           class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary flex-1"
-          type="submit"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i>Đặt lịch xem nhà</button><button
+          type="submit" :disabled="isLoading">
+          <i x-show="!isLoading" data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+          <span x-show="!isLoading">Đặt lịch xem nhà</span>
+          <span x-show="isLoading" class="flex items-center">
+            <div class="loading loading-sm mr-2"></div>
+            Đang xử lý...
+          </span>
+        </button>
+        <button @click="closeScheduleModal()"
           class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
-          type="button">Hủy</button></div>
-    </form>
-  </div>
-</div>
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-  <div class="bg-white rounded-lg max-w-3xl w-full p-6">
-    <div class="flex justify-between items-center mb-4">
-      <h3 class="text-lg font-semibold">Đặt lịch xem nhà</h3><button class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
-    </div>
-    <div class="mb-4 p-3 bg-blue-50 rounded-lg">
-      <h4 class="font-medium text-blue-900 mb-1">Căn hộ cao cấp Midtown Sakura Park</h4>
-      <p class="text-sm text-blue-700 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>Đường Yersin, Phường Phú Hữu, TP. Thủ Dầu Một</p>
-    </div>
-    <form class="space-y-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            placeholder="Nhập họ và tên" required="" type="text" value=""></div>
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            placeholder="Nhập số điện thoại" required="" type="tel" value=""></div>
+          type="button">Hủy</button>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Email</label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            placeholder="Nhập email" type="email" value=""></div>
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Giới tính</label>
-          <div class="flex items-center gap-6 h-[42px]"><label class="flex items-center gap-2 cursor-pointer"><input
-                class="text-blue-600" type="radio" value="male" name="gender"><span>Nam</span></label><label
-              class="flex items-center gap-2 cursor-pointer"><input class="text-blue-600" type="radio" value="female"
-                name="gender"><span>Nữ</span></label></div>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Ngày xem <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            min="2025-09-27" required="" type="date" value=""></div>
-        <div><label class="block text-sm font-medium text-gray-700 mb-1">Giờ xem <span
-              class="text-red-500">*</span></label><input
-            class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-            placeholder="hh:mm am/pm (vd: 02:30 pm)" required="" type="time" value=""></div>
-      </div>
-      <div><label class="block text-sm font-medium text-gray-700 mb-2">Hình thức xem nhà</label>
-        <div class="grid grid-cols-2 gap-3"><label
-            class="flex items-center space-x-2 cursor-pointer p-3 border rounded-lg hover:bg-gray-50"><input
-              class="text-blue-600" type="radio" value="individual" checked="" name="visitType">
-            <div>
-              <div class="font-medium text-sm">Xem riêng</div>
-              <div class="text-xs text-gray-500">Tư vấn 1-1</div>
-            </div>
-          </label><label
-            class="flex items-center space-x-2 cursor-pointer p-3 border rounded-lg hover:bg-gray-50"><input
-              class="text-blue-600" type="radio" value="group" name="visitType">
-            <div>
-              <div class="font-medium text-sm">Xem nhóm</div>
-              <div class="text-xs text-gray-500">Cùng khách khác</div>
-            </div>
-          </label></div>
-      </div>
-      <div><label class="block text-sm font-medium text-gray-700 mb-1">Ghi chú</label><textarea
-          class="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full"
-          rows="3" placeholder="Yêu cầu đặc biệt hoặc câu hỏi..."></textarea></div>
-      <div class="bg-yellow-50 p-3 rounded-lg">
-        <div class="flex items-start"><i data-lucide="clock" class="w-4 h-4 text-yellow-600 mt-0.5 mr-2 flex-shrink-0"></i>
-          <div class="text-sm text-yellow-800">
-            <p class="font-medium mb-1">Lưu ý quan trọng:</p>
-            <ul class="text-xs space-y-1">
-              <li>• Vui lòng đặt lịch trước ít nhất 24 giờ</li>
-              <li>• Mang theo CMND/CCCD khi đến xem nhà</li>
-              <li>• Chúng tôi sẽ xác nhận lịch hẹn qua điện thoại</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="flex space-x-3"><button
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary flex-1"
-          type="submit"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i>Đặt lịch xem nhà</button><button
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
-          type="button">Hủy</button></div>
     </form>
   </div>
 </div>

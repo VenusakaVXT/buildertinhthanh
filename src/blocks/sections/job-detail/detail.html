@@ -1,15 +1,20 @@
 <div class="lg:col-span-8 space-y-8">
-  <!-- Job Detail -->
+	<!-- Job Detail -->
 	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
 		<div class="p-6">
 			<div class="flex items-start gap-4 mb-6">
-				<a href="/doanh-nghiep/công-ty-tnhh-samsung-electronics-việt-nam"><img src="/placeholder.svg?height=60&amp;width=60" alt="Công ty TNHH Samsung Electronics Việt Nam" class="w-16 h-16 rounded-lg object-cover hover:opacity-90 transition-opacity"></a>
+				<a href="/doanh-nghiep/công-ty-tnhh-samsung-electronics-việt-nam"><img
+						src="./../../assets/images/placeholder.svg?height=60&amp;width=60"
+						alt="Công ty TNHH Samsung Electronics Việt Nam"
+						class="w-16 h-16 rounded-lg object-cover hover:opacity-90 transition-opacity"></a>
 				<div class="flex-1">
 					<div class="flex items-center gap-2 mb-2">
-						<h1 class="text-2xl md:text-3xl font-bold text-gray-900">Kỹ sư Phần mềm Senior</h1>
-						<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-default bg-blue-500 text-white">Nổi bật</div>
+						<h1 class="job-title text-2xl md:text-3xl font-bold text-gray-900">Kỹ sư Phần mềm Senior</h1>
+						<div class="badge badge-featured">
+							Nổi bật</div>
 					</div>
-					<a class="text-lg text-blue-600 hover:text-blue-800 font-medium mb-3 block" href="/doanh-nghiep/công-ty-tnhh-samsung-electronics-việt-nam">Công ty TNHH Samsung Electronics Việt Nam</a>
+					<a class="job-company text-lg text-blue-600 hover:text-blue-800 font-medium mb-3 block"
+						href="/doanh-nghiep/công-ty-tnhh-samsung-electronics-việt-nam">Công ty TNHH Samsung Electronics Việt Nam</a>
 					<div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
 						<div class="flex items-center">
 							<i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
@@ -37,51 +42,52 @@
 						</div>
 					</div>
 					<div class="flex flex-wrap gap-2 mb-4">
-						<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700">React</div>
-						<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700">Node.js</div>
-						<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700">JavaScript</div>
-						<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700">TypeScript</div>
+						<div class="badge badge-primary">React</div>
+						<div class="badge badge-primary">Node.js</div>
+						<div class="badge badge-primary">JavaScript</div>
+						<div class="badge badge-primary">TypeScript</div>
 					</div>
 				</div>
 			</div>
 			<div class="flex flex-wrap items-center gap-3 overflow-auto">
-				<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary flex-1 md:flex-none" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Robafnnkq:" data-state="closed">
+				<button @click="handleApplyClick()"
+					class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary flex-1 md:flex-none">
 					<i data-lucide="send" class="w-4 h-4 mr-2"></i>
 					Ứng tuyển ngay
 				</button>
-				<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
-					<i data-lucide="bookmark" class="w-4 h-4 mr-2"></i>
-					Lưu việc
+				<button @click="handleSaveJob()"
+					class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border h-10 px-4 py-2"
+					:class="isJobSaved ? 'border-blue-600 bg-blue-50 text-blue-700 hover:bg-blue-100' : 'border-input bg-background hover:bg-accent hover:text-accent-foreground'">
+					<i data-lucide="bookmark" class="w-4 h-4 mr-2" :class="isJobSaved ? 'fill-current text-blue-600' : ''"></i>
+					<span x-text="isJobSaved ? 'Đã lưu' : 'Lưu việc'">Lưu việc</span>
 				</button>
-				<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+				<button @click="handleShare()"
+					class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
 					<i data-lucide="share2" class="w-4 h-4 mr-2"></i>
 					Chia sẻ
 				</button>
-				<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+				<button
+					class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
 					<i data-lucide="flag" class="w-4 h-4 mr-2"></i>
 					Báo cáo
 				</button>
 			</div>
 			<div class="flex items-center gap-6 mt-6 pt-6 border-t text-sm text-gray-600">
 				<div class="flex items-center">
-					<i data-lucide="eye" class="w-4 h-4 mr-1"></i>
-					245<!-- --> lượt xem
-				</div>
-				<div class="flex items-center">
 					<i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
-					Đăng <!-- -->21/12/2024
+					Đăng 21/12/2024
 				</div>
 				<div class="flex items-center">
 					<i data-lucide="circle-alert" class="w-4 h-4 mr-1 text-red-500"></i>
 					<span class="text-red-600 font-medium">
-						Còn <!-- -->0<!-- --> ngày
+						Còn 0 ngày
 					</span>
 				</div>
 			</div>
 		</div>
 	</div>
 
-  <!-- Job Description -->
+	<!-- Job Description -->
 	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
 		<div class="flex flex-col space-y-1.5 p-6">
 			<div class="text-2xl font-semibold leading-none tracking-tight flex items-center">
@@ -91,7 +97,8 @@
 		</div>
 		<div class="p-6 pt-0 space-y-6">
 			<div>
-				<p class="text-gray-700 leading-relaxed">Phát triển và bảo trì các ứng dụng web sử dụng React và Node.js. Làm việc trong môi trường Agile với đội ngũ quốc tế.</p>
+				<p class="text-gray-700 leading-relaxed">Phát triển và bảo trì các ứng dụng web sử dụng React và Node.js. Làm
+					việc trong môi trường Agile với đội ngũ quốc tế.</p>
 			</div>
 			<div>
 				<h4 class="font-semibold mb-3 flex items-center">
@@ -137,24 +144,28 @@
 	</div>
 
 
-  <!-- Create CV -->
-	<div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
+	<!-- Create CV -->
+	<div
+		class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
 		<div class="p-6">
 			<div class="text-center">
 				<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
 					<i data-lucide="file-text" class="w-8 h-8 text-blue-600"></i>
 				</div>
 				<h3 class="text-xl font-bold text-gray-900 mb-2">Chưa có CV? Tạo CV Online ngay!</h3>
-				<p class="text-gray-600 mb-6 max-w-md mx-auto">Tạo CV chuyên nghiệp trong vài phút với các mẫu CV được thiết kế bởi chuyên gia HR</p>
+				<p class="text-gray-600 mb-6 max-w-md mx-auto">Tạo CV chuyên nghiệp trong vài phút với các mẫu CV được thiết kế
+					bởi chuyên gia HR</p>
 				<div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
 					<a class="w-full" href="/viec-lam/mau-cv">
-						<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">
+						<button
+							class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">
 							<i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
 							Tạo CV miễn phí
 						</button>
 					</a>
 					<a class="w-full" href="/tin-tuc/huong-dan-viet-cv">
-						<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent w-full">
+						<button
+							class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent w-full">
 							<i data-lucide="eye" class="w-4 h-4 mr-2"></i>
 							Hướng dẫn viết CV
 						</button>
@@ -179,7 +190,7 @@
 	</div>
 
 
-  <!-- Benefits -->
+	<!-- Benefits -->
 	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
 		<div class="flex flex-col space-y-1.5 p-6">
 			<div class="text-2xl font-semibold leading-none tracking-tight flex items-center">
@@ -224,7 +235,7 @@
 	</div>
 
 
-  <!-- Work conditions -->
+	<!-- Work conditions -->
 	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
 		<div class="flex flex-col space-y-1.5 p-6">
 			<div class="text-2xl font-semibold leading-none tracking-tight flex items-center">
@@ -235,21 +246,27 @@
 		<div class="p-6 pt-0">
 			<div class="grid md:grid-cols-2 gap-6">
 				<div class="space-y-4">
-					<div class="flex items-center justify-between"><span class="text-gray-600">Hình thức làm việc:</span><span class="font-medium">Toàn thời gian</span></div>
-					<div class="flex items-center justify-between"><span class="text-gray-600">Cấp bậc:</span><span class="font-medium">Senior</span></div>
-					<div class="flex items-center justify-between"><span class="text-gray-600">Kinh nghiệm:</span><span class="font-medium">3-5 năm</span></div>
+					<div class="flex items-center justify-between"><span class="text-gray-600">Hình thức làm việc:</span><span
+							class="font-medium">Toàn thời gian</span></div>
+					<div class="flex items-center justify-between"><span class="text-gray-600">Cấp bậc:</span><span
+							class="font-medium">Senior</span></div>
+					<div class="flex items-center justify-between"><span class="text-gray-600">Kinh nghiệm:</span><span
+							class="font-medium">3-5 năm</span></div>
 				</div>
 				<div class="space-y-4">
-					<div class="flex items-center justify-between"><span class="text-gray-600">Địa điểm:</span><span class="font-medium">KCN VSIP I, Thuận An</span></div>
-					<div class="flex items-center justify-between"><span class="text-gray-600">Mức lương:</span><span class="font-medium text-green-600">25-35 triệu VNĐ</span></div>
-					<div class="flex items-center justify-between"><span class="text-gray-600">Hạn nộp hồ sơ:</span><span class="font-medium text-red-600">21/01/2025</span></div>
+					<div class="flex items-center justify-between"><span class="text-gray-600">Địa điểm:</span><span
+							class="font-medium">KCN VSIP I, Thuận An</span></div>
+					<div class="flex items-center justify-between"><span class="text-gray-600">Mức lương:</span><span
+							class="font-medium text-green-600">25-35 triệu VNĐ</span></div>
+					<div class="flex items-center justify-between"><span class="text-gray-600">Hạn nộp hồ sơ:</span><span
+							class="font-medium text-red-600">21/01/2025</span></div>
 				</div>
 			</div>
 		</div>
 	</div>
 
 
-  <!-- Job Relevant -->
+	<!-- Job Relevant -->
 	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
 		<div class="flex flex-col space-y-1.5 p-6">
 			<div class="text-2xl font-semibold leading-none tracking-tight">Việc làm liên quan</div>
@@ -257,124 +274,132 @@
 		<div class="p-6 pt-0">
 			<div class="grid md:grid-cols-2 gap-4">
 				<a href="/viec-lam/2">
-					<div class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
+					<div
+						class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
 						<div class="p-4">
 							<div class="flex items-start gap-3 mb-3">
-								<img src="/placeholder.svg?height=60&amp;width=60" alt="Tập đoàn Becamex IDC" class="w-10 h-10 rounded-lg object-cover">
+								<img src="./../../assets/images/placeholder.svg?height=60&amp;width=60" alt="Tập đoàn Becamex IDC"
+									class="w-10 h-10 rounded-lg object-cover">
 								<div class="flex-1 min-w-0">
 									<h4 class="font-semibold line-clamp-1 mb-1">Nhân viên Kế toán Tổng hợp</h4>
 									<p class="text-sm text-gray-600 line-clamp-1">Tập đoàn Becamex IDC</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Thủ Dầu Một</span><span class="text-green-600 font-medium">12-18 triệu</span></div>
+							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Thủ Dầu Một</span><span
+									class="text-green-600 font-medium">12-18 triệu</span></div>
 							<div class="flex gap-1">
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">Excel</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">SAP</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs">
-									+<!-- -->1
-								</div>
+								<div class="badge badge-primary">Excel</div>
+								<div class="badge badge-primary">SAP</div>
+								<div class="badge badge-secondary">+1</div>
 							</div>
 						</div>
 					</div>
 				</a>
 				<a href="/viec-lam/3">
-					<div class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
+					<div
+						class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
 						<div class="p-4">
 							<div class="flex items-start gap-3 mb-3">
-								<img src="/placeholder.svg?height=60&amp;width=60" alt="Công ty CP Đầu tư Địa ốc Đại Quang Minh" class="w-10 h-10 rounded-lg object-cover">
+								<img src="./../../assets/images/placeholder.svg?height=60&amp;width=60"
+									alt="Công ty CP Đầu tư Địa ốc Đại Quang Minh" class="w-10 h-10 rounded-lg object-cover">
 								<div class="flex-1 min-w-0">
 									<h4 class="font-semibold line-clamp-1 mb-1">Chuyên viên Marketing Digital</h4>
 									<p class="text-sm text-gray-600 line-clamp-1">Công ty CP Đầu tư Địa ốc Đại Quang Minh</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Dĩ An</span><span class="text-green-600 font-medium">15-20 triệu</span></div>
+							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Dĩ An</span><span
+									class="text-green-600 font-medium">15-20 triệu</span></div>
 							<div class="flex gap-1">
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">Facebook Ads</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">Google Ads</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs">
-									+<!-- -->2
-								</div>
+								<div class="badge badge-primary">Facebook Ads</div>
+								<div class="badge badge-primary">Google Ads</div>
+								<div class="badge badge-secondary">+2</div>
 							</div>
 						</div>
 					</div>
 				</a>
 				<a href="/viec-lam/4">
-					<div class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
+					<div
+						class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
 						<div class="p-4">
 							<div class="flex items-start gap-3 mb-3">
-								<img src="/placeholder.svg?height=60&amp;width=60" alt="Công ty TNHH Pouchen Việt Nam" class="w-10 h-10 rounded-lg object-cover">
+								<img src="./../../assets/images/placeholder.svg?height=60&amp;width=60"
+									alt="Công ty TNHH Pouchen Việt Nam" class="w-10 h-10 rounded-lg object-cover">
 								<div class="flex-1 min-w-0">
 									<h4 class="font-semibold line-clamp-1 mb-1">Công nhân Sản xuất</h4>
 									<p class="text-sm text-gray-600 line-clamp-1">Công ty TNHH Pouchen Việt Nam</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>KCN Đồng An</span><span class="text-green-600 font-medium">8-12 triệu</span></div>
+							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>KCN Đồng An</span><span
+									class="text-green-600 font-medium">8-12 triệu</span></div>
 							<div class="flex gap-1">
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">Thao tác máy</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">Làm việc nhóm</div>
+								<div class="badge badge-primary">Thao tác máy</div>
+								<div class="badge badge-primary">Làm việc nhóm</div>
 							</div>
 						</div>
 					</div>
 				</a>
 				<a href="/viec-lam/5">
-					<div class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
+					<div
+						class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
 						<div class="p-4">
 							<div class="flex items-start gap-3 mb-3">
-								<img src="/placeholder.svg?height=60&amp;width=60" alt="Trường Quốc tế Việt Úc" class="w-10 h-10 rounded-lg object-cover">
+								<img src="./../../assets/images/placeholder.svg?height=60&amp;width=60" alt="Trường Quốc tế Việt Úc"
+									class="w-10 h-10 rounded-lg object-cover">
 								<div class="flex-1 min-w-0">
 									<h4 class="font-semibold line-clamp-1 mb-1">Giáo viên Tiếng Anh</h4>
 									<p class="text-sm text-gray-600 line-clamp-1">Trường Quốc tế Việt Úc</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Thủ Dầu Một</span><span class="text-green-600 font-medium">18-25 triệu</span></div>
+							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Thủ Dầu Một</span><span
+									class="text-green-600 font-medium">18-25 triệu</span></div>
 							<div class="flex gap-1">
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">IELTS</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">TOEFL</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs">
-									+<!-- -->1
-								</div>
+								<div class="badge badge-primary">IELTS</div>
+								<div class="badge badge-primary">TOEFL</div>
+								<div class="badge badge-secondary">+1</div>
 							</div>
 						</div>
 					</div>
 				</a>
 				<a href="/viec-lam/6">
-					<div class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
+					<div
+						class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
 						<div class="p-4">
 							<div class="flex items-start gap-3 mb-3">
-								<img src="/placeholder.svg?height=60&amp;width=60" alt="Công ty CP Thép Hòa Phát" class="w-10 h-10 rounded-lg object-cover">
+								<img src="./../../assets/images/placeholder.svg?height=60&amp;width=60" alt="Công ty CP Thép Hòa Phát"
+									class="w-10 h-10 rounded-lg object-cover">
 								<div class="flex-1 min-w-0">
 									<h4 class="font-semibold line-clamp-1 mb-1">Nhân viên Kinh doanh B2B</h4>
 									<p class="text-sm text-gray-600 line-clamp-1">Công ty CP Thép Hòa Phát</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>KCN Mỹ Phước</span><span class="text-green-600 font-medium">15-30 triệu</span></div>
+							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>KCN Mỹ Phước</span><span
+									class="text-green-600 font-medium">15-30 triệu</span></div>
 							<div class="flex gap-1">
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">Bán hàng B2B</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">Đàm phán</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs">
-									+<!-- -->1
-								</div>
+								<div class="badge badge-primary">Bán hàng B2B</div>
+								<div class="badge badge-primary">Đàm phán</div>
+								<div class="badge badge-secondary">+1</div>
 							</div>
 						</div>
 					</div>
 				</a>
 				<a href="/viec-lam/7">
-					<div class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
+					<div
+						class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow cursor-pointer card-hover">
 						<div class="p-4">
 							<div class="flex items-start gap-3 mb-3">
-								<img src="/placeholder.svg?height=60&amp;width=60" alt="Công ty TNHH Phần mềm FPT" class="w-10 h-10 rounded-lg object-cover">
+								<img src="./../../assets/images/placeholder.svg?height=60&amp;width=60" alt="Công ty TNHH Phần mềm FPT"
+									class="w-10 h-10 rounded-lg object-cover">
 								<div class="flex-1 min-w-0">
 									<h4 class="font-semibold line-clamp-1 mb-1">Lập trình viên Mobile (React Native)</h4>
 									<p class="text-sm text-gray-600 line-clamp-1">Công ty TNHH Phần mềm FPT</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Thủ Dầu Một</span><span class="text-green-600 font-medium">20-28 triệu</span></div>
+							<div class="flex items-center gap-4 text-xs text-gray-500 mb-2"><span>TP. Thủ Dầu Một</span><span
+									class="text-green-600 font-medium">20-28 triệu</span></div>
 							<div class="flex gap-1">
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">React Native</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-gray-100 text-gray-700 text-xs">JavaScript</div>
-								<div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-secondary bg-gray-100 text-gray-700 text-xs">
-									+<!-- -->2
-								</div>
+								<div class="badge badge-primary">React Native</div>
+								<div class="badge badge-primary">JavaScript</div>
+								<div class="badge badge-secondary">+2</div>
 							</div>
 						</div>
 					</div>
@@ -382,7 +407,8 @@
 			</div>
 			<div class="text-center mt-6">
 				<a href="/viec-lam">
-					<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+					<button
+						class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
 						Xem thêm việc làm
 						<i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
 					</button>
@@ -392,7 +418,7 @@
 	</div>
 
 
-  <!-- Tips -->
+	<!-- Tips -->
 	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
 		<div class="flex flex-col space-y-1.5 p-6">
 			<div class="text-2xl font-semibold leading-none tracking-tight flex items-center">
@@ -447,7 +473,7 @@
 	</div>
 
 
-  <!-- Salary Information -->
+	<!-- Salary Information -->
 	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
 		<div class="flex flex-col space-y-1.5 p-6">
 			<div class="text-2xl font-semibold leading-none tracking-tight flex items-center">
@@ -461,7 +487,7 @@
 					<div>
 						<h4 class="font-semibold text-gray-900">Mức lương trung bình</h4>
 						<p class="text-sm text-gray-600">
-							Cho vị trí <!-- -->Senior<!-- --> trong ngành
+							Cho vị trí Senior trong ngành
 						</p>
 					</div>
 					<div class="text-right">

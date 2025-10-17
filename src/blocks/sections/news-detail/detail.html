@@ -8,14 +8,15 @@
         lúc 15:00 21 tháng 12, 2024
       </span>
     </div>
-    <h1 class="text-3xl font-bold text-gray-900 mb-4 leading-tight">Bình Dương thu hút 2,5 tỷ USD vốn đầu tư nước ngoài
+    <h1 class="news-title text-3xl font-bold text-gray-900 mb-4 leading-tight">Bình Dương thu hút 2,5 tỷ USD vốn đầu tư nước ngoài
       trong năm 2024</h1>
     <p class="text-lg text-gray-600 mb-6 leading-relaxed">Tỉnh Bình Dương tiếp tục khẳng định vị thế là điểm đến hấp dẫn
       cho các nhà đầu tư quốc tế với nhiều dự án lớn được triển khai.</p>
     <div class="flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img alt="Nguyễn Văn A" loading="lazy" width="40" height="40" decoding="async" data-nimg="1"
-          class="rounded-full" src="./../../assets/placeholder.svg?height=40&amp;width=40&amp;text=A" style="color: transparent;">
+          class="rounded-full" src="./../../assets/images/placeholder.svg?height=40&amp;width=40&amp;text=A"
+          style="color: transparent;">
         <div>
           <div class="flex items-center space-x-2">
             <span class="font-medium text-gray-900">Nguyễn Văn A</span>
@@ -39,7 +40,8 @@
   <div class="relative">
     <img alt="Bình Dương thu hút 2,5 tỷ USD vốn đầu tư nước ngoài trong năm 2024" loading="lazy" width="800"
       height="400" decoding="async" data-nimg="1" class="w-full h-64 md:h-80 object-cover cursor-pointer"
-      src="./../../assets/placeholder.svg?height=400&amp;width=800&amp;text=Bình+Dương+thu+hút+đầu+tư" style="color: transparent;">
+      src="./../../assets/images/placeholder.svg?height=400&amp;width=800&amp;text=Bình+Dương+thu+hút+đầu+tư"
+      style="color: transparent;">
     <div class="absolute bottom-4 right-4"><button
         class="bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm hover:bg-opacity-70 transition-all">+3
         ảnh</button></div>
@@ -130,16 +132,19 @@
         </div>
         <div class="flex items-center space-x-2">
           <span class="text-sm text-gray-600 mr-2">Chia sẻ:</span>
-          <button class="p-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all">
+          <button @click="shareFacebook()"
+            class="p-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all">
             <i data-lucide="facebook" class="w-4 h-4"></i>
           </button>
-          <button class="p-2 rounded-full bg-sky-50 text-sky-600 hover:bg-sky-100 transition-all">
+          <button @click="shareTwitter()"
+            class="p-2 rounded-full bg-sky-50 text-sky-600 hover:bg-sky-100 transition-all">
             <i data-lucide="twitter" class="w-4 h-4"></i>
           </button>
-          <button class="p-2 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 transition-all">
+          <button @click="shareLinkedIn()"
+            class="p-2 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 transition-all">
             <i data-lucide="linkedin" class="w-4 h-4"></i>
           </button>
-          <button class="p-2 rounded-full transition-all bg-gray-50 text-gray-600 hover:bg-gray-100">
+          <button @click="copyUrl()" class="p-2 rounded-full transition-all bg-gray-50 text-gray-600 hover:bg-gray-100">
             <i data-lucide="copy" class="w-4 h-4"></i>
           </button>
         </div>

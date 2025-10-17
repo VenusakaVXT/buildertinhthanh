@@ -19,18 +19,16 @@
           <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>
           Chat Zalo
         </button>
-        <button class="btn btn-secondary flex items-center w-full">
+        <button @click="handleSendContact()" class="btn btn-secondary flex items-center w-full">
           <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>
           Gửi thông tin liên hệ
         </button>
-        <button class="btn btn-primary flex items-center w-full">
+        <button @click="handleScheduleVisit()" class="btn btn-primary flex items-center w-full">
           <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
           Đặt lịch xem nhà
         </button>
       </div>
       <div class="pt-4 border-t">
-        <div class="flex items-center justify-between text-sm text-gray-600 mb-2"><span>Lượt xem:</span><span
-            class="font-medium">1250</span></div>
         <div class="flex items-center justify-between text-sm text-gray-600"><span>Đăng bởi:</span><span
             class="font-medium">Công ty CP Đầu tư Sakura</span></div>
       </div>
@@ -211,11 +209,14 @@
             class="custom-input w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="VD: 3.5 tỷ"
             value="2.8 tỷ VNĐ"></div>
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Tỷ lệ vay (%)</label><input type="number"
-            class="custom-input w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="70" min="1" max="100"
-            value="70">
-          <div class="mt-1"><input type="range" min="10" max="90"
-              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" value="70"></div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Tỷ lệ vay (%)</label>
+          <input type="number" name="loanRate" class="custom-input w-full px-3 py-2 border border-gray-300 rounded-md"
+            placeholder="70" min="10" max="90" value="70" @input="handleLoanRateInput($event)">
+          <div class="mt-1">
+            <input type="range" min="10" max="90"
+              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" value="70"
+              @input="handleLoanRateChange($event)">
+          </div>
         </div>
         <div><label class="block text-sm font-medium text-gray-700 mb-1">Thời hạn vay (năm)</label><input type="number"
             class="custom-input w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="20" min="1" max="30"
@@ -252,7 +253,7 @@
         <div class="flex items-start space-x-2">
           <i data-lucide="info" class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0"></i>
           <p class="text-xs text-blue-800">
-            <strong>Phương pháp hiện tại:</strong> <!-- -->Trả gốc đều mỗi tháng, lãi tính trên số dư giảm dần. Phổ biến
+            <strong>Phương pháp hiện tại:</strong> Trả gốc đều mỗi tháng, lãi tính trên số dư giảm dần. Phổ biến
             tại Việt Nam.
           </p>
         </div>
@@ -394,22 +395,38 @@
       </div>
     </div>
     <div class="p-6 pt-0 space-y-3">
-      <div class="space-y-2"><label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox"
-            class="rounded border-gray-300"><span class="text-sm">Kiểm tra pháp lý</span></label><label
-          class="flex items-center space-x-2 cursor-pointer"><input type="checkbox"
-            class="rounded border-gray-300"><span class="text-sm">Khảo sát thực tế</span></label><label
-          class="flex items-center space-x-2 cursor-pointer"><input type="checkbox"
-            class="rounded border-gray-300"><span class="text-sm">So sánh giá thị trường</span></label><label
-          class="flex items-center space-x-2 cursor-pointer"><input type="checkbox"
-            class="rounded border-gray-300"><span class="text-sm">Tính toán tài chính</span></label><label
-          class="flex items-center space-x-2 cursor-pointer"><input type="checkbox"
-            class="rounded border-gray-300"><span class="text-sm">Tư vấn luật sư</span></label><label
-          class="flex items-center space-x-2 cursor-pointer"><input type="checkbox"
-            class="rounded border-gray-300"><span class="text-sm">Chuẩn bị hồ sơ vay</span></label></div>
+      <div class="space-y-2">
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" class="checklist-checkbox rounded border-gray-300" checked
+            @change="handleChecklistChange()">
+          <span class="text-sm">Kiểm tra pháp lý</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" class="checklist-checkbox rounded border-gray-300" checked
+            @change="handleChecklistChange()">
+          <span class="text-sm">Khảo sát thực tế</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" class="checklist-checkbox rounded border-gray-300" @change="handleChecklistChange()">
+          <span class="text-sm">So sánh giá thị trường</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" class="checklist-checkbox rounded border-gray-300" @change="handleChecklistChange()">
+          <span class="text-sm">Tính toán tài chính</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" class="checklist-checkbox rounded border-gray-300" @change="handleChecklistChange()">
+          <span class="text-sm">Tư vấn luật sư</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" class="checklist-checkbox rounded border-gray-300" @change="handleChecklistChange()">
+          <span class="text-sm">Chuẩn bị hồ sơ vay</span>
+        </label>
+      </div>
       <div class="pt-2 border-t">
         <div class="flex justify-between text-sm"><span class="text-gray-600">Tiến độ:</span><span
-            class="font-medium text-blue-600">2/6 hoàn thành</span></div>
-        <div class="w-full bg-gray-200 rounded-full h-2 mt-1">
+            class="font-medium text-blue-600 progress-text">2/6 hoàn thành</span></div>
+        <div class="progress-bar w-full bg-gray-200 rounded-full h-2 mt-1">
           <div class="bg-blue-500 h-2 rounded-full" style="width:33%"></div>
         </div>
       </div>

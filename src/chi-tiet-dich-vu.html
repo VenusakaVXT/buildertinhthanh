@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bình Dương - Tin Tức & Tiện Ích</title>
+  <meta name="description"
+    content="Cổng thông tin tổng hợp về tỉnh Bình Dương, cung cấp tin tức, bất động sản, việc làm và các tiện ích thiết yếu.">
+  <script type="text/javascript">
+    const API_URL = "https://panel.dongnai.net/api/v2/";
+  </script>
+  <!-- all css -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- 1. CAC THU VIEN CAN SU DUNG -->
+  <!-- Notification Library -->
+  <script src="assets/js/libs/notification.js" defer></script>
+  <!-- Initialize FastNotice -->
+  <script>
+    // Khởi tạo FastNotice với cấu hình tùy chỉnh sau khi DOM sẵn sàng
+    document.addEventListener('DOMContentLoaded', function () {
+      window.fastNotice = new FastNotice({
+        position: 'top-center',    // Vị trí mặc định
+        duration: 3000,            // Thời gian hiển thị (ms)
+        maxNotifications: 3        // Số notification tối đa
+      });
+    });
+  </script>
+  <!-- Lucide Icons - Custom Build -->
+  <script src="assets/js/lucide-custom.min.js" defer></script>
+  <!-- jModal manager -->
+  <script src="assets/js/libs/jmodal.1.1.0.js" defer></script>
+  <!-- Load BlazeSlider Library -->
+  <script src="assets/js/libs/blaze-slider.js" defer></script>
+  <!-- Libs Tabs JS Thuần -->
+  <script src="assets/js/libs/tabs.js" defer></script>
+  <!-- Image Fallback Utility -->
+  <script src="assets/js/libs/image-fallback.js" defer></script>
+
+
+  <!-- 2. CAC CODE JS TU VIET. -->
+
+  <!-- Header Component JS. Vi no goi Cart nen nam sau Cart -->
+  <script src="assets/js/header.js" defer></script>
+  <!-- Homepage Component JS -->
+  <script src="assets/js/home.js" defer></script>
+  <!-- Job Detail Component JS -->
+  <script src="assets/js/service-detail.js" defer></script>
+  <!-- Run BlazeSlider -->
+  <script src="assets/js/sliders.js" defer></script>
+
+  <!-- Alpine.js CDN. Nam duoi cung vi chay Defer va vi no AutoRun nen can load sau cung truoc -->
+  <script src="assets/js/libs/alpinejs.3.15.0.js" defer></script>
+
+</head>
+
+<body class="min-h-screen bg-white">
+  <!-- header -->
+  <!-- include:./blocks/header.html -->
+
+  <!-- Main Content Area -->
+  <main class="min-h-screen bg-gray-50" x-data="serviceDetailComponent()">
+    <!-- Breadcrumb Section -->
+    <!-- include:blocks/sections/service-detail/breadcrumb.html -->
+
+    <div class="container mx-auto px-4 py-8">
+      <!-- Container -->
+      <div class="grid lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-8">
+          <!-- Carousel Section -->
+          <!-- include:blocks/sections/service-detail/carousel.html -->
+
+          <!-- Info Section -->
+          <!-- include:blocks/sections/service-detail/info.html -->
+
+          <div class="tabs mb-6">
+            <div class="tabs-menus">
+              <button class="tab-menu active" data-tab="description">Mô tả</button>
+              <button class="tab-menu" data-tab="packages">Gói dịch vụ</button>
+              <button class="tab-menu" data-tab="reviews">Đánh giá</button>
+              <button class="tab-menu" data-tab="faq">FAQ</button>
+            </div>
+
+            <div class="tab-content active p-6" data-tab-content="description">
+              <!-- Description Content -->
+              <!-- include:blocks/sections/service-detail/tabs/description.html -->
+            </div>
+
+            <div class="tab-content p-6" data-tab-content="packages">
+              <!-- Packages Content -->
+              <!-- include:blocks/sections/service-detail/tabs/packages.html -->
+            </div>
+
+            <div class="tab-content p-6" data-tab-content="reviews">
+              <!-- Reviews Content -->
+              <!-- include:blocks/sections/service-detail/tabs/reviews.html -->
+            </div>
+
+            <div class="tab-content p-6" data-tab-content="faq">
+              <!-- FAQ Content -->
+              <!-- include:blocks/sections/service-detail/tabs/faq.html -->
+            </div>
+          </div>
+
+          <!-- Other Section -->
+          <!-- include:blocks/sections/service-detail/other.html -->
+
+          <!-- Relevant Section -->
+          <!-- include:blocks/sections/service-detail/relevant.html -->
+        </div>
+
+        <!-- Sidebar -->
+        <!-- include:blocks/sections/service-detail/sidebar.html -->
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Modal Apply Job -->
+  <!-- include:blocks/sections/service-detail/modal.html -->
+
+  <!-- Footer -->
+  <!-- include:./blocks/footer.html -->
+</body>
+
+</html>

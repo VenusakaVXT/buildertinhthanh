@@ -44,7 +44,7 @@
   <!-- Header Component JS. Vi no goi Cart nen nam sau Cart -->
   <script src="assets/js/header.js" defer></script>
   <!-- Homepage Component JS -->
-	<script src="assets/js/home.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
   <!-- Location Component JS -->
   <script src="assets/js/location-detail.js" defer></script>
   <!-- Run BlazeSlider -->
@@ -60,7 +60,7 @@
   <!-- include:./blocks/header.html -->
 
   <!-- Main Content Area -->
-  <main class="min-h-screen bg-gray-50">
+  <main class="min-h-screen bg-gray-50" x-data="locationDetailComponent()">
     <!-- Breadcrumb Section -->
     <!-- include:blocks/sections/location-detail/breadcrumb.html -->
 
@@ -88,16 +88,16 @@
       <!-- Relevant Section -->
       <div class="mt-16 space-y-16">
         <!-- Location Relevant Section -->
-		    <!-- include:blocks/sections/common/location-relevant.html -->
+        <!-- include:blocks/sections/common/location-relevant.html -->
 
         <!-- Real Estate Popular Section -->
-		    <!-- include:blocks/sections/common/real-estate-popular.html -->
+        <!-- include:blocks/sections/common/real-estate-popular.html -->
 
         <!-- Job Suggestion Section -->
-		    <!-- include:blocks/sections/common/job-suggestion.html -->
+        <!-- include:blocks/sections/common/job-suggestion.html -->
 
         <!-- Binh Duong News Section -->
-		    <!-- include:blocks/sections/common/binh-duong-news.html -->
+        <!-- include:blocks/sections/common/binh-duong-news.html -->
       </div>
 
       <!-- CTA Section -->

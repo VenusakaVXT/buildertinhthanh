@@ -1,0 +1,67 @@
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+  <div class="p-6">
+    <h3 class="text-xl font-bold mb-6">Câu hỏi thường gặp</h3>
+    <div class="space-y-4">
+      <div class="border rounded-lg overflow-hidden">
+        <button @click="toggleFaqItem(0)" :class="getFaqButtonClasses(0)">
+          <span class="font-medium">Thời gian hoàn thành website là bao lâu?</span>
+          <i data-lucide="chevron-down" :class="getFaqIconClasses(0)"></i>
+        </button>
+        <div :class="getFaqItemClasses(0)">
+          <div class="overflow-hidden px-4 pb-4">
+            <p class="text-gray-700">Tùy thuộc vào gói dịch vụ, thời gian hoàn thành từ 7-14 ngày làm việc. Chúng tôi sẽ
+              thông báo tiến độ thường xuyên.</p>
+          </div>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden">
+        <button @click="toggleFaqItem(1)" :class="getFaqButtonClasses(1)">
+          <span class="font-medium">Có được chỉnh sửa sau khi hoàn thành không?</span>
+          <i data-lucide="chevron-down" :class="getFaqIconClasses(1)"></i>
+        </button>
+        <div :class="getFaqItemClasses(1)">
+          <div class="overflow-hidden px-4 pb-4">
+            <p class="text-gray-700">Có, mỗi gói dịch vụ đều bao gồm số lần chỉnh sửa miễn phí. Ngoài ra chúng tôi hỗ
+              trợ chỉnh sửa có phí với giá ưu đãi.</p>
+          </div>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden">
+        <button @click="toggleFaqItem(2)" :class="getFaqButtonClasses(2)">
+          <span class="font-medium">Website có tương thích với mobile không?</span>
+          <i data-lucide="chevron-down" :class="getFaqIconClasses(2)"></i>
+        </button>
+        <div :class="getFaqItemClasses(2)">
+          <div class="overflow-hidden px-4 pb-4">
+            <p class="text-gray-700">Tất cả website chúng tôi thiết kế đều responsive, tương thích hoàn hảo với mọi
+              thiết bị từ desktop, tablet đến mobile.</p>
+          </div>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden">
+        <button @click="toggleFaqItem(3)" :class="getFaqButtonClasses(3)">
+          <span class="font-medium">Có hỗ trợ SEO không?</span>
+          <i data-lucide="chevron-down" :class="getFaqIconClasses(3)"></i>
+        </button>
+        <div :class="getFaqItemClasses(3)">
+          <div class="overflow-hidden px-4 pb-4">
+            <p class="text-gray-700">Có, tất cả gói dịch vụ đều bao gồm SEO cơ bản. Gói cao cấp sẽ có SEO chuyên sâu
+              hơn.</p>
+          </div>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden">
+        <button @click="toggleFaqItem(4)" :class="getFaqButtonClasses(4)">
+          <span class="font-medium">Thanh toán như thế nào?</span>
+          <i data-lucide="chevron-down" :class="getFaqIconClasses(4)"></i>
+        </button>
+        <div :class="getFaqItemClasses(4)">
+          <div class="overflow-hidden px-4 pb-4">
+            <p class="text-gray-700">Thanh toán 50% trước khi bắt đầu, 50% còn lại khi hoàn thành và bàn giao website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

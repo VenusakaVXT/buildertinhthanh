@@ -1,0 +1,47 @@
+<div id="contactModal" class="jmodal hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+  x-data="serviceDetailComponent()">
+  <div class="jmodal-content bg-white rounded-lg max-w-md w-full p-6">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold leading-none tracking-tight">Liên hệ với Nguyễn Văn A</h2>
+      <button @click="closeContactModal()" class="text-gray-400 hover:text-gray-600">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+    <form @submit.prevent="handleContactSubmit($event)" class="space-y-4">
+      <div>
+        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="name">Họ và tên <span class="text-red-500">*</span></label>
+        <input
+          class="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+          :class="errors.name ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-input bg-background'"
+          name="name" id="name" placeholder="Nhập họ và tên">
+        <p x-show="errors.name" x-text="errors.name" class="text-red-500 text-xs mt-1"></p>
+      </div>
+      <div>
+        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="phone">Số điện thoại <span class="text-red-500">*</span></label>
+        <input
+          class="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+          :class="errors.phone ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-input bg-background'"
+          name="phone" id="phone" placeholder="Nhập số điện thoại">
+        <p x-show="errors.phone" x-text="errors.phone" class="text-red-500 text-xs mt-1"></p>
+      </div>
+      <div>
+        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="message">Tin nhắn</label>
+        <textarea
+          class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+          name="message" id="message" placeholder="Mô tả yêu cầu của bạn..." rows="4"></textarea>
+      </div>
+      <button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full"
+        type="submit" :disabled="isLoading">
+        <span x-show="!isLoading">Gửi tin nhắn</span>
+        <span x-show="isLoading" class="flex items-center">
+          <div class="loading loading-sm mr-2"></div>
+          Đang gửi...
+        </span>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 /* Location Card */
 .location__item {
-  @apply shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg;
+  @apply border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg;
 }
 
 .location__item-image {

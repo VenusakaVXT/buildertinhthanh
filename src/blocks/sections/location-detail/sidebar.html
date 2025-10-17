@@ -26,21 +26,34 @@
 			Giờ làm việc
 		</h3>
 		<div class="space-y-2">
-			<div class="flex justify-between text-sm p-2 rounded "><span class="text-gray-600">Thứ 2 </span><span
-					class="text-gray-900">7:30 - 11:30, 13:30 - 17:00</span></div>
-			<div class="flex justify-between text-sm p-2 rounded "><span class="text-gray-600">Thứ 3 </span><span
-					class="text-gray-900">7:30 - 11:30, 13:30 - 17:00</span></div>
-			<div class="flex justify-between text-sm p-2 rounded bg-blue-50 border border-blue-200"><span
-					class="font-semibold text-blue-700">Thứ 4 (Hôm nay)</span><span class="font-semibold text-blue-700">7:30 -
-					11:30, 13:30 - 17:00</span></div>
-			<div class="flex justify-between text-sm p-2 rounded "><span class="text-gray-600">Thứ 5 </span><span
-					class="text-gray-900">7:30 - 11:30, 13:30 - 17:00</span></div>
-			<div class="flex justify-between text-sm p-2 rounded "><span class="text-gray-600">Thứ 6 </span><span
-					class="text-gray-900">7:30 - 11:30, 13:30 - 17:00</span></div>
-			<div class="flex justify-between text-sm p-2 rounded "><span class="text-gray-600">Thứ 7 </span><span
-					class="text-gray-900">Đóng cửa</span></div>
-			<div class="flex justify-between text-sm p-2 rounded "><span class="text-gray-600">Chủ nhật </span><span
-					class="text-gray-900">Đóng cửa</span></div>
+			<div class="flex justify-between text-sm p-2 rounded" data-day-container="Thứ 2">
+				<span class="text-gray-600" data-day="Thứ 2">Thứ 2</span>
+				<span class="text-gray-900" data-time="Thứ 2">7:30 - 11:30, 13:30 - 17:00</span>
+			</div>
+			<div class="flex justify-between text-sm p-2 rounded" data-day-container="Thứ 3">
+				<span class="text-gray-600" data-day="Thứ 3">Thứ 3</span>
+				<span class="text-gray-900" data-time="Thứ 3">7:30 - 11:30, 13:30 - 17:00</span>
+			</div>
+			<div class="flex justify-between text-sm p-2 rounded" data-day-container="Thứ 4">
+				<span class="text-gray-600" data-day="Thứ 4">Thứ 4</span>
+				<span class="text-gray-900" data-time="Thứ 4">7:30 - 11:30, 13:30 - 17:00</span>
+			</div>
+			<div class="flex justify-between text-sm p-2 rounded" data-day-container="Thứ 5">
+				<span class="text-gray-600" data-day="Thứ 5">Thứ 5</span>
+				<span class="text-gray-900" data-time="Thứ 5">7:30 - 11:30, 13:30 - 17:00</span>
+			</div>
+			<div class="flex justify-between text-sm p-2 rounded" data-day-container="Thứ 6">
+				<span class="text-gray-600" data-day="Thứ 6">Thứ 6</span>
+				<span class="text-gray-900" data-time="Thứ 6">7:30 - 11:30, 13:30 - 17:00</span>
+			</div>
+			<div class="flex justify-between text-sm p-2 rounded" data-day-container="Thứ 7">
+				<span class="text-gray-600" data-day="Thứ 7">Thứ 7</span>
+				<span class="text-gray-900" data-time="Thứ 7">Đóng cửa</span>
+			</div>
+			<div class="flex justify-between text-sm p-2 rounded" data-day-container="Chủ nhật">
+				<span class="text-gray-600" data-day="Chủ nhật">Chủ nhật</span>
+				<span class="text-gray-900" data-time="Chủ nhật">Đóng cửa</span>
+			</div>
 		</div>
 		<div class="mt-4 p-3 bg-green-50 rounded-lg">
 			<div class="flex-center-y">
@@ -76,7 +89,8 @@
 					<div class="text-sm text-purple-600">Truy cập trang web</div>
 				</div>
 			</a>
-			<button class="flex items-center p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors w-full">
+			<button @click="scrollToMap()"
+				class="flex items-center p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors w-full">
 				<i data-lucide="navigation" class="w-5 h-5 text-orange-600 mr-3"></i>
 				<div>
 					<div class="font-medium text-gray-900">Chỉ đường</div>
@@ -88,17 +102,17 @@
 	<div class="bg-white rounded-2xl shadow-lg p-6">
 		<h3 class="text-lg font-semibold text-gray-900 mb-4">Hành động</h3>
 		<div class="grid grid-cols-2 gap-3">
-			<button
-				class="flex flex-col items-center p-3 rounded-lg transition-colors bg-gray-50 text-gray-600 hover:bg-gray-100">
-				<i data-lucide="heart" class="w-5 h-5 mb-1"></i>
-				<span class="text-xs font-medium">Yêu thích</span>
+			<button @click="toggleFavorite()"
+				:class="isFavorite ? 'flex flex-col items-center p-3 rounded-lg transition-colors bg-red-50 text-red-600 hover:bg-red-100' : 'flex flex-col items-center p-3 rounded-lg transition-colors bg-gray-50 text-gray-600 hover:bg-gray-100'">
+				<i data-lucide="heart" :class="isFavorite ? 'w-5 h-5 mb-1 fill-current' : 'w-5 h-5 mb-1'"></i>
+				<span class="text-xs font-medium" :class="isFavorite ? 'text-red-600' : ''">Yêu thích</span>
 			</button>
-			<button
+			<button @click="scrollToReviews()"
 				class="flex flex-col items-center p-3 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">
 				<i data-lucide="star" class="w-5 h-5 mb-1"></i>
 				<span class="text-xs font-medium">Đánh giá</span>
 			</button>
-			<button
+			<button @click="handleShare()"
 				class="flex flex-col items-center p-3 bg-green-50 text-green-600 rounded-lg hover:bg-green-100 transition-colors">
 				<i data-lucide="share2" class="w-5 h-5 mb-1"></i>
 				<span class="text-xs font-medium">Chia sẻ</span>

@@ -45,8 +45,8 @@
   <script src="assets/js/header.js" defer></script>
   <!-- Homepage Component JS -->
   <script src="assets/js/home.js" defer></script>
-  <!-- Location Component JS -->
-  <script src="assets/js/location-detail.js" defer></script>
+  <!-- Real Estate Detail Component JS -->
+  <script src="assets/js/real-estate-detail.js" defer></script>
   <!-- Run BlazeSlider -->
   <script src="assets/js/sliders.js" defer></script>
 
@@ -60,7 +60,7 @@
   <!-- include:./blocks/header.html -->
 
   <!-- Main Content Area -->
-  <main class="min-h-screen bg-gray-50">
+  <main class="min-h-screen bg-gray-50" x-data="realEstateDetailComponent()">
     <!-- Breadcrumb Section -->
     <!-- include:blocks/sections/real-estate-detail/breadcrumb.html -->
 
@@ -86,9 +86,6 @@
       </div>
     </div>
   </main>
-
-  <!-- Modal Tour 360 -->
-  <!-- include:blocks/sections/real-estate-detail/modal-vitual-tour.html -->
 
   <!-- Modal Send Contact -->
   <!-- include:blocks/sections/real-estate-detail/modal-send-contact-info.html -->
