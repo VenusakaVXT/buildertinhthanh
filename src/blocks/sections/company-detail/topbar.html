@@ -1,0 +1,31 @@
+<div class="sticky top-[4rem] z-40 bg-white border-b shadow-sm">
+    <div class="container mx-auto px-2 sm:px-4">
+      <nav class="flex items-center gap-4 sm:gap-6 lg:gap-8 py-3 sm:py-4 overflow-x-auto" x-data="tabNavigation()"
+        x-init="window.tabNavigation = $data">
+        <button @click="scrollToSection('overview')"
+          :class="(window.tabNavigation && window.tabNavigation.activeTab === 'overview') ? 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-blue-500 text-blue-600 font-semibold' : 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-transparent text-gray-600 hover:text-gray-900'">
+          Tổng quan
+        </button>
+        <button @click="scrollToSection('services')"
+          :class="(window.tabNavigation && window.tabNavigation.activeTab === 'services') ? 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-blue-500 text-blue-600 font-semibold' : 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-transparent text-gray-600 hover:text-gray-900'">
+          Dịch vụ
+        </button>
+        <button @click="scrollToSection('jobs')"
+          :class="(window.tabNavigation && window.tabNavigation.activeTab === 'jobs') ? 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-blue-500 text-blue-600 font-semibold' : 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-transparent text-gray-600 hover:text-gray-900'">
+          Tuyển dụng
+        </button>
+        <button @click="scrollToSection('news')"
+          :class="(window.tabNavigation && window.tabNavigation.activeTab === 'news') ? 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-blue-500 text-blue-600 font-semibold' : 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-transparent text-gray-600 hover:text-gray-900'">
+          Tin tức
+        </button>
+        <button @click="scrollToSection('reviews')"
+          :class="(window.tabNavigation && window.tabNavigation.activeTab === 'reviews') ? 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-blue-500 text-blue-600 font-semibold' : 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-transparent text-gray-600 hover:text-gray-900'">
+          Đánh giá
+        </button>
+        <button @click="scrollToSection('about')"
+          :class="(window.tabNavigation && window.tabNavigation.activeTab === 'about') ? 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-blue-500 text-blue-600 font-semibold' : 'whitespace-nowrap pb-2 border-b-2 transition-colors text-sm sm:text-base border-transparent text-gray-600 hover:text-gray-900'">
+          Thông tin
+        </button>
+      </nav>
+    </div>
+</div>

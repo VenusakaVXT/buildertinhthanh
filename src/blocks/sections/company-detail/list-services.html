@@ -1,0 +1,398 @@
+<section id="services" class="scroll-mt-32">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-bold">Dịch vụ của công ty</h3>
+          <div
+            class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700">
+            12 dịch vụ
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+          <div class="flex-1">
+            <div class="relative">
+              <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                placeholder="Tìm kiếm dịch vụ..." value="">
+            </div>
+          </div>
+          <select class="select select-white w-[250px]">
+            <option value="">Tất cả danh mục</option>
+            <option>Thiết kế web</option>
+            <option>Digital Marketing</option>
+            <option>Nhiếp ảnh</option>
+            <option>Thiết kế đồ họa</option>
+            <option>Kế toán</option>
+            <option>Quay phim</option>
+            <option>Dọn dẹp</option>
+            <option>Sửa chữa</option>
+            <option>Gia sư</option>
+            <option>Trang trí</option>
+            <option>Vận chuyển</option>
+            <option>Sức khỏe</option>
+          </select>
+        </div>
+        <div x-data="servicesToggle()">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Thiết kế website chuyên nghiệp" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Thiết kế web</div>
+                  <div class="badge badge-hot">Hot</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Thiết kế website chuyên nghiệp</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Thiết kế website responsive,
+                  SEO-friendly cho doanh nghiệp và cá nhân</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">5 - 20 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.8
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Nguyễn Văn A
+                  </span>
+                  <a href="/dich-vu-thanh-vien/1"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ SEO tăng thứ hạng Google" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Digital Marketing</div>
+                  <div class="badge badge-hot">Hot</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ SEO tăng thứ hạng Google</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Tối ưu hóa website lên TOP Google,
+                  tăng traffic và doanh số bán hàng</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">3 - 15 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.9
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Trần Thị B
+                  </span>
+                  <a href="/dich-vu-thanh-vien/2"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Chụp ảnh sản phẩm chuyên nghiệp" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Nhiếp ảnh</div>
+                  <div class="badge badge-hot">Hot</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Chụp ảnh sản phẩm chuyên nghiệp</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Chụp ảnh sản phẩm cho shop online,
+                  catalog, quảng cáo với chất lượng cao</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">500k - 2 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.7
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Lê Văn C
+                  </span>
+                  <a href="/dich-vu-thanh-vien/3"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Thiết kế logo và nhận diện thương hiệu" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Thiết kế đồ họa</div>
+                  <div class="badge badge-hot">Hot</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Thiết kế logo và nhận diện thương hiệu</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Thiết kế logo độc đáo, bộ nhận diện
+                  thương hiệu hoàn chỉnh cho doanh nghiệp</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">1 - 5 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.6
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Phạm Thị D
+                  </span>
+                  <a href="/dich-vu-thanh-vien/4"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ kế toán doanh nghiệp" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Kế toán</div>
+                  <div class="badge badge-hot">Hot</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ kế toán doanh nghiệp</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Dịch vụ kế toán trọn gói cho doanh
+                  nghiệp vừa và nhỏ, báo cáo thuế</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">2 - 8 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.8
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Hoàng Văn E
+                  </span>
+                  <a href="/dich-vu-thanh-vien/5"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ quay phim sự kiện" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Quay phim</div>
+                  <div class="badge badge-hot">Hot</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ quay phim sự kiện</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Quay phim cưới hỏi, sự kiện doanh
+                  nghiệp, tiệc sinh nhật với chất lượng 4K</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">3 - 12 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.9
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Nguyễn Thị F
+                  </span>
+                  <a href="/dich-vu-thanh-vien/6"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+              x-show="showAll">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ dọn dẹp nhà cửa" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Dọn dẹp</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ dọn dẹp nhà cửa</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Dọn dẹp nhà cửa, văn phòng chuyên
+                  nghiệp, nhanh chóng và sạch sẽ</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">200k - 1 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.5
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Trần Văn G
+                  </span>
+                  <a href="/dich-vu-thanh-vien/7"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+              x-show="showAll">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ sửa chữa điện tử" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Sửa chữa</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ sửa chữa điện tử</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Sửa chữa điện thoại, laptop, máy tính
+                  bảng tại nhà hoặc cửa hàng</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">100k - 2 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.4
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Lê Thị H
+                  </span>
+                  <a href="/dich-vu-thanh-vien/8"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+              x-show="showAll">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ gia sư toán lý hóa" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Gia sư</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ gia sư toán lý hóa</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Gia sư kinh nghiệm dạy toán, lý, hóa
+                  cấp
+                  2, cấp 3 tại nhà học sinh</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">150k - 500k VNĐ/buổi</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.7
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Phạm Văn I
+                  </span>
+                  <a href="/dich-vu-thanh-vien/9"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+              x-show="showAll">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ trang trí tiệc cưới" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Trang trí</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ trang trí tiệc cưới</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Trang trí tiệc cưới, sinh nhật, khai
+                  trương với phong cách hiện đại</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">5 - 30 triệu VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.8
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Hoàng Thị J
+                  </span>
+                  <a href="/dich-vu-thanh-vien/10"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+              x-show="showAll">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ vận chuyển hàng hóa" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Vận chuyển</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ vận chuyển hàng hóa</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Vận chuyển hàng hóa nội thành và liên
+                  tỉnh, an toàn và nhanh chóng</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">50k - 500k VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.3
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Nguyễn Văn K
+                  </span>
+                  <a href="/dich-vu-thanh-vien/11"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+              x-show="showAll">
+              <div class="p-4 flex flex-col flex-1">
+                <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                  alt="Dịch vụ massage tại nhà" class="w-full h-32 object-cover rounded-lg mb-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-primary">Sức khỏe</div>
+                </div>
+                <h4 class="font-semibold mb-2 line-clamp-2">Dịch vụ massage tại nhà</h4>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2 flex-1">Massage thư giãn, trị liệu tại nhà với
+                  kỹ thuật chuyên nghiệp</p>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-semibold text-green-600">300k - 800k VNĐ</span>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-current mr-1"></i>
+                    4.6
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-500">
+                    <i data-lucide="building" class="w-3 h-3 inline mr-1"></i>
+                    Trần Thị L
+                  </span>
+                  <a href="/dich-vu-thanh-vien/12"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                      chi tiết</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-6">
+            <button @click="toggleServices()"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 transition-all duration-300">
+              <span x-text="getButtonText()">Xem tất cả dịch vụ</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

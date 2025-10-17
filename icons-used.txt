@@ -113,11 +113,11 @@ shield
 check
 chevron-up
 award
+target
 circle-check-big
 tag
 bookmark
 circle-alert
-target
 coffee
 utensils-crossed
 credit-card

@@ -1,0 +1,661 @@
+<section id="news" class="scroll-mt-32">
+	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+		<div class="p-6">
+			<div class="flex items-center justify-between mb-6">
+				<h3 class="text-xl font-bold">Tin tức &amp; Sự kiện</h3>
+                <div class="badge badge-primary">18 bài viết</div>
+            </div>
+			<div class="flex flex-col md:flex-row gap-4 mb-6">
+				<div class="flex-1">
+					<div class="relative">
+						<i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+						<input
+							class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+							placeholder="Tìm kiếm tin tức..." value="">
+					</div>
+				</div>
+				<select class="select select-white w-[250px]">
+					<option value="">Tất cả danh mục</option>
+					<option>Kinh Tế</option>
+					<option>Giao Thông</option>
+					<option>Văn Hóa</option>
+					<option>Du Lịch</option>
+					<option>Ẩm Thực</option>
+					<option>Đặc Sản</option>
+					<option>Vui Chơi</option>
+					<option>Công Nghệ</option>
+					<option>Môi Trường</option>
+				</select>
+			</div>
+			<div x-data="newsToggle()">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Bình Dương thu hút 2,5 tỷ USD vốn đầu tư nước ngoài trong năm 2024"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+                                <div class="badge badge-primary">Giao Thông</div>
+								<s="text-xs text-gray-500">21/12/2024</s=>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Bình Dương thu hút 2,5 tỷ USD vốn đầu tư nước ngoài trong năm 2024
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Tỉnh Bình Dương tiếp tục
+								khẳng định vị thế là điểm đến hấp dẫn cho các nhà đầu tư quốc tế với nhiều dự án lớn được
+								triển
+								khai.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">
+									By Nguyễn Văn A
+									</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>
+										1250
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/1">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Khánh thành cầu vượt Mỹ Phước - Tân Vạn, giảm ùn tắc giao thông"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Giao Thông</div>
+								<div class="badge badge-featured">Nổi bật</div>
+								<span class="text-xs text-gray-500">21/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Khánh thành cầu vượt Mỹ Phước - Tân Vạn, giảm ùn tắc giao thông
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Cầu vượt Mỹ Phước - Tân
+								Vạn chính thức đưa vào sử dụng, góp phần giải quyết tình trạng ùn tắc giao thông tại khu vực.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">
+									By Trần Thị B
+									</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>
+										890
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/2">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								    Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Lễ hội Văn hóa Dân gian Bình Dương 2024 thu hút hàng nghìn du khách"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Văn Hóa</div>
+								<div class="badge badge-featured">Nổi bật</div>
+								<span class="text-xs text-gray-500">21/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Lễ hội Văn hóa Dân gian Bình Dương 2024 thu hút hàng nghìn du khách
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Lễ hội diễn ra tại Trung
+								tâm Văn hóa tỉnh với nhiều hoạt động đặc sắc, giới thiệu văn hóa truyền thống địa phương.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">
+									By Lê Văn C
+									</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>650
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/3">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Khu du lịch Đại Nam thu hút hơn 2 triệu lượt khách trong năm 2024"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Du Lịch</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Khu du lịch Đại Nam thu hút hơn 2 triệu lượt khách trong năm 2024
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Khu du lịch Đại Nam tiếp
+								tục là điểm đến hấp dẫn với nhiều trò chơi và dịch vụ giải trí đa dạng.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">
+									By Nguyễn Thị P
+									</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>1200
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/16">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Chùa Bà Đen - Điểm du lịch tâm linh nổi tiếng của Tây Ninh gần Bình Dương"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Du Lịch</div>
+								<span class="text-xs text-gray-500">19/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Chùa Bà Đen - Điểm du lịch tâm linh nổi tiếng của Tây Ninh gần Bình Dương
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Chùa Bà Đen với cáp treo
+								hiện đại và không gian tâm linh thanh tịnh thu hút du khách thập phương.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">
+									By Trần Văn Q
+									</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>980
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/17">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Khu sinh thái Trăm Trứng - Thiên đường xanh giữa lòng Bình Dương"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Du Lịch</div>
+								<span class="text-xs text-gray-500">18/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Khu sinh thái Trăm Trứng - Thiên đường xanh giữa lòng Bình Dương
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Khu sinh thái với không
+								gian xanh mát, hồ nước trong xanh và các hoạt động vui chơi hấp dẫn.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">
+									By Lê Thị R
+									</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>750
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/18">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Bánh tráng nướng Trang Bang - Đặc sản không thể bỏ qua khi đến Bình Dương"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Ẩm Thực</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Bánh tráng nướng Trang Bang - Đặc sản không thể bỏ qua khi đến Bình Dương
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Bánh tráng nướng với hương
+								vị đặc trưng, ăn kèm với các loại rau sống và nước chấm đậm đà.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Phạm Văn S</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>890
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/19">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Chợ đêm Thủ Dầu Một - Thiên đường ẩm thực đường phố"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Ẩm Thực</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Chợ đêm Thủ Dầu Một - Thiên đường ẩm thực đường phố
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Chợ đêm với hàng trăm món
+								ăn đường phố đa dạng, từ truyền thống đến hiện đại.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Hoàng Thị T</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>1100
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/20">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Quán cơm tấm Sài Gòn nổi tiếng 30 năm tại Dĩ An"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Ẩm Thực</div>
+								<span class="text-xs text-gray-500">18/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Quán cơm tấm Sài Gòn nổi tiếng 30 năm tại Dĩ An
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Quán cơm tấm gia truyền
+								với
+								hương vị đậm đà, thu hút thực khách gần xa.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Nguyễn Văn U</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>650
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/21">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Nem nướng Ninh Hòa - Hương vị đặc trưng của vùng đất Bình Dương"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Đặc Sản</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Nem nướng Ninh Hòa - Hương vị đặc trưng của vùng đất Bình Dương
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Nem nướng với công thức
+								gia truyền, thịt tươi ngon và gia vị đặc biệt tạo nên hương vị khó quên.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Trần Thị V</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>720
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/22">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Bánh ít lá gai - Món quà quê giản dị mà đậm đà"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Đặc Sản</div>
+								<span class="text-xs text-gray-500">19/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Bánh ít lá gai - Món quà quê giản dị mà đậm đà
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Bánh ít lá gai với vỏ bánh
+								xanh mướt từ lá gai, nhân tôm thịt thơm ngon.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Lê Văn W</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>580
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/23">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Mắm ruốc Bình Dương - Gia vị không thể thiếu trong bữa cơm gia đình"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Đặc Sản</div>
+								<span class="text-xs text-gray-500">18/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Mắm ruốc Bình Dương - Gia vị không thể thiếu trong bữa cơm gia đình
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Mắm ruốc với hương vị đặc
+								trưng, được chế biến từ ruốc tươi và gia vị truyền thống.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Phạm Thị X</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>490
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/24">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Công viên Gia Định - Không gian xanh lý tưởng cho gia đình"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Vui Chơi</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Công viên Gia Định - Không gian xanh lý tưởng cho gia đình
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Công viên với nhiều trò
+								chơi dành cho trẻ em và không gian thư giãn cho người lớn.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Hoàng Văn Y</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>820
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/25">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Khu vui chơi Kidzone - Thiên đường của các bé"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Vui Chơi</div>
+								<span class="text-xs text-gray-500">19/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Khu vui chơi Kidzone - Thiên đường của các bé
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Khu vui chơi trong nh��
+								với nhiều trò chơi an toàn và giáo dục cho trẻ em.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Nguyễn Thị Z</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>690
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/26">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Bowling Superbowl - Địa điểm giải trí hiện đại tại Bình Dương"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Vui Chơi</div>
+								<span class="text-xs text-gray-500">19/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Bowling Superbowl - Địa điểm giải trí hiện đại tại Bình Dương
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Sân bowling với trang
+								thiết
+								bị hiện đại, phục vụ nhu cầu giải trí của mọi lứa tuổi.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Trần Văn AA</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>540
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/27">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Triển khai dự án Smart City tại TP. Thủ Dầu Một"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Công Nghệ</div>
+								<div class="badge badge-featured">Nổi bật</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Triển khai dự án Smart City tại TP. Thủ Dầu Một
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Dự án thành phố thông minh
+								được kh��i động với nhiều giải pháp công nghệ hiện đại.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Phạm Thị D</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>1100
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/4">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Khu công nghiệp VSIP III chính thức đi vào hoạt động"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Kinh Tế</div>
+								<div class="badge badge-featured">Nổi bật</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Khu công nghiệp VSIP III chính thức đi vào hoạt động
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Khu công nghiệp mới với
+								quy
+								mô 1.000 ha sẽ tạo việc làm cho hàng nghìn lao động.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Hoàng Văn E</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>980
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/5">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+								alt="Bình Dương đạt giải thưởng Thành phố Xanh ASEAN 2024"
+								class="w-full h-24 sm:h-32 object-cover rounded-lg mb-2 sm:mb-3">
+							<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
+								<div class="badge badge-primary">Môi Trường</div>
+								<div class="badge badge-featured">Nổi bật</div>
+								<span class="text-xs text-gray-500">20/12/2024</span>
+							</div>
+							<h4
+								class="font-semibold mb-1 sm:mb-2 line-clamp-2 text-sm sm:text-base min-h-[40px] sm:min-h-[50px]">
+								Bình Dương đạt giải thưởng Thành phố Xanh ASEAN 2024
+							</h4>
+							<p class="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">Tỉnh Bình Dương vinh dự
+								nhận giải thưởng Thành phố Xanh ASEAN nhờ những nỗ lực bảo vệ môi trường.
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-3 sm:gap-4 text-xs text-gray-500">
+									<span class="line-clamp-1">By Nguyễn Thị F</span>
+									<div class="flex items-center">
+										<i data-lucide="eye" class="w-3 h-3 mr-1"></i>750
+									</div>
+								</div>
+								<a class="flex-shrink-0" href="/tin-tuc/6">
+								<button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm">
+								Đọc thêm
+								<i data-lucide="chevron-right" class="w-3 h-3 sm:w-4 sm:h-4 ml-1"></i>
+								</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-center mt-6">
+					<button @click="toggleNews()"
+						class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 transition-all duration-300">
+					<span x-text="getButtonText()">Xem tất cả tin tức</span>
+					<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

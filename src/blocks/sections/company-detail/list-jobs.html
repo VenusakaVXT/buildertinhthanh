@@ -1,0 +1,940 @@
+<section id="jobs" class="scroll-mt-32">
+	<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+		<div class="p-6">
+			<div class="flex items-center justify-between mb-6">
+				<h3 class="text-xl font-bold">Cơ hội nghề nghiệp</h3>
+				<div class="badge badge-primary">15 vị trí</div>
+			</div>
+			<div class="grid md:grid-cols-3 gap-3 mb-6">
+				<div class="relative">
+					<i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+					<input
+						class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+						placeholder="Tìm kiếm việc làm..." value="">
+				</div>
+				<select class="select select-white">
+					<option value="">Tất cả cấp bậc</option>
+					<option>Senior</option>
+					<option>Nhân viên</option>
+					<option>Chuyên viên</option>
+					<option>Công nhân</option>
+					<option>Giáo viên</option>
+					<option>Middle</option>
+					<option>Kỹ sư</option>
+					<option>Junior</option>
+					<option>Quản lý</option>
+					<option>Bác sĩ</option>
+					<option>Kỹ thuật viên</option>
+				</select>
+				<select class="select select-white">
+					<option value="">Tất cả địa điểm</option>
+					<option>KCN VSIP I</option>
+					<option>TP. Thủ Dầu Một</option>
+					<option>TP. Dĩ An</option>
+					<option>KCN Đồng An</option>
+					<option>KCN Mỹ Phước</option>
+					<option>TP. Thuận An</option>
+					<option>KCN VSIP II</option>
+					<option>KCN Sóng Thần</option>
+				</select>
+			</div>
+			<div x-data="jobsToggle()">
+				<div class="space-y-3 sm:space-y-4">
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty TNHH Samsung Electronics Việt Nam"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Kỹ sư Phần mềm Senior
+											</h4>
+											<div class="badge badge-featured">Nổi bật</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty TNHH Samsung
+											Electronics Việt Nam
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">KCN VSIP I, Thuận An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">25-35 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Senior</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Phát triển và
+											bảo trì các ứng dụng web sử dụng React và Node.js. Làm việc trong môi trường Agile với đội ngũ
+											quốc tế.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">React</div>
+											<div class="badge badge primary">Node.js</div>
+											<div class="badge badge primary">JavaScript</div>
+											<span class="text-xs text-gray-500">+1 kỹ năng</span>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											245 lượt xem
+										</div>
+										<div>21/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/1"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60" alt="Tập đoàn Becamex IDC"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Nhân viên Kế toán Tổng hợp</h4>
+											<div class="badge badge-featured">Nổi bật</div>
+											<div class="badge badge-hot">Gấp</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Tập đoàn Becamex IDC
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">12-18 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Nhân viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Thực hiện công
+											tác kế toán tổng hợp, lập báo cáo tài chính, theo dõi công nợ và quản lý tài sản.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Excel</div>
+											<div class="badge badge primary">SAP</div>
+											<div class="badge badge primary">Kế toán</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											189 lượt xem
+										</div>
+										<div>21/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/2"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty CP Đầu tư Địa ốc Đại Quang Minh"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Chuyên viên Marketing Digital</h4>
+											<div class="badge badge-featured">Nổi bật</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty CP Đầu tư
+											Địa ốc Đại Quang Minh
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">15-20 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Chuyên viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Xây dựng và
+											triển
+											khai chiến lược marketing online, quản lý các kênh digital, tối ưu hóa ROI.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Facebook Ads</div>
+											<div class="badge badge primary">Google Ads</div>
+											<div class="badge badge primary">SEO</div>
+											<span class="text-xs text-gray-500">+1 kỹ năng</span>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											156 lượt xem
+										</div>
+										<div>21/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/3"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty TNHH Pouchen Việt Nam"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Công nhân Sản xuất
+											</h4>
+											<div class="badge badge-featured">Nổi bật</div>
+											<div class="badge badge-hot">Gấp</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty TNHH Pouchen
+											Việt Nam
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">KCN Đồng An, Thuận An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">8-12 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Công nhân</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Vận hành máy
+											móc sản xuất, kiểm tra chất lượng sản phẩm, đảm bảo an toàn lao động.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Thao tác máy</div>
+											<div class="badge badge primary">Làm việc nhóm</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											312 lượt xem
+										</div>
+										<div>20/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/4"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Trường Quốc tế Việt Úc"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Giáo viên Tiếng Anh
+											</h4>
+											<div class="badge badge-featured">Nổi bật</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Trường Quốc tế Việt
+											Úc
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">18-25 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Giáo viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Giảng dạy tiếng
+											Anh cho học sinh cấp 2, cấp 3. Chuẩn bị giáo án, đánh giá học sinh.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">IELTS</div>
+											<div class="badge badge primary">TOEFL</div>
+											<div class="badge badge primary">Giảng dạy</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											98 lượt xem
+										</div>
+										<div>20/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/5"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty CP Thép Hòa Phát"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Nhân viên Kinh doanh
+												B2B
+											</h4>
+											<div class="badge badge-hot">Gấp</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty CP Thép Hòa
+											Phát
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">KCN Mỹ Phước, Bến Cát</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">15-30 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Nhân viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Phát triển
+											khách
+											hàng doanh nghiệp, tư vấn sản phẩm thép, đạt chỉ tiêu doanh số.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Bán hàng B2B</div>
+											<div class="badge badge primary">Đàm phán</div>
+											<div class="badge badge primary">CRM</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											167 lượt xem
+										</div>
+										<div>20/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/6"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty TNHH Phần mềm FPT"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Lập trình viên
+												Mobile (React Native)
+											</h4>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty TNHH Phần mềm FPT
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">20-28 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Middle</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Phát triển ứng
+											dụng mobile đa nền tảng, tối ưu hiệu suất, tích hợp API.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">React Native</div>
+											<div class="badge badge primary">JavaScript</div>
+											<div class="badge badge primary">Redux</div>
+											<span class="text-xs text-gray-500">+1 kỹ năng</span>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											134 lượt xem
+										</div>
+										<div>20/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/7"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60" alt="Tập đoàn Vingroup"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Nhân viên Nhân sự
+											</h4>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Tập đoàn Vingroup
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">12-16 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Nhân viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Hỗ trợ tuyển
+											dụng, quản lý hồ sơ nhân sự, tổ chức đào tạo, tính lương.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Tuyển dụng</div>
+											<div class="badge badge primary">Đào tạo</div>
+											<div class="badge badge primary">Lương thưởng</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											203 lượt xem
+										</div>
+										<div>20/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/8"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty TNHH Denso Việt Nam"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Kỹ sư Cơ khí</h4>
+											<div class="badge badge-hot">Gấp</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty TNHH Denso
+											Việt Nam
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">KCN VSIP II, Bình Dương</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">18-25 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Kỹ sư</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Thiết kế, cải
+											tiến quy trình sản xuất, bảo trì thiết bị, tối ưu hóa hiệu suất.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">AutoCAD</div>
+											<div class="badge badge primary">SolidWorks</div>
+											<div class="badge badge primary">Lean Manufacturing</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											178 lượt xem
+										</div>
+										<div>19/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/9"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty CP Đầu tư Bất động sản Novaland"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Chuyên viên Pháp chế
+											</h4>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty CP Đầu tư
+											Bất
+											động sản Novaland
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">16-22 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Chuyên viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Tư vấn pháp lý,
+											soạn thảo hợp đồng, xử lý tranh chấp, tuân thủ pháp luật.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Luật Dân sự</div>
+											<div class="badge badge primary">Luật Đất đai</div>
+											<div class="badge badge primary">Hợp đồng</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											89 lượt xem
+										</div>
+										<div>19/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/10"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty TNHH Quảng cáo Ogilvy"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Nhân viên Thiết kế
+												Đồ họa
+											</h4>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty TNHH Quảng
+											cáo
+											Ogilvy
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Dĩ An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">10-15 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Junior</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Thiết kế ấn
+											phẩm
+											quảng cáo, branding, layout website, video motion graphics.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Photoshop</div>
+											<div class="badge badge primary">Illustrator</div>
+											<div class="badge badge primary">InDesign</div>
+											<span class="text-xs text-gray-500">+1 kỹ năng</span>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											145 lượt xem
+										</div>
+										<div>19/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/11"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Hệ thống Siêu thị Co.opmart"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Quản lý Cửa hàng
+											</h4>
+											<div class="badge badge-hot">Gấp</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Hệ thống Siêu thị
+											Co.opmart
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Thuận An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">14-20 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Quản lý</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Quản lý hoạt
+											động cửa hàng, đội ngũ nhân viên, doanh số, chăm sóc khách hàng.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Quản lý bán lẻ</div>
+											<div class="badge badge primary">Lãnh đạo</div>
+											<div class="badge badge primary">POS System</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											267 lượt xem
+										</div>
+										<div>19/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/12"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Bệnh viện Đa khoa Quốc tế Becamex"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Bác sĩ Đa khoa</h4>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Bệnh viện Đa khoa
+											Quốc
+											tế Becamex
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">TP. Thủ Dầu Một</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">25-40 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Bác sĩ</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Khám, chẩn đoán
+											và điều trị bệnh nhân, tư vấn sức khỏe, làm việc theo ca.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Khám bệnh</div>
+											<div class="badge badge primary">Chẩn đoán</div>
+											<div class="badge badge primary">Điều trị</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											156 lượt xem
+										</div>
+										<div>19/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/13"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty TNHH Logistics Gemadept"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Nhân viên Xuất nhập
+												khẩu
+											</h4>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty TNHH Logistics Gemadept</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">KCN Sóng Thần, Dĩ An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">12-18 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Nhân viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Xử lý thủ tục
+											xuất nhập khẩu, làm việc với hải quan, theo dõi hàng hóa.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Xuất nhập khẩu</div>
+											<div class="badge badge primary">Hải quan</div>
+											<div class="badge badge primary">Logistics</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											198 lượt xem
+										</div>
+										<div>18/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/14"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover" x-show="showAll">
+						<div class="p-3 sm:p-4">
+							<div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+								<div class="flex gap-3 sm:gap-4 flex-1 min-w-0">
+									<img src="./../../../assets/images/placeholder.svg?height=60&amp;width=60"
+										alt="Công ty TNHH Jabil Circuit Việt Nam"
+										class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0">
+									<div class="flex-1 min-w-0">
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+											<h4 class="font-semibold text-sm sm:text-base line-clamp-2 min-w-0">Kỹ thuật viên Điện
+												tử
+											</h4>
+											<div class="badge badge-hot">Gấp</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">Công ty TNHH Jabil
+											Circuit Việt Nam
+										</p>
+										<div class="space-y-1 sm:space-y-0">
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">KCN VSIP I, Thuận An</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="dollar-sign" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">10-16 triệu VNĐ</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="clock" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Toàn thời gian</span>
+											</div>
+											<div class="flex items-center text-xs sm:text-sm text-gray-600">
+												<i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0"></i>
+												<span class="line-clamp-1 min-w-0">Kỹ thuật viên</span>
+											</div>
+										</div>
+										<p class="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-2 sm:mb-3 mt-2">Vận hành máy
+											SMT,
+											kiểm tra chất lượng sản phẩm điện tử, bảo trì thiết bị.
+										</p>
+										<div class="flex flex-wrap items-center gap-1 sm:gap-2">
+											<div class="badge badge primary">Điện tử</div>
+											<div class="badge badge primary">SMT</div>
+											<div class="badge badge primary">Kiểm tra chất lượng</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex items-center justify-between w-full sm:w-auto">
+									<div class="flex items-center gap-3 text-xs text-gray-500 mr-2">
+										<div class="flex items-center">
+											<i data-lucide="eye" class="w-3 h-3 inline mr-1"></i>
+											223 lượt xem
+										</div>
+										<div>18/12/2024</div>
+									</div>
+									<a class="flex-shrink-0" href="/viec-lam/15"><button
+										class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary text-xs sm:text-sm">Ứng
+									tuyển</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-center mt-6">
+					<button @click="toggleJobs()"
+						class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 transition-all duration-300">
+					<span x-text="getButtonText()">Xem tất cả việc làm</span>
+					<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
