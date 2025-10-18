@@ -1,0 +1,507 @@
+<div
+  class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 space-y-6">
+  <div class="flex justify-between items-center">
+    <h3 class="text-lg font-semibold">Dịch vụ đã thuê (10)</h3>
+    <select class="select select-white">
+      <option value="">Tất cả trạng thái</option>
+      <option>Hoàn thành</option>
+      <option>Đang sử dụng</option>
+    </select>
+  </div>
+  <div class="space-y-4">
+    <div x-data="reviewToggle">
+      <div class="my-activities__service-card bg-card text-card-foreground card-hover">
+        <div class="my-activities__service-card-content">
+          <div class="my-activities__service-card-layout">
+            <div class="my-activities__service-card-image-container"><img src="./../../assets/images/placeholder.svg"
+                alt="Dịch vụ vệ sinh nhà cửa" class="my-activities__service-card-image"></div>
+            <div class="my-activities__service-card-main">
+              <div class="my-activities__service-card-header">
+                <div>
+                  <h4 class="my-activities__service-card-title">Dịch vụ vệ sinh nhà cửa</h4>
+                  <div class="my-activities__service-card-provider">
+                    <i data-lucide="settings" class="my-activities__service-card-provider-icon"></i>
+                    <span class="my-activities__service-card-provider-name">CleanPro Services</span>
+                  </div>
+                </div>
+                <div
+                  class="my-activities__service-card-status-badge my-activities__service-card-status-badge-completed focus:ring-ring focus:ring-offset-2">
+                  <i data-lucide="clock" class="my-activities__service-card-status-icon"></i>
+                  Hoàn thành
+                </div>
+              </div>
+              <div class="my-activities__service-card-info-row">
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="dollar-sign" class="my-activities__service-card-info-icon"></i>
+                  <span class="my-activities__service-card-price">500,000 VNĐ</span>
+                </div>
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="calendar" class="my-activities__service-card-info-icon"></i>
+                  <span>Thời gian: 3 giờ</span>
+                </div>
+                <div class="my-activities__service-card-tag focus:ring-ring focus:ring-offset-2 text-foreground">
+                  Vệ sinh</div>
+              </div>
+              <p class="my-activities__service-card-description">Vệ sinh tổng thể căn hộ 3 phòng ngủ, bao gồm lau dọn,
+                hút
+                bụi và vệ sinh nhà tắm</p>
+              <div class="my-activities__service-card-actions">
+                <button @click="toggleReview()" :class="getButtonClasses()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    :class="getChevronClasses()">
+                    <path x-show="!showReview" d="m18 15-6-6-6 6"></path>
+                    <path x-show="showReview" d="m6 9 6 6 6-6"></path>
+                  </svg>
+                  <span x-text="getButtonText()"></span>
+                </button>
+                <button
+                  class="my-activities__service-card-contact-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground">
+                  <i data-lucide="message-circle" class="my-activities__service-card-btn-icon"></i>
+                  Liên hệ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-show="showReview" :class="getReviewClasses()">
+        <div class="my-activities__service-review bg-card text-card-foreground">
+          <div class="my-activities__service-review-content">
+            <div class="space-y-4">
+              <div class="my-activities__service-review-header">
+                <h5 class="my-activities__service-review-title">Đánh giá của bạn</h5>
+                <div class="my-activities__service-review-rating">
+                  <div class="my-activities__service-review-stars">
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                  </div>
+                  <span class="my-activities__service-review-date">11/1/2024</span>
+                </div>
+              </div>
+              <div class="my-activities__service-review-content-box">
+                <p class="my-activities__service-review-text">Dịch vụ rất tốt, nhân viên chuyên nghiệp và tận
+                  tâm. Nhà cửa được dọn dẹp sạch sẽ, thơm tho. Sẽ sử dụng lại dịch vụ này.</p>
+              </div>
+              <div class="my-activities__service-review-footer">
+                <div class="my-activities__service-review-likes">
+                  <i data-lucide="thumbs-up" class="my-activities__service-review-likes-icon"></i>
+                  <span>12 người thấy hữu ích</span>
+                </div>
+                <button
+                  class="my-activities__service-review-edit-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground">Chỉnh
+                  sửa đánh giá</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div x-data="reviewToggle">
+      <div class="my-activities__service-card bg-card text-card-foreground card-hover">
+        <div class="my-activities__service-card-content">
+          <div class="my-activities__service-card-layout">
+            <div class="my-activities__service-card-image-container"><img src="./../../assets/images/placeholder.svg"
+                alt="Sửa chữa điện nước" class="my-activities__service-card-image"></div>
+            <div class="my-activities__service-card-main">
+              <div class="my-activities__service-card-header">
+                <div>
+                  <h4 class="my-activities__service-card-title">Sửa chữa điện nước</h4>
+                  <div class="my-activities__service-card-provider">
+                    <i data-lucide="settings" class="my-activities__service-card-provider-icon"></i>
+                    <span class="my-activities__service-card-provider-name">Fix It Fast</span>
+                  </div>
+                </div>
+                <div
+                  class="my-activities__service-card-status-badge my-activities__service-card-status-badge-completed focus:ring-ring focus:ring-offset-2">
+                  <i data-lucide="clock" class="my-activities__service-card-status-icon"></i>
+                  Hoàn thành
+                </div>
+              </div>
+              <div class="my-activities__service-card-info-row">
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="dollar-sign" class="my-activities__service-card-info-icon"></i>
+                  <span class="my-activities__service-card-price">800,000 VNĐ</span>
+                </div>
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="calendar" class="my-activities__service-card-info-icon"></i>
+                  <span>Thời gian: 2 giờ</span>
+                </div>
+                <div class="my-activities__service-card-tag focus:ring-ring focus:ring-offset-2 text-foreground">
+                  Sửa chữa</div>
+              </div>
+              <p class="my-activities__service-card-description">Sửa chữa hệ thống điện và thay thế vòi nước bị hỏng</p>
+              <div class="my-activities__service-card-actions">
+                <button @click="toggleReview()" :class="getButtonClasses()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    :class="getChevronClasses()">
+                    <path x-show="!showReview" d="m18 15-6-6-6 6"></path>
+                    <path x-show="showReview" d="m6 9 6 6 6-6"></path>
+                  </svg>
+                  <span x-text="getButtonText()"></span>
+                </button>
+                <button
+                  class="my-activities__service-card-contact-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground">
+                  <i data-lucide="message-circle" class="my-activities__service-card-btn-icon"></i>
+                  Liên hệ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-show="showReview" :class="getReviewClasses()">
+        <div class="my-activities__service-review bg-card text-card-foreground">
+          <div class="my-activities__service-review-content">
+            <div class="space-y-4">
+              <div class="my-activities__service-review-header">
+                <h5 class="my-activities__service-review-title">Đánh giá của bạn</h5>
+                <div class="my-activities__service-review-rating">
+                  <div class="my-activities__service-review-stars">
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star-empty"></i>
+                  </div>
+                  <span class="my-activities__service-review-date">9/1/2024</span>
+                </div>
+              </div>
+              <div class="my-activities__service-review-content-box">
+                <p class="my-activities__service-review-text">Thợ đến đúng giờ, sửa chữa nhanh chóng và hiệu
+                  quả. Giá cả hợp lý. Tuy nhiên, có thể cải thiện thêm về việc dọn dẹp sau khi hoàn thành
+                  công việc.</p>
+              </div>
+              <div class="my-activities__service-review-footer">
+                <div class="my-activities__service-review-likes">
+                  <i data-lucide="thumbs-up" class="my-activities__service-review-likes-icon"></i>
+                  <span>8 người thấy hữu ích</span>
+                </div>
+                <button
+                  class="my-activities__service-review-edit-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground">Chỉnh
+                  sửa đánh giá</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div x-data="reviewToggle">
+      <div class="my-activities__service-card bg-card text-card-foreground card-hover">
+        <div class="my-activities__service-card-content">
+          <div class="my-activities__service-card-layout">
+            <div class="my-activities__service-card-image-container"><img src="./../../assets/images/placeholder.svg"
+                alt="Chăm sóc cây cảnh" class="my-activities__service-card-image"></div>
+            <div class="my-activities__service-card-main">
+              <div class="my-activities__service-card-header">
+                <div>
+                  <h4 class="my-activities__service-card-title">Chăm sóc cây cảnh</h4>
+                  <div class="my-activities__service-card-provider">
+                    <i data-lucide="settings" class="my-activities__service-card-provider-icon"></i>
+                    <span class="my-activities__service-card-provider-name">Green Garden Care</span>
+                  </div>
+                </div>
+                <div
+                  class="my-activities__service-card-status-badge my-activities__service-card-status-badge-using focus:ring-ring focus:ring-offset-2">
+                  <i data-lucide="circle-check-big" class="my-activities__service-card-status-icon"></i>
+                  Đang sử dụng
+                </div>
+              </div>
+              <div class="my-activities__service-card-info-row">
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="dollar-sign" class="my-activities__service-card-info-icon"></i>
+                  <span class="my-activities__service-card-price">300,000 VNĐ/tháng</span>
+                </div>
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="calendar" class="my-activities__service-card-info-icon"></i>
+                  <span>Thời gian: Hàng tháng</span>
+                </div>
+                <div class="my-activities__service-card-tag focus:ring-ring focus:ring-offset-2 text-foreground">
+                  Chăm sóc cây</div>
+              </div>
+              <p class="my-activities__service-card-description">Chăm sóc và tưới nước cây cảnh trong vườn hàng tuần</p>
+              <div class="my-activities__service-card-actions">
+                <button @click="toggleReview()" :class="getButtonClasses()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    :class="getChevronClasses()">
+                    <path x-show="!showReview" d="m18 15-6-6-6 6"></path>
+                    <path x-show="showReview" d="m6 9 6 6 6-6"></path>
+                  </svg>
+                  <span x-text="getButtonText()"></span>
+                </button>
+                <button
+                  class="my-activities__service-card-contact-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground">
+                  <i data-lucide="message-circle" class="my-activities__service-card-btn-icon"></i>
+                  Liên hệ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-show="showReview" :class="getReviewClasses()">
+        <div class="my-activities__service-review bg-card text-card-foreground">
+          <div class="my-activities__service-review-content">
+            <div class="space-y-4">
+              <div class="my-activities__service-review-header">
+                <h5 class="my-activities__service-review-title">Đánh giá của bạn</h5>
+                <div class="my-activities__service-review-rating">
+                  <div class="my-activities__service-review-stars">
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                  </div>
+                  <span class="my-activities__service-review-date">15/1/2024</span>
+                </div>
+              </div>
+              <div class="my-activities__service-review-content-box">
+                <p class="my-activities__service-review-text">Dịch vụ xuất sắc! Cây cối trong vườn luôn xanh
+                  tươi và khỏe mạnh. Nhân viên rất am hiểu về cây trồng và cho nhiều l��i khuyên hữu ích.
+                </p>
+              </div>
+              <div class="my-activities__service-review-footer">
+                <div class="my-activities__service-review-likes">
+                  <i data-lucide="thumbs-up" class="my-activities__service-review-likes-icon"></i>
+                  <span>15 người thấy hữu ích</span>
+                </div>
+                <button
+                  class="my-activities__service-review-edit-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground">Chỉnh
+                  sửa đánh giá</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div x-data="reviewToggle">
+      <div class="my-activities__service-card bg-card text-card-foreground card-hover">
+        <div class="my-activities__service-card-content">
+          <div class="my-activities__service-card-layout">
+            <div class="my-activities__service-card-image-container"><img src="./../../assets/images/placeholder.svg"
+                alt="Giặt ủi quần áo" class="my-activities__service-card-image"></div>
+            <div class="my-activities__service-card-main">
+              <div class="my-activities__service-card-header">
+                <div>
+                  <h4 class="my-activities__service-card-title">Giặt ủi quần áo</h4>
+                  <div class="my-activities__service-card-provider">
+                    <i data-lucide="settings" class="my-activities__service-card-provider-icon"></i>
+                    <span class="my-activities__service-card-provider-name">LaundryMax</span>
+                  </div>
+                </div>
+                <div
+                  class="my-activities__service-card-status-badge my-activities__service-card-status-badge-completed focus:ring-ring focus:ring-offset-2">
+                  <i data-lucide="clock" class="my-activities__service-card-status-icon"></i>
+                  Hoàn thành
+                </div>
+              </div>
+              <div class="my-activities__service-card-info-row">
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="dollar-sign" class="my-activities__service-card-info-icon"></i>
+                  <span class="my-activities__service-card-price">150,000 VNĐ</span>
+                </div>
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="calendar" class="my-activities__service-card-info-icon"></i>
+                  <span>Thời gian: 1 ngày</span>
+                </div>
+                <div class="my-activities__service-card-tag focus:ring-ring focus:ring-offset-2 text-foreground">
+                  Giặt ủi</div>
+              </div>
+              <p class="my-activities__service-card-description">Giặt ủi 20 bộ quần áo công sở và casual</p>
+              <div class="my-activities__service-card-actions">
+                <button @click="toggleReview()" :class="getButtonClasses()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    :class="getChevronClasses()">
+                    <path x-show="!showReview" d="m18 15-6-6-6 6"></path>
+                    <path x-show="showReview" d="m6 9 6 6 6-6"></path>
+                  </svg>
+                  <span x-text="getButtonText()"></span>
+                </button>
+                <button
+                  class="my-activities__service-card-contact-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground">
+                  <i data-lucide="message-circle" class="my-activities__service-card-btn-icon"></i>
+                  Liên hệ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-show="showReview" :class="getReviewClasses()">
+        <div class="my-activities__service-review bg-card text-card-foreground">
+          <div class="my-activities__service-review-content">
+            <div class="space-y-4">
+              <div class="my-activities__service-review-header">
+                <h5 class="my-activities__service-review-title">Đánh giá của bạn</h5>
+                <div class="my-activities__service-review-rating">
+                  <div class="my-activities__service-review-stars">
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star-empty"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star-empty"></i>
+                  </div>
+                  <span class="my-activities__service-review-date">14/1/2024</span>
+                </div>
+              </div>
+              <div class="my-activities__service-review-content-box">
+                <p class="my-activities__service-review-text">Dịch vụ ổn, quần áo được giặt sạch và ủi phẳng.
+                  Tuy nhiên thời gian giao hàng hơi chậm so với cam kết ban đầu. Cần cải thiện về
+                  punctuality.</p>
+              </div>
+              <div class="my-activities__service-review-footer">
+                <div class="my-activities__service-review-likes">
+                  <i data-lucide="thumbs-up" class="my-activities__service-review-likes-icon"></i>
+                  <span>5 người thấy hữu ích</span>
+                </div>
+                <button
+                  class="my-activities__service-review-edit-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground">Chỉnh
+                  sửa đánh giá</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div x-data="reviewToggle">
+      <div class="my-activities__service-card bg-card text-card-foreground card-hover">
+        <div class="my-activities__service-card-content">
+          <div class="my-activities__service-card-layout">
+            <div class="my-activities__service-card-image-container"><img src="./../../assets/images/placeholder.svg"
+                alt="Dịch vụ trông trẻ tại nhà" class="my-activities__service-card-image"></div>
+            <div class="my-activities__service-card-main">
+              <div class="my-activities__service-card-header">
+                <div>
+                  <h4 class="my-activities__service-card-title">Dịch vụ trông trẻ tại nhà</h4>
+                  <div class="my-activities__service-card-provider">
+                    <i data-lucide="settings" class="my-activities__service-card-provider-icon"></i>
+                    <span class="my-activities__service-card-provider-name">Happy Kids Care</span>
+                  </div>
+                </div>
+                <div
+                  class="my-activities__service-card-status-badge my-activities__service-card-status-badge-completed focus:ring-ring focus:ring-offset-2">
+                  <i data-lucide="clock" class="my-activities__service-card-status-icon"></i>
+                  Hoàn thành
+                </div>
+              </div>
+              <div class="my-activities__service-card-info-row">
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="dollar-sign" class="my-activities__service-card-info-icon"></i>
+                  <span class="my-activities__service-card-price">200,000 VNĐ/giờ</span>
+                </div>
+                <div class="my-activities__service-card-info-item">
+                  <i data-lucide="calendar" class="my-activities__service-card-info-icon"></i>
+                  <span>Thời gian: 4 giờ</span>
+                </div>
+                <div class="my-activities__service-card-tag focus:ring-ring focus:ring-offset-2 text-foreground">
+                  Chăm sóc trẻ</div>
+              </div>
+              <p class="my-activities__service-card-description">Trông trẻ tại nhà, hỗ trợ ăn uống và chơi cùng bé.</p>
+              <div class="my-activities__service-card-actions">
+                <button @click="toggleReview()" :class="getButtonClasses()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    :class="getChevronClasses()">
+                    <path x-show="!showReview" d="m18 15-6-6-6 6"></path>
+                    <path x-show="showReview" d="m6 9 6 6 6-6"></path>
+                  </svg>
+                  <span x-text="getButtonText()"></span>
+                </button>
+                <button
+                  class="my-activities__service-card-contact-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground">
+                  <i data-lucide="message-circle" class="my-activities__service-card-btn-icon"></i>
+                  Liên hệ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-show="showReview" :class="getReviewClasses()">
+        <div class="my-activities__service-review bg-card text-card-foreground">
+          <div class="my-activities__service-review-content">
+            <div class="space-y-4">
+              <div class="my-activities__service-review-header">
+                <h5 class="my-activities__service-review-title">Đánh giá của bạn</h5>
+                <div class="my-activities__service-review-rating">
+                  <div class="my-activities__service-review-stars">
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                    <i data-lucide="star" class="my-activities__service-review-star"></i>
+                  </div>
+                  <span class="my-activities__service-review-date">16/1/2024</span>
+                </div>
+              </div>
+              <div class="my-activities__service-review-content-box">
+                <p class="my-activities__service-review-text">Cô trông trẻ rất dễ thương, bé nhà tôi rất thích.
+                  Tôi cảm thấy yên tâm khi để con ở nhà cùng dịch vụ.</p>
+              </div>
+              <div class="my-activities__service-review-footer">
+                <div class="my-activities__service-review-likes">
+                  <i data-lucide="thumbs-up" class="my-activities__service-review-likes-icon"></i>
+                  <span>10 người thấy hữu ích</span>
+                </div>
+                <button
+                  class="my-activities__service-review-edit-btn ring-offset-background focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground">Chỉnh
+                  sửa đánh giá</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+    <div class="text-sm text-gray-600">Hiển thị 5 / 10</div>
+    <div class="flex items-center gap-2">
+      <!-- Previous Button -->
+      <button
+        class="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled>
+        <svg viewBox="64 64 896 896" width="16" height="16" fill="currentColor">
+          <path
+            d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z">
+          </path>
+        </svg>
+      </button>
+
+      <!-- Page Numbers -->
+      <button
+        class="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium hover:from-blue-600 hover:to-purple-700 transition-all">1</button>
+      <button
+        class="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-all">2</button>
+
+      <!-- Next Button -->
+      <button
+        class="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 transition-all">
+        <svg viewBox="64 64 896 896" width="16" height="16" fill="currentColor">
+          <path
+            d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z">
+          </path>
+        </svg>
+      </button>
+
+      <!-- Items per page selector -->
+      <div class="ml-4 flex items-center gap-2">
+        <span class="text-sm text-gray-600">Hiển thị</span>
+        <select
+          class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        <span class="text-sm text-gray-600">/ trang</span>
+      </div>
+    </div>
+  </div>
+</div>

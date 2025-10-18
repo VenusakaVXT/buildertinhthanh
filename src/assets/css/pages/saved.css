@@ -1,0 +1,430 @@
+.saved__filter-item {
+  @apply border inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-colors h-9 rounded-md px-3 w-full justify-start;
+}
+
+.saved__cta-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors rounded-md px-3 mt-2 h-7;
+}
+
+
+/* Job card components */
+.saved__job-card {
+  @apply rounded-lg border shadow-sm hover:shadow-md transition-shadow;
+}
+
+.saved__job-card-content {
+  @apply p-4 sm:p-6;
+}
+
+.saved__job-card-layout {
+  @apply flex flex-col sm:flex-row gap-3 sm:gap-4;
+}
+
+.saved__job-card-image {
+  @apply flex-shrink-0 self-center sm:self-start;
+}
+
+.saved__job-card-image img {
+  @apply w-16 h-16 sm:w-16 sm:h-16 rounded-lg object-cover border;
+}
+
+.saved__job-card-main {
+  @apply flex-1 space-y-2 sm:space-y-3;
+}
+
+.saved__job-card-header {
+  @apply flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2;
+}
+
+.saved__job-card-title-section {
+  @apply flex items-center gap-2;
+}
+
+.saved__job-card-title {
+  @apply text-base sm:text-lg font-semibold text-gray-900 hover:text-blue-600 cursor-pointer;
+}
+
+.saved__job-card-urgent-badge {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-red-100 text-red-800 hover:bg-red-100;
+}
+
+.saved__job-card-company {
+  @apply flex items-center gap-2 text-gray-600 mt-1 text-sm sm:text-base;
+}
+
+.saved__job-card-company-icon {
+  @apply w-4 h-4;
+}
+
+.saved__job-card-company-name {
+  @apply font-medium;
+}
+
+.saved__job-card-bookmark-btn {
+  @apply hidden sm:inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-9 rounded-md px-3 text-gray-400 hover:text-red-500;
+}
+
+.saved__job-card-bookmark-icon {
+  @apply w-4 h-4 fill-current;
+}
+
+.saved__job-card-info-row {
+  @apply flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600;
+}
+
+.saved__job-card-info-item {
+  @apply flex items-center gap-1;
+}
+
+.saved__job-card-info-icon {
+  @apply w-4 h-4;
+}
+
+.saved__job-card-salary {
+  @apply font-semibold text-red-600;
+}
+
+.saved__job-card-tags-row {
+  @apply flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm;
+}
+
+.saved__job-card-tag {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2;
+}
+
+.saved__job-card-deadline {
+  @apply flex items-center gap-1 text-gray-600;
+}
+
+.saved__job-card-deadline-expired {
+  @apply flex items-center gap-1 text-red-600;
+}
+
+.saved__job-card-deadline-icon {
+  @apply w-4 h-4;
+}
+
+.saved__job-card-expired-badge {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ml-2 text-red-600 border-red-600;
+}
+
+.saved__job-card-description {
+  @apply text-xs sm:text-sm text-gray-600;
+}
+
+.saved__job-card-actions {
+  @apply flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2;
+}
+
+.saved__job-card-apply-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 w-full sm:w-auto;
+}
+
+.saved__job-card-apply-btn-disabled {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 opacity-50 w-full sm:w-auto;
+}
+
+.saved__job-card-unsave-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 border w-full sm:w-auto;
+}
+
+.saved__job-card-btn-icon {
+  @apply w-4 h-4 mr-2;
+}
+
+
+
+
+/* Real estate card components */
+.saved__real-estate-card {
+  @apply rounded-lg border shadow-sm hover:shadow-md transition-shadow;
+}
+
+.saved__real-estate-card-content {
+  @apply p-4 sm:p-6;
+}
+
+.saved__real-estate-card-layout {
+  @apply flex flex-col sm:flex-row gap-3 sm:gap-4;
+}
+
+.saved__real-estate-card-image-container {
+  @apply flex-shrink-0 self-center sm:self-start;
+}
+
+.saved__real-estate-card-image-wrapper {
+  @apply relative;
+}
+
+.saved__real-estate-card-image {
+  @apply w-24 h-20 sm:w-32 sm:h-24 rounded-lg object-cover border;
+}
+
+.saved__real-estate-card-badge-container {
+  @apply absolute top-2 left-2;
+}
+
+.saved__real-estate-card-featured-badge {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 border-transparent bg-yellow-100 text-yellow-800 hover:bg-yellow-100;
+}
+
+.saved__real-estate-card-main {
+  @apply flex-1 space-y-2 sm:space-y-3;
+}
+
+.saved__real-estate-card-header {
+  @apply flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2;
+}
+
+.saved__real-estate-card-title {
+  @apply text-base sm:text-lg font-semibold text-gray-900 hover:text-blue-600 cursor-pointer;
+}
+
+.saved__real-estate-card-location {
+  @apply flex items-center gap-2 text-gray-600 mt-1 text-sm sm:text-base;
+}
+
+.saved__real-estate-card-location-icon {
+  @apply w-4 h-4;
+}
+
+.saved__real-estate-card-bookmark-btn {
+  @apply hidden sm:inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-9 rounded-md px-3 text-gray-400 hover:text-red-500;
+}
+
+.saved__real-estate-card-bookmark-icon {
+  @apply w-4 h-4 fill-current;
+}
+
+.saved__real-estate-card-info-row {
+  @apply flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600;
+}
+
+.saved__real-estate-card-info-item {
+  @apply flex items-center gap-1;
+}
+
+.saved__real-estate-card-info-icon {
+  @apply w-4 h-4;
+}
+
+.saved__real-estate-card-price {
+  @apply font-semibold text-red-600 text-lg;
+}
+
+.saved__real-estate-card-tags-row {
+  @apply flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm;
+}
+
+.saved__real-estate-card-tag {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2;
+}
+
+.saved__real-estate-card-room-info {
+  @apply flex items-center gap-1 text-gray-600;
+}
+
+.saved__real-estate-card-room-icon {
+  @apply w-4 h-4;
+}
+
+.saved__real-estate-card-description {
+  @apply text-xs sm:text-sm text-gray-600;
+}
+
+.saved__real-estate-card-contact-info {
+  @apply flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600 bg-gray-50 p-3 rounded-lg;
+}
+
+.saved__real-estate-card-contact-item {
+  @apply flex items-center gap-1;
+}
+
+.saved__real-estate-card-contact-icon {
+  @apply w-4 h-4;
+}
+
+.saved__real-estate-card-actions {
+  @apply flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2;
+}
+
+.saved__real-estate-card-schedule-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 w-full sm:w-auto;
+}
+
+.saved__real-estate-card-contact-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 border w-full sm:w-auto;
+}
+
+.saved__real-estate-card-unsave-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 border w-full sm:w-auto;
+}
+
+.saved__real-estate-card-btn-icon {
+  @apply w-4 h-4 mr-2;
+}
+
+
+
+
+/* Service card components */
+.saved__service-card {
+  @apply rounded-lg border shadow-sm hover:shadow-md transition-shadow;
+}
+
+.saved__service-card-content {
+  @apply p-4 sm:p-6;
+}
+
+.saved__service-card-layout {
+  @apply flex flex-col sm:flex-row gap-3 sm:gap-4;
+}
+
+.saved__service-card-image-container {
+  @apply flex-shrink-0 self-center sm:self-start;
+}
+
+.saved__service-card-image {
+  @apply w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover border;
+}
+
+.saved__service-card-main {
+  @apply flex-1 space-y-2 sm:space-y-3;
+}
+
+.saved__service-card-header {
+  @apply flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2;
+}
+
+.saved__service-card-title {
+  @apply text-base sm:text-lg font-semibold text-gray-900 hover:text-blue-600 cursor-pointer;
+}
+
+.saved__service-card-provider {
+  @apply flex items-center gap-2 text-gray-600 mt-1 text-sm sm:text-base;
+}
+
+.saved__service-card-provider-icon {
+  @apply w-4 h-4;
+}
+
+.saved__service-card-provider-name {
+  @apply font-medium;
+}
+
+.saved__service-card-status-badge {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 text-red-600 border-red-600;
+}
+
+.saved__service-card-bookmark-btn {
+  @apply hidden sm:inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-9 rounded-md px-3 text-gray-400 hover:text-red-500;
+}
+
+.saved__service-card-bookmark-icon {
+  @apply w-4 h-4 fill-current;
+}
+
+.saved__service-card-info-row {
+  @apply flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600;
+}
+
+.saved__service-card-info-item {
+  @apply flex items-center gap-1;
+}
+
+.saved__service-card-info-icon {
+  @apply w-4 h-4;
+}
+
+.saved__service-card-price {
+  @apply font-semibold;
+}
+
+.saved__service-card-tags-row {
+  @apply flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm;
+}
+
+.saved__service-card-tag {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2;
+}
+
+.saved__service-card-rating {
+  @apply flex items-center gap-1;
+}
+
+.saved__service-card-stars {
+  @apply flex;
+}
+
+.saved__service-card-star {
+  @apply w-4 h-4 text-yellow-400 fill-current;
+}
+
+.saved__service-card-star-empty {
+  @apply w-4 h-4 text-gray-300;
+}
+
+.saved__service-card-rating-count {
+  @apply text-gray-600;
+}
+
+.saved__service-card-reviews {
+  @apply flex items-center gap-1 text-gray-600;
+}
+
+.saved__service-card-reviews-icon {
+  @apply w-4 h-4;
+}
+
+.saved__service-card-description {
+  @apply text-xs sm:text-sm text-gray-600;
+}
+
+.saved__service-card-contact-info {
+  @apply flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600 bg-gray-50 p-3 rounded-lg;
+}
+
+.saved__service-card-contact-item {
+  @apply flex items-center gap-1;
+}
+
+.saved__service-card-contact-icon {
+  @apply w-4 h-4;
+}
+
+.saved__service-card-actions {
+  @apply flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2;
+}
+
+.saved__service-card-contact-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 w-full sm:w-auto;
+}
+
+.saved__service-card-call-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 border w-full sm:w-auto;
+}
+
+.saved__service-card-unsave-btn {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 h-8 sm:h-9 rounded-md px-3 border w-full sm:w-auto;
+}
+
+.saved__service-card-btn-icon {
+  @apply w-4 h-4 mr-2;
+}
+
+/* Utility classes for responsive design */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-none {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow: visible;
+}

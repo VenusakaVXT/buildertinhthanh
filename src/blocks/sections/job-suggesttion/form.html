@@ -1,0 +1,192 @@
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm lg:col-span-2">
+  <div class="p-6">
+    <form class="space-y-6" x-data="jobSuggestionSettings">
+      <section class="space-y-4">
+        <div class="flex items-center gap-2"><i data-lucide="user-round" class="w-5 h-5 text-gray-500"></i>
+          <h2 class="text-base font-medium">Thông tin cá nhân</h2>
+        </div>
+        <div class="space-y-2"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Giới
+            tính <span class="text-red-500">*</span></label>
+          <div class="flex flex-wrap gap-6">
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="gender" value="female" @click="selectGender('female')"
+                :checked="isGenderSelected('female')" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <span>Nữ</span>
+            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="gender" value="male" @click="selectGender('male')"
+                :checked="isGenderSelected('male')" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <span>Nam</span>
+            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="gender" value="other" @click="selectGender('other')"
+                :checked="isGenderSelected('other')" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <span>Không xác định</span>
+            </label>
+          </div>
+        </div>
+      </section>
+      <section class="space-y-4">
+        <div class="flex items-center gap-2"><i data-lucide="briefcase" class="w-5 h-5 text-gray-500"></i>
+          <h2 class="text-base font-medium">Nhu cầu công việc</h2>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Vị trí chuyên môn (tối đa 5) <span class="text-red-500">*</span>
+          </label>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="relative h-10">
+              <i data-lucide="briefcase" class="w-4 h-4 absolute inset-y-0 left-3 my-auto text-gray-400 pointer-events-none"></i>
+              <input x-model="professionalPositionInput" @keydown="handleProfessionalPositionKeydown($event)"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                placeholder="Nhập & Enter để thêm" required="">
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" @click="addProfessionalPosition('Frontend Developer')"
+                :disabled="isMaxReached(professionalPositions) || professionalPositions.includes('Frontend Developer')"
+                class="suggestion-button">Frontend Developer</button>
+              <button type="button" @click="addProfessionalPosition('Backend Developer')"
+                :disabled="isMaxReached(professionalPositions) || professionalPositions.includes('Backend Developer')"
+                class="suggestion-button">Backend Developer</button>
+              <button type="button" @click="addProfessionalPosition('Fullstack Developer')"
+                :disabled="isMaxReached(professionalPositions) || professionalPositions.includes('Fullstack Developer')"
+                class="suggestion-button">Fullstack Developer</button>
+              <button type="button" @click="addProfessionalPosition('QA/QC')"
+                :disabled="isMaxReached(professionalPositions) || professionalPositions.includes('QA/QC')"
+                class="suggestion-button">QA/QC</button>
+              <button type="button" @click="addProfessionalPosition('Product Manager')"
+                :disabled="isMaxReached(professionalPositions) || professionalPositions.includes('Product Manager')"
+                class="suggestion-button">Product Manager</button>
+            </div>
+          </div>
+          <!-- Selected badges -->
+          <div class="flex flex-wrap gap-2 mt-2" x-show="professionalPositions.length > 0">
+            <template x-for="position in professionalPositions" :key="position">
+              <div class="badge-suggestion">
+                <span x-text="position"></span>
+                <button type="button" @click="removeProfessionalPosition(position)" class="badge-remove">×</button>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Nhập vị trí chuyên môn không có trong danh mục (tối đa 5)
+          </label>
+          <input x-model="customPositionInput" @keydown="handleCustomPositionKeydown($event)"
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            placeholder="Nhập & Enter để thêm" value="">
+          <!-- Selected badges -->
+          <div class="flex flex-wrap gap-2 mt-2" x-show="customPositions.length > 0">
+            <template x-for="position in customPositions" :key="position">
+              <div class="badge-suggestion">
+                <span x-text="position"></span>
+                <button type="button" @click="removeCustomPosition(position)" class="badge-remove">×</button>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Kỹ năng (tối đa 5)
+          </label>
+          <input x-model="skillInput" @keydown="handleSkillKeydown($event)"
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            placeholder="Nhập kỹ năng & Enter để thêm" value="">
+          <!-- Selected badges -->
+          <div class="flex flex-wrap gap-2 mt-2" x-show="skills.length > 0">
+            <template x-for="skill in skills" :key="skill">
+              <div class="badge-suggestion">
+                <span x-text="skill"></span>
+                <button type="button" @click="removeSkill(skill)" class="badge-remove">×</button>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Kinh nghiệm <span class="text-red-500">*</span>
+          </label>
+          <select class="select select-white" x-model="selectedExperience">
+            <option value="">Chưa có kinh nghiệm</option>
+            <option value="1 năm">1 năm</option>
+            <option value="2 năm">2 năm</option>
+            <option value="3 năm">3 năm</option>
+            <option value="4 năm">4 năm</option>
+            <option value="5+ năm">5+ năm</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="space-y-2 md:col-span-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="salary">Mức lương mong muốn</label>
+            <div class="relative h-10">
+              <i data-lucide="dollar-sign" class="w-4 h-4 absolute inset-y-0 left-3 my-auto text-gray-400 pointer-events-none"></i>
+              <input type="number" x-model="salaryInput"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                id="salary" min="0" placeholder="0" value="">
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              Đơn vị
+            </label>
+            <select class="select select-white" x-model="salaryUnit">
+              <option value="VND">VND</option>
+              <option value="USD">USD</option>
+            </select>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Địa điểm mong muốn
+          </label>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="relative h-10">
+              <i data-lucide="map-pin" class="w-4 h-4 absolute inset-y-0 left-3 my-auto text-gray-400 pointer-events-none"></i>
+              <input x-model="locationInput" @keydown="handleLocationKeydown($event)"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                placeholder="Nhập & Enter để thêm" value="">
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" @click="addLocation('Hồ Chí Minh')" :disabled="locations.includes('Hồ Chí Minh')"
+                class="suggestion-button">Hồ Chí Minh</button>
+              <button type="button" @click="addLocation('Hà Nội')" :disabled="locations.includes('Hà Nội')"
+                class="suggestion-button">Hà Nội</button>
+              <button type="button" @click="addLocation('Đà Nẵng')" :disabled="locations.includes('Đà Nẵng')"
+                class="suggestion-button">Đà Nẵng</button>
+              <button type="button" @click="addLocation('Bình Dương')" :disabled="locations.includes('Bình Dương')"
+                class="suggestion-button">Bình Dương</button>
+              <button type="button" @click="addLocation('Cần Thơ')" :disabled="locations.includes('Cần Thơ')"
+                class="suggestion-button">Cần Thơ</button>
+            </div>
+          </div>
+          <!-- Selected badges -->
+          <div class="flex flex-wrap gap-2 mt-2" x-show="locations.length > 0">
+            <template x-for="location in locations" :key="location">
+              <div class="badge-suggestion">
+                <span x-text="location"></span>
+                <button type="button" @click="removeLocation(location)" class="badge-remove">×</button>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="about">Giới thiệu ngắn</label>
+          <textarea x-model="shortIntroduction"
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[100px]"
+            id="about" placeholder="Mong muốn công việc, môi trường, công nghệ…"></textarea>
+        </div>
+      </section>
+      <div class="flex justify-end space-x-3">
+        <button @click="handleSaveDraft()"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+          type="button">Lưu nháp</button>
+        <button @click="handleUpdate()" :class="isFormValid() ? 'update-button valid' : 'update-button invalid'"
+          :disabled="!isFormValid()" type="button">Cập nhật</button>
+      </div>
+    </form>
+  </div>
+</div>

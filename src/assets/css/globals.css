@@ -239,6 +239,15 @@
         @apply justify-center whitespace-nowrap text-sm font-medium transition-colors h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2;
     }
 
+    /* Button Slider */
+    .btn-prev {
+        @apply absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center;
+    }
+
+    .btn-next {
+        @apply absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center;
+    }
+
     /* Border Styles */
     .border-primary {
         border-color: hsl(var(--primary));
@@ -416,6 +425,10 @@
         @apply bg-gradient-to-r from-purple-500 to-indigo-500 text-white border-0 shadow-sm px-2.5 py-0.5 rounded-md;
     }
 
+    .badge-interest {
+        @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-pink-50 text-pink-700 border-pink-200;
+    }
+
     /* Section Styles */
     .section {
         @apply py-12 lg:py-16;
@@ -571,6 +584,21 @@
     /* Center content modal (auth, dialogs, etc) */
     .jmodal-content {
         @apply max-w-md rounded-2xl fixed left-[50%] top-[50%] z-50 w-full translate-x-[-50%] translate-y-[-50%] bg-white shadow-2xl border border-gray-100;
+    }
+
+    /* Image gallery modal - override jmodal-content for fullscreen image viewing */
+    .jmodal-content.image-gallery {
+        @apply max-w-none w-full h-[90vh] bg-black rounded-lg;
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: auto;
+    }
+
+    /* Ensure image gallery modal is centered */
+    .jmodal:has(.jmodal-content.image-gallery) {
+        @apply flex items-center justify-center;
     }
 
     .jmodal-title {
@@ -1094,6 +1122,62 @@
        ======================================================================== */
     .slide-grid {
         @apply grid gap-4 grid-cols-1;
+    }
+
+    /* ========================================================================
+       JOB SUGGESTION FORM STYLES
+       ======================================================================== */
+    .badge-suggestion {
+        @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors;
+    }
+
+    .badge-remove {
+        @apply ml-1 text-gray-500 hover:text-gray-700 cursor-pointer;
+    }
+
+    .suggestion-button {
+        @apply px-3 py-1 rounded text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors cursor-pointer;
+    }
+
+    .suggestion-button:disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+
+    .update-button {
+        @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 min-w-[120px];
+    }
+
+    .update-button.valid {
+        @apply bg-primary text-primary-foreground hover:bg-primary/90;
+    }
+
+    .update-button.invalid {
+        @apply bg-gray-300 text-gray-500 cursor-not-allowed;
+    }
+
+    /* Switch Toggle Styles */
+    .switch-toggle {
+        @apply inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .switch-toggle.active {
+        @apply bg-blue-500;
+    }
+
+    .switch-toggle.inactive {
+        @apply bg-gray-300;
+    }
+
+    .switch-handle {
+        @apply pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform;
+    }
+
+    .switch-handle.active {
+        @apply translate-x-5;
+    }
+
+    .switch-handle.inactive {
+        @apply translate-x-0;
     }
 
     /* ========================================================================
@@ -1834,6 +1918,14 @@
         background-repeat: no-repeat;
     }
 
+    .object-cover-image {
+        @apply w-full h-full object-cover;
+    }
+
+    .object-cover-image-hover {
+        @apply w-full h-full object-cover group-hover:scale-105 transition-transform duration-300;
+    }
+
     /* Image Wrap */
     .img-wrap,
     .img-wrap-grid-card {
@@ -1887,5 +1979,138 @@
 
     .flex-col-start {
         @apply flex flex-col items-start justify-start;
+    }
+
+    /* Modal Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes zoomOut {
+        from {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        to {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInFromLeft {
+        from {
+            transform: translateX(-50%) translateY(-50%) translateX(-50%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        from {
+            transform: translateX(-50%) translateY(-50%) translateY(-48%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOutToLeft {
+        from {
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateX(-50%) translateY(-50%) translateX(-50%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideOutToTop {
+        from {
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateX(-50%) translateY(-50%) translateY(-48%);
+            opacity: 0;
+        }
+    }
+
+    .animate-in {
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    .animate-out {
+        animation: fadeOut 0.2s ease-out;
+    }
+
+    .fade-in-0 {
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    .fade-out-0 {
+        animation: fadeOut 0.2s ease-out;
+    }
+
+    .zoom-in-95 {
+        animation: zoomIn 0.2s ease-out;
+    }
+
+    .zoom-out-95 {
+        animation: zoomOut 0.2s ease-out;
+    }
+
+    .slide-in-from-left-1\/2 {
+        animation: slideInFromLeft 0.2s ease-out;
+    }
+
+    .slide-in-from-top-\[48\%\] {
+        animation: slideInFromTop 0.2s ease-out;
+    }
+
+    .slide-out-to-left-1\/2 {
+        animation: slideOutToLeft 0.2s ease-out;
+    }
+
+    .slide-out-to-top-\[48\%\] {
+        animation: slideOutToTop 0.2s ease-out;
     }
 }

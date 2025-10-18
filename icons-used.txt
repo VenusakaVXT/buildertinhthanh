@@ -119,8 +119,15 @@ tag
 bookmark
 circle-alert
 coffee
+triangle-alert
+calendar-check
+filter
 utensils-crossed
 credit-card
+user-round
+sparkles
+circle-x
+eye-off
 user-pen
 upload
 truck
@@ -131,4 +138,7 @@ leaf
 external-link
 thermometer
 sun
+link
+ellipsis
+github
 school

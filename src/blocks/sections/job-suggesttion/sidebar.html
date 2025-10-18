@@ -1,0 +1,57 @@
+<div class="space-y-4" x-data="jobSuggestionSettings">
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div class="p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-gray-500"></i>
+          <span class="font-medium">Quyền riêng tư</span>
+        </div>
+        <button type="button" @click="toggleEmployerContact()"
+          :class="allowEmployerContact ? 'switch-toggle active' : 'switch-toggle inactive'">
+          <span :class="allowEmployerContact ? 'switch-handle active' : 'switch-handle inactive'"></span>
+        </button>
+      </div>
+      <p class="text-sm text-muted-foreground">Cho phép NTD liên hệ khi có vị trí phù hợp.</p>
+      <div class="flex items-center justify-between">
+        <span>Đang bật tìm việc</span>
+        <button type="button" @click="toggleActivelyLooking()"
+          :class="activelyLookingForJob ? 'switch-toggle active' : 'switch-toggle inactive'">
+          <span :class="activelyLookingForJob ? 'switch-handle active' : 'switch-handle inactive'"></span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between">
+        <span>Nhận gợi ý việc làm</span>
+        <button type="button" @click="toggleJobSuggestions()"
+          :class="receiveJobSuggestions ? 'switch-toggle active' : 'switch-toggle inactive'">
+          <span :class="receiveJobSuggestions ? 'switch-handle active' : 'switch-handle inactive'"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div class="p-4 space-y-3">
+      <div class="flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-gray-500"></i><span class="font-medium">Mẹo tối ưu hồ sơ</span></div>
+      <ul class="text-sm space-y-1 list-disc pl-5">
+        <li>Thêm kỹ năng trọng điểm &amp; dự án nổi bật.</li>
+        <li>Điền địa điểm làm việc &amp; mức lương mong muốn.</li>
+        <li>Cập nhật trạng thái tìm việc để được ưu tiên.</li>
+      </ul><button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">Khám
+        phá ngay</button>
+    </div>
+  </div>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div class="p-4 space-y-2">
+      <div class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-gray-500"></i><span class="font-medium">Gợi ý nhanh</span></div>
+      <div class="flex flex-wrap gap-2"><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 btn btn-sm"
+          type="button">ReactJS</button><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 btn btn-sm"
+          type="button">NodeJS</button><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 btn btn-sm"
+          type="button">QA</button><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 btn btn-sm"
+          type="button">PM</button></div>
+    </div>
+  </div>
+</div>
