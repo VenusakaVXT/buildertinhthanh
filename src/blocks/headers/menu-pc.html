@@ -461,12 +461,12 @@
   <div class="flex-center-y">
     <!-- Login Buttons (default) -->
     <div id="loginButtons" class="flex items-center space-x-3">
-      <button @click="openAuthModal(); authTab = 'login'; errors = {}; isLoading = false"
+      <button aria-label="login" @click="openAuthModal(); authTab = 'login'; errors = {}; isLoading = false"
         class="hidden xl:flex btn btn-outline">
         <i data-lucide="log-in" class="w-4 h-4 mr-2"></i>
         Đăng Nhập
       </button>
-      <button @click="openAuthModal(); authTab = 'login'; errors = {}; isLoading = false"
+      <button aria-label="users" @click="openAuthModal(); authTab = 'login'; errors = {}; isLoading = false"
         class="xl:hidden btn btn-ghost btn-sm p-2 h-8 w-8">
         <i data-lucide="users" class="w-6 h-6"></i>
       </button>
@@ -492,10 +492,10 @@
 
   <!-- Mobile Menu -->
   <div class="lg:hidden flex items-center space-x-2 pl-2">
-    <button @click="openMobileMenu(true)" class="btn btn-ghost btn-sm p-2 h-8 w-8">
+    <button aria-label="search" @click="openMobileMenu(true)" class="btn btn-ghost btn-sm p-2 h-8 w-8">
       <i data-lucide="search" class="w-6 h-6"></i>
     </button>
-    <button @click="openMobileMenu()" class="btn btn-ghost btn-sm p-2 h-8 w-8">
+    <button aria-label="menu" @click="openMobileMenu()" class="btn btn-ghost btn-sm p-2 h-8 w-8">
       <i data-lucide="menu" class="w-6 h-6"></i>
     </button>
   </div>
