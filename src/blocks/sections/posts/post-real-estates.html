@@ -1,0 +1,433 @@
+<div class="rounded-lg border bg-card text-card-foreground shadow-lg">
+  <div class="flex flex-col space-y-1.5 p-6 border-b">
+    <div class="font-semibold tracking-tight text-xl">Chọn Loại Nội Dung</div>
+  </div>
+  <div class="p-0">
+    <!-- Tabs -->
+    <div class="border-b">
+      <div
+        class="flex flex-nowrap gap-0 overflow-x-auto scrollbar-hide touch-pan-x overscroll-x-contain snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
+        <a href="./dang-trang-thai.html" class="post-tab inactive">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Trạng thái</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Chia sẻ suy nghĩ của bạn</div>
+          </div>
+        </a>
+        <a href="./dang-tin-tuc.html" class="post-tab inactive">
+          <i data-lucide="newspaper" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Tin tức</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Đăng tin tức mới nhất</div>
+          </div>
+        </a>
+        <a href="./dang-tuyen-dung.html" class="post-tab inactive">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Việc làm</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Tuyển dụng nhân tài</div>
+          </div>
+        </a>
+        <a href="./dang-nha-dat.html" class="post-tab active">
+          <i data-lucide="house" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Nhà đất</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Mua bán, cho thuê BĐS</div>
+          </div>
+        </a>
+        <a href="./dang-dich-vu.html" class="post-tab inactive">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Dịch vụ</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Cung cấp dịch vụ chuyên nghiệp</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Real Estate Post -->
+    <div id="real-estate-post" class="p-6" x-data="postRealEstates">
+      <form class="space-y-6">
+        <div class="space-y-2"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="title">Tiêu đề tin đăng *</label><input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            id="real-estate-title" placeholder="VD: Bán căn hộ 2PN view đẹp tại Q1" required="" value="">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Loại
+              bất động sản *</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Chọn loại BĐS</option>
+                <option value="apartment">Chung cư</option>
+                <option value="house">Nhà riêng</option>
+                <option value="villa">Biệt thự</option>
+                <option value="townhouse">Nhà phố</option>
+                <option value="land">Đất nền</option>
+                <option value="office">Văn phòng</option>
+                <option value="shop">Cửa hàng</option>
+                <option value="warehouse">Kho xưởng</option>
+              </select>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Hình
+              thức *</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Bán/Cho thuê</option>
+                <option value="sell">Bán</option>
+                <option value="rent">Cho thuê</option>
+                <option value="lease">Cho thuê dài hạn</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Giá
+              *</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <div class="relative">
+                  <i data-lucide="dollar-sign"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="real-estate-price" type="number" placeholder="Nhập giá" required="" value="">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="relative">
+                  <select class="select select-white">
+                    <option value="total" selected>Tổng giá</option>
+                    <option value="per-m2">Giá/m²</option>
+                    <option value="per-month">Giá/tháng</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="negotiable"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="text-sm font-medium leading-none">Có thể thương lượng</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Thông
+              tin chi tiết</label>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="area">Diện tích (m²) *</label>
+                <div class="relative">
+                  <i data-lucide="ruler"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="real-estate-area" placeholder="0" required="" type="number" value="">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="bedrooms">Phòng ngủ</label>
+                <div class="relative">
+                  <i data-lucide="bed"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="bedrooms" placeholder="0" type="number" value="">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="bathrooms">Phòng tắm</label>
+                <div class="relative">
+                  <i data-lucide="bath"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="bathrooms" placeholder="0" type="number" value="">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="parking">Chỗ đậu xe</label>
+                <div class="relative">
+                  <i data-lucide="car"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="parking" placeholder="0" type="number" value="">
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="space-y-2"><label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="floor">Tầng</label><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  id="floor" placeholder="VD: 5" value=""></div>
+              <div class="space-y-2"><label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="totalFloors">Tổng số tầng</label><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  id="totalFloors" placeholder="VD: 20" value=""></div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="yearBuilt">Năm xây dựng</label>
+                <div class="relative">
+                  <i data-lucide="calendar"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="yearBuilt" placeholder="2020" type="number" value="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Địa
+              chỉ *</label>
+            <div class="space-y-4">
+              <div class="relative">
+                <i data-lucide="map-pin"
+                  class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                  id="real-estate-address" placeholder="Địa chỉ cụ thể" required="" value="">
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  placeholder="Phường/Xã" value=""><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  placeholder="Quận/Huyện" value=""><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  placeholder="Tỉnh/Thành phố" value=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Tình
+              trạng pháp lý</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Chọn tình trạng</option>
+                <option value="red-book">Sổ đỏ</option>
+                <option value="pink-book">Sổ hồng</option>
+                <option value="waiting">Đang chờ sổ</option>  
+                <option value="contract">Hợp đồng mua bán</option>
+              </select>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Hướng
+              nhà</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Chọn hướng</option>
+                <option value="north">Bắc</option>
+                <option value="south">Nam</option>
+                <option value="east">Đông</option>  
+                <option value="west">Tây</option>
+                <option value="northeast">Đông Bắc</option>
+                <option value="northwest">Tây Bắc</option>
+                <option value="southeast">Đông Nam</option>
+                <option value="southwest">Tây Nam</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="description">Mô tả chi tiết *</label><textarea
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[120px]"
+            id="real-estate-description" placeholder="Mô tả chi tiết về bất động sản..." required=""></textarea></div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Tiện
+              ích xung quanh</label>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Thang máy"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Thang máy</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Hồ bơi"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Hồ bơi</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Gym" class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Gym</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Sân tennis"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Sân tennis</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Sân chơi trẻ em"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Sân chơi trẻ em</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Khu BBQ"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Khu BBQ</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Siêu thị"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Siêu thị</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Trường học"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Trường học</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Bệnh viện"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Bệnh viện</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Công viên"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Công viên</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Gần trung tâm"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Gần trung tâm</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Gần sân bay"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Gần sân bay</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="Gần bến xe"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">Gần bến xe</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="An ninh 24/7"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="font-medium text-sm">An ninh 24/7</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Hình
+            ảnh *</label>
+          <div class="flex items-center gap-3">
+            <label
+              class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+              <i data-lucide="camera" class="w-4 h-4"></i>
+              <span>Thêm ảnh</span><input multiple="" accept="image/*" class="hidden" type="file"
+                id="real-estate-images">
+            </label>
+            <span class="text-sm text-gray-500">Tối đa 20 ảnh</span>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Thông
+              tin liên hệ *</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2"><label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="contactName">Tên liên hệ</label><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  id="contactName" placeholder="Họ và tên" value=""></div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="contactPhoneRealEstate">Số điện thoại *</label>
+                <div class="relative">
+                  <i data-lucide="phone"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="contactPhoneRealEstate" placeholder="0123456789" required="" type="tel" value="">
+                </div>
+                <p id="phone-message-real-estate" class="text-sm text-gray-500">Nhập số điện thoại hợp lệ</p>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="contactEmailRealEstate">Email</label>
+              <div class="relative">
+                <i data-lucide="mail"
+                  class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                  id="contactEmailRealEstate" placeholder="email@example.com" type="email" value="">
+              </div>
+              <p id="email-message-real-estate" class="text-sm text-gray-500">Nhập địa chỉ email hợp lệ (tùy
+                chọn)</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="urgentRealEstate">Cần bán/cho thuê gấp</label>
+              <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-gray-500"
+                id="urgentRealEstate">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-0"></span>
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="allowContact">Cho phép liên hệ</label>
+              <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-blue-500"
+                id="allowContact">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-5"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end space-x-3"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+            type="button">Lưu nháp</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 min-w-[120px]"
+            type="submit" id="real-estate-submit-btn" disabled="">Đăng tin</button></div>
+      </form>
+    </div>
+  </div>
+</div>

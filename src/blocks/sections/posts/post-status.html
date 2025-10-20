@@ -1,0 +1,137 @@
+<div class="rounded-lg border bg-card text-card-foreground shadow-lg">
+  <div class="flex flex-col space-y-1.5 p-6 border-b">
+    <div class="font-semibold tracking-tight text-xl">Chọn Loại Nội Dung</div>
+  </div>
+  <div class="p-0">
+    <!-- Tabs -->
+    <div class="border-b">
+      <div
+        class="flex flex-nowrap gap-0 overflow-x-auto scrollbar-hide touch-pan-x overscroll-x-contain snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
+        <a href="./dang-trang-thai.html" class="post-tab active">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Trạng thái</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Chia sẻ suy nghĩ của bạn</div>
+          </div>
+        </a>
+        <a href="./dang-tin-tuc.html" class="post-tab inactive">
+          <i data-lucide="newspaper" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Tin tức</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Đăng tin tức mới nhất</div>
+          </div>
+        </a>
+        <a href="./dang-tuyen-dung.html" class="post-tab inactive">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Việc làm</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Tuyển dụng nhân tài</div>
+          </div>
+        </a>
+        <a href="./dang-nha-dat.html" class="post-tab inactive">
+          <i data-lucide="house" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Nhà đất</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Mua bán, cho thuê BĐS</div>
+          </div>
+        </a>
+        <a href="./dang-dich-vu.html" class="post-tab inactive">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Dịch vụ</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Cung cấp dịch vụ chuyên nghiệp</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Status Post -->
+    <div id="status-post" class="p-6" x-data="postStatus">
+      <form class="space-y-6">
+        <div class="space-y-2"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="content">Nội dung</label><textarea
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[120px] resize-none"
+            id="content" placeholder="Bạn đang nghĩ gì?" required=""></textarea>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Cảm
+              xúc</label>
+            <select class="select select-white">
+              <option value="">Chọn cảm xúc</option>
+              <option value="happy">😊 Vui vẻ</option>
+              <option value="excited">🎉 Hào hứng</option>
+              <option value="grateful">🙏 Biết ơn</option>
+              <option value="relaxed">😌 Thư giãn</option>
+              <option value="motivated">💪 Có động lực</option>
+              <option value="thoughtful">🤔 Suy nghĩ</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Vị
+              trí</label>
+            <select class="select select-white">
+              <option value="">Chọn vị trí</option>
+              <option value="TP. Thủ Dầu Một">TP. Thủ Dầu Một</option>
+              <option value="TP. Dĩ An">TP. Dĩ An</option>
+              <option value="TP. Thuận An">TP. Thuận An</option>
+              <option value="TP. Tân Uyên">TP. Tân Uyên</option>
+              <option value="Thị xã Bến Cát">Thị xã Bến Cát</option>
+              <option value="Huyện Bắc Tân Uyên">Huyện Bắc Tân Uyên</option>
+              <option value="Huyện Dầu Tiếng">Huyện Dầu Tiếng</option>
+              <option value="Huyện Phú Giáo">Huyện Phú Giáo</option>
+              <option value="KCN Mỹ Phước">KCN Mỹ Phước</option>
+              <option value="KCN Sóng Thần">KCN Sóng Thần</option>
+              <option value="KCN Bàu Bàng">KCN Bàu Bàng</option>
+              <option value="KCN Việt Hương">KCN Việt Hương</option>
+              <option value="KCN Đồng An">KCN Đồng An</option>
+              <option value="KCN Tân Đông Hiệp">KCN Tân Đông Hiệp</option>
+              <option value="KCN Bình Dương">KCN Bình Dương</option>
+            </select>
+          </div>
+        </div>
+        <div class="space-y-3"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Hình
+            ảnh</label>
+          <div class="flex items-center gap-3"><label
+              class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 transition-colors"><i
+                data-lucide="camera" class="w-4 h-4"></i><span>Thêm ảnh</span><input multiple="" accept="image/*"
+                class="hidden" type="file" id="status-image-upload"></label><span class="text-sm text-gray-500">Tối đa
+              10 ảnh</span>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <div class="flex items-center justify-between"><label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="privacy">Quyền riêng tư</label>
+              <select class="select select-white w-40">
+                <option value="public">🌐 Công khai</option>
+                <option value="friends">👥 Bạn bè</option>
+                <option value="private">🔒 Riêng tư</option>
+              </select>
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="tag-friends">Gắn thẻ bạn bè</label>
+              <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-gray-500"
+                id="tag-friends">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-0"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end space-x-3"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+            type="button">Lưu nháp</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 min-w-[120px]"
+            type="submit" id="status-submit-btn" disabled="">Đăng bài</button></div>
+      </form>
+    </div>
+  </div>
+</div>

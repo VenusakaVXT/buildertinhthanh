@@ -1,0 +1,404 @@
+<div class="rounded-lg border bg-card text-card-foreground shadow-lg">
+  <div class="flex flex-col space-y-1.5 p-6 border-b">
+    <div class="font-semibold tracking-tight text-xl">Chọn Loại Nội Dung</div>
+  </div>
+  <div class="p-0">
+    <!-- Tabs -->
+    <div class="border-b">
+      <div
+        class="flex flex-nowrap gap-0 overflow-x-auto scrollbar-hide touch-pan-x overscroll-x-contain snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
+        <a href="./dang-trang-thai.html" class="post-tab inactive">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Trạng thái</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Chia sẻ suy nghĩ của bạn</div>
+          </div>
+        </a>
+        <a href="./dang-tin-tuc.html" class="post-tab inactive">
+          <i data-lucide="newspaper" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Tin tức</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Đăng tin tức mới nhất</div>
+          </div>
+        </a>
+        <a href="./dang-tuyen-dung.html" class="post-tab inactive">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Việc làm</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Tuyển dụng nhân tài</div>
+          </div>
+        </a>
+        <a href="./dang-nha-dat.html" class="post-tab inactive">
+          <i data-lucide="house" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Nhà đất</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Mua bán, cho thuê BĐS</div>
+          </div>
+        </a>
+        <a href="./dang-dich-vu.html" class="post-tab active">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Dịch vụ</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Cung cấp dịch vụ chuyên nghiệp</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Service Post -->
+    <div id="service-post" class="p-6" x-data="postServices">
+      <form class="space-y-6">
+        <div class="space-y-2"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="title">Tên dịch vụ *</label><input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            id="service-title" placeholder="VD: Dọn dẹp nhà cửa chuyên nghiệp" required="" value=""></div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="fixedPrice">Khoảng giá *</label>
+                <div class="relative">
+                  <i data-lucide="dollar-sign"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="service-price" placeholder="0" type="number" value="">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Đơn
+                  vị tiền tệ</label>
+                <div class="relative">
+                  <select class="select select-white">
+                    <option value="VND" selected>VND</option>
+                    <option value="USD">USD</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="negotiable"
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                <span class="text-sm font-medium leading-none">Có thể thương lượng</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="description">Mô tả dịch vụ *</label><textarea
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[120px]"
+            id="service-description" placeholder="Mô tả chi tiết về dịch vụ của bạn..." required=""></textarea></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Kinh
+              nghiệm</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Chọn mức kinh nghiệm</option>
+                <option value="beginner">Mới bắt đầu</option>
+                <option value="intermediate">1-3 năm</option>
+                <option value="experienced">3-5 năm</option>
+                <option value="expert">5+ năm</option>
+                <option value="master">Chuyên gia</option>
+              </select>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Thời
+              gian làm việc</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Chọn thời gian</option>
+                <option value="24/7">24/7</option>
+                <option value="weekdays">Thứ 2 - Thứ 6</option>
+                <option value="weekends">Cuối tuần</option>
+                <option value="flexible">Linh hoạt</option>
+                <option value="appointment">Theo lịch hẹn</option>
+              </select>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Danh
+              mục dịch vụ *</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Chọn danh mục</option>
+                <option value="home-services">Dịch vụ gia đình</option>
+                <option value="beauty-health">Làm đẹp & Sức khỏe</option>
+                <option value="education">Giáo dục</option>
+                <option value="business">Dịch vụ doanh nghiệp</option>
+                <option value="events">Sự kiện</option>
+                <option value="transport">Vận chuyển</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="location">Địa chỉ cơ sở</label>
+            <div class="relative">
+              <i data-lucide="map-pin"
+                class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                id="location" placeholder="Địa chỉ cơ sở của bạn" value="">
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div class="p-4 space-y-3">
+              <label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Khu
+                vực phục vụ</label>
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 1"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 1</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 2"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 2</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 3"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 3</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 4"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 4</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 5"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 5</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 6"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 6</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 7"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 7</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 8"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 8</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 9"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 9</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 10"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 10</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 11"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 11</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận 12"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận 12</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận Bình Thạnh"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận Bình Thạnh</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận Gò Vấp"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận Gò Vấp</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận Phú Nhuận"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận Phú Nhuận</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận Tân Bình"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận Tân Bình</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Quận Tân Phú"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Quận Tân Phú</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Thủ Đức"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Thủ Đức</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Bình Dương"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Bình Dương</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="Đồng Nai"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:outline-none">
+                  <span class="font-medium text-sm">Đồng Nai</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Portfolio/Hình
+            ảnh mẫu</label>
+          <div class="flex items-center gap-3">
+            <label
+              class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+              <i data-lucide="camera" class="w-4 h-4"></i>
+              <span>Thêm hình ảnh</span><input multiple="" accept="image/*" class="hidden" type="file">
+            </label>
+            <span class="text-sm text-gray-500">Tối đa 10 ảnh</span>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Chứng
+            chỉ/Bằng cấp</label>
+          <div class="flex items-center gap-3">
+            <label
+              class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+              <i data-lucide="award" class="w-4 h-4"></i>
+              <span>Thêm chứng chỉ</span><input multiple="" accept="image/*,.pdf" class="hidden" type="file">
+            </label>
+            <span class="text-sm text-gray-500">Ảnh hoặc PDF</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Loại
+              đảm bảo</label>
+            <div class="relative">
+              <select class="select select-white">
+                <option value="" selected>Chọn loại đảm bảo</option>
+                <option value="satisfaction">Đảm bảo hài lòng</option>
+                <option value="quality">Đảm bảo chất lượng</option>
+                <option value="time">Đảm bảo thời gian</option>
+                <option value="warranty">Bảo hành</option>
+              </select>
+            </div>
+          </div>
+          <div class="space-y-2"><label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="guaranteePeriod">Thời gian đảm bảo</label><input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+              id="guaranteePeriod" placeholder="VD: 30 ngày, 6 tháng" value=""></div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Thông
+              tin liên hệ *</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2"><label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="contactName">Tên liên hệ</label><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  id="contactName" placeholder="Họ và tên" value=""></div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="contactPhoneService">Số điện thoại *</label>
+                <div class="relative">
+                  <i data-lucide="phone"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="contactPhoneService" placeholder="0123456789" required="" type="tel" value="">
+                </div>
+                <p id="phone-message-service" class="text-sm text-gray-500">Nhập số điện thoại hợp lệ</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="contactEmailService">Email</label>
+                <div class="relative">
+                  <i data-lucide="mail"
+                    class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                    id="contactEmailService" placeholder="email@example.com" type="email" value="">
+                </div>
+                <p id="email-message-service" class="text-sm text-gray-500">Nhập địa chỉ email hợp lệ (tùy
+                  chọn)</p>
+              </div>
+              <div class="space-y-2"><label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="website">Website</label><input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  id="website" placeholder="https://website.com" type="url" value=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="urgentService">Cần khách hàng gấp</label>
+              <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-gray-500"
+                id="urgentService">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-0"></span>
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="equipment">Cung cấp dụng cụ/thiết bị</label>
+              <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-gray-500"
+                id="equipment">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-0"></span>
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="homeService">Dịch vụ tại nhà</label>
+              <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-gray-500"
+                id="homeService">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-0"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end space-x-3"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+            type="button">Lưu nháp</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 min-w-[120px]"
+            type="submit" id="service-submit-btn" disabled="">Đăng dịch vụ</button></div>
+      </form>
+    </div>
+  </div>
+</div>

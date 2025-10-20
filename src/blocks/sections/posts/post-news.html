@@ -1,0 +1,207 @@
+<div class="rounded-lg border bg-card text-card-foreground shadow-lg">
+  <div class="flex flex-col space-y-1.5 p-6 border-b">
+    <div class="font-semibold tracking-tight text-xl">Chọn Loại Nội Dung</div>
+  </div>
+  <div class="p-0">
+    <!-- Tabs -->
+    <div class="border-b">
+      <div
+        class="flex flex-nowrap gap-0 overflow-x-auto scrollbar-hide touch-pan-x overscroll-x-contain snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
+        <a href="./dang-trang-thai.html" class="post-tab inactive">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Trạng thái</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Chia sẻ suy nghĩ của bạn</div>
+          </div>
+        </a>
+        <a href="./dang-tin-tuc.html" class="post-tab active">
+          <i data-lucide="newspaper" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Tin tức</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Đăng tin tức mới nhất</div>
+          </div>
+        </a>
+        <a href="./dang-tuyen-dung.html" class="post-tab inactive">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Việc làm</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Tuyển dụng nhân tài</div>
+          </div>
+        </a>
+        <a href="./dang-nha-dat.html" class="post-tab inactive">
+          <i data-lucide="house" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Nhà đất</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Mua bán, cho thuê BĐS</div>
+          </div>
+        </a>
+        <a href="./dang-dich-vu.html" class="post-tab inactive">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+          <div class="text-center sm:text-left">
+            <div class="font-medium text-xs sm:text-sm truncate">Dịch vụ</div>
+            <div class="text-xs text-gray-400 hidden xl:block truncate">Cung cấp dịch vụ chuyên nghiệp</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- News Post -->
+    <div id="news-post" class="p-6" x-data="postNews">
+      <form class="space-y-6">
+        <div class="space-y-2"><label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="title">Tiêu đề *</label><input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            id="news-title" placeholder="Nhập tiêu đề tin tức" required="" value=""></div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="summary">Tóm tắt *</label>
+          <textarea
+            class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-20"
+            id="news-summary" placeholder="Tóm tắt ngắn gọn về tin tức" required=""></textarea>
+          <div class="text-sm text-gray-500 text-right">0/200</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Danh
+              mục
+            </label>
+            <select class="select select-white">
+              <option value="">Chọn danh mục</option>
+              <option value="thoi-su">Thời sự</option>
+              <option value="kinh-te">Kinh tế</option>
+              <option value="xa-hoi">Xã hội</option>
+              <option value="van-hoa">Văn hóa</option>
+              <option value="the-thao">Thể thao</option>
+              <option value="cong-nghe">Công nghệ</option>
+              <option value="giao-duc">Giáo dục</option>
+              <option value="suc-khoe">Sức khỏe</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Độ
+              ưu tiên</label>
+            <select class="select select-white">
+              <option value="low">🔘 Thấp</option>
+              <option value="normal" selected>🔵 Bình thường</option>
+              <option value="high">🟠 Cao</option>
+              <option value="urgent">🔴 Khẩn cấp</option>
+            </select>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="content">Nội dung *</label>
+          <textarea
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[200px]"
+            id="news-content" placeholder="Nội dung chi tiết tin tức" required=""></textarea>
+          <div class="text-sm text-gray-500 text-right">0/5000</div>
+        </div>
+        <div class="space-y-3">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Ảnh
+            đại diện *</label>
+          <div class="flex items-center gap-3">
+            <label
+              class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+              <i data-lucide="camera" class="w-4 h-4"></i>
+              <span>Chọn ảnh đại diện</span><input accept="image/*" class="hidden" type="file" id="news-featured-image">
+            </label>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Ảnh
+            bổ sung</label>
+          <div class="flex items-center gap-3">
+            <label
+              class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+              <i data-lucide="image" class="w-4 h-4"></i>
+              <span>Thêm ảnh</span><input multiple="" accept="image/*" class="hidden" type="file">
+            </label>
+            <span class="text-sm text-gray-500">Tối đa 8 ảnh</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2"><label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="source">Nguồn tin</label><input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+              id="source" placeholder="Tên nguồn tin" value=""></div>
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="sourceUrl">Link nguồn</label>
+            <div class="relative">
+              <i data-lucide="link"
+                class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+                id="sourceUrl" placeholder="https://..." type="url" value="">
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Thẻ
+            tag</label>
+          <div class="flex gap-2">
+            <input id="tag-input"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1"
+              placeholder="Nhập tag" value="">
+            <button id="add-tag-btn"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+              type="button">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <!-- Tags Container -->
+          <div id="tags-container" class="flex flex-wrap gap-2 mt-2">
+            <!-- Tags will be added here dynamically -->
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="publishDate">Thời gian đăng</label>
+          <div class="relative">
+            <i data-lucide="calendar"
+              class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+              id="publishDate" type="datetime-local" value="">
+          </div>
+          <p id="publish-date-message" class="text-sm text-gray-500">Để trống để đăng ngay lập tức</p>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-4 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-alert" class="w-4 h-4 text-red-500"></i>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="breaking">Tin nóng</label>
+              </div>
+              <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-gray-500"
+                id="breaking">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-0"></span>
+              </button>
+            </div>
+            <div class="flex items-center justify-between"><label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="comments">Cho phép bình luận</label> <button type="button"
+                class="inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-blue-500"
+                id="comments">
+                <span
+                  class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform translate-x-5"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end space-x-3"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+            type="button">Lưu nháp</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 min-w-[120px]"
+            type="submit" id="news-submit-btn" disabled="">Đăng tin</button></div>
+      </form>
+    </div>
+  </div>
+</div>

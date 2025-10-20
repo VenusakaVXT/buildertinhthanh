@@ -565,6 +565,19 @@
         }
     }
 
+    /* Post Tabs */
+    .post-tab {
+        @apply flex flex-col sm:flex-row sm:flex-nowrap items-center space-y-1 sm:space-y-0 sm:space-x-3 px-4 sm:px-[16px] py-4 text-sm font-medium whitespace-nowrap transition-colors border-b-2 snap-start flex-none min-w-[100px] md:min-w-[140px] lg:min-w-[125px] md:h-14;
+    }
+
+    .post-tab.inactive {
+        @apply text-gray-500 border-transparent hover:text-gray-700 hover:bg-gray-50;
+    }
+
+    .post-tab.active {
+        @apply text-blue-600 border-blue-600 bg-blue-50;
+    }
+
     /* ========================================================================
        JMODAL GROUP: jModal library styles (Optimized for performance & INP)
        ======================================================================== */

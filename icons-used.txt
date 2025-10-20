@@ -122,6 +122,9 @@ coffee
 triangle-alert
 calendar-check
 filter
+ruler
+image
+link
 utensils-crossed
 credit-card
 user-round
@@ -138,7 +141,6 @@ leaf
 external-link
 thermometer
 sun
-link
 ellipsis
 github
 school
