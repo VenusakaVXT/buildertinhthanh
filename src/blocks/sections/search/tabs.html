@@ -1,0 +1,91 @@
+<div class="mt-4 overflow-x-auto">
+  <div dir="ltr" data-orientation="horizontal">
+    <div role="tablist" aria-orientation="horizontal"
+      class="inline-flex items-center justify-center rounded-md bg-muted p-1 text-muted-foreground w-max min-w-full lg:w-auto lg:grid-cols-none lg:flex h-auto"
+      tabindex="0" data-orientation="horizontal" style="outline:none">
+      <button type="button" role="tab" :aria-selected="activeTab === 'all'" aria-controls="radix-:R4qfnkq:-content-all"
+        :data-state="activeTab === 'all' ? 'active' : 'inactive'" data-tab="all"
+        class="justify-center rounded-sm px-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-1 sm:gap-2 whitespace-nowrap text-xs sm:text-sm py-2 min-w-fit"
+        :tabindex="activeTab === 'all' ? '0' : '-1'" data-orientation="horizontal" data-radix-collection-item=""
+        @click="switchTab('all')"
+        :class="{ 'bg-background text-foreground shadow-sm !rounded-md': activeTab === 'all' }"><span>Tất
+          cả</span>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs flex-shrink-0">
+          226</div>
+      </button>
+      <button type="button" role="tab" :aria-selected="activeTab === 'jobs'"
+        aria-controls="radix-:R4qfnkq:-content-jobs" :data-state="activeTab === 'jobs' ? 'active' : 'inactive'"
+        data-tab="jobs"
+        class="justify-center rounded-sm px-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-1 sm:gap-2 whitespace-nowrap text-xs sm:text-sm py-2 min-w-fit"
+        :tabindex="activeTab === 'jobs' ? '0' : '-1'" data-orientation="horizontal" data-radix-collection-item=""
+        @click="switchTab('jobs')"
+        :class="{ 'bg-background text-foreground shadow-sm !rounded-md': activeTab === 'jobs' }"><span>Việc
+          làm</span>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs flex-shrink-0">
+          60</div>
+      </button>
+      <button type="button" role="tab" :aria-selected="activeTab === 'estates'"
+        aria-controls="radix-:R4qfnkq:-content-estates" :data-state="activeTab === 'estates' ? 'active' : 'inactive'"
+        data-tab="estates"
+        class="justify-center rounded-sm px-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-1 sm:gap-2 whitespace-nowrap text-xs sm:text-sm py-2 min-w-fit"
+        :tabindex="activeTab === 'estates' ? '0' : '-1'" data-orientation="horizontal" data-radix-collection-item=""
+        @click="switchTab('estates')"
+        :class="{ 'bg-background text-foreground shadow-sm !rounded-md': activeTab === 'estates' }"><span>Bất
+          động sản</span>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold tra nsition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs flex-shrink-0">
+          50</div>
+      </button>
+      <button type="button" role="tab" :aria-selected="activeTab === 'services'"
+        aria-controls="radix-:R4qfnkq:-content-services" :data-state="activeTab === 'services' ? 'active' : 'inactive'"
+        id="radix-:R4qfnkq:-trigger-services" data-tab="services"
+        class="justify-center rounded-sm px-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-1 sm:gap-2 whitespace-nowrap text-xs sm:text-sm py-2 min-w-fit"
+        :tabindex="activeTab === 'services' ? '0' : '-1'" data-orientation="horizontal" data-radix-collection-item=""
+        @click="switchTab('services')"
+        :class="{ 'bg-background text-foreground shadow-sm !rounded-md': activeTab === 'services' }"><span>Dịch
+          vụ</span>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs flex-shrink-0">
+          7</div>
+      </button>
+      <button type="button" role="tab" :aria-selected="activeTab === 'companies'"
+        aria-controls="radix-:R4qfnkq:-content-companies"
+        :data-state="activeTab === 'companies' ? 'active' : 'inactive'" data-tab="companies"
+        class="justify-center rounded-sm px-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-1 sm:gap-2 whitespace-nowrap text-xs sm:text-sm py-2 min-w-fit"
+        :tabindex="activeTab === 'companies' ? '0' : '-1'" data-orientation="horizontal" data-radix-collection-item=""
+        @click="switchTab('companies')"
+        :class="{ 'bg-background text-foreground shadow-sm !rounded-md': activeTab === 'companies' }"><span>Doanh
+          nghiệp</span>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs flex-shrink-0">
+          4</div>
+      </button>
+      <button type="button" role="tab" :aria-selected="activeTab === 'news'"
+        aria-controls="radix-:R4qfnkq:-content-news" :data-state="activeTab === 'news' ? 'active' : 'inactive'"
+        data-tab="news"
+        class="justify-center rounded-sm px-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-1 sm:gap-2 whitespace-nowrap text-xs sm:text-sm py-2 min-w-fit"
+        :tabindex="activeTab === 'news' ? '0' : '-1'" data-orientation="horizontal" data-radix-collection-item=""
+        @click="switchTab('news')"
+        :class="{ 'bg-background text-foreground shadow-sm !rounded-md': activeTab === 'news' }"><span>Tin
+          tức</span>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs flex-shrink-0">
+          55</div>
+      </button>
+      <button type="button" role="tab" :aria-selected="activeTab === 'locations'"
+        aria-controls="radix-:R4qfnkq:-content-locations"
+        :data-state="activeTab === 'locations' ? 'active' : 'inactive'" data-tab="locations"
+        class="justify-center rounded-sm px-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-1 sm:gap-2 whitespace-nowrap text-xs sm:text-sm py-2 min-w-fit"
+        :tabindex="activeTab === 'locations' ? '0' : '-1'" data-orientation="horizontal" data-radix-collection-item=""
+        @click="switchTab('locations')"
+        :class="{ 'bg-background text-foreground shadow-sm !rounded-md': activeTab === 'locations' }"><span>Địa
+          điểm</span>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs flex-shrink-0">
+          50</div>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,390 @@
+<div class="hidden lg:block lg:col-span-1" style="overflow-anchor: none;">
+  <div class="sticky top-6">
+    <div class="space-y-4 sm:space-y-6">
+      <!-- Bộ lọc đang áp dụng -->
+      <div
+        x-show="selectedLocations.length > 0 || selectedWorkTypes.length > 0 || selectedJobTypes.length > 0 || selectedExperiences.length > 0 || selectedSkills.length > 0 || salaryMin > 0"
+        class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+          <div class="flex items-center justify-between">
+            <div class="font-semibold tracking-tight text-xs sm:text-sm">Bộ lọc đang áp dụng</div>
+            <button @click="clearAllFilters()" class="text-xs text-blue-600 hover:text-red-600 font-medium">
+              Xóa tất cả
+            </button>
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="flex flex-wrap gap-2">
+            <!-- Location filters -->
+            <template x-for="location in selectedLocations" :key="'loc-' + location">
+              <div class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+                <span x-text="location"></span>
+                <button @click="removeLocation(location)" class="ml-1 hover:bg-gray-200 rounded-full p-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="h-3 w-3">
+                    <path d="m18 6-12 12"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </template>
+
+            <!-- Work type filters -->
+            <template x-for="workType in selectedWorkTypes" :key="'work-' + workType">
+              <div class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+                <span x-text="workType"></span>
+                <button @click="removeWorkType(workType)" class="ml-1 hover:bg-gray-200 rounded-full p-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="h-3 w-3">
+                    <path d="m18 6-12 12"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </template>
+
+            <!-- Job type filters -->
+            <template x-for="jobType in selectedJobTypes" :key="'job-' + jobType">
+              <div class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+                <span x-text="jobType"></span>
+                <button @click="removeJobType(jobType)" class="ml-1 hover:bg-gray-200 rounded-full p-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="h-3 w-3">
+                    <path d="m18 6-12 12"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </template>
+
+            <!-- Experience filters -->
+            <template x-for="experience in selectedExperiences" :key="'exp-' + experience">
+              <div class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+                <span x-text="experience"></span>
+                <button @click="removeExperience(experience)" class="ml-1 hover:bg-gray-200 rounded-full p-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="h-3 w-3">
+                    <path d="m18 6-12 12"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </template>
+
+            <!-- Skills filters -->
+            <template x-for="skill in selectedSkills" :key="'skill-' + skill">
+              <div class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+                <span x-text="skill"></span>
+                <button @click="removeSkill(skill)" class="ml-1 hover:bg-gray-200 rounded-full p-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="h-3 w-3">
+                    <path d="m18 6-12 12"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </template>
+
+            <!-- Salary filter -->
+            <div x-show="salaryMin > 0"
+              class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+              <span x-text="getSalaryDisplayValue()"></span>
+              <button @click="removeSalary()" class="ml-1 hover:bg-gray-200 rounded-full p-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                  <path d="m18 6-12 12"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+          <div class="font-semibold tracking-tight text-xs sm:text-sm">Địa điểm</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-2 sm:space-y-3">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-tp-thu-dau-mot" name="location" value="TP. Thủ Dầu Một"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-tp-thu-dau-mot" class="font-medium text-xs sm:text-sm cursor-pointer">TP. Thủ Dầu
+                Một</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-tp-thuan-an" name="location" value="TP. Thuận An"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-tp-thuan-an" class="font-medium text-xs sm:text-sm cursor-pointer">TP. Thuận
+                An</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-tp-di-an" name="location" value="TP. Dĩ An"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-tp-di-an" class="font-medium text-xs sm:text-sm cursor-pointer">TP. Dĩ An</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-kcn-vsip-i" name="location" value="KCN VSIP I, Thuận An"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-kcn-vsip-i" class="font-medium text-xs sm:text-sm cursor-pointer">KCN VSIP I, Thuận
+                An</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-kcn-vsip-ii" name="location" value="KCN VSIP II, Bình Dương"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-kcn-vsip-ii" class="font-medium text-xs sm:text-sm cursor-pointer">KCN VSIP II, Bình
+                Dương</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-kcn-my-phuoc" name="location" value="KCN Mỹ Phước, Bến Cát"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-kcn-my-phuoc" class="font-medium text-xs sm:text-sm cursor-pointer">KCN Mỹ Phước, Bến
+                Cát</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-kcn-dong-an" name="location" value="KCN Đồng An, Thuận An"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-kcn-dong-an" class="font-medium text-xs sm:text-sm cursor-pointer">KCN Đồng An, Thuận
+                An</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="location-kcn-song-than" name="location" value="KCN Sóng Thần, Dĩ An"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="location-kcn-song-than" class="font-medium text-xs sm:text-sm cursor-pointer">KCN Sóng Thần,
+                Dĩ An</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+          <div class="font-semibold tracking-tight text-xs sm:text-sm">Hình thức làm việc</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-2 sm:space-y-3">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="worktype-onsite" name="worktype" value="Onsite"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="worktype-onsite" class="font-medium text-xs sm:text-sm cursor-pointer">Onsite</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="worktype-remote" name="worktype" value="Remote"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="worktype-remote" class="font-medium text-xs sm:text-sm cursor-pointer">Remote</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="worktype-hybrid" name="worktype" value="Hybrid"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="worktype-hybrid" class="font-medium text-xs sm:text-sm cursor-pointer">Hybrid</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+          <div class="font-semibold tracking-tight text-xs sm:text-sm">Loại hình công việc</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-2 sm:space-y-3">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="jobtype-fulltime" name="jobtype" value="Toàn thời gian"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="jobtype-fulltime" class="font-medium text-xs sm:text-sm cursor-pointer">Toàn thời gian</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="jobtype-parttime" name="jobtype" value="Bán thời gian"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="jobtype-parttime" class="font-medium text-xs sm:text-sm cursor-pointer">Bán thời gian</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="jobtype-internship" name="jobtype" value="Thực tập"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="jobtype-internship" class="font-medium text-xs sm:text-sm cursor-pointer">Thực tập</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="jobtype-contract" name="jobtype" value="Hợp đồng"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="jobtype-contract" class="font-medium text-xs sm:text-sm cursor-pointer">Hợp đồng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+          <div class="font-semibold tracking-tight text-xs sm:text-sm">Kinh nghiệm</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-2 sm:space-y-3">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="experience-none" name="experience" value="Không yêu cầu"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="experience-none" class="font-medium text-xs sm:text-sm cursor-pointer">Không yêu cầu</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="experience-0-1" name="experience" value="0-1 năm"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="experience-0-1" class="font-medium text-xs sm:text-sm cursor-pointer">0-1 năm</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="experience-1-2" name="experience" value="1-2 năm"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="experience-1-2" class="font-medium text-xs sm:text-sm cursor-pointer">1-2 năm</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="experience-2-3" name="experience" value="2-3 năm"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="experience-2-3" class="font-medium text-xs sm:text-sm cursor-pointer">2-3 năm</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="experience-3-5" name="experience" value="3-5 năm"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="experience-3-5" class="font-medium text-xs sm:text-sm cursor-pointer">3-5 năm</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="experience-5plus" name="experience" value="5+ năm"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="experience-5plus" class="font-medium text-xs sm:text-sm cursor-pointer">5+ năm</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" x-data="searchJobComponent">
+        <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+          <div class="font-semibold tracking-tight text-xs sm:text-sm">Mức lương (triệu VNĐ)</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-3 sm:space-y-4">
+            <!-- Custom slider container -->
+            <div class="relative" @mousedown="startDrag($event)" @touchstart="startDrag($event)"
+              @click="onSliderClick($event)" x-ref="salarySlider">
+
+              <!-- Slider track -->
+              <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
+                <!-- Active track (blue part) -->
+                <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+                  :style="`width: ${getSalaryPercentage()}%`"></div>
+
+                <!-- Slider handle -->
+                <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+                  :style="`left: ${getSalaryPercentage()}%`">
+                  <!-- Handle circle -->
+                  <div
+                    class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                    @mousedown="startDrag($event)" @touchstart="startDrag($event)">
+                  </div>
+
+                  <!-- Value display tooltip -->
+                  <div
+                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                    x-show="isDragging || salaryMin > 0" x-text="getSalaryDisplayValue()">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Min/Max labels -->
+            <div class="flex justify-between text-xs sm:text-sm text-gray-500">
+              <span x-text="salaryMin > 0 ? salaryMin + ' triệu' : '0 triệu'"></span>
+              <span>50 triệu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+          <div class="font-semibold tracking-tight text-xs sm:text-sm">Kỹ năng</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-2 sm:space-y-3">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-react" name="skill" value="React"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-react" class="font-medium text-xs sm:text-sm cursor-pointer">React</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-nodejs" name="skill" value="Node.js"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-nodejs" class="font-medium text-xs sm:text-sm cursor-pointer">Node.js</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-javascript" name="skill" value="JavaScript"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-javascript" class="font-medium text-xs sm:text-sm cursor-pointer">JavaScript</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-typescript" name="skill" value="TypeScript"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-typescript" class="font-medium text-xs sm:text-sm cursor-pointer">TypeScript</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-python" name="skill" value="Python"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-python" class="font-medium text-xs sm:text-sm cursor-pointer">Python</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-java" name="skill" value="Java"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-java" class="font-medium text-xs sm:text-sm cursor-pointer">Java</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-excel" name="skill" value="Excel"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-excel" class="font-medium text-xs sm:text-sm cursor-pointer">Excel</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-sap" name="skill" value="SAP"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-sap" class="font-medium text-xs sm:text-sm cursor-pointer">SAP</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-ke-toan" name="skill" value="Kế toán"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-ke-toan" class="font-medium text-xs sm:text-sm cursor-pointer">Kế toán</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-facebook-ads" name="skill" value="Facebook Ads"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-facebook-ads" class="font-medium text-xs sm:text-sm cursor-pointer">Facebook Ads</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-google-ads" name="skill" value="Google Ads"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-google-ads" class="font-medium text-xs sm:text-sm cursor-pointer">Google Ads</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-seo" name="skill" value="SEO"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-seo" class="font-medium text-xs sm:text-sm cursor-pointer">SEO</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-autocad" name="skill" value="AutoCAD"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-autocad" class="font-medium text-xs sm:text-sm cursor-pointer">AutoCAD</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-solidworks" name="skill" value="SolidWorks"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-solidworks" class="font-medium text-xs sm:text-sm cursor-pointer">SolidWorks</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-photoshop" name="skill" value="Photoshop"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-photoshop" class="font-medium text-xs sm:text-sm cursor-pointer">Photoshop</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="skill-illustrator" name="skill" value="Illustrator"
+                class="h-3 w-3 sm:h-4 sm:w-4 rounded border-gray-300 text-primary focus:ring-primary">
+              <label for="skill-illustrator" class="font-medium text-xs sm:text-sm cursor-pointer">Illustrator</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

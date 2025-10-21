@@ -144,3 +144,6 @@ sun
 ellipsis
 github
 school
+sliders-horizontal
+play
+mic

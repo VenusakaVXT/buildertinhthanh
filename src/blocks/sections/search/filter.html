@@ -1,0 +1,302 @@
+<div class="hidden lg:block w-80 flex-shrink-0">
+  <div class="sticky top-32">
+    <div class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-semibold">Bộ lọc</h3>
+        <button @click="clearAllFilters()"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 rounded-md px-3 text-red-600 hover:text-red-700 hover:bg-red-50">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-x w-4 h-4 mr-1">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>Xóa bộ lọc
+        </button>
+      </div>
+
+      <!-- Common Filter -->
+      <div id="common-filter" class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-base">Bộ lọc chung</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-4">
+            <div class="relative">
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block"
+                for="location"><i data-lucide="map-pin" class="w-4 h-4 inline mr-1"></i>
+                Địa điểm
+              </label>
+              <select class="select select-white">
+                <option value="">Tất cả địa điểm</option>
+                <option value="TP. Thủ Dầu Một">TP. Thủ Dầu Một</option>
+                <option value="TP. Dĩ An">TP. Dĩ An</option>
+                <option value="TP. Thuận An">TP. Thuận An</option>
+                <option value="TP. Tân Uyên">TP. Tân Uyên</option>
+                <option value="Thị xã Bến Cát">Thị xã Bến Cát</option>
+                <option value="Huyện Bắc Tân Uyên">Huyện Bắc Tân Uyên</option>
+                <option value="Huyện Dầu Tiếng">Huyện Dầu Tiếng</option>
+                <option value="Huyện Phú Giáo">Huyện Phú Giáo</option>
+                <option value="KCN Mỹ Phước">KCN Mỹ Phước</option>
+                <option value="KCN Sóng Thần">KCN Sóng Thần</option>
+                <option value="KCN Bàu Bàng">KCN Bàu Bàng</option>
+                <option value="KCN Việt Hương">KCN Việt Hương</option>
+                <option value="KCN Đồng An">KCN Đồng An</option>
+                <option value="KCN Tân Đông Hiệp">KCN Tân Đông Hiệp</option>
+                <option value="KCN Bình Dương">KCN Bình Dương</option>
+              </select>
+            </div>
+            <div class="relative">
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block"><i
+                  data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>Thời gian</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="today">Hôm nay</option>
+                <option value="this-week">Tuần này</option>
+                <option value="this-month">Tháng này</option>
+                <option value="last-3-months">3 tháng qua</option>
+              </select>
+            </div>
+            <div class="relative">
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block"><i
+                  data-lucide="star" class="w-4 h-4 inline mr-1"></i>Đánh giá tối thiểu</label>
+
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="1">⭐ 1+ sao</option>
+                <option value="2">⭐⭐ 2+ sao</option>
+                <option value="3">⭐⭐⭐ 3+ sao</option>
+                <option value="4">⭐⭐⭐⭐ 4+ sao</option>
+                <option value="5">⭐⭐⭐⭐⭐ 5 sao</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Job Filter -->
+      <div id="job-filter" class="rounded-lg border bg-card text-card-foreground shadow-sm hidden">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-base">Bộ lọc việc làm</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-4">
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Loại
+                công việc</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="full-time">Toàn thời gian</option>
+                <option value="part-time">Bán thời gian</option>
+                <option value="contract">Hợp đồng</option>
+                <option value="internship">Thực tập</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Kinh
+                nghiệm</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="0-1">0-1 năm</option>
+                <option value="1-3">1-3 năm</option>
+                <option value="3-5">3-5 năm</option>
+                <option value="5+">5+ năm</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Mức
+                lương (triệu VND)</label>
+              <input type="number" x-model="salaryValue" @blur="handleSalaryBlur()" placeholder="Nhập mức lương..."
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Real Estate Filter -->
+      <div id="real-estate-filter" class="rounded-lg border bg-card text-card-foreground shadow-sm hidden">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-base">Bộ lọc bất động sản</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-4">
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Loại
+                bất động sản</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="apartment">Chung cư</option>
+                <option value="house">Nhà riêng</option>
+                <option value="villa">Biệt thự</option>
+                <option value="land">Đất nền</option>
+              </select>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Số
+                phòng ngủ</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="1">1 phòng</option>
+                <option value="2">2 phòng</option>
+                <option value="3">3 phòng</option>
+                <option value="4+">4+ phòng</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Diện
+                tích (m²)</label>
+              <input type="number" x-model="areaValue" @blur="handleAreaBlur()" placeholder="Nhập diện tích..."
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Service Filter -->
+      <div id="service-filter" class="rounded-lg border bg-card text-card-foreground shadow-sm hidden">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-base">Bộ lọc dịch vụ</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-4">
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Loại
+                dịch vụ</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="software">Phần mềm</option>
+                <option value="consulting">Tư vấn</option>
+                <option value="design">Thiết kế</option>
+                <option value="marketing">Marketing</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Gói
+                dịch vụ</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="free">Miễn phí</option>
+                <option value="basic">Cơ bản</option>
+                <option value="premium">Cao cấp</option>
+                <option value="enterprise">Doanh nghiệp</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Company Filter -->
+      <div id="company-filter" class="rounded-lg border bg-card text-card-foreground shadow-sm hidden">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-base">Bộ lọc doanh nghiệp</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-4">
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Ngành
+                nghề</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="technology">Công nghệ</option>
+                <option value="finance">Tài chính</option>
+                <option value="healthcare">Y tế</option>
+                <option value="education">Giáo dục</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Quy
+                mô công ty</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="1-10">1-10 nhân viên</option>
+                <option value="11-50">11-50 nhân viên</option>
+                <option value="51-200">51-200 nhân viên</option>
+                <option value="200+">200+ nhân viên</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- News Filter -->
+      <div id="news-filter" class="rounded-lg border bg-card text-card-foreground shadow-sm hidden">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-base">Bộ lọc tin tức</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-4">
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Danh
+                mục tin tức</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="tin-dia-phuong">Tin địa phương</option>
+                <option value="kinh-doanh">Kinh doanh</option>
+                <option value="cong-nghe">Công nghệ</option>
+                <option value="doi-song">Đời sống</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Nguồn
+                tin</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="tin-tuc-dia-phuong">Tin tức địa phương</option>
+                <option value="vnexpress">VnExpress</option>
+                <option value="tuoi-tre">Tuổi Trẻ</option>
+                <option value="thanh-nien">Thanh Niên</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Location Filter -->
+      <div id="location-filter" class="rounded-lg border bg-card text-card-foreground shadow-sm hidden">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-base">Bộ lọc địa điểm</div>
+        </div>
+        <div class="p-6 pt-0">
+          <div class="space-y-4">
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Loại
+                địa điểm</label>
+              <select class="select select-white">
+                <option value="">Tất cả</option>
+                <option value="nha-hang">Nhà hàng</option>
+                <option value="khach-san">Khách sạn</option>
+                <option value="diem-tham-quan">Điểm tham quan</option>
+                <option value="mua-sam">Mua sắm</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Khoảng
+                cách (km)</label>
+              <input type="number" x-model="distanceValue" @blur="handleDistanceBlur()"
+                placeholder="Nhập khoảng cách..."
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
