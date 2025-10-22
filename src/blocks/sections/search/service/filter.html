@@ -1,0 +1,281 @@
+<div class="hidden lg:block">
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm h-fit">
+    <div class="flex flex-col space-y-1.5 p-6 pb-3 sm:pb-4">
+      <div class="flex items-center justify-between">
+        <div class="font-semibold tracking-tight text-sm sm:text-lg flex items-center gap-2">
+          <i data-lucide="filter" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          Bộ lọc
+        </div>
+        <button @click="clearAllFilters()" x-show="hasActiveFilters()"
+          class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+          Xóa tất cả
+        </button>
+      </div>
+    </div>
+
+    <!-- Bộ lọc đang áp dụng -->
+    <div x-show="hasActiveFilters()" x-cloak class="px-6 pb-4">
+      <h3 class="text-sm font-medium text-gray-700 mb-3">Bộ lọc đang áp dụng</h3>
+      <div class="flex flex-wrap gap-2">
+        <template x-for="(filter, index) in appliedFilters" :key="filter.type + '-' + index">
+          <div class="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+            <span x-text="filter.label"></span>
+            <button type="button" @click="filter.clearFn()"
+              class="ml-1 hover:bg-gray-200 rounded-full p-0.5 transition-colors">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <div class="p-6 pt-0 space-y-6">
+      <div>
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block"
+          for="category-select">Danh mục</label>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Tất cả danh mục</option>
+          <option value="ho-tro-khach-hang">Hỗ trợ khách hàng</option>
+          <option value="dich-vu-cong">Dịch vụ công</option>
+          <option value="an-ninh">An ninh</option>
+          <option value="quy-hoach">Quy hoạch</option>
+          <option value="hanh-chinh">Hành chính</option>
+          <option value="kinh-doanh">Kinh doanh</option>
+          <option value="tai-chinh">Tài chính</option>
+          <option value="bao-hiem">Bảo hiểm</option>
+        </select>
+      </div>
+      <div>
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Gói dịch vụ
+        </label>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Tất cả gói</option>
+          <option value="hang-thang">Hàng tháng</option>
+          <option value="hang-nam">Hàng năm</option>
+          <option value="tron-doi">Trọn đời</option>
+        </select>
+      </div>
+      <div>
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Khoảng giá (VND)
+        </label>
+        <div class="space-y-3">
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-gray-600">Từ</label>
+              <input type="number" x-model="priceMin" @input="validatePrice()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                min="0" placeholder="0">
+            </div>
+            <div>
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-gray-600">Đến</label>
+              <input type="number" x-model="priceMax" @input="validatePrice()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                min="0" placeholder="Không giới hạn">
+            </div>
+          </div>
+          <div x-show="priceError" class="text-red-500 text-sm">
+            <span x-text="priceError"></span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <input type="checkbox" class="h-4 w-4 rounded border border-primary text-primary" id="hasTrial">
+        <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+          for="hasTrial">Có dùng thử miễn phí</label>
+      </div>
+      <div>
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Chính sách hoàn tiền
+        </label>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Tất cả</option>
+          <option value="khong-hoan-tien">Không hoàn tiền</option>
+          <option value="15-ngay">15 ngày hoàn tiền</option>
+          <option value="30-ngay">30 ngày hoàn tiền</option>
+          <option value="45-ngay">45 ngày hoàn tiền</option>
+          <option value="60-ngay">60 ngày hoàn tiền</option>
+          <option value="90-ngay">90 ngày hoàn tiền</option>
+        </select>
+      </div>
+      <div>
+        <div class="flex flex-col space-y-1.5 pb-2 sm:pb-3 font-semibold text-xs sm:text-sm">
+          Đánh giá tối thiểu (sao)
+        </div>
+        <div class="space-y-3 sm:space-y-4">
+          <!-- Custom slider container -->
+          <div class="relative" @mousedown="startRatingDrag($event)" @touchstart="startRatingDrag($event)"
+            @click="onRatingSliderClick($event)" x-ref="ratingSlider">
+
+            <!-- Slider track -->
+            <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
+              <!-- Active track (blue part) -->
+              <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+                :style="`width: ${getRatingPercentage()}%`"></div>
+
+              <!-- Slider handle -->
+              <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+                :style="`left: ${getRatingPercentage()}%`">
+                <!-- Handle circle -->
+                <div
+                  class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                  @mousedown="startRatingDrag($event)" @touchstart="startRatingDrag($event)">
+                </div>
+
+                <!-- Value display tooltip -->
+                <div
+                  class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                  x-show="isRatingDragging || minRating > 0" x-text="getRatingDisplayValue()">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Min/Max labels -->
+          <div class="flex justify-between text-xs sm:text-sm text-gray-500">
+            <span x-text="minRating > 0 ? minRating + ' sao' : '0 sao'"></span>
+            <span>5 sao</span>
+          </div>
+        </div>
+      </div>
+      <div class="border border-gray-200 rounded-md p-3">
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Tính năng
+        </label>
+        <div class="space-y-2 max-h-40 overflow-y-auto">
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-Hỗ trợ 24/7">
+            <label class="font-medium text-sm cursor-pointer" for="feature-Hỗ trợ 24/7">Hỗ trợ 24/7</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-API tích hợp">
+            <label class="font-medium text-sm cursor-pointer" for="feature-API tích hợp">API tích hợp</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-Dashboard quản lý">
+            <label class="font-medium text-sm cursor-pointer" for="feature-Dashboard quản lý">Dashboard quản
+              lý</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-Báo cáo thống kê">
+            <label class="font-medium text-sm cursor-pointer" for="feature-Báo cáo thống kê">Báo cáo thống
+              kê</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-Thông báo tự động">
+            <label class="font-medium text-sm cursor-pointer" for="feature-Thông báo tự động">Thông báo tự
+              động</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-Lưu trữ điện tử">
+            <label class="font-medium text-sm cursor-pointer" for="feature-Lưu trữ điện tử">Lưu trữ điện
+              tử</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-Tìm kiếm nâng cao">
+            <label class="font-medium text-sm cursor-pointer" for="feature-Tìm kiếm nâng cao">Tìm kiếm nâng
+              cao</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="feature-Xuất báo cáo">
+            <label class="font-medium text-sm cursor-pointer" for="feature-Xuất báo cáo">Xuất báo cáo</label>
+          </div>
+        </div>
+      </div>
+      <div class="border border-gray-200 rounded-md p-3">
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Tích hợp
+        </label>
+        <div class="space-y-2 max-h-40 overflow-y-auto">
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-SMS">
+            <label class="font-medium text-sm cursor-pointer" for="integration-SMS">SMS</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-Email">
+            <label class="font-medium text-sm cursor-pointer" for="integration-Email">Email</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-Zalo">
+            <label class="font-medium text-sm cursor-pointer" for="integration-Zalo">Zalo</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-Facebook">
+            <label class="font-medium text-sm cursor-pointer" for="integration-Facebook">Facebook</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-REST API">
+            <label class="font-medium text-sm cursor-pointer" for="integration-REST API">REST API</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-Banking API">
+            <label class="font-medium text-sm cursor-pointer" for="integration-Banking API">Banking API</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-Digital signature">
+            <label class="font-medium text-sm cursor-pointer" for="integration-Digital signature">Digital
+              signature</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              id="integration-Payment gateway">
+            <label class="font-medium text-sm cursor-pointer" for="integration-Payment gateway">Payment
+              gateway</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Hình thức cung cấp
+        </label>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Tất cả</option>
+          <option value="truc-tuyen">Trực tuyến</option>
+          <option value="tai-cho">Tại chỗ</option>
+          <option value="ket-hop">Kết hợp</option>
+        </select>
+      </div>
+      <div>
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Thời hạn hợp đồng (tháng)
+        </label>
+        <input type="number" x-model="contractTerm" @blur="updateContractTermInURL()"
+          @keyup.enter="updateContractTermInURL()"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+          min="0" placeholder="Tối đa (tháng)" value="">
+      </div>
+      <div>
+        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+          Cam kết dịch vụ (SLA)
+        </label>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Tất cả</option>
+          <option value="24-7">24/7</option>
+          <option value="gio-hanh-chinh">Giờ hành chính</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

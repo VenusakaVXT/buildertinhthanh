@@ -60,8 +60,24 @@
 	<!-- include:./blocks/header.html -->
 
 	<!-- Main Content Area -->
-	<main class="min-h-screen bg-gray-50">
-        
+	<main class="min-h-screen bg-gray-50" x-data="searchCompanyComponent">
+		<div class="container mx-auto px-1 sm:px-4 py-3 sm:py-8">
+			<!-- Search Input -->
+			<!-- include:blocks/sections/search/company/input.html -->
+
+			<div class="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
+				<!-- Filter -->
+				<!-- include:blocks/sections/search/company/filter.html -->
+
+				<div class="flex-1 min-w-0">
+					<!-- Sortbar -->
+					<!-- include:blocks/sections/search/company/sortbar.html -->
+
+					<!-- Company Results -->
+					<!-- include:blocks/sections/search/company/list.html -->
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<!-- Footer -->

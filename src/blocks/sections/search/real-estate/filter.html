@@ -1,13 +1,5 @@
 <div class="hidden lg:block w-80 flex-shrink-0">
-  <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 sticky top-6" x-data="realEstateSearch"
-    @province-selected="selectedProvince = $event.detail.province; selectedDistrict = ''"
-    @district-selected="selectedDistrict = $event.detail.district"
-    @real-estate-type-selected="selectedRealEstateType = $event.detail.type"
-    @form-type-selected="selectedFormType = $event.detail.type"
-    @bedrooms-selected="selectedBedrooms = $event.detail.bedrooms"
-    @bathrooms-selected="selectedBathrooms = $event.detail.bathrooms"
-    @direction-selected="selectedDirection = $event.detail.direction"
-    @amenities-selected="selectedAmenities = $event.detail.amenities">
+  <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 sticky top-6">
     <div class="space-y-4 sm:space-y-6">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -107,536 +99,124 @@
         <div>
           <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
             for="province">Tỉnh/Thành phố</label>
-          <div class="relative">
-            <button type="button" @click="toggleProvinceDropdown()"
-              class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1">
-              <span x-show="!selectedProvince" class="line-clamp-1">Chọn tỉnh/thành phố</span>
-              <span x-show="selectedProvince" x-text="selectedProvince" class="line-clamp-1"></span>
-              <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
-            </button>
-
-            <!-- Province Dropdown Menu -->
-            <div x-show="showProvinceDropdown" @click.away="showProvinceDropdown = false" x-cloak
-              class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-              <ul class="py-1 max-h-60 overflow-y-auto">
-                <li @click="selectProvince('Bình Dương')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                  :class="selectedProvince === 'Bình Dương' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                  <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                  <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                  <span>Bình Dương</span>
-                </li>
-                <li @click="selectProvince('TP.Hồ Chí Minh')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                  :class="selectedProvince === 'TP.Hồ Chí Minh' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                  <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                  <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                  <span>TP.Hồ Chí Minh</span>
-                </li>
-                <li @click="selectProvince('Đồng Nai')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                  :class="selectedProvince === 'Đồng Nai' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                  <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                  <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                  <span>Đồng Nai</span>
-                </li>
-                <li @click="selectProvince('Long An')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                  :class="selectedProvince === 'Long An' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                  <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                  <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                  <span>Long An</span>
-                </li>
-                <li @click="selectProvince('Tây Ninh')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                  :class="selectedProvince === 'Tây Ninh' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                  <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                  <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                  <span>Tây Ninh</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <select id="province" class="select select-white w-full h-10 text-sm">
+            <option value="">Chọn tỉnh/thành phố</option>
+            <option value="binh-duong">Bình Dương</option>
+            <option value="tp-ho-chi-minh">TP.Hồ Chí Minh</option>
+            <option value="dong-nai">Đồng Nai</option>
+            <option value="long-an">Long An</option>
+            <option value="tay-ninh">Tây Ninh</option>
+          </select>
         </div>
 
         <!-- Quận/Huyện -->
         <div>
           <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
             for="district">Quận/Huyện</label>
-          <div class="relative">
-            <button type="button" @click="toggleDistrictDropdown()" :disabled="!selectedProvince"
-              class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1"
-              :class="{ 'opacity-50 cursor-not-allowed': !selectedProvince }">
-              <span x-show="!selectedDistrict" class="line-clamp-1">Chọn quận/huyện</span>
-              <span x-show="selectedDistrict" x-text="selectedDistrict" class="line-clamp-1"></span>
-              <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
-            </button>
+          <select id="district" class="select select-white w-full h-10 text-sm" disabled>
+            <option value="">Chọn quận/huyện</option>
+            <!-- Bình Dương Districts -->
+            <option value="tp-thu-dau-mot" data-province="binh-duong">TP. Thủ Dầu Một</option>
+            <option value="tp-di-an" data-province="binh-duong">TP. Dĩ An</option>
+            <option value="tp-thuan-an" data-province="binh-duong">TP. Thuận An</option>
+            <option value="ben-cat" data-province="binh-duong">Bến Cát</option>
+            <option value="tan-uyen" data-province="binh-duong">Tân Uyên</option>
+            <option value="bau-bang" data-province="binh-duong">Bàu Bàng</option>
+            <option value="phu-giao" data-province="binh-duong">Phú Giáo</option>
+            <option value="dau-tieng" data-province="binh-duong">Dầu Tiếng</option>
+            <option value="bac-tan-uyen" data-province="binh-duong">Bắc Tân Uyên</option>
 
-            <!-- District Dropdown Menu -->
-            <div x-show="showDistrictDropdown && selectedProvince" @click.away="showDistrictDropdown = false" x-cloak
-              class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-              <ul class="py-1 max-h-60 overflow-y-auto">
-                <!-- Bình Dương Districts -->
-                <div x-show="selectedProvince === 'Bình Dương'">
-                  <li @click="selectDistrict('TP. Thủ Dầu Một')"
-                    class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Thủ Dầu Một' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Thủ Dầu Một</span>
-                  </li>
-                  <li @click="selectDistrict('TP. Dĩ An')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Dĩ An' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Dĩ An</span>
-                  </li>
-                  <li @click="selectDistrict('TP. Thuận An')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Thuận An' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Thuận An</span>
-                  </li>
-                  <li @click="selectDistrict('Bến Cát')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Bến Cát' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Bến Cát</span>
-                  </li>
-                  <li @click="selectDistrict('Tân Uyên')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Tân Uyên' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Tân Uyên</span>
-                  </li>
-                  <li @click="selectDistrict('Bàu Bàng')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Bàu Bàng' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Bàu Bàng</span>
-                  </li>
-                  <li @click="selectDistrict('Phú Giáo')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Phú Giáo' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Phú Giáo</span>
-                  </li>
-                  <li @click="selectDistrict('Dầu Tiếng')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Dầu Tiếng' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Dầu Tiếng</span>
-                  </li>
-                  <li @click="selectDistrict('Bắc Tân Uyên')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Bắc Tân Uyên' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Bắc Tân Uyên</span>
-                  </li>
-                </div>
+            <!-- TP.Hồ Chí Minh Districts -->
+            <option value="quan-1" data-province="tp-ho-chi-minh">Quận 1</option>
+            <option value="quan-2" data-province="tp-ho-chi-minh">Quận 2</option>
+            <option value="quan-3" data-province="tp-ho-chi-minh">Quận 3</option>
+            <option value="quan-4" data-province="tp-ho-chi-minh">Quận 4</option>
+            <option value="quan-5" data-province="tp-ho-chi-minh">Quận 5</option>
+            <option value="quan-6" data-province="tp-ho-chi-minh">Quận 6</option>
+            <option value="quan-7" data-province="tp-ho-chi-minh">Quận 7</option>
+            <option value="quan-8" data-province="tp-ho-chi-minh">Quận 8</option>
+            <option value="quan-9" data-province="tp-ho-chi-minh">Quận 9</option>
+            <option value="quan-10" data-province="tp-ho-chi-minh">Quận 10</option>
+            <option value="quan-11" data-province="tp-ho-chi-minh">Quận 11</option>
+            <option value="quan-12" data-province="tp-ho-chi-minh">Quận 12</option>
+            <option value="tp-thu-duc" data-province="tp-ho-chi-minh">TP. Thủ Đức</option>
 
-                <!-- TP.Hồ Chí Minh Districts -->
-                <div x-show="selectedProvince === 'TP.Hồ Chí Minh'">
-                  <li @click="selectDistrict('Quận 1')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 1' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 1</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 2')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 2' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 2</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 3')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 3' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 3</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 4')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 4' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 4</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 5')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 5' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 5</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 6')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 6' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 6</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 7')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 7' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 7</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 8')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 8' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 8</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 9')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 9' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 9</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 10')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 10' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 10</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 11')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 11' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 11</span>
-                  </li>
-                  <li @click="selectDistrict('Quận 12')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Quận 12' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Quận 12</span>
-                  </li>
-                  <li @click="selectDistrict('TP. Thủ Đức')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Thủ Đức' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Thủ Đức</span>
-                  </li>
-                </div>
+            <!-- Đồng Nai Districts -->
+            <option value="tp-bien-hoa" data-province="dong-nai">TP. Biên Hòa</option>
+            <option value="tp-long-khanh" data-province="dong-nai">TP. Long Khánh</option>
+            <option value="nhon-trach" data-province="dong-nai">Nhơn Trạch</option>
+            <option value="vinh-cuu" data-province="dong-nai">Vĩnh Cửu</option>
+            <option value="trang-bom" data-province="dong-nai">Trảng Bom</option>
+            <option value="thong-nhat" data-province="dong-nai">Thống Nhất</option>
+            <option value="cam-my" data-province="dong-nai">Cẩm Mỹ</option>
+            <option value="long-thanh" data-province="dong-nai">Long Thành</option>
+            <option value="xuan-loc" data-province="dong-nai">Xuân Lộc</option>
+            <option value="dinh-quan" data-province="dong-nai">Định Quán</option>
+            <option value="tan-phu" data-province="dong-nai">Tân Phú</option>
 
-                <!-- Đồng Nai Districts -->
-                <div x-show="selectedProvince === 'Đồng Nai'">
-                  <li @click="selectDistrict('TP. Biên Hòa')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Biên Hòa' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Biên Hòa</span>
-                  </li>
-                  <li @click="selectDistrict('TP. Long Khánh')"
-                    class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Long Khánh' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Long Khánh</span>
-                  </li>
-                  <li @click="selectDistrict('Nhơn Trạch')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Nhơn Trạch' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Nhơn Trạch</span>
-                  </li>
-                  <li @click="selectDistrict('Vĩnh Cửu')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Vĩnh Cửu' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Vĩnh Cửu</span>
-                  </li>
-                  <li @click="selectDistrict('Trảng Bom')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Trảng Bom' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Trảng Bom</span>
-                  </li>
-                  <li @click="selectDistrict('Thống Nhất')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Thống Nhất' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Thống Nhất</span>
-                  </li>
-                  <li @click="selectDistrict('Cẩm Mỹ')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Cẩm Mỹ' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Cẩm Mỹ</span>
-                  </li>
-                  <li @click="selectDistrict('Long Thành')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Long Thành' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Long Thành</span>
-                  </li>
-                  <li @click="selectDistrict('Xuân Lộc')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Xuân Lộc' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Xuân Lộc</span>
-                  </li>
-                  <li @click="selectDistrict('Định Quán')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Định Quán' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Định Quán</span>
-                  </li>
-                  <li @click="selectDistrict('Tân Phú')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Tân Phú' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Tân Phú</span>
-                  </li>
-                </div>
+            <!-- Long An Districts -->
+            <option value="tp-tan-an" data-province="long-an">TP. Tân An</option>
+            <option value="can-giuoc" data-province="long-an">Cần Giuộc</option>
+            <option value="can-duoc" data-province="long-an">Cần Đước</option>
+            <option value="chau-thanh" data-province="long-an">Châu Thành</option>
+            <option value="duc-hoa" data-province="long-an">Đức Hòa</option>
+            <option value="duc-hue" data-province="long-an">Đức Huệ</option>
+            <option value="moc-hoa" data-province="long-an">Mộc Hóa</option>
+            <option value="tan-hung" data-province="long-an">Tân Hưng</option>
+            <option value="tan-thanh" data-province="long-an">Tân Thạnh</option>
+            <option value="tan-tru" data-province="long-an">Tân Trụ</option>
+            <option value="thanh-hoa" data-province="long-an">Thạnh Hóa</option>
+            <option value="thu-thua" data-province="long-an">Thủ Thừa</option>
+            <option value="vinh-hung" data-province="long-an">Vĩnh Hưng</option>
 
-                <!-- Long An Districts -->
-                <div x-show="selectedProvince === 'Long An'">
-                  <li @click="selectDistrict('TP. Tân An')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Tân An' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Tân An</span>
-                  </li>
-                  <li @click="selectDistrict('Cần Giuộc')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Cần Giuộc' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Cần Giuộc</span>
-                  </li>
-                  <li @click="selectDistrict('Cần Đước')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Cần Đước' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Cần Đước</span>
-                  </li>
-                  <li @click="selectDistrict('Châu Thành')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Châu Thành' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Châu Thành</span>
-                  </li>
-                  <li @click="selectDistrict('Đức Hòa')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Đức Hòa' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Đức Hòa</span>
-                  </li>
-                  <li @click="selectDistrict('Đức Huệ')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Đức Huệ' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Đức Huệ</span>
-                  </li>
-                  <li @click="selectDistrict('Mộc Hóa')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Mộc Hóa' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Mộc Hóa</span>
-                  </li>
-                  <li @click="selectDistrict('Tân Hưng')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Tân Hưng' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Tân Hưng</span>
-                  </li>
-                  <li @click="selectDistrict('Tân Thạnh')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Tân Thạnh' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Tân Thạnh</span>
-                  </li>
-                  <li @click="selectDistrict('Tân Trụ')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Tân Trụ' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Tân Trụ</span>
-                  </li>
-                  <li @click="selectDistrict('Thạnh Hóa')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Thạnh Hóa' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Thạnh Hóa</span>
-                  </li>
-                  <li @click="selectDistrict('Thủ Thừa')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Thủ Thừa' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Thủ Thừa</span>
-                  </li>
-                  <li @click="selectDistrict('Vĩnh Hưng')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Vĩnh Hưng' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Vĩnh Hưng</span>
-                  </li>
-                </div>
+            <!-- Tây Ninh Districts -->
+            <option value="tp-tay-ninh" data-province="tay-ninh">TP. Tây Ninh</option>
+            <option value="ben-cau" data-province="tay-ninh">Bến Cầu</option>
+            <option value="chau-thanh-tn" data-province="tay-ninh">Châu Thành</option>
+            <option value="duong-minh-chau" data-province="tay-ninh">Dương Minh Châu</option>
+            <option value="go-dau" data-province="tay-ninh">Gò Dầu</option>
+            <option value="hoa-thanh" data-province="tay-ninh">Hòa Thành</option>
+            <option value="tan-bien" data-province="tay-ninh">Tân Biên</option>
+            <option value="tan-chau" data-province="tay-ninh">Tân Châu</option>
+            <option value="trang-bang" data-province="tay-ninh">Trảng Bàng</option>
+          </select>
 
-                <!-- Tây Ninh Districts -->
-                <div x-show="selectedProvince === 'Tây Ninh'">
-                  <li @click="selectDistrict('TP. Tây Ninh')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'TP. Tây Ninh' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>TP. Tây Ninh</span>
-                  </li>
-                  <li @click="selectDistrict('Bến Cầu')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Bến Cầu' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Bến Cầu</span>
-                  </li>
-                  <li @click="selectDistrict('Châu Thành')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Châu Thành' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Châu Thành</span>
-                  </li>
-                  <li @click="selectDistrict('Dương Minh Châu')"
-                    class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Dương Minh Châu' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Dương Minh Châu</span>
-                  </li>
-                  <li @click="selectDistrict('Gò Dầu')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Gò Dầu' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Gò Dầu</span>
-                  </li>
-                  <li @click="selectDistrict('Hòa Thành')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Hòa Thành' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Hòa Thành</span>
-                  </li>
-                  <li @click="selectDistrict('Tân Biên')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Tân Biên' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Tân Biên</span>
-                  </li>
-                  <li @click="selectDistrict('Tân Châu')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Tân Châu' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Tân Châu</span>
-                  </li>
-                  <li @click="selectDistrict('Trảng Bàng')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                    :class="selectedDistrict === 'Trảng Bàng' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                    <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                    <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                    <span>Trảng Bàng</span>
-                  </li>
-                </div>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
       <div>
         <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
           Loại bất động sản
         </label>
-        <div class="relative">
-          <button type="button" @click="toggleRealEstateTypeDropdown()"
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1">
-            <span x-show="!selectedRealEstateType" class="line-clamp-1">Chọn loại BĐS</span>
-            <span x-show="selectedRealEstateType" x-text="selectedRealEstateType" class="line-clamp-1"></span>
-            <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
-          </button>
-
-          <!-- Real Estate Type Dropdown Menu -->
-          <div x-show="showRealEstateTypeDropdown" @click.away="showRealEstateTypeDropdown = false" x-cloak
-            class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-            <ul class="py-1">
-              <li @click="selectRealEstateType('Căn hộ')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedRealEstateType === 'Căn hộ' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Căn hộ</span>
-              </li>
-              <li @click="selectRealEstateType('Nhà phố')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedRealEstateType === 'Nhà phố' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Nhà phố</span>
-              </li>
-              <li @click="selectRealEstateType('Biệt thự')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedRealEstateType === 'Biệt thự' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Biệt thự</span>
-              </li>
-              <li @click="selectRealEstateType('Đất nền')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedRealEstateType === 'Đất nền' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Đất nền</span>
-              </li>
-              <li @click="selectRealEstateType('Shophouse')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedRealEstateType === 'Shophouse' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Shophouse</span>
-              </li>
-              <li @click="selectRealEstateType('Nhà mặt tiền')"
-                class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedRealEstateType === 'Nhà mặt tiền' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Nhà mặt tiền</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Chọn loại BĐS</option>
+          <option value="can-ho">Căn hộ</option>
+          <option value="nha-pho">Nhà phố</option>
+          <option value="biet-thu">Biệt thự</option>
+          <option value="dat-nen">Đất nền</option>
+          <option value="shophouse">Shophouse</option>
+          <option value="nha-mat-tien">Nhà mặt tiền</option>
+        </select>
       </div>
       <div>
         <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Hình
           thức</label>
-        <div class="relative">
-          <button type="button" @click="toggleFormTypeDropdown()"
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1">
-            <span x-show="!selectedFormType" class="line-clamp-1">Chọn hình thức</span>
-            <span x-show="selectedFormType" x-text="selectedFormType" class="line-clamp-1"></span>
-            <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
-          </button>
-
-          <!-- Form Type Dropdown Menu -->
-          <div x-show="showFormTypeDropdown" @click.away="showFormTypeDropdown = false" x-cloak
-            class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-            <ul class="py-1">
-              <li @click="selectFormType('Đang bán')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedFormType === 'Đang bán' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Đang bán</span>
-              </li>
-              <li @click="selectFormType('Cho thuê')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedFormType === 'Cho thuê' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Cho thuê</span>
-              </li>
-              <li @click="selectFormType('Sắp bàn giao')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedFormType === 'Sắp bàn giao' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Sắp bàn giao</span>
-              </li>
-              <li @click="selectFormType('Sắp mở bán')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedFormType === 'Sắp mở bán' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Sắp mở bán</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Chọn hình thức</option>
+          <option value="dang-ban">Đang bán</option>
+          <option value="cho-thue">Cho thuê</option>
+          <option value="sap-ban-giao">Sắp bàn giao</option>
+          <option value="sap-mo-ban">Sắp mở bán</option>
+        </select>
       </div>
       <div>
         <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
           Khoảng giá
         </label>
         <div class="grid grid-cols-2 gap-2">
-          <input type="number" x-model="priceMin" @blur="updatePriceRange()" @input="validatePrice()"
+          <input type="number" x-model="priceMin" @input="validatePrice()"
             class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
             placeholder="Từ (VNĐ)">
-          <input type="number" x-model="priceMax" @blur="updatePriceRange()" @input="validatePrice()"
+          <input type="number" x-model="priceMax" @input="validatePrice()"
             class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
             placeholder="Đến (VNĐ)">
         </div>
@@ -645,199 +225,83 @@
         </div>
       </div>
       <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
-          Diện tích: <span class="text-blue-600 font-semibold" x-text="areaMin"></span> - 500 m²
-        </label>
-        <div class="relative" x-cloak @mousemove="onAreaMouseMove($event)" @mouseup="onAreaMouseUp()"
-          @mouseleave="onAreaMouseUp()">
-          <!-- Slider track -->
-          <div class="relative h-2 w-full bg-gray-200 rounded-full">
-            <!-- Active track (blue part) -->
-            <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
-              :style="`width: ${getAreaPercentage()}%`"></div>
+        <div class="flex flex-col space-y-1.5 pb-2 sm:pb-3 font-semibold text-xs sm:text-sm">
+          Diện tích (m²)
+        </div>
+        <div class="space-y-3 sm:space-y-4">
+          <!-- Custom slider container -->
+          <div class="relative" @mousedown="startDrag($event)" @touchstart="startDrag($event)"
+            @click="onSliderClick($event)" x-ref="areaSlider">
 
-            <!-- Slider handle -->
-            <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
-              :style="`left: ${getAreaPercentage()}%`">
-              <!-- Handle circle -->
-              <div
-                class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
-                @mousedown="onAreaDragStart()" @touchstart="onAreaDragStart()">
-              </div>
+            <!-- Slider track -->
+            <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
+              <!-- Active track (blue part) -->
+              <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+                :style="`width: ${getAreaPercentage()}%`"></div>
 
-              <!-- Value display tooltip -->
-              <div
-                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
-                x-show="isDragging || areaMin > 0" x-text="getAreaDisplayValue()">
+              <!-- Slider handle -->
+              <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+                :style="`left: ${getAreaPercentage()}%`">
+                <!-- Handle circle -->
+                <div
+                  class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                  @mousedown="startDrag($event)" @touchstart="startDrag($event)">
+                </div>
+
+                <!-- Value display tooltip -->
+                <div
+                  class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                  x-show="isDragging || areaMin > 0" x-text="getAreaDisplayValue()">
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Hidden input for accessibility -->
-          <input type="range" min="0" max="500" step="1" :value="areaMin" @input="onAreaChange($event)"
-            @mouseup="onAreaDragEnd()" @touchend="onAreaDragEnd()"
-            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+          <!-- Min/Max labels -->
+          <div class="flex justify-between text-xs sm:text-sm text-gray-500">
+            <span x-text="areaMin > 0 ? areaMin + ' m²' : '0 m²'"></span>
+            <span>500 m²</span>
+          </div>
         </div>
       </div>
       <div>
         <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số phòng
           ngủ (tối thiểu)</label>
-        <div class="relative">
-          <button type="button" @click="toggleBedroomsDropdown()"
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1">
-            <span x-show="!selectedBedrooms" class="line-clamp-1">Chọn số phòng ngủ</span>
-            <span x-show="selectedBedrooms" x-text="selectedBedrooms + '+ phòng'" class="line-clamp-1"></span>
-            <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
-          </button>
-
-          <!-- Bedrooms Dropdown Menu -->
-          <div x-show="showBedroomsDropdown" @click.away="showBedroomsDropdown = false" x-cloak
-            class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-            <ul class="py-1">
-              <li @click="selectBedrooms('1')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBedrooms === '1' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>1+ phòng</span>
-              </li>
-              <li @click="selectBedrooms('2')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBedrooms === '2' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>2+ phòng</span>
-              </li>
-              <li @click="selectBedrooms('3')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBedrooms === '3' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>3+ phòng</span>
-              </li>
-              <li @click="selectBedrooms('4')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBedrooms === '4' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>4+ phòng</span>
-              </li>
-              <li @click="selectBedrooms('5')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBedrooms === '5' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>5+ phòng</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Chọn số phòng ngủ</option>
+          <option value="1">1+ phòng</option>
+          <option value="2">2+ phòng</option>
+          <option value="3">3+ phòng</option>
+          <option value="4">4+ phòng</option>
+          <option value="5">5+ phòng</option>
+        </select>
       </div>
       <div>
         <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số WC (tối
           thiểu)</label>
-        <div class="relative">
-          <button type="button" @click="toggleBathroomsDropdown()"
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1">
-            <span x-show="!selectedBathrooms" class="line-clamp-1">Chọn số WC</span>
-            <span x-show="selectedBathrooms" x-text="selectedBathrooms + '+ WC'" class="line-clamp-1"></span>
-            <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
-          </button>
-
-          <!-- Bathrooms Dropdown Menu -->
-          <div x-show="showBathroomsDropdown" @click.away="showBathroomsDropdown = false" x-cloak
-            class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-            <ul class="py-1">
-              <li @click="selectBathrooms('1')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBathrooms === '1' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>1+ WC</span>
-              </li>
-              <li @click="selectBathrooms('2')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBathrooms === '2' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>2+ WC</span>
-              </li>
-              <li @click="selectBathrooms('3')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBathrooms === '3' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>3+ WC</span>
-              </li>
-              <li @click="selectBathrooms('4')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedBathrooms === '4' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>4+ WC</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Chọn số WC</option>
+          <option value="1">1+ WC</option>
+          <option value="2">2+ WC</option>
+          <option value="3">3+ WC</option>
+          <option value="4">4+ WC</option>
+        </select>
       </div>
       <div>
         <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
           Hướng nhà
         </label>
-        <div class="relative">
-          <button type="button" @click="toggleDirectionDropdown()"
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1">
-            <span x-show="!selectedDirection" class="line-clamp-1">Chọn hướng</span>
-            <span x-show="selectedDirection" x-text="getDirectionDisplayValue()" class="line-clamp-1"></span>
-            <i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
-          </button>
-
-          <!-- Direction Dropdown Menu -->
-          <div x-show="showDirectionDropdown" @click.away="showDirectionDropdown = false" x-cloak
-            class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-            <ul class="py-1">
-              <li @click="selectDirection('dong')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'dong' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Đông</span>
-              </li>
-              <li @click="selectDirection('tay')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'tay' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Tây</span>
-              </li>
-              <li @click="selectDirection('nam')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'nam' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Nam</span>
-              </li>
-              <li @click="selectDirection('bac')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'bac' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Bắc</span>
-              </li>
-              <li @click="selectDirection('dong-nam')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'dong-nam' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Đông Nam</span>
-              </li>
-              <li @click="selectDirection('dong-bac')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'dong-bac' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Đông Bắc</span>
-              </li>
-              <li @click="selectDirection('tay-nam')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'tay-nam' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Tây Nam</span>
-              </li>
-              <li @click="selectDirection('tay-bac')" class="flex items-center px-4 py-2 text-sm cursor-pointer"
-                :class="selectedDirection === 'tay-bac' ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'">
-                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
-                <i data-lucide="check" class="w-4 h-4 mr-2 invisible"></i>
-                <span>Tây Bắc</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="">Chọn hướng</option>
+          <option value="dong">Đông</option>
+          <option value="tay">Tây</option>
+          <option value="nam">Nam</option>
+          <option value="bac">Bắc</option>
+          <option value="dong-nam">Đông Nam</option>
+          <option value="dong-bac">Đông Bắc</option>
+          <option value="tay-nam">Tây Nam</option>
+          <option value="tay-bac">Tây Bắc</option>
+        </select>
       </div>
       <div>
         <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
@@ -845,70 +309,55 @@
         </label>
         <div class="space-y-2 max-h-48 overflow-y-auto">
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Hồ bơi')" @change="toggleAmenity('Hồ bơi')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Hồ bơi">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Hồ bơi">
             <label class="font-medium text-sm cursor-pointer" for="Hồ bơi">Hồ bơi</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Gym')" @change="toggleAmenity('Gym')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Gym">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Gym">
             <label class="font-medium text-sm cursor-pointer" for="Gym">Gym</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Công viên')" @change="toggleAmenity('Công viên')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Công viên">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Công viên">
             <label class="font-medium text-sm cursor-pointer" for="Công viên">Công viên</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Siêu thị')" @change="toggleAmenity('Siêu thị')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Siêu thị">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Siêu thị">
             <label class="font-medium text-sm cursor-pointer" for="Siêu thị">Siêu thị</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Trường học')" @change="toggleAmenity('Trường học')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Trường học">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Trường học">
             <label class="font-medium text-sm cursor-pointer" for="Trường học">Trường học</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Bệnh viện')" @change="toggleAmenity('Bệnh viện')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Bệnh viện">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Bệnh viện">
             <label class="font-medium text-sm cursor-pointer" for="Bệnh viện">Bệnh viện</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('An ninh 24/7')" @change="toggleAmenity('An ninh 24/7')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="An ninh 24/7">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="An ninh 24/7">
             <label class="font-medium text-sm cursor-pointer" for="An ninh 24/7">An ninh 24/7</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Thang máy')" @change="toggleAmenity('Thang máy')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Thang máy">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Thang máy">
             <label class="font-medium text-sm cursor-pointer" for="Thang máy">Thang máy</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Hầm để xe')" @change="toggleAmenity('Hầm để xe')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Hầm để xe">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Hầm để xe">
             <label class="font-medium text-sm cursor-pointer" for="Hầm để xe">Hầm để xe</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Sân vườn')" @change="toggleAmenity('Sân vườn')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Sân vườn">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Sân vườn">
             <label class="font-medium text-sm cursor-pointer" for="Sân vườn">Sân vườn</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Gần KCN')" @change="toggleAmenity('Gần KCN')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Gần KCN">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Gần KCN">
             <label class="font-medium text-sm cursor-pointer" for="Gần KCN">Gần KCN</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Mặt tiền rộng')"
-              @change="toggleAmenity('Mặt tiền rộng')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Mặt tiền rộng">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Mặt tiền rộng">
             <label class="font-medium text-sm cursor-pointer" for="Mặt tiền rộng">Mặt tiền rộng</label>
           </div>
           <div class="flex items-center space-x-2">
-            <input type="checkbox" :checked="isAmenitySelected('Giao thông thuận lợi')"
-              @change="toggleAmenity('Giao thông thuận lợi')"
-              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Giao thông thuận lợi">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Giao thông thuận lợi">
             <label class="font-medium text-sm cursor-pointer" for="Giao thông thuận lợi">Giao thông thuận
               lợi</label>
           </div>

@@ -2,11 +2,13 @@
   <h1 class="text-lg sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Tìm kiếm bất động sản</h1>
   <form class="flex flex-col sm:flex-row gap-2 sm:gap-3">
     <div class="flex-1 relative">
-      <i data-lucide="search" class="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3 sm:h-4 sm:w-4"></i>
-      <input type="text"
+      <i data-lucide="search"
+        class="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3 sm:h-4 sm:w-4"></i>
+      <input type="text" x-model="keyword"
         class="flex w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-8 sm:pl-10 pr-8 sm:pr-10 h-8 sm:h-10 text-xs sm:text-sm"
         placeholder="Nhập từ khóa tìm kiếm...">
-      <button class="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors">
+      <button type="button" @click="clearKeyword()" x-show="keyword.length > 0"
+        class="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors">
         <i data-lucide="x" class="h-3 w-3 sm:h-4 sm:w-4"></i>
       </button>
     </div>

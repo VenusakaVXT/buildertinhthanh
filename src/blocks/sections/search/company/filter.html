@@ -1,0 +1,634 @@
+<div class="hidden lg:block w-80 flex-shrink-0">
+  <div class="sticky top-4">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 p-6 pb-3 sm:pb-4">
+        <div class="flex items-center justify-between">
+          <div class="font-semibold tracking-tight text-sm sm:text-lg flex items-center gap-2"><i data-lucide="filter"
+              class="w-4 h-4 sm:w-5 sm:h-5"></i>Bộ lọc</div><button @click="clearAllFilters()"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 text-gray-500 hover:text-gray-700 text-xs sm:text-sm">Xóa
+            tất cả</button>
+        </div>
+      </div>
+
+      <!-- Bộ lọc đang áp dụng -->
+      <div x-show="hasActiveFilters()" x-cloak class="px-6 pb-4">
+        <h3 class="text-sm font-medium text-gray-700 mb-3">Bộ lọc đang áp dụng</h3>
+        <div class="flex flex-wrap gap-2">
+          <template x-for="(filter, index) in appliedFilters" :key="filter.type + '-' + index">
+            <div class="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+              <span x-text="filter.label"></span>
+              <button type="button" @click="filter.clearFn()"
+                class="ml-1 hover:bg-gray-200 rounded-full p-0.5 transition-colors">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="p-6 pt-0 space-y-4 sm:space-y-6">
+        <div class="space-y-2 sm:space-y-3">
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs sm:text-sm font-medium">
+              Ngành nghề
+            </label>
+            <div>
+              <select class="select select-white w-full h-8 sm:h-auto text-xs sm:text-sm">
+                <option value="">Tất cả ngành nghề</option>
+                <option value="ban-le">Bán lẻ</option>
+                <option value="bat-dong-san">Bất động sản</option>
+                <option value="cong-nghe-thong-tin">Công nghệ thông tin</option>
+                <option value="giao-duc">Giáo dục</option>
+                <option value="logistics">Logistics</option>
+                <option value="marketing">Marketing</option>
+                <option value="san-xuat">Sản xuất</option>
+                <option value="tai-chinh">Tài chính</option>
+                <option value="y-te">Y tế</option>
+                <option value="o-to">Ô tô</option>
+                <option value="dien-tu-cong-nghe">Điện tử - Công nghệ</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Sub-industry dropdown (only show when industry is selected) -->
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs sm:text-sm font-medium">
+              Lĩnh vực
+            </label>
+            <div>
+              <select id="subIndustry" class="select select-white w-full h-8 sm:h-auto text-xs sm:text-sm" disabled>
+                <option value="">Tất cả lĩnh vực</option>
+                <!-- Bất động sản -->
+                <option value="phat-trien-bat-dong-san" data-industry="bat-dong-san">Phát triển bất động sản</option>
+                <option value="phat-trien-du-an" data-industry="bat-dong-san">Phát triển dự án</option>
+                <option value="dau-tu-phat-trien" data-industry="bat-dong-san">Đầu tư phát triển</option>
+                <option value="moi-gioi-dich-vu-bds" data-industry="bat-dong-san">Môi giới & dịch vụ BĐS</option>
+                <option value="quan-ly-bat-dong-san" data-industry="bat-dong-san">Quản lý bất động sản</option>
+
+                <!-- Công nghệ thông tin -->
+                <option value="phan-mem" data-industry="cong-nghe-thong-tin">Phần mềm</option>
+                <option value="dich-vu-it" data-industry="cong-nghe-thong-tin">Dịch vụ IT</option>
+                <option value="thuong-mai-dien-tu" data-industry="cong-nghe-thong-tin">Thương mại điện tử</option>
+                <option value="tri-tue-nhan-tao" data-industry="cong-nghe-thong-tin">Trí tuệ nhân tạo (AI)</option>
+                <option value="an-ninh-mang" data-industry="cong-nghe-thong-tin">An ninh mạng</option>
+
+                <!-- Sản xuất -->
+                <option value="san-xuat-dien-tu" data-industry="san-xuat">Sản xuất điện tử</option>
+                <option value="san-xuat-o-to" data-industry="san-xuat">Sản xuất ô tô</option>
+                <option value="san-xuat-det-may" data-industry="san-xuat">Sản xuất dệt may</option>
+                <option value="san-xuat-thuc-pham" data-industry="san-xuat">Sản xuất thực phẩm</option>
+                <option value="san-xuat-co-khi" data-industry="san-xuat">Sản xuất cơ khí</option>
+
+                <!-- Bán lẻ -->
+                <option value="sieu-thi-cua-hang-tien-loi" data-industry="ban-le">Siêu thị & cửa hàng tiện lợi</option>
+                <option value="thoi-trang-phu-kien" data-industry="ban-le">Thời trang & phụ kiện</option>
+                <option value="do-gia-dung" data-industry="ban-le">Đồ gia dụng</option>
+                <option value="thuc-pham-do-uong" data-industry="ban-le">Thực phẩm & đồ uống</option>
+
+                <!-- Giáo dục -->
+                <option value="giao-duc-pho-thong" data-industry="giao-duc">Giáo dục phổ thông</option>
+                <option value="dao-tao-nghe" data-industry="giao-duc">Đào tạo nghề</option>
+                <option value="dai-hoc-sau-dai-hoc" data-industry="giao-duc">Đại học & sau đại học</option>
+                <option value="dao-tao-truc-tuyen" data-industry="giao-duc">Đào tạo trực tuyến</option>
+
+                <!-- Logistics -->
+                <option value="van-tai-duong-bo" data-industry="logistics">Vận tải đường bộ</option>
+                <option value="van-tai-duong-bien" data-industry="logistics">Vận tải đường biển</option>
+                <option value="kho-bai-phan-phoi" data-industry="logistics">Kho bãi & phân phối</option>
+                <option value="giao-nhan-nhanh" data-industry="logistics">Giao nhận nhanh</option>
+
+                <!-- Marketing -->
+                <option value="quang-cao" data-industry="marketing">Quảng cáo</option>
+                <option value="digital-marketing" data-industry="marketing">Digital Marketing</option>
+                <option value="quan-he-cong-chung" data-industry="marketing">Quan hệ công chúng (PR)</option>
+                <option value="nghien-cuu-thi-truong" data-industry="marketing">Nghiên cứu thị trường</option>
+
+                <!-- Tài chính -->
+                <option value="ngan-hang" data-industry="tai-chinh">Ngân hàng</option>
+                <option value="chung-khoan" data-industry="tai-chinh">Chứng khoán</option>
+                <option value="bao-hiem" data-industry="tai-chinh">Bảo hiểm</option>
+                <option value="dau-tu" data-industry="tai-chinh">Đầu tư</option>
+
+                <!-- Y tế -->
+                <option value="benh-vien-phong-kham" data-industry="y-te">Bệnh viện & phòng khám</option>
+                <option value="duoc-pham" data-industry="y-te">Dược phẩm</option>
+                <option value="trang-thiet-bi-y-te" data-industry="y-te">Trang thiết bị y tế</option>
+                <option value="cham-soc-suc-khoe" data-industry="y-te">Chăm sóc sức khỏe</option>
+
+                <!-- Ô tô -->
+                <option value="san-xuat-o-to" data-industry="o-to">Sản xuất ô tô</option>
+                <option value="phan-phoi-dai-ly" data-industry="o-to">Phân phối & đại lý</option>
+                <option value="phu-tung-linh-kien" data-industry="o-to">Phụ tùng & linh kiện</option>
+                <option value="dich-vu-sua-chua-bao-duong" data-industry="o-to">Dịch vụ sửa chữa & bảo dưỡng</option>
+
+                <!-- Điện tử - Công nghệ -->
+                <option value="thiet-bi-dien-tu" data-industry="dien-tu-cong-nghe">Thiết bị điện tử</option>
+                <option value="cong-nghe-vien-thong" data-industry="dien-tu-cong-nghe">Công nghệ viễn thông</option>
+                <option value="cong-nghe-tieu-dung" data-industry="dien-tu-cong-nghe">Công nghệ tiêu dùng</option>
+                <option value="nghien-cuu-phat-trien" data-industry="dien-tu-cong-nghe">Nghiên cứu & phát triển</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2 sm:space-y-3">
+          <!-- Tỉnh/Thành phố -->
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+              for="province">Tỉnh/Thành phố</label>
+            <select id="province" class="select select-white w-full h-10 text-sm">
+              <option value="">Chọn tỉnh/thành phố</option>
+              <option value="binh-duong">Bình Dương</option>
+              <option value="tp-ho-chi-minh">TP.Hồ Chí Minh</option>
+              <option value="dong-nai">Đồng Nai</option>
+              <option value="long-an">Long An</option>
+              <option value="tay-ninh">Tây Ninh</option>
+            </select>
+          </div>
+
+          <!-- Quận/Huyện -->
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+              for="district">Quận/Huyện</label>
+            <select id="district" class="select select-white w-full h-10 text-sm" disabled>
+              <option value="">Chọn quận/huyện</option>
+              <!-- Bình Dương Districts -->
+              <option value="tp-thu-dau-mot" data-province="binh-duong">TP. Thủ Dầu Một</option>
+              <option value="tp-di-an" data-province="binh-duong">TP. Dĩ An</option>
+              <option value="tp-thuan-an" data-province="binh-duong">TP. Thuận An</option>
+              <option value="ben-cat" data-province="binh-duong">Bến Cát</option>
+              <option value="tan-uyen" data-province="binh-duong">Tân Uyên</option>
+              <option value="bau-bang" data-province="binh-duong">Bàu Bàng</option>
+              <option value="phu-giao" data-province="binh-duong">Phú Giáo</option>
+              <option value="dau-tieng" data-province="binh-duong">Dầu Tiếng</option>
+              <option value="bac-tan-uyen" data-province="binh-duong">Bắc Tân Uyên</option>
+
+              <!-- TP.Hồ Chí Minh Districts -->
+              <option value="quan-1" data-province="tp-ho-chi-minh">Quận 1</option>
+              <option value="quan-2" data-province="tp-ho-chi-minh">Quận 2</option>
+              <option value="quan-3" data-province="tp-ho-chi-minh">Quận 3</option>
+              <option value="quan-4" data-province="tp-ho-chi-minh">Quận 4</option>
+              <option value="quan-5" data-province="tp-ho-chi-minh">Quận 5</option>
+              <option value="quan-6" data-province="tp-ho-chi-minh">Quận 6</option>
+              <option value="quan-7" data-province="tp-ho-chi-minh">Quận 7</option>
+              <option value="quan-8" data-province="tp-ho-chi-minh">Quận 8</option>
+              <option value="quan-9" data-province="tp-ho-chi-minh">Quận 9</option>
+              <option value="quan-10" data-province="tp-ho-chi-minh">Quận 10</option>
+              <option value="quan-11" data-province="tp-ho-chi-minh">Quận 11</option>
+              <option value="quan-12" data-province="tp-ho-chi-minh">Quận 12</option>
+              <option value="tp-thu-duc" data-province="tp-ho-chi-minh">TP. Thủ Đức</option>
+
+              <!-- Đồng Nai Districts -->
+              <option value="tp-bien-hoa" data-province="dong-nai">TP. Biên Hòa</option>
+              <option value="tp-long-khanh" data-province="dong-nai">TP. Long Khánh</option>
+              <option value="nhon-trach" data-province="dong-nai">Nhơn Trạch</option>
+              <option value="vinh-cuu" data-province="dong-nai">Vĩnh Cửu</option>
+              <option value="trang-bom" data-province="dong-nai">Trảng Bom</option>
+              <option value="thong-nhat" data-province="dong-nai">Thống Nhất</option>
+              <option value="cam-my" data-province="dong-nai">Cẩm Mỹ</option>
+              <option value="long-thanh" data-province="dong-nai">Long Thành</option>
+              <option value="xuan-loc" data-province="dong-nai">Xuân Lộc</option>
+              <option value="dinh-quan" data-province="dong-nai">Định Quán</option>
+              <option value="tan-phu" data-province="dong-nai">Tân Phú</option>
+
+              <!-- Long An Districts -->
+              <option value="tp-tan-an" data-province="long-an">TP. Tân An</option>
+              <option value="can-giuoc" data-province="long-an">Cần Giuộc</option>
+              <option value="can-duoc" data-province="long-an">Cần Đước</option>
+              <option value="chau-thanh" data-province="long-an">Châu Thành</option>
+              <option value="duc-hoa" data-province="long-an">Đức Hòa</option>
+              <option value="duc-hue" data-province="long-an">Đức Huệ</option>
+              <option value="moc-hoa" data-province="long-an">Mộc Hóa</option>
+              <option value="tan-hung" data-province="long-an">Tân Hưng</option>
+              <option value="tan-thanh" data-province="long-an">Tân Thạnh</option>
+              <option value="tan-tru" data-province="long-an">Tân Trụ</option>
+              <option value="thanh-hoa" data-province="long-an">Thạnh Hóa</option>
+              <option value="thu-thua" data-province="long-an">Thủ Thừa</option>
+              <option value="vinh-hung" data-province="long-an">Vĩnh Hưng</option>
+
+              <!-- Tây Ninh Districts -->
+              <option value="tp-tay-ninh" data-province="tay-ninh">TP. Tây Ninh</option>
+              <option value="ben-cau" data-province="tay-ninh">Bến Cầu</option>
+              <option value="chau-thanh-tn" data-province="tay-ninh">Châu Thành</option>
+              <option value="duong-minh-chau" data-province="tay-ninh">Dương Minh Châu</option>
+              <option value="go-dau" data-province="tay-ninh">Gò Dầu</option>
+              <option value="hoa-thanh" data-province="tay-ninh">Hòa Thành</option>
+              <option value="tan-bien" data-province="tay-ninh">Tân Biên</option>
+              <option value="tan-chau" data-province="tay-ninh">Tân Châu</option>
+              <option value="trang-bang" data-province="tay-ninh">Trảng Bàng</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="space-y-3">
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Số lượng nhân viên
+          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <input x-model="employeesMin" @input="validateEmployees()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                placeholder="Tối thiểu" type="number">
+            </div>
+            <div>
+              <input x-model="employeesMax" @input="validateEmployees()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                placeholder="Tối đa" type="number">
+            </div>
+          </div>
+          <div x-show="employeesError" class="text-red-500 text-sm">
+            <span x-text="employeesError"></span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Doanh thu (VND/năm)
+          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <input x-model="revenueMin" @input="validateRevenue()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-sm"
+                placeholder="Tối thiểu" type="number">
+            </div>
+            <div>
+              <input x-model="revenueMax" @input="validateRevenue()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-sm"
+                placeholder="Tối đa" type="number">
+            </div>
+          </div>
+          <div x-show="revenueError" class="text-red-500 text-sm">
+            <span x-text="revenueError"></span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Năm thành lập
+          </label>
+          <input x-model="establishmentYear" @input="updateEstablishmentYear()" @blur="updateEstablishmentYear()"
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-sm"
+            placeholder="Ví dụ: 2010" type="number">
+          <div x-show="establishmentYearError" class="text-red-500 text-sm">
+            <span x-text="establishmentYearError"></span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex flex-col space-y-1.5 pb-2 sm:pb-3 font-semibold text-xs sm:text-sm">
+            Đánh giá tối thiểu (sao)
+          </div>
+          <div class="space-y-3 sm:space-y-4">
+            <!-- Custom slider container -->
+            <div class="relative" @mousedown="startRatingDrag($event)" @touchstart="startRatingDrag($event)"
+              @click="onRatingSliderClick($event)" x-ref="ratingSlider">
+
+              <!-- Slider track -->
+              <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
+                <!-- Active track (blue part) -->
+                <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+                  :style="`width: ${getRatingPercentage()}%`"></div>
+
+                <!-- Slider handle -->
+                <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+                  :style="`left: ${getRatingPercentage()}%`">
+                  <!-- Handle circle -->
+                  <div
+                    class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                    @mousedown="startRatingDrag($event)" @touchstart="startRatingDrag($event)">
+                  </div>
+
+                  <!-- Value display tooltip -->
+                  <div
+                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                    x-show="isRatingDragging || minRating > 0" x-text="getRatingDisplayValue()">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Min/Max labels -->
+            <div class="flex justify-between text-xs sm:text-sm text-gray-500">
+              <span x-text="minRating > 0 ? minRating + ' sao' : '0 sao'"></span>
+              <span>5 sao</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Tùy chọn khác
+          </label>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="hasHiring"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="hasHiring">Đang tuyển dụng</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="verified"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="verified">Đã xác minh</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="active"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="active">Đang hoạt động</label>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Chứng chỉ
+          </label>
+          <div class="max-h-32 overflow-y-auto space-y-2">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-AEO"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-AEO">AEO</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-BRC"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-BRC">BRC</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-BSCI"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-BSCI">BSCI</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-CMMI Level 5"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-CMMI Level 5">CMMI Level 5</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-Cambridge Assessment"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-Cambridge Assessment">Cambridge Assessment</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-Google Partner"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-Google Partner">Google Partner</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-Green Building"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-Green Building">Green Building</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-HACCP"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-HACCP">HACCP</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-IB Authorization"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-IB Authorization">IB Authorization</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-ISO 14001"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-ISO 14001">ISO 14001</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-ISO 15189"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-ISO 15189">ISO 15189</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-ISO 27001"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-ISO 27001">ISO 27001</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-ISO 45001"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-ISO 45001">ISO 45001</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-ISO 9001"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-ISO 9001">ISO 9001</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-JCI"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-JCI">JCI</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-OHSAS 18001"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-OHSAS 18001">OHSAS 18001</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-TS 16949"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-TS 16949">TS 16949</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="cert-WRAP"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="cert-WRAP">WRAP</label>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Từ khóa
+          </label>
+          <div class="max-h-32 overflow-y-auto space-y-2">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-CNTT"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-CNTT">CNTT</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-bán lẻ"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-bán lẻ">bán lẻ</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-bất động sản"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-bất động sản">bất động sản</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-bệnh viện"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-bệnh viện">bệnh viện</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-cao cấp"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-cao cấp">cao cấp</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-chăm sóc sức khỏe"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-chăm sóc sức khỏe">chăm sóc sức khỏe</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-chất lượng cao"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-chất lượng cao">chất lượng cao</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-công nghiệp"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-công nghiệp">công nghiệp</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-công nghệ"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-công nghệ">công nghệ</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-digital"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-digital">digital</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-digital transformation"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-digital transformation">digital transformation</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-giày dép"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-giày dép">giày dép</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-giáo dục"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-giáo dục">giáo dục</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-hạ tầng"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-hạ tầng">hạ tầng</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-kho bãi"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-kho bãi">kho bãi</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-khu công nghiệp"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-khu công nghiệp">khu công nghiệp</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-linh kiện ô tô"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-linh kiện ô tô">linh kiện ô tô</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-logistics"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-logistics">logistics</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-lắp ráp"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-lắp ráp">lắp ráp</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-marketing"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+                for="tag-marketing">marketing</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@
         <input x-model="keyword" @keydown.enter="performSearch()"
           class="flex w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-7 sm:pl-10 pr-7 sm:pr-10 h-8 sm:h-10 text-xs sm:text-sm"
           placeholder="Nhập từ khóa tìm kiếm...">
-        <button x-show="keyword.trim()" @click="clearKeyword()"
+        <button x-show="keyword.length > 0" @click="clearKeyword()"
           class="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200 p-1 rounded-full hover:bg-gray-100"
           type="button" aria-label="Xóa từ khóa tìm kiếm">
           <i data-lucide="x" class="h-3 w-3 sm:h-4 sm:w-4"></i>
