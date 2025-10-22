@@ -115,7 +115,7 @@
             for="district">Quận/Huyện</label>
           <select id="district" class="select select-white w-full h-10 text-sm" disabled>
             <option value="">Chọn quận/huyện</option>
-            <!-- Bình Dương Districts -->
+                <!-- Bình Dương Districts -->
             <option value="tp-thu-dau-mot" data-province="binh-duong">TP. Thủ Dầu Một</option>
             <option value="tp-di-an" data-province="binh-duong">TP. Dĩ An</option>
             <option value="tp-thuan-an" data-province="binh-duong">TP. Thuận An</option>
@@ -126,7 +126,7 @@
             <option value="dau-tieng" data-province="binh-duong">Dầu Tiếng</option>
             <option value="bac-tan-uyen" data-province="binh-duong">Bắc Tân Uyên</option>
 
-            <!-- TP.Hồ Chí Minh Districts -->
+                <!-- TP.Hồ Chí Minh Districts -->
             <option value="quan-1" data-province="tp-ho-chi-minh">Quận 1</option>
             <option value="quan-2" data-province="tp-ho-chi-minh">Quận 2</option>
             <option value="quan-3" data-province="tp-ho-chi-minh">Quận 3</option>
@@ -141,7 +141,7 @@
             <option value="quan-12" data-province="tp-ho-chi-minh">Quận 12</option>
             <option value="tp-thu-duc" data-province="tp-ho-chi-minh">TP. Thủ Đức</option>
 
-            <!-- Đồng Nai Districts -->
+                <!-- Đồng Nai Districts -->
             <option value="tp-bien-hoa" data-province="dong-nai">TP. Biên Hòa</option>
             <option value="tp-long-khanh" data-province="dong-nai">TP. Long Khánh</option>
             <option value="nhon-trach" data-province="dong-nai">Nhơn Trạch</option>
@@ -154,7 +154,7 @@
             <option value="dinh-quan" data-province="dong-nai">Định Quán</option>
             <option value="tan-phu" data-province="dong-nai">Tân Phú</option>
 
-            <!-- Long An Districts -->
+                <!-- Long An Districts -->
             <option value="tp-tan-an" data-province="long-an">TP. Tân An</option>
             <option value="can-giuoc" data-province="long-an">Cần Giuộc</option>
             <option value="can-duoc" data-province="long-an">Cần Đước</option>
@@ -169,7 +169,7 @@
             <option value="thu-thua" data-province="long-an">Thủ Thừa</option>
             <option value="vinh-hung" data-province="long-an">Vĩnh Hưng</option>
 
-            <!-- Tây Ninh Districts -->
+                <!-- Tây Ninh Districts -->
             <option value="tp-tay-ninh" data-province="tay-ninh">TP. Tây Ninh</option>
             <option value="ben-cau" data-province="tay-ninh">Bến Cầu</option>
             <option value="chau-thanh-tn" data-province="tay-ninh">Châu Thành</option>
@@ -233,25 +233,25 @@
           <div class="relative" @mousedown="startDrag($event)" @touchstart="startDrag($event)"
             @click="onSliderClick($event)" x-ref="areaSlider">
 
-            <!-- Slider track -->
+          <!-- Slider track -->
             <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
-              <!-- Active track (blue part) -->
-              <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
-                :style="`width: ${getAreaPercentage()}%`"></div>
+            <!-- Active track (blue part) -->
+            <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+              :style="`width: ${getAreaPercentage()}%`"></div>
 
-              <!-- Slider handle -->
-              <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
-                :style="`left: ${getAreaPercentage()}%`">
-                <!-- Handle circle -->
-                <div
-                  class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+            <!-- Slider handle -->
+            <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+              :style="`left: ${getAreaPercentage()}%`">
+              <!-- Handle circle -->
+              <div
+                class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
                   @mousedown="startDrag($event)" @touchstart="startDrag($event)">
-                </div>
+              </div>
 
-                <!-- Value display tooltip -->
-                <div
-                  class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
-                  x-show="isDragging || areaMin > 0" x-text="getAreaDisplayValue()">
+              <!-- Value display tooltip -->
+              <div
+                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                x-show="isDragging || areaMin > 0" x-text="getAreaDisplayValue()">
                 </div>
               </div>
             </div>

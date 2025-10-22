@@ -144,6 +144,10 @@ sun
 ellipsis
 github
 school
+loader-2
 sliders-horizontal
+footprints
+file-type
+arrow-up-down
 play
 mic

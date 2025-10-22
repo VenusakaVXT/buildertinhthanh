@@ -1,0 +1,296 @@
+<div class="hidden md:block w-80 flex-shrink-0">
+  <div class="sticky top-6 pr-2">
+    <div class="space-y-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="filter" class="w-5 h-5 text-gray-600"></i>
+          <h3 class="font-semibold text-gray-900">Bộ lọc</h3>
+        </div>
+      </div>
+
+      <!-- Bộ lọc đang áp dụng -->
+      <div x-show="hasActiveFilters()" x-cloak class="px-6 pb-4">
+        <h3 class="text-sm font-medium text-gray-700 mb-3">Bộ lọc đang áp dụng</h3>
+        <div class="flex flex-wrap gap-2">
+          <template x-for="(filter, index) in appliedFilters" :key="filter.type + '-' + index">
+            <div class="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+              <span x-text="filter.label"></span>
+              <button type="button" @click="filter.clearFn()"
+                class="ml-1 hover:bg-gray-200 rounded-full p-0.5 transition-colors">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" x-data="newsSearch">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-sm flex items-center gap-2">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            Chuyên mục
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Tất cả chuyên mục</option>
+            <option value="dan-sinh">Dân Sinh</option>
+            <option value="giao-thong">Giao Thông</option>
+            <option value="giao-duc">Giáo Dục</option>
+            <option value="khoi-nghiep">Khởi Nghiệp</option>
+            <option value="kinh-te">Kinh Tế</option>
+            <option value="moi-truong">Môi Trường</option>
+            <option value="thuong-mai">Thương Mại</option>
+            <option value="the-thao">Thể Thao</option>
+            <option value="van-hoa">Văn Hóa</option>
+            <option value="y-te">Y Tế</option>
+            <option value="am-thuc">Ẩm Thực</option>
+          </select>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" x-data="newsSearch">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-sm flex items-center gap-2">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            Thẻ tag
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-3">
+          <div class="max-h-32 overflow-y-auto space-y-2">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-FDI"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-FDI">
+                #FDI
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-bất động sản"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-bất động sản">
+                #bất động sản
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-chất lượng"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+                #chất lượng
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-công nghệ"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-công nghệ">
+                #công nghệ
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-cầu vượt"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-cầu vượt">
+                #cầu vượt
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-du lịch"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-du lịch">
+                #du lịch
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-dân sinh"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-dân sinh">
+                #dân sinh
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-giao thông"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-giao thông">
+                #giao thông
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-giáo dục"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-giáo dục">
+                #giáo dục
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-giải thưởng"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-giải thưởng">
+                #giải thưởng
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-giải trí"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-giải trí">
+                #giải trí
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-hạ tầng"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-hạ tầng">
+                #hạ tầng
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-khu công nghiệp"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-khu công nghiệp">
+                #khu công nghiệp
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-khu đô thị"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-khu đô thị">
+                #khu đô thị
+              </label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" id="tag-khởi nghiệp"
+                class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+              <label class="font-medium text-sm cursor-pointer" for="tag-khởi nghiệp">
+                #khởi nghiệp
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" x-data="newsSearch">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-sm flex items-center gap-2">
+            <i data-lucide="building-2" class="w-4 h-4"></i>
+            Nguồn tin
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Tất cả các nguồn</option>
+            <option value="bao-binh-duong">Báo Bình Dương</option>
+            <option value="cafeland">Cafeland</option>
+            <option value="dan-tri">Dân Trí</option>
+            <option value="giao-duc-thoi-dai">Giáo Dục & Thời Đại</option>
+            <option value="suc-khoe-doi-song">Sức Khỏe & Đời Sống</option>
+            <option value="thanh-nien">Thanh Niên</option>
+            <option value="the-thao-van-hoa">Thể Thao & Văn Hóa</option>
+            <option value="tuoi-tre">Tuổi Trẻ</option>
+            <option value="vietnamnet">VietnamNet</option>
+            <option value="vnexpress">VnExpress</option>
+          </select>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" x-data="newsSearch">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-sm flex items-center gap-2">
+            <i data-lucide="user" class="w-4 h-4"></i>
+            Tác giả
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Tất cả tác giả</option>
+            <option value="nguyen-van-a">Nguyễn Văn A</option>
+            <option value="tran-thi-b">Trần Thị B</option>
+            <option value="le-van-c">Lê Văn C</option>
+            <option value="pham-thi-d">Phạm Thị D</option>
+            <option value="hoang-van-e">Hoàng Văn E</option>
+            <option value="vu-thi-f">Vũ Thị F</option>
+            <option value="dang-van-g">Đặng Văn G</option>
+            <option value="bui-thi-h">Bùi Thị H</option>
+            <option value="phan-van-i">Phan Văn I</option>
+            <option value="vo-thi-k">Võ Thị K</option>
+          </select>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-sm flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            Khoảng thời gian
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-3">
+          <div>
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-gray-600"
+              for="dateFrom">Từ ngày</label>
+            <input type="date"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1"
+              id="dateFrom" x-model="dateFrom" @change="validateDateRange()">
+          </div>
+          <div>
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-gray-600"
+              for="dateTo">Đến ngày</label>
+            <input type="date"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1"
+              id="dateTo" x-model="dateTo" @change="validateDateRange()">
+            <!-- Error message -->
+            <div x-show="dateError" class="text-red-500 text-xs mt-1">
+              <span x-text="dateError"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" x-data="newsSearch">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-sm flex items-center gap-2">
+            <i data-lucide="file-type" class="w-4 h-4"></i>
+            Loại bài viết
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Tất cả loại</option>
+            <option value="bai-bao">Bài báo</option>
+            <option value="video">Video</option>
+            <option value="hinh-anh">Hình ảnh</option>
+            <option value="y-kien">Ý kiến</option>
+            <option value="phan-tich">Phân tích</option>
+          </select>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" x-data="newsSearch">
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="font-semibold tracking-tight text-sm">Bộ lọc đặc biệt</div>
+        </div>
+        <div class="p-6 pt-0 space-y-3">
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="hasVideo"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium text-sm cursor-pointer flex items-center gap-2" for="hasVideo">
+              <i data-lucide="video" class="w-4 h-4"></i>
+              Có video
+            </label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="popular"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium text-sm cursor-pointer flex items-center gap-2" for="popular">
+              <i data-lucide="star" class="w-4 h-4"></i>
+              Nổi bật
+            </label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="breaking"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium text-sm cursor-pointer flex items-center gap-2" for="breaking">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+              Tin nóng
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

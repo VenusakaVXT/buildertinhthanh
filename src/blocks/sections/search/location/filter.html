@@ -1,0 +1,257 @@
+<div class="hidden lg:block">
+  <div class="space-y-4 sm:space-y-6">
+    <div class="flex items-center justify-between">
+      <h3 class="font-semibold text-sm sm:text-lg">Bộ lọc</h3>
+    </div>
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 p-6 pb-2 sm:pb-3">
+        <div class="font-semibold tracking-tight text-sm sm:text-base flex items-center gap-2"><i data-lucide="map-pin"
+            class="w-3 h-3 sm:h-4 sm:w-4"></i>Vị trí &amp; Khoảng cách</div>
+      </div>
+      <div class="p-6 pt-0 space-y-3 sm:space-y-4">
+        <div class="space-y-2" x-data="locationSearch">
+          <button @click="getCurrentLocation()" :disabled="isGettingLocation"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-full bg-transparent">
+            <i data-lucide="navigation" class="w-4 h-4 mr-2"></i>
+            <i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i>
+            <span x-text="isGettingLocation ? 'Đang lấy vị trí...' : 'Lấy vị trí hiện tại'"></span>
+          </button>
+
+          <!-- Display current location if available -->
+          <div x-show="currentLat !== null && currentLng !== null"
+            class="mt-2 p-2 bg-green-50 border border-green-200 rounded-md">
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-green-800">
+                <div class="font-medium">Vị trí hiện tại:</div>
+                <div class="text-xs">Lat: <span x-text="currentLat?.toFixed(6)"></span></div>
+                <div class="text-xs">Lng: <span x-text="currentLng?.toFixed(6)"></span></div>
+              </div>
+              <button @click="clearLocation()" class="text-green-600 hover:text-green-800 text-xs">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <form id="manual-coords-form" class="space-y-2" @submit.prevent="setManualLocation()">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm">
+            Hoặc nhập tọa độ thủ công:
+          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-sm"
+              placeholder="Vĩ độ" step="any" type="number" name="lat" x-model="manualLat">
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-sm"
+              placeholder="Kinh độ" step="any" type="number" name="lng" x-model="manualLng">
+          </div>
+          <button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-full bg-transparent"
+            type="submit">Đặt vị trí</button>
+        </form>
+
+        <div class="space-y-3" x-transition x-data="locationSearch">
+          <div class="space-y-2">
+            <label class="font-medium text-sm">Phương tiện di chuyển:</label>
+            <select class="select select-white w-full h-10 text-sm">
+              <option value="walking">Đi bộ</option>
+              <option value="bicycle">Xe đạp</option>
+              <option value="motorbike" selected>Xe máy</option>
+              <option value="car">Ô tô</option>
+              <option value="bus">Xe buýt</option>
+            </select>
+          </div>
+
+          <!-- Maximum Distance -->
+          <div class="space-y-2">
+            <label class="font-medium text-sm">Khoảng cách tối đa (km):</label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              placeholder="Không giới hạn" type="number" min="0" step="0.1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 p-6 pb-3">
+        <div class="font-semibold tracking-tight text-base">Danh mục</div>
+      </div>
+      <div class="p-6 pt-0" x-data="locationSearch">
+        <select class="select select-white w-full h-10 text-sm">
+          <option value="" selected>Tất cả danh mục</option>
+          <option value="shopping">Mua sắm</option>
+          <option value="food">Ăn uống</option>
+          <option value="tourism">Du lịch</option>
+          <option value="healthcare">Y tế</option>
+          <option value="education">Giáo dục</option>
+          <option value="banking">Ngân hàng</option>
+          <option value="transportation">Giao thông</option>
+          <option value="administration">Hành chính</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 p-6 pb-3">
+        <div class="font-semibold tracking-tight text-base">Địa điểm</div>
+      </div>
+      <div class="p-6 pt-0 space-y-4" x-data="locationSearch">
+        <div>
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm">
+            Tỉnh/Thành phố
+          </label>
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="" selected>Chọn tỉnh/thành phố</option>
+            <option value="ho-chi-minh">TP. Hồ Chí Minh</option>
+            <option value="ha-noi">Hà Nội</option>
+            <option value="da-nang">Đà Nẵng</option>
+            <option value="can-tho">Cần Thơ</option>
+            <option value="binh-duong">Bình Dương</option>
+            <option value="dong-nai">Đồng Nai</option>
+            <option value="long-an">Long An</option>
+            <option value="tay-ninh">Tây Ninh</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 p-6 pb-3">
+        <div class="font-semibold tracking-tight text-base">Mức giá</div>
+      </div>
+      <div class="p-6 pt-0" x-data="locationSearch">
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="price-1"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="price-1">Rẻ</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="price-2"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="price-2">Vừa</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="price-3"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="price-3">Đắt</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-3 px-4 rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 pb-2 sm:pb-3 font-semibold text-xs sm:text-sm">
+        Đánh giá tối thiểu (sao)
+      </div>
+      <div class="space-y-3 sm:space-y-4">
+        <!-- Custom slider container -->
+        <div class="relative" @mousedown="startRatingDrag($event)" @touchstart="startRatingDrag($event)"
+          @click="onRatingSliderClick($event)" x-ref="ratingSlider">
+
+          <!-- Slider track -->
+          <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
+            <!-- Active track (blue part) -->
+            <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+              :style="`width: ${getRatingPercentage()}%`"></div>
+
+            <!-- Slider handle -->
+            <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+              :style="`left: ${getRatingPercentage()}%`">
+              <!-- Handle circle -->
+              <div
+                class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                @mousedown="startRatingDrag($event)" @touchstart="startRatingDrag($event)">
+              </div>
+
+              <!-- Value display tooltip -->
+              <div
+                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                x-show="isRatingDragging || minRating > 0" x-text="getRatingDisplayValue()">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Min/Max labels -->
+        <div class="flex justify-between text-xs sm:text-sm text-gray-500">
+          <span x-text="minRating > 0 ? minRating + ' sao' : '0 sao'"></span>
+          <span>5 sao</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 p-6 pb-3">
+        <div class="font-semibold tracking-tight text-base">Thời gian mở cửa</div>
+      </div>
+      <div class="p-6 pt-0" x-data="locationSearch">
+        <div class="flex items-center space-x-2">
+          <button type="button" @click="toggleOpenNow()" :class="isOpenNow ? 'bg-primary' : 'bg-gray-500'"
+            class="peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50"
+            id="open-now">
+            <span :class="isOpenNow ? 'translate-x-5' : 'translate-x-0'"
+              class="pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform"></span>
+          </button>
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+            for="open-now">Đang mở cửa</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="flex flex-col space-y-1.5 p-6 pb-3">
+        <div class="font-semibold tracking-tight text-base">Tiện ích</div>
+      </div>
+      <div class="p-6 pt-0" x-data="locationSearch">
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="feature-wifi"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="feature-wifi">WiFi miễn phí</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="feature-parking"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="feature-parking">Bãi đỗ xe</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="feature-kidFriendly"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="feature-kidFriendly">Thân thiện trẻ em</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="feature-petFriendly"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="feature-petFriendly">Cho phép thú cưng</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="feature-outdoor"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="feature-outdoor">Không gian ngoài trời</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="feature-aircon"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="feature-aircon">Điều hòa</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="feature-delivery"
+              class="h-4 w-4 rounded border border-primary text-primary focus:outline-none">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
+              for="feature-delivery">Giao hàng</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
