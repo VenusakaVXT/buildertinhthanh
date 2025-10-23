@@ -81,8 +81,8 @@ mail
 shield-check
 grid3x3
 list
-chevron-left
 arrow-right
+chevron-left
 eye
 message-circle
 camera
