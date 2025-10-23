@@ -129,8 +129,10 @@ utensils-crossed
 credit-card
 user-round
 sparkles
-circle-x
+save
+loader
 eye-off
+circle-x
 user-pen
 upload
 truck
@@ -153,4 +155,3 @@ file-type
 arrow-up-down
 play
 mic
-save

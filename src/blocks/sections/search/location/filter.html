@@ -202,11 +202,10 @@
       </div>
       <div class="p-6 pt-0" x-data="locationSearch">
         <div class="flex items-center space-x-2">
-          <button type="button" @click="toggleOpenNow()" :class="isOpenNow ? 'bg-primary' : 'bg-gray-500'"
-            class="peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50"
+          <button type="button"
+            class="bg-gray-500 peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50"
             id="open-now">
-            <span :class="isOpenNow ? 'translate-x-5' : 'translate-x-0'"
-              class="pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform"></span>
+            <span class="pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform translate-x-0"></span>
           </button>
           <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer"
             for="open-now">Đang mở cửa</label>

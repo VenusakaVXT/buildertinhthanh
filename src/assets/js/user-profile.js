@@ -12,6 +12,9 @@ document.addEventListener('alpine:init', () => {
             avatar: ''
         },
 
+        // Original data for comparison
+        originalUserInfo: {},
+
         // Password form data
         passwordForm: {
             currentPassword: '',
@@ -31,18 +34,25 @@ document.addEventListener('alpine:init', () => {
 
         init() {
             console.log('User Profile component initialized.');
+            // Store original data for comparison
+            this.originalUserInfo = { ...this.userInfo };
         },
 
-        toggleEditMode() {
+        // Enable edit mode
+        enableEditMode() {
+            this.isEditing = true;
+            this.clearErrors();
+        },
+
+        // Handle form submit (when pressing Enter)
+        handleFormSubmit() {
             if (this.isEditing) {
-                // Save changes
                 this.updatePersonalInfo();
             } else {
-                // Enable edit mode
-                this.isEditing = true;
-                this.clearErrors();
+                this.enableEditMode();
             }
         },
+
 
         async updatePersonalInfo() {
             this.clearErrors();
@@ -56,11 +66,21 @@ document.addEventListener('alpine:init', () => {
                 return;
             }
 
+            // Check if there are any changes
+            if (!this.hasChanges()) {
+                this.isSubmitting = false;
+                this.isEditing = false;
+                this.showInfo('Không có thay đổi nào để lưu');
+                return;
+            }
+
             // Mock success for testing
             setTimeout(() => {
                 this.isEditing = false;
                 this.isSubmitting = false;
                 this.showSuccess('Cập nhật thông tin thành công');
+                // Update original data after successful save
+                this.originalUserInfo = { ...this.userInfo };
             }, 1000);
         },
 
@@ -184,6 +204,21 @@ document.addEventListener('alpine:init', () => {
             if (window.fastNotice) {
                 window.fastNotice.show(message, 'info');
             }
+        },
+
+        // Check if there are any changes
+        hasChanges() {
+            return JSON.stringify(this.userInfo) !== JSON.stringify(this.originalUserInfo);
+        },
+
+        // Cancel edit mode and restore original data
+        cancelEdit() {
+            this.isEditing = false;
+            this.isSubmitting = false;
+            this.clearErrors();
+            // Restore original data
+            this.userInfo = { ...this.originalUserInfo };
+            this.showInfo('Đã hủy thay đổi');
         }
     }));
 });
