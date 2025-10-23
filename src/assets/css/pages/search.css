@@ -916,521 +916,153 @@
   @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors text-xs px-3 py-1 h-8 bg-transparent;
 }
 
-/* Real Estate Card Styles - Common */
-.real-estate-card {
+
+
+/* Real Estate List Card Styles */
+.search__real-estate-list-card {
   @apply rounded-lg border shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer;
 }
 
-.real-estate-card__container {
-  @apply p-0;
+.search__real-estate-list-card__container {
+  @apply p-0 flex items-stretch;
 }
 
-.real-estate-card__image-container {
-  @apply relative overflow-hidden;
+.search__real-estate-list-card__image-container {
+  @apply relative w-40 sm:w-48 md:w-56 lg:w-60 flex-shrink-0 overflow-hidden;
 }
 
-.real-estate-card__image {
-  @apply w-full h-32 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300;
+.search__real-estate-list-card__image {
+  @apply w-full h-full min-h-[8rem] sm:min-h-[9rem] md:min-h-[11rem] object-cover group-hover:scale-105 transition-transform duration-300;
 }
 
-.real-estate-card__badges-top-left {
+.search__real-estate-list-card__badges-top-left {
   @apply absolute top-2 sm:top-3 left-2 sm:left-3 flex flex-col gap-1 sm:gap-2;
 }
 
-.real-estate-card__badge-type {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
+.search__real-estate-list-card__badge-type {
+  @apply inline-flex items-center rounded-full border font-semibold transition-colors border-transparent text-white text-xs px-1 py-0;
 }
 
-.real-estate-card__badge-featured {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
+.search__real-estate-list-card__badge-featured {
+  @apply inline-flex items-center rounded-full border font-semibold transition-colors border-transparent text-white text-xs px-1 py-0;
 }
 
-.real-estate-card__badge-status {
+.search__real-estate-list-card__badge-status {
   @apply absolute top-2 sm:top-3 right-2 sm:right-3;
 }
 
-.real-estate-card__badge-status-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-gray-700 text-xs px-1 py-0;
+.search__real-estate-list-card__badge-status-item {
+  @apply inline-flex items-center rounded-full border font-semibold transition-colors border-transparent text-gray-700 text-xs px-1 py-0;
 }
 
-.real-estate-card__badge-hot {
+.search__real-estate-list-card__badge-hot {
   @apply absolute bottom-2 sm:bottom-3 left-2 sm:left-3;
 }
 
-.real-estate-card__badge-hot-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white animate-pulse text-xs px-1 py-0;
+.search__real-estate-list-card__badge-hot-item {
+  @apply inline-flex items-center rounded-full border font-semibold transition-colors border-transparent text-white animate-pulse text-xs px-1 py-0;
 }
 
-.real-estate-card__badge-verified {
+.search__real-estate-list-card__badge-verified {
   @apply absolute bottom-2 sm:bottom-3 right-2 sm:right-3;
 }
 
-.real-estate-card__badge-verified-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
+.search__real-estate-list-card__badge-verified-item {
+  @apply inline-flex items-center rounded-full border font-semibold transition-colors border-transparent text-white text-xs px-1 py-0;
 }
 
-.real-estate-card__content {
-  @apply p-2 sm:p-4;
+.search__real-estate-list-card__content {
+  @apply p-3 sm:p-4 flex-1 flex flex-col;
 }
 
-.real-estate-card__title {
+.search__real-estate-list-card__title {
   @apply font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base;
 }
 
-.real-estate-card__pricing {
-  @apply mb-3;
+.search__real-estate-list-card__pricing {
+  @apply mb-2 flex items-center;
 }
 
-.real-estate-card__price {
-  @apply text-lg sm:text-xl font-bold text-red-600;
+.search__real-estate-list-card__price {
+  @apply text-base sm:text-lg font-bold text-blue-600 mr-2 sm:mr-3;
 }
 
-.real-estate-card__price-per-unit {
+.search__real-estate-list-card__price-per-unit {
   @apply text-xs sm:text-sm text-gray-500;
 }
 
-.real-estate-card__location {
-  @apply flex items-center text-gray-600 mb-3;
+.search__real-estate-list-card__location {
+  @apply flex items-center text-gray-600 mb-2;
 }
 
-.real-estate-card__location-icon {
+.search__real-estate-list-card__location-icon {
   @apply w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0;
 }
 
-.real-estate-card__location-text {
+.search__real-estate-list-card__location-text {
   @apply text-xs sm:text-sm line-clamp-1;
 }
 
-.real-estate-card__specs {
-  @apply grid grid-cols-3 gap-1 sm:gap-2 mb-3 text-xs sm:text-sm;
+.search__real-estate-list-card__specs {
+  @apply grid grid-cols-3 gap-1 sm:gap-2 mb-2 text-xs sm:text-sm;
 }
 
-.real-estate-card__spec-item {
+.search__real-estate-list-card__spec-item {
   @apply flex items-center text-gray-600;
 }
 
-.real-estate-card__spec-icon {
+.search__real-estate-list-card__spec-icon {
   @apply w-3 h-3 sm:w-4 sm:h-4 mr-1;
 }
 
-.real-estate-card__amenities {
-  @apply mb-3;
+.search__real-estate-list-card__amenities {
+  @apply mb-2;
 }
 
-.real-estate-card__amenities-container {
+.search__real-estate-list-card__amenities-container {
   @apply flex flex-wrap gap-1;
 }
 
-.real-estate-card__amenity {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs px-1 py-0;
+.search__real-estate-list-card__amenity {
+  @apply inline-flex items-center rounded-full border font-semibold transition-colors text-xs px-1 py-0;
 }
 
-.real-estate-card__description {
-  @apply text-xs sm:text-sm text-gray-700 mb-4 line-clamp-2;
+.search__real-estate-list-card__footer {
+  @apply flex items-center justify-between pt-3 border-t mt-auto;
 }
 
-.real-estate-card__footer {
-  @apply flex items-center justify-between pt-3 border-t;
+.search__real-estate-list-card__stats {
+  @apply flex items-center text-gray-500 text-xs;
 }
 
-.real-estate-card__stats {
-  @apply flex items-center text-gray-500 text-xs sm:text-sm;
-}
-
-.real-estate-card__stat-item {
+.search__real-estate-list-card__stat-item {
   @apply flex items-center;
 }
 
-.real-estate-card__stat-icon {
+.search__real-estate-list-card__stat-icon {
   @apply w-3 h-3 sm:w-4 sm:h-4 mr-1;
 }
 
-.real-estate-card__stat-separator {
+.search__real-estate-list-card__stat-separator {
   @apply w-3 h-3 sm:w-4 sm:h-4 ml-2 sm:ml-3 mr-1;
 }
 
-.real-estate-card__contact {
-  @apply mt-3 p-2 sm:p-3 bg-gray-50 rounded-lg;
-}
-
-.real-estate-card__contact-content {
-  @apply flex items-center justify-between;
-}
-
-.real-estate-card__contact-info {
-  @apply flex flex-col;
-}
-
-.real-estate-card__contact-name {
-  @apply font-medium text-gray-900 text-xs sm:text-sm;
-}
-
-.real-estate-card__contact-phone {
-  @apply text-blue-600 hover:text-blue-800 text-xs sm:text-sm flex items-center;
-}
-
-.real-estate-card__contact-phone-icon {
-  @apply w-3 h-3 mr-1;
-}
-
-.real-estate-card__actions {
+.search__real-estate-list-card__actions {
   @apply flex gap-1 sm:gap-2;
 }
 
-.real-estate-card__btn-contact {
-  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-xs px-3 py-1 h-8;
+.search__real-estate-list-card__btn-contact {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors text-xs px-3 py-1 h-8;
 }
 
-.real-estate-card__btn-contact-text-mobile {
+.search__real-estate-list-card__btn-contact-text-mobile {
   @apply sm:hidden;
 }
 
-.real-estate-card__btn-contact-text-desktop {
+.search__real-estate-list-card__btn-contact-text-desktop {
   @apply hidden sm:inline;
 }
 
-/* Real Estate Card Styles - Grid View Specific */
-.grid-card {
-  @apply rounded-lg border shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer;
+.search__real-estate-list-card__btn-detail {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors text-xs px-3 py-1 h-8 bg-transparent;
 }
-
-.grid-card__container {
-  @apply p-0;
-}
-
-.grid-card__image-container {
-  @apply relative overflow-hidden;
-}
-
-.grid-card__image {
-  @apply w-full h-32 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300;
-}
-
-.grid-card__badges-top-left {
-  @apply absolute top-2 sm:top-3 left-2 sm:left-3 flex flex-col gap-1 sm:gap-2;
-}
-
-.grid-card__badge-type {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
-}
-
-.grid-card__badge-featured {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
-}
-
-.grid-card__badge-status {
-  @apply absolute top-2 sm:top-3 right-2 sm:right-3;
-}
-
-.grid-card__badge-status-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-gray-700 text-xs px-1 py-0;
-}
-
-.grid-card__badge-hot {
-  @apply absolute bottom-2 sm:bottom-3 left-2 sm:left-3;
-}
-
-.grid-card__badge-hot-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white animate-pulse text-xs px-1 py-0;
-}
-
-.grid-card__badge-verified {
-  @apply absolute bottom-2 sm:bottom-3 right-2 sm:right-3;
-}
-
-.grid-card__badge-verified-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
-}
-
-.grid-card__content {
-  @apply p-2 sm:p-4;
-}
-
-.grid-card__title {
-  @apply font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base;
-}
-
-.grid-card__pricing {
-  @apply mb-3;
-}
-
-.grid-card__price {
-  @apply text-lg sm:text-xl font-bold text-red-600;
-}
-
-.grid-card__price-per-unit {
-  @apply text-xs sm:text-sm text-gray-500;
-}
-
-.grid-card__location {
-  @apply flex items-center text-gray-600 mb-3;
-}
-
-.grid-card__location-icon {
-  @apply w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0;
-}
-
-.grid-card__location-text {
-  @apply text-xs sm:text-sm line-clamp-1;
-}
-
-.grid-card__specs {
-  @apply grid grid-cols-3 gap-1 sm:gap-2 mb-3 text-xs sm:text-sm;
-}
-
-.grid-card__spec-item {
-  @apply flex items-center text-gray-600;
-}
-
-.grid-card__spec-icon {
-  @apply w-3 h-3 sm:w-4 sm:h-4 mr-1;
-}
-
-.grid-card__amenities {
-  @apply mb-3;
-}
-
-.grid-card__amenities-container {
-  @apply flex flex-wrap gap-1;
-}
-
-.grid-card__amenity {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs px-1 py-0;
-}
-
-.grid-card__description {
-  @apply text-xs sm:text-sm text-gray-700 mb-4 line-clamp-2;
-}
-
-.grid-card__footer {
-  @apply flex items-center justify-between pt-3 border-t;
-}
-
-.grid-card__stats {
-  @apply flex items-center text-gray-500 text-xs sm:text-sm;
-}
-
-.grid-card__stat-item {
-  @apply flex items-center;
-}
-
-.grid-card__stat-icon {
-  @apply w-3 h-3 sm:w-4 sm:h-4 mr-1;
-}
-
-.grid-card__stat-separator {
-  @apply w-3 h-3 sm:w-4 sm:h-4 ml-2 sm:ml-3 mr-1;
-}
-
-.grid-card__contact {
-  @apply mt-3 p-2 sm:p-3 bg-gray-50 rounded-lg;
-}
-
-.grid-card__contact-content {
-  @apply flex items-center justify-between;
-}
-
-.grid-card__contact-info {
-  @apply flex flex-col;
-}
-
-.grid-card__contact-name {
-  @apply font-medium text-gray-900 text-xs sm:text-sm;
-}
-
-.grid-card__contact-phone {
-  @apply text-blue-600 hover:text-blue-800 text-xs sm:text-sm flex items-center;
-}
-
-.grid-card__contact-phone-icon {
-  @apply w-3 h-3 mr-1;
-}
-
-.grid-card__actions {
-  @apply flex gap-1 sm:gap-2;
-}
-
-.grid-card__btn-contact {
-  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-xs px-3 py-1 h-8;
-}
-
-.grid-card__btn-contact-text-mobile {
-  @apply sm:hidden;
-}
-
-.grid-card__btn-contact-text-desktop {
-  @apply hidden sm:inline;
-}
-
-/* Real Estate Card Styles - List View Specific */
-.list-card {
-  @apply rounded-lg border shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer;
-}
-
-.list-card__container {
-  @apply p-0;
-}
-
-.list-card__image-container {
-  @apply relative overflow-hidden;
-}
-
-.list-card__image {
-  @apply w-full h-32 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300;
-}
-
-.list-card__badges-top-left {
-  @apply absolute top-2 sm:top-3 left-2 sm:left-3 flex flex-col gap-1 sm:gap-2;
-}
-
-.list-card__badge-type {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
-}
-
-.list-card__badge-featured {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
-}
-
-.list-card__badge-status {
-  @apply absolute top-2 sm:top-3 right-2 sm:right-3;
-}
-
-.list-card__badge-status-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-gray-700 text-xs px-1 py-0;
-}
-
-.list-card__badge-hot {
-  @apply absolute bottom-2 sm:bottom-3 left-2 sm:left-3;
-}
-
-.list-card__badge-hot-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white animate-pulse text-xs px-1 py-0;
-}
-
-.list-card__badge-verified {
-  @apply absolute bottom-2 sm:bottom-3 right-2 sm:right-3;
-}
-
-.list-card__badge-verified-item {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-white text-xs px-1 py-0;
-}
-
-.list-card__content {
-  @apply p-2 sm:p-4;
-}
-
-.list-card__title {
-  @apply font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base;
-}
-
-.list-card__pricing {
-  @apply mb-3;
-}
-
-.list-card__price {
-  @apply text-lg sm:text-xl font-bold text-red-600;
-}
-
-.list-card__price-per-unit {
-  @apply text-xs sm:text-sm text-gray-500;
-}
-
-.list-card__location {
-  @apply flex items-center text-gray-600 mb-3;
-}
-
-.list-card__location-icon {
-  @apply w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0;
-}
-
-.list-card__location-text {
-  @apply text-xs sm:text-sm line-clamp-1;
-}
-
-.list-card__specs {
-  @apply grid grid-cols-3 gap-1 sm:gap-2 mb-3 text-xs sm:text-sm;
-}
-
-.list-card__spec-item {
-  @apply flex items-center text-gray-600;
-}
-
-.list-card__spec-icon {
-  @apply w-3 h-3 sm:w-4 sm:h-4 mr-1;
-}
-
-.list-card__amenities {
-  @apply mb-3;
-}
-
-.list-card__amenities-container {
-  @apply flex flex-wrap gap-1;
-}
-
-.list-card__amenity {
-  @apply inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs px-1 py-0;
-}
-
-.list-card__description {
-  @apply text-xs sm:text-sm text-gray-700 mb-4 line-clamp-2;
-}
-
-.list-card__footer {
-  @apply flex items-center justify-between pt-3 border-t;
-}
-
-.list-card__stats {
-  @apply flex items-center text-gray-500 text-xs sm:text-sm;
-}
-
-.list-card__stat-item {
-  @apply flex items-center;
-}
-
-.list-card__stat-icon {
-  @apply w-3 h-3 sm:w-4 sm:h-4 mr-1;
-}
-
-.list-card__stat-separator {
-  @apply w-3 h-3 sm:w-4 sm:h-4 ml-2 sm:ml-3 mr-1;
-}
-
-.list-card__contact {
-  @apply mt-3 p-2 sm:p-3 bg-gray-50 rounded-lg;
-}
-
-.list-card__contact-content {
-  @apply flex items-center justify-between;
-}
-
-.list-card__contact-info {
-  @apply flex flex-col;
-}
-
-.list-card__contact-name {
-  @apply font-medium text-gray-900 text-xs sm:text-sm;
-}
-
-.list-card__contact-phone {
-  @apply text-blue-600 hover:text-blue-800 text-xs sm:text-sm flex items-center;
-}
-
-.list-card__contact-phone-icon {
-  @apply w-3 h-3 mr-1;
-}
-
-.list-card__actions {
-  @apply flex gap-1 sm:gap-2;
-}
-
-.list-card__btn-contact {
-  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-xs px-3 py-1 h-8;
-}
-
-.list-card__btn-contact-text-mobile {
-  @apply sm:hidden;
-}
-
-.list-card__btn-contact-text-desktop {
-  @apply hidden sm:inline;
-} 

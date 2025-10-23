@@ -1,0 +1,217 @@
+<div class="hidden lg:block lg:col-span-3">
+    <div class="space-y-4 sticky top-24 self-start">
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="trending-up" class="w-5 h-5 text-orange-500"></i>
+            <h3 class="font-semibold">Xu hướng</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center hover:bg-gray-50 p-2 rounded-lg cursor-pointer">
+              <div>
+                <p class="font-medium text-blue-600">#ViecLamBinhDuong</p>
+                <p class="text-sm text-gray-500">2.3k bài viết</p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center hover:bg-gray-50 p-2 rounded-lg cursor-pointer">
+              <div>
+                <p class="font-medium text-blue-600">#BatDongSanBinhDuong</p>
+                <p class="text-sm text-gray-500">1.8k bài viết</p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center hover:bg-gray-50 p-2 rounded-lg cursor-pointer">
+              <div>
+                <p class="font-medium text-blue-600">#TinTucBinhDuong</p>
+                <p class="text-sm text-gray-500">3.1k bài viết</p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center hover:bg-gray-50 p-2 rounded-lg cursor-pointer">
+              <div>
+                <p class="font-medium text-blue-600">#DichVuBinhDuong</p>
+                <p class="text-sm text-gray-500">892 bài viết</p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center hover:bg-gray-50 p-2 rounded-lg cursor-pointer">
+              <div>
+                <p class="font-medium text-blue-600">#KhuCongNghiep</p>
+                <p class="text-sm text-gray-500">1.2k bài viết</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="users" class="w-5 h-5 text-blue-500"></i>
+            <h3 class="font-semibold">Gợi ý theo dõi</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-3"><img
+                  src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Công ty Samsung Việt Nam"
+                  class="w-10 h-10 rounded-full">
+                <div>
+                  <p class="font-medium text-sm">Công ty Samsung Việt Nam</p>
+                  <p class="text-xs text-gray-500">12k người theo dõi</p>
+                </div>
+              </div>
+              <button
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 btn-outline-primary text-xs"
+                x-data="followButton" @click="toggleFollow()">
+                Theo dõi
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-3"><img
+                  src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Nhóm Việc Làm Bình Dương"
+                  class="w-10 h-10 rounded-full">
+                <div>
+                  <p class="font-medium text-sm">Nhóm Việc Làm Bình Dương</p>
+                  <p class="text-xs text-gray-500">8.5k thành viên</p>
+                </div>
+              </div>
+              <button
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 btn-outline-primary text-xs"
+                x-data="followButton" @click="toggleFollow()">
+                Theo dõi
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-3"><img
+                  src="./../../assets/images/placeholder.svg?height=40&amp;width=40" alt="Hội BĐS Bình Dương"
+                  class="w-10 h-10 rounded-full">
+                <div>
+                  <p class="font-medium text-sm">Hội BĐS Bình Dương</p>
+                  <p class="text-xs text-gray-500">15k thành viên</p>
+                </div>
+              </div>
+              <button
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 btn-outline-primary text-xs"
+                x-data="followButton" @click="toggleFollow()">
+                Theo dõi
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="calendar" class="w-5 h-5 text-green-500"></i>
+            <h3 class="font-semibold">Sự kiện sắp tới</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="p-3 bg-green-50 rounded-lg">
+              <p class="font-medium text-sm">Hội chợ việc làm 2024</p>
+              <p class="text-xs text-gray-600 flex items-center mt-1"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i>15/01/2024</p>
+              <p class="text-xs text-gray-600 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>Trung tâm Hội chợ BD</p>
+            </div>
+            <div class="p-3 bg-blue-50 rounded-lg">
+              <p class="font-medium text-sm">Triển lãm BĐS Bình Dương</p>
+              <p class="text-xs text-gray-600 flex items-center mt-1"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i>20/01/2024</p>
+              <p class="text-xs text-gray-600 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>Becamex IDC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="star" class="w-5 h-5 text-yellow-500"></i>
+            <h3 class="font-semibold">Thống kê hôm nay</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="text-center p-2 bg-blue-50 rounded-lg">
+              <div class="text-lg font-bold text-blue-600">1.2K</div>
+              <div class="text-xs text-gray-600">Bài viết</div>
+            </div>
+            <div class="text-center p-2 bg-green-50 rounded-lg">
+              <div class="text-lg font-bold text-green-600">856</div>
+              <div class="text-xs text-gray-600">Người dùng</div>
+            </div>
+            <div class="text-center p-2 bg-orange-50 rounded-lg">
+              <div class="text-lg font-bold text-orange-600">2.4K</div>
+              <div class="text-xs text-gray-600">Tương tác</div>
+            </div>
+            <div class="text-center p-2 bg-purple-50 rounded-lg">
+              <div class="text-lg font-bold text-purple-600">95%</div>
+              <div class="text-xs text-gray-600">Hài lòng</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="trending-up" class="w-5 h-5 text-pink-500"></i>
+            <h3 class="font-semibold">Hashtags phổ biến</h3>
+          </div>
+          <div class="flex flex-wrap gap-2"><span
+              class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full hover:bg-blue-200 cursor-pointer transition-colors">#ViecLamBinhDuong</span><span
+              class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full hover:bg-blue-200 cursor-pointer transition-colors">#BatDongSanBD</span><span
+              class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full hover:bg-blue-200 cursor-pointer transition-colors">#TinTucBD</span><span
+              class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full hover:bg-blue-200 cursor-pointer transition-colors">#DichVuBD</span><span
+              class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full hover:bg-blue-200 cursor-pointer transition-colors">#KhuCongNghiep</span><span
+              class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full hover:bg-blue-200 cursor-pointer transition-colors">#StartupBD</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="map-pin" class="w-5 h-5 text-blue-500"></i>
+            <h3 class="font-semibold">Thời tiết Bình Dương</h3>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-orange-500">32°C</div>
+            <div class="text-sm text-gray-600">Nắng ít mây</div>
+            <div class="flex justify-between mt-3 text-xs text-gray-500"><span>Cao: 35°C</span><span>Thấp:
+                26°C</span></div>
+            <div class="flex justify-between mt-2 text-xs text-gray-500"><span>Độ ẩm: 65%</span><span>Gió: 12
+                km/h</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="star" class="w-5 h-5 text-yellow-500"></i>
+            <h3 class="font-semibold">Liên kết nhanh</h3>
+          </div>
+          <div class="space-y-2"><a href="/bat-dong-san"
+              class="block p-2 hover:bg-gray-50 rounded-lg transition-colors">
+              <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center"><i data-lucide="building" class="w-4 h-4 text-green-600"></i></div><span class="text-sm font-medium">Bất động sản</span>
+              </div>
+            </a><a href="/viec-lam" class="block p-2 hover:bg-gray-50 rounded-lg transition-colors">
+              <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center"><i data-lucide="briefcase" class="w-4 h-4 text-blue-600"></i></div><span class="text-sm font-medium">Việc làm</span>
+              </div>
+            </a><a href="/dich-vu-thanh-vien" class="block p-2 hover:bg-gray-50 rounded-lg transition-colors">
+              <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center"><i data-lucide="settings" class="w-4 h-4 text-purple-600"></i></div><span class="text-sm font-medium">Dịch vụ</span>
+              </div>
+            </a></div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-4"><i data-lucide="clock" class="w-5 h-5 text-indigo-500"></i>
+            <h3 class="font-semibold">Hoạt động gần đây</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2 text-sm">
+              <div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-600">156 người đang
+                online</span>
+            </div>
+            <div class="flex items-center space-x-2 text-sm">
+              <div class="w-2 h-2 bg-blue-500 rounded-full"></div><span class="text-gray-600">24 bài viết mới
+                trong 1h</span>
+            </div>
+            <div class="flex items-center space-x-2 text-sm">
+              <div class="w-2 h-2 bg-orange-500 rounded-full"></div><span class="text-gray-600">12 việc làm mới
+                hôm nay</span>
+            </div>
+            <div class="flex items-center space-x-2 text-sm">
+              <div class="w-2 h-2 bg-purple-500 rounded-full"></div><span class="text-gray-600">8 BĐS mới đăng
+                bán</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

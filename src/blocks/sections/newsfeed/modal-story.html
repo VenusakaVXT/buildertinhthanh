@@ -1,0 +1,72 @@
+<div x-data="storyModalComponent" x-show="isOpen" x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @open-story-modal.window="console.log('Event received:', $event); openStory($event.detail.storyElement)"
+    @keydown.escape="closeStory()" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+    style="display: none;">
+
+    <!-- Progress bars for desktop -->
+    <div class="hidden md:flex absolute top-3 left-1/2 -translate-x-1/2 gap-1 mt-[55px]"
+      :style="'width: ' + getProgressBarsWidth() + 'px'">
+      <template x-for="(bar, index) in getVisibleProgressBars()" :key="index">
+        <div class="h-[3px] bg-white/30 rounded overflow-hidden" :style="'width: ' + getSingleBarWidth() + 'px'">
+          <div class="h-full bg-white transition-all duration-75 ease-linear story-progress-bar"
+            :style="getBarProgressStyle(index)">
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <!-- Close button -->
+    <button @click="closeStory()" aria-label="Đóng"
+      class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl leading-none z-10">×</button>
+
+    <!-- Navigation buttons -->
+    <button @click="prevStory()"
+      class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white items-center justify-center z-10"
+      aria-label="Trước">❮</button>
+    <button @click="nextStory()"
+      class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white items-center justify-center z-10"
+      aria-label="Tiếp">❯</button>
+
+    <!-- Main story content -->
+    <div
+      class="w-[320px] md:w-[400px] max-w-[85vw] max-h-[85vh] aspect-[9/16] bg-black rounded-xl overflow-hidden relative flex items-center justify-center story-modal-content">
+
+      <!-- Story content -->
+      <template x-if="currentStory">
+        <div class="w-full h-full relative">
+          <!-- Image or Video -->
+          <img x-show="currentStory.type === 'image'" :src="currentStory.content" :alt="currentStory.author"
+            class="w-full h-full object-cover story-image">
+
+          <video x-show="currentStory.type === 'video'" :src="currentStory.content"
+            class="w-full h-full object-cover story-video" autoplay muted loop></video>
+
+          <!-- Story header -->
+          <div class="absolute top-2 left-2 right-2 flex items-center gap-2 z-10">
+            <img :src="currentStory.avatar" class="w-8 h-8 rounded-full border-2 border-white"
+              :alt="currentStory.author">
+            <div class="text-white text-sm font-medium truncate" x-text="currentStory.author"></div>
+            <div class="text-white/80 text-xs" x-text="currentStory.time"></div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Progress bars for mobile -->
+      <div class="md:hidden absolute top-2 left-2 right-2 flex gap-1 z-10">
+        <template x-for="(bar, index) in getVisibleProgressBars()" :key="index">
+          <div class="h-[2px] bg-white/30 rounded overflow-hidden" :style="'width: calc((100% - 16px) / 5)'">
+            <div class="h-full bg-white transition-all duration-75 ease-linear story-progress-bar"
+              :style="getBarProgressStyle(index)">
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Click areas for navigation -->
+      <div @click="prevStory()" class="absolute inset-y-0 left-0 w-1/3 cursor-pointer"></div>
+      <div @click="nextStory()" class="absolute inset-y-0 right-0 w-2/3 cursor-pointer"></div>
+    </div>
+</div>

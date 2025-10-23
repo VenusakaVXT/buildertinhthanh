@@ -129,6 +129,8 @@ utensils-crossed
 credit-card
 user-round
 sparkles
+layout-grid
+folder
 save
 loader
 eye-off
@@ -145,6 +147,8 @@ thermometer
 sun
 ellipsis
 github
+play
+smile
 school
 loader-2
 footprints
@@ -153,5 +157,4 @@ bus
 sliders-horizontal
 file-type
 arrow-up-down
-play
 mic
