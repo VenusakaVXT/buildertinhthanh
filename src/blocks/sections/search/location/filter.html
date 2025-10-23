@@ -10,23 +10,25 @@
       </div>
       <div class="p-6 pt-0 space-y-3 sm:space-y-4">
         <div class="space-y-2" x-data="locationSearch">
-          <button @click="getCurrentLocation()" :disabled="isGettingLocation"
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-full bg-transparent">
-            <i data-lucide="navigation" class="w-4 h-4 mr-2"></i>
-            <i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i>
-            <span x-text="isGettingLocation ? 'Đang lấy vị trí...' : 'Lấy vị trí hiện tại'"></span>
-          </button>
+          <form id="current-location-form" @submit.prevent="getCurrentLocationAndRedirect()">
+            <button type="submit" :disabled="isGettingLocation"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-full bg-transparent">
+              <i data-lucide="navigation" class="w-4 h-4 mr-2" x-show="!isGettingLocation"></i>
+              <i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin" x-show="isGettingLocation"></i>
+              <span x-text="isGettingLocation ? 'Đang lấy vị trí...' : 'Lấy vị trí hiện tại'">Lấy vị trí hiện tại</span>
+            </button>
+          </form>
 
           <!-- Display current location if available -->
-          <div x-show="currentLat !== null && currentLng !== null"
-            class="mt-2 p-2 bg-green-50 border border-green-200 rounded-md">
+          <div x-cloak x-show="showLocationDisplay" class="mt-2 p-2 bg-green-50 border border-green-200 rounded-md"
+            style="display: none !important;" x-init="if (showLocationDisplay) $el.style.display = 'block'">
             <div class="flex items-center justify-between">
               <div class="text-sm text-green-800">
                 <div class="font-medium">Vị trí hiện tại:</div>
                 <div class="text-xs">Lat: <span x-text="currentLat?.toFixed(6)"></span></div>
                 <div class="text-xs">Lng: <span x-text="currentLng?.toFixed(6)"></span></div>
               </div>
-              <button @click="clearLocation()" class="text-green-600 hover:text-green-800 text-xs">
+              <button @click="clearLocationAndRedirect()" class="text-green-600 hover:text-green-800 text-xs">
                 <i data-lucide="x" class="w-4 h-4"></i>
               </button>
             </div>
@@ -53,11 +55,21 @@
           <div class="space-y-2">
             <label class="font-medium text-sm">Phương tiện di chuyển:</label>
             <select class="select select-white w-full h-10 text-sm">
-              <option value="walking">Đi bộ</option>
-              <option value="bicycle">Xe đạp</option>
-              <option value="motorbike" selected>Xe máy</option>
-              <option value="car">Ô tô</option>
-              <option value="bus">Xe buýt</option>
+              <option value="walking">
+                <i data-lucide="footprints" class="h-3 w-3 sm:h-4 sm:w-4 mr-2"></i>Đi bộ
+              </option>
+              <option value="bicycle">
+                <i data-lucide="bike" class="h-3 w-3 sm:h-4 sm:w-4 mr-2"></i>Xe đạp
+              </option>
+              <option value="motorbike" selected>
+                <i data-lucide="bike" class="h-3 w-3 sm:h-4 sm:w-4 mr-2"></i>Xe máy
+              </option>
+              <option value="car">
+                <i data-lucide="car" class="h-3 w-3 sm:h-4 sm:w-4 mr-2"></i>Ô tô
+              </option>
+              <option value="bus">
+                <i data-lucide="bus" class="h-3 w-3 sm:h-4 sm:w-4 mr-2"></i>Xe buýt
+              </option>
             </select>
           </div>
 

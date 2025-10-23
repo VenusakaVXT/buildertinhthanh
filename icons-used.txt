@@ -145,9 +145,12 @@ ellipsis
 github
 school
 loader-2
-sliders-horizontal
 footprints
+bike
+bus
+sliders-horizontal
 file-type
 arrow-up-down
 play
 mic
+save
