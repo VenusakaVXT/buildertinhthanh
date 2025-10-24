@@ -1,0 +1,220 @@
+<section id="posts" class="tab-content lg:col-span-6 min-w-0" data-tab-content="posts">
+  <div class="space-y-2 sm:space-y-4">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div class="p-2 sm:p-4 space-y-2 sm:space-y-3">
+        <div class="flex items-center gap-2 sm:gap-3"><img
+            src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+            class="w-7 h-7 sm:w-10 sm:h-10 rounded-full" alt="me"><input
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-xs sm:text-sm h-7 sm:h-10"
+            placeholder="Chia sẻ bài đăng về BĐS…" value=""></div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm"><button
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground py-2 bg-transparent h-6 sm:h-auto px-2 sm:px-3"><i data-lucide="image" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i><span class="hidden sm:inline">Ảnh</span></button><button
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground py-2 bg-transparent h-6 sm:h-auto px-2 sm:px-3"><i data-lucide="video" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i><span class="hidden sm:inline">Video</span></button><button
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground py-2 bg-transparent h-6 sm:h-auto px-2 sm:px-3"><i data-lucide="circle-help" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i><span class="hidden sm:inline">Hỏi đáp</span></button></div><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 py-2 btn-primary text-xs sm:text-sm h-6 sm:h-auto px-3 sm:px-4"
+            disabled="">Đăng bài</button>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-2 sm:space-y-4" x-data="gallery()">
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+        <div class="p-2 sm:p-4">
+          <div class="flex items-start gap-2"><img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+              class="w-7 h-7 sm:w-10 sm:h-10 rounded-full" alt="Nguyễn Văn An">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1">
+                <div class="font-medium text-xs sm:text-sm">Nguyễn Văn An</div><span class="text-xs text-gray-500">• 2
+                  giờ trước</span>
+              </div>
+              <div class="text-xs sm:text-sm text-gray-700 whitespace-pre-line mt-1 leading-relaxed">Vừa tham
+                gia hội chợ việc làm tại Bình Dương hôm nay. Rất nhiều cơ hội tốt cho các bạn trẻ! 🎉</div>
+              <div class="mt-3 post-gallery grid grid-cols-2 sm:grid-cols-3 gap-2 rounded-lg overflow-hidden">
+                <button type="button" class="relative block cursor-pointer" aria-label="Xem ảnh 1"
+                  @click="openPostGallery($el, 0)">
+                  <img src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="post-0"
+                    class="w-full h-40 sm:h-48 object-cover hover:opacity-90 transition-opacity">
+                </button>
+                <button type="button" class="relative block cursor-pointer" aria-label="Xem ảnh 2"
+                  @click="openPostGallery($el, 1)">
+                  <img src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="post-1"
+                    class="w-full h-40 sm:h-48 object-cover hover:opacity-90 transition-opacity">
+                </button>
+                <button type="button" class="relative block cursor-pointer" aria-label="Xem ảnh 3"
+                  @click="openPostGallery($el, 2)">
+                  <img src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="post-2"
+                    class="w-full h-40 sm:h-48 object-cover hover:opacity-90 transition-opacity">
+                </button>
+                <button type="button" class="relative block cursor-pointer" aria-label="Xem ảnh 4"
+                  @click="openPostGallery($el, 3)">
+                  <img src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="post-3"
+                    class="w-full h-40 sm:h-48 object-cover hover:opacity-90 transition-opacity">
+                </button>
+                <button type="button" class="relative block cursor-pointer" aria-label="Xem ảnh 5"
+                  @click="openPostGallery($el, 4)">
+                  <img src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="post-4"
+                    class="w-full h-40 sm:h-48 object-cover hover:opacity-90 transition-opacity">
+                </button>
+                <button type="button" class="relative block cursor-pointer" aria-label="Xem ảnh 6"
+                  @click="openPostGallery($el, 5)">
+                  <img src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="post-5"
+                    class="w-full h-40 sm:h-48 object-cover hover:opacity-90 transition-opacity">
+                  <div
+                    class="absolute inset-0 bg-black/50 flex items-center justify-center cursor-pointer hover:bg-opacity-60 transition-all"
+                    @click="openPostGallery($el, 5)">
+                    <span class="text-white text-xl font-semibold">+6</span>
+                  </div>
+                </button>
+                <!-- Ảnh ẩn - chỉ dùng cho modal -->
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+                    alt="post-6" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+                    alt="post-7" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+                    alt="post-8" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+                    alt="post-9" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+                    alt="post-10" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+                    alt="post-11" class="w-full h-full object-cover"></div>
+              </div>
+              <div class="flex items-center gap-4 mt-2 text-xs text-gray-600"><button class="like-button"
+                  x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-3 h-3"></i> 24</button>
+                <div class="flex items-center gap-1"><i data-lucide="message-circle" class="w-3 h-3"></i> 8</div>
+                <div class="flex items-center gap-1"><i data-lucide="share2" class="w-3 h-3"></i> 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+        <div class="p-2 sm:p-4">
+          <div class="flex items-start gap-2"><img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+              class="w-7 h-7 sm:w-10 sm:h-10 rounded-full" alt="Trần Thị Bình">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1">
+                <div class="font-medium text-xs sm:text-sm">Trần Thị Bình</div><span class="text-xs text-gray-500">• 6
+                  giờ trước</span>
+              </div>
+              <div class="text-xs sm:text-sm text-gray-700 whitespace-pre-line mt-1 leading-relaxed">Chia sẻ
+                căn hộ 2PN tại chung cư Moonlight Boulevard, view đẹp, giá tốt. Liên hệ ngay! 🏠</div>
+              <div class="mt-3 post-gallery relative">
+                <img src="./../../assets/images/placeholder.svg?height=300&amp;width=500" alt="post"
+                  class="rounded-lg border w-full max-h-96 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                  @click="openPostGallery($el, 0)">
+                <div
+                  class="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm font-semibold cursor-pointer hover:bg-opacity-60 transition-all"
+                  @click="openPostGallery($el, 0)">
+                  +4
+                </div>
+                <!-- Ảnh ẩn - chỉ dùng cho modal -->
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+                    alt="post-2" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+                    alt="post-3" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+                    alt="post-4" class="w-full h-full object-cover"></div>
+                <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+                    alt="post-5" class="w-full h-full object-cover"></div>
+              </div>
+              <div class="flex items-center gap-4 mt-2 text-xs text-gray-600"><button class="like-button active"
+                  x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-3 h-3 fill-current"></i> 18</button>
+                <div class="flex items-center gap-1"><i data-lucide="message-circle" class="w-3 h-3"></i> 5</div>
+                <div class="flex items-center gap-1"><i data-lucide="share2" class="w-3 h-3"></i> 2</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover">
+        <div class="p-2 sm:p-4">
+          <div class="flex items-start gap-2"><img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+              class="w-7 h-7 sm:w-10 sm:h-10 rounded-full" alt="Lê Minh Đức">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1">
+                <div class="font-medium text-xs sm:text-sm">Lê Minh Đức</div><span class="text-xs text-gray-500">• 8 giờ
+                  trước</span>
+              </div>
+              <div class="text-xs sm:text-sm text-gray-700 whitespace-pre-line mt-1 leading-relaxed">Dịch vụ
+                sửa chữa điện tử tại nhà, uy tín - chất lượng. Bảo hành 6 tháng, giá cả hợp lý. Phục vụ 24/7!
+                ⚡</div>
+              <div class="flex items-center gap-4 mt-2 text-xs text-gray-600"><button class="like-button"
+                  x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-3 h-3"></i> 12</button>
+                <div class="flex items-center gap-1"><i data-lucide="message-circle" class="w-3 h-3"></i> 3</div>
+                <div class="flex items-center gap-1"><i data-lucide="share2" class="w-3 h-3"></i> 1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Modal for Posts -->
+      <template x-if="isOpen">
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80" @click="closeModal">
+          <div class="relative w-full max-w-5xl h-[90vh] bg-black rounded-lg overflow-hidden flex flex-col" @click.stop>
+
+            <!-- Header -->
+            <div
+              class="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/50 to-transparent p-4 flex justify-between text-white">
+              <div>
+                <h3 class="text-lg font-semibold" x-text="postTitle"></h3>
+                <p class="text-sm opacity-75" x-text="(currentIndex+1) + ' / ' + images.length"></p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <button @click="handleDownload()" class="text-white hover:text-gray-300 p-2" title="Tải ảnh về máy">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7,10 12,15 17,10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                </button>
+                <button class="text-white hover:text-gray-300 p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg>
+                </button>
+                <button @click="closeModal" class="text-white hover:text-gray-300 p-2">✕</button>
+              </div>
+            </div>
+
+            <!-- Ảnh chính -->
+            <div class="flex-1 flex items-center justify-center">
+              <img :src="images[currentIndex]?.src" :alt="images[currentIndex]?.alt"
+                class="max-h-full max-w-full object-contain">
+            </div>
+
+            <!-- Nút trái/phải -->
+            <button @click="prev" x-show="images.length > 1"
+              class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/70">‹</button>
+            <button @click="next" x-show="images.length > 1"
+              class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/70">›</button>
+
+            <!-- Thumbnail -->
+            <div x-show="images.length > 1"
+              class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 flex justify-center space-x-2 overflow-x-auto">
+              <template x-for="(img, index) in images" :key="index">
+                <button @click="setIndex(index)" class="w-12 h-12 rounded-lg overflow-hidden border-2"
+                  :class="index === currentIndex ? 'border-white' : 'border-transparent opacity-60 hover:opacity-80'">
+                  <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover">
+                </button>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div class="text-center py-4 sm:py-6">
+      <button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 btn-outline-primary w-full sm:w-auto text-xs sm:text-sm">
+        Xem thêm bài viết
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,413 +1,425 @@
 <div class="space-y-4" x-data="gallery()">
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
-      <div class="p-0">
-        <div class="p-4 flex items-start justify-between gap-2">
-          <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
-              class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
-                class="aspect-square h-full w-full"
-                src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
-            <div class="min-w-0">
-              <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
-                <h3
-                  class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
-                  Nguyễn Văn An</h3><i data-lucide="circle-check-big" class="w-4 h-4 text-blue-500"></i>
-              </div>
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
-                <span>2 giờ trước</span><span>•</span>
-                <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i><span>Thủ Dầu Một, Bình Dương</span></div>
-              </div>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
+    <div class="p-0">
+      <div class="p-4 flex items-start justify-between gap-2">
+        <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
+            class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
+              class="aspect-square h-full w-full"
+              src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
+          <div class="min-w-0">
+            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+              <h3 class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
+                Nguyễn Văn An</h3><i data-lucide="circle-check-big" class="w-4 h-4 text-blue-500"></i>
             </div>
-          </div><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
-            type="button" id="radix-:R8kpafnkq:" aria-haspopup="menu" aria-expanded="false"
-            data-state="closed"><i data-lucide="ellipsis" class="w-4 h-4"></i></button>
-        </div>
-        <div class="px-4 pb-4">
-          <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">Vừa tham gia hội chợ việc
-            làm tại Bình Dương hôm nay. Rất nhiều cơ hội tốt cho các bạn trẻ! 🎉</p>
-        </div>
-        <div class="mb-4">
-          <div class="post-gallery grid gap-1 grid-cols-2">
-            <div class="relative aspect-square"><img
-                src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="Post image 1"
-                class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                @click="openPostGallery($el, 0)"></div>
-            <div class="relative aspect-square"><img
-                src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="Post image 2"
-                class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                @click="openPostGallery($el, 1)"></div>
-            <div class="relative aspect-square"><img
-                src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="Post image 3"
-                class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                @click="openPostGallery($el, 2)"></div>
-            <div class="relative aspect-square"><img
-                src="./../../assets/images/placeholder.svg?height=300&amp;width=400" alt="Post image 4"
-                class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                @click="openPostGallery($el, 3)">
-              <div
-                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center cursor-pointer hover:bg-opacity-60 transition-all"
-                @click="openPostGallery($el, 3)">
-                <span class="text-white font-semibold text-lg">+2</span>
-              </div>
+            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
+              <span>2 giờ trước</span><span>•</span>
+              <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin"
+                  class="w-3 h-3 mr-1"></i><span>Thủ Dầu Một, Bình Dương</span></div>
             </div>
-            <!-- Ảnh ẩn - chỉ dùng cho modal -->
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
-                alt="Post image 5" class="w-full h-full object-cover"></div>
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
-                alt="Post image 6" class="w-full h-full object-cover"></div>
           </div>
-        </div>
-        <div class="px-4 py-2 border-t border-gray-100">
-          <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>24<!-- --> lượt
-                thích</span><span>8<!-- --> bình luận</span></div><span>3<!-- --> lượt chia sẻ</span>
-          </div>
-        </div>
-        <div class="px-4 py-3 border-t border-gray-100">
-          <div class="flex items-center justify-between sm:justify-around"><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-red-600"
-              x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-4 h-4 mr-2"></i>Thích</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
-        </div>
+        </div><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
+          type="button" id="radix-:R8kpafnkq:" aria-haspopup="menu" aria-expanded="false" data-state="closed"><i
+            data-lucide="ellipsis" class="w-4 h-4"></i></button>
       </div>
-    </div>
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
-      <div class="p-0">
-        <div class="p-4 flex items-start justify-between gap-2">
-          <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
-              class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
-                class="aspect-square h-full w-full"
-                src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
-            <div class="min-w-0">
-              <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
-                <h3
-                  class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
-                  Công ty TNHH ABC</h3><i data-lucide="circle-check-big" class="w-4 h-4 text-blue-500"></i>
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-green-100 text-green-800">
-                  <i data-lucide="briefcase" class="w-4 h-4"></i><span class="ml-1">Việc làm</span>
-                </div>
-              </div>
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
-                <span>4 giờ trước</span><span>•</span>
-                <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i><span>Dĩ An, Bình Dương</span></div>
-              </div>
-            </div>
-          </div><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
-            type="button" id="radix-:R8l9afnkq:" aria-haspopup="menu" aria-expanded="false"
-            data-state="closed"><i data-lucide="ellipsis" class="w-4 h-4"></i></button>
-        </div>
-        <div class="px-4 pb-4">
-          <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">🏢 TUYỂN DỤNG: Kỹ sư phần
-            mềm - Lương 15-25 triệu
-
-            ✅ Yêu cầu: 2+ năm kinh nghiệm
-            ✅ Công nghệ: React, Node.js
-            ✅ Chế độ: Full remote, bảo hiểm đầy đủ</p>
-          <div class="bg-green-50 rounded-lg p-3 mb-3 border border-green-200">
-            <div class="flex items-center justify-between sm:justify-around">
-              <div>
-                <h4 class="font-semibold text-green-800">Kỹ sư phần mềm</h4>
-                <p class="text-sm text-green-600">Công ty TNHH ABC</p>
-              </div>
-              <div class="text-right">
-                <div class="font-semibold text-green-700">15-25 triệu</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="px-4 py-2 border-t border-gray-100">
-          <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>45<!-- --> lượt
-                thích</span><span>12<!-- --> bình luận</span></div><span>8<!-- --> lượt chia sẻ</span>
-          </div>
-        </div>
-        <div class="px-4 py-3 border-t border-gray-100">
-          <div class="flex items-center justify-between sm:justify-around"><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-red-600 hover:text-red-700"
-              x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-4 h-4 mr-2 fill-current"></i>Thích</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
-        </div>
+      <div class="px-4 pb-4">
+        <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">Vừa tham gia hội chợ việc
+          làm tại Bình Dương hôm nay. Rất nhiều cơ hội tốt cho các bạn trẻ! 🎉</p>
       </div>
-    </div>
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
-      <div class="p-0">
-        <div class="p-4 flex items-start justify-between gap-2">
-          <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
-              class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
-                class="aspect-square h-full w-full"
-                src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
-            <div class="min-w-0">
-              <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
-                <h3
-                  class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
-                  Trần Thị Bình</h3>
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-orange-100 text-orange-800">
-                  <i data-lucide="house" class="w-4 h-4"></i><span class="ml-1">Bất động sản</span>
-                </div>
-              </div>
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
-                <span>6 giờ trước</span><span>•</span>
-                <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i><span>Thuận An, Bình Dương</span></div>
-              </div>
-            </div>
-          </div><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
-            type="button" id="radix-:R8lpafnkq:" aria-haspopup="menu" aria-expanded="false"
-            data-state="closed"><i data-lucide="ellipsis" class="w-4 h-4"></i></button>
-        </div>
-        <div class="px-4 pb-4">
-          <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">Chia sẻ căn hộ 2PN tại
-            chung cư Moonlight Boulevard, view đẹp, giá tốt. Liên hệ ngay! 🏠</p>
-          <div class="bg-orange-50 rounded-lg p-3 mb-3 border border-orange-200">
-            <div class="flex items-center justify-between sm:justify-around">
-              <div>
-                <h4 class="font-semibold text-orange-800">Căn hộ 2PN Moonlight Boulevard</h4>
-                <p class="text-sm text-orange-600">70m²</p>
-              </div>
-              <div class="text-right">
-                <div class="font-semibold text-orange-700">2.5 tỷ</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-4">
-          <div class="post-gallery relative">
-            <img src="./../../assets/images/placeholder.svg?height=300&amp;width=500" alt="Post image 1"
-              class="w-full max-h-72 sm:max-h-96 object-cover cursor-pointer hover:opacity-90 transition-opacity"
-              @click="openPostGallery($el, 0)">
+      <div class="mb-4">
+        <div class="post-gallery grid gap-1 grid-cols-2">
+          <div class="relative aspect-square"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+              alt="Post image 1" class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+              @click="openPostGallery($el, 0)"></div>
+          <div class="relative aspect-square"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+              alt="Post image 2" class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+              @click="openPostGallery($el, 1)"></div>
+          <div class="relative aspect-square"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+              alt="Post image 3" class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+              @click="openPostGallery($el, 2)"></div>
+          <div class="relative aspect-square"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+              alt="Post image 4" class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+              @click="openPostGallery($el, 3)">
             <div
-              class="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm font-semibold cursor-pointer hover:bg-opacity-60 transition-all"
-              @click="openPostGallery($el, 0)">
-              +4
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center cursor-pointer hover:bg-opacity-60 transition-all"
+              @click="openPostGallery($el, 3)">
+              <span class="text-white font-semibold text-lg">+2</span>
             </div>
-            <!-- Ảnh ẩn - chỉ dùng cho modal -->
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
-                alt="Post image 2" class="w-full h-full object-cover"></div>
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
-                alt="Post image 3" class="w-full h-full object-cover"></div>
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
-                alt="Post image 4" class="w-full h-full object-cover"></div>
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
-                alt="Post image 5" class="w-full h-full object-cover"></div>
           </div>
-        </div>
-        <div class="px-4 py-2 border-t border-gray-100">
-          <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>18<!-- --> lượt
-                thích</span><span>5<!-- --> bình luận</span></div><span>2<!-- --> lượt chia sẻ</span>
-          </div>
-        </div>
-        <div class="px-4 py-3 border-t border-gray-100">
-          <div class="flex items-center justify-between sm:justify-around"><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-red-600"
-              x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-4 h-4 mr-2"></i>Thích</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
+          <!-- Ảnh ẩn - chỉ dùng cho modal -->
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+              alt="Post image 5" class="w-full h-full object-cover"></div>
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=400"
+              alt="Post image 6" class="w-full h-full object-cover"></div>
         </div>
       </div>
-    </div>
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
-      <div class="p-0">
-        <div class="p-4 flex items-start justify-between gap-2">
-          <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
-              class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
-                class="aspect-square h-full w-full"
-                src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
-            <div class="min-w-0">
-              <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
-                <h3
-                  class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
-                  Lê Minh Đức</h3>
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-purple-100 text-purple-800">
-                  <i data-lucide="settings" class="w-4 h-4"></i><span class="ml-1">Dịch vụ</span>
-                </div>
-              </div>
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
-                <span>8 giờ trước</span><span>•</span>
-                <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i><span>Bến Cát, Bình Dương</span></div>
-              </div>
-            </div>
-          </div><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
-            type="button" id="radix-:R8m9afnkq:" aria-haspopup="menu" aria-expanded="false"
-            data-state="closed"><i data-lucide="ellipsis" class="w-4 h-4"></i></button>
-        </div>
-        <div class="px-4 pb-4">
-          <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">Dịch vụ sửa chữa điện tử
-            tại nhà, uy tín - chất lượng. Bảo hành 6 tháng, giá cả hợp lý. Phục vụ 24/7! ⚡</p>
-          <div class="bg-purple-50 rounded-lg p-3 mb-3 border border-purple-200">
-            <div class="flex items-center justify-between sm:justify-around">
-              <div>
-                <h4 class="font-semibold text-purple-800">Sửa chữa điện tử</h4>
-                <div class="flex items-center flex-wrap gap-x-2 gap-y-1"><i data-lucide="star" class="w-4 h-4 text-yellow-500"></i><span class="text-sm text-purple-600">4.8</span></div>
-              </div>
-              <div class="text-right">
-                <div class="font-semibold text-purple-700">Từ 50k</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="px-4 py-2 border-t border-gray-100">
-          <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>12<!-- --> lượt
-                thích</span><span>3<!-- --> bình luận</span></div><span>1<!-- --> lượt chia sẻ</span>
-          </div>
-        </div>
-        <div class="px-4 py-3 border-t border-gray-100">
-          <div class="flex items-center justify-between sm:justify-around"><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-red-600"
-              x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-4 h-4 mr-2"></i>Thích</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
+      <div class="px-4 py-2 border-t border-gray-100">
+        <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>24<!-- --> lượt
+              thích</span><span>8<!-- --> bình luận</span></div><span>3<!-- --> lượt chia sẻ</span>
         </div>
       </div>
+      <div class="px-4 py-3 border-t border-gray-100">
+        <div class="flex items-center justify-between sm:justify-around"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-red-600"
+            x-data="likeButton" @click="toggleLike()"><i data-lucide="heart"
+              class="w-4 h-4 mr-2"></i>Thích</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i
+              data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i
+              data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
+      </div>
     </div>
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
-      <div class="p-0">
-        <div class="p-4 flex items-start justify-between gap-2">
-          <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
-              class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
-                class="aspect-square h-full w-full"
-                src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
-            <div class="min-w-0">
-              <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
-                <h3
-                  class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
-                  Báo Bình Dương</h3><i data-lucide="circle-check-big" class="w-4 h-4 text-blue-500"></i>
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-blue-100 text-blue-800">
-                  <i data-lucide="newspaper" class="w-4 h-4"></i><span class="ml-1">Tin tức</span>
-                </div>
-              </div>
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
-                <span>1 ngày trước</span><span>•</span>
-                <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i><span>Bình Dương</span></div>
-              </div>
-            </div>
-          </div><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
-            type="button" id="radix-:R8mpafnkq:" aria-haspopup="menu" aria-expanded="false"
-            data-state="closed"><i data-lucide="ellipsis" class="w-4 h-4"></i></button>
-        </div>
-        <div class="px-4 pb-4">
-          <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">🔥 TIN HOT: Bình Dương sẽ
-            có thêm 3 khu công nghiệp mới trong năm 2024, tạo ra hàng nghìn việc làm cho người dân địa phương.
-          </p>
-          <div class="bg-blue-50 rounded-lg p-3 mb-3 border border-blue-200">
-            <div class="flex items-center justify-between sm:justify-around">
+  </div>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
+    <div class="p-0">
+      <div class="p-4 flex items-start justify-between gap-2">
+        <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
+            class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
+              class="aspect-square h-full w-full"
+              src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
+          <div class="min-w-0">
+            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+              <h3 class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
+                Công ty TNHH ABC</h3><i data-lucide="circle-check-big" class="w-4 h-4 text-blue-500"></i>
               <div
-                class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-blue-700 border-blue-300">
-                Kinh tế</div>
-              <div class="flex items-center text-sm text-blue-600"><i data-lucide="eye" class="w-4 h-4 mr-1"></i><span>3 phút đọc</span></div>
+                class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-green-100 text-green-800">
+                <i data-lucide="briefcase" class="w-4 h-4"></i><span class="ml-1">Việc làm</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
+              <span>4 giờ trước</span><span>•</span>
+              <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin"
+                  class="w-3 h-3 mr-1"></i><span>Dĩ An, Bình Dương</span></div>
             </div>
           </div>
-        </div>
-        <div class="mb-4">
-          <div class="post-gallery relative">
-            <img src="./../../assets/images/placeholder.svg?height=250&amp;width=400" alt="Post image 1"
-              class="w-full max-h-72 sm:max-h-96 object-cover cursor-pointer hover:opacity-90 transition-opacity"
-              @click="openPostGallery($el, 0)">
-            <div
-              class="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm font-semibold cursor-pointer hover:bg-opacity-60 transition-all"
-              @click="openPostGallery($el, 0)">
-              +3
-            </div>
-            <!-- Ảnh ẩn - chỉ dùng cho modal -->
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=250&amp;width=400"
-                alt="Post image 2" class="w-full h-full object-cover"></div>
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=250&amp;width=400"
-                alt="Post image 3" class="w-full h-full object-cover"></div>
-            <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=250&amp;width=400"
-                alt="Post image 4" class="w-full h-full object-cover"></div>
-          </div>
-        </div>
-        <div class="px-4 py-2 border-t border-gray-100">
-          <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>156<!-- --> lượt
-                thích</span><span>34<!-- --> bình luận</span></div><span>28<!-- --> lượt chia sẻ</span>
-          </div>
-        </div>
-        <div class="px-4 py-3 border-t border-gray-100">
-          <div class="flex items-center justify-between sm:justify-around"><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-red-600 hover:text-red-700"
-              x-data="likeButton" @click="toggleLike()"><i data-lucide="heart" class="w-4 h-4 mr-2 fill-current"></i>Thích</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
-        </div>
+        </div><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
+          type="button" id="radix-:R8l9afnkq:" aria-haspopup="menu" aria-expanded="false" data-state="closed"><i
+            data-lucide="ellipsis" class="w-4 h-4"></i></button>
       </div>
-    </div>
+      <div class="px-4 pb-4">
+        <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">🏢 TUYỂN DỤNG: Kỹ sư phần
+          mềm - Lương 15-25 triệu
 
-    <!-- Gallery Modal for Posts -->
-    <template x-if="isOpen">
-      <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80" @click="closeModal">
-        <div class="relative w-full max-w-5xl h-[90vh] bg-black rounded-lg overflow-hidden flex flex-col"
-          @click.stop>
-
-          <!-- Header -->
-          <div
-            class="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/50 to-transparent p-4 flex justify-between text-white">
+          ✅ Yêu cầu: 2+ năm kinh nghiệm
+          ✅ Công nghệ: React, Node.js
+          ✅ Chế độ: Full remote, bảo hiểm đầy đủ</p>
+        <div class="bg-green-50 rounded-lg p-3 mb-3 border border-green-200">
+          <div class="flex items-center justify-between sm:justify-around">
             <div>
-              <h3 class="text-lg font-semibold" x-text="postTitle"></h3>
-              <p class="text-sm opacity-75" x-text="(currentIndex+1) + ' / ' + images.length"></p>
+              <h4 class="font-semibold text-green-800">Kỹ sư phần mềm</h4>
+              <p class="text-sm text-green-600">Công ty TNHH ABC</p>
             </div>
-            <div class="flex items-center space-x-2">
-              <button class="text-white hover:text-gray-300 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7,10 12,15 17,10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-              </button>
-              <button class="text-white hover:text-gray-300 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="18" cy="5" r="3"></circle>
-                  <circle cx="6" cy="12" r="3"></circle>
-                  <circle cx="18" cy="19" r="3"></circle>
-                  <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
-                  <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
-                </svg>
-              </button>
-              <button @click="closeModal" class="text-white hover:text-gray-300 p-2">✕</button>
+            <div class="text-right">
+              <div class="font-semibold text-green-700">15-25 triệu</div>
             </div>
-          </div>
-
-          <!-- Ảnh chính -->
-          <div class="flex-1 flex items-center justify-center">
-            <img :src="images[currentIndex]?.src" :alt="images[currentIndex]?.alt"
-              class="max-h-full max-w-full object-contain">
-          </div>
-
-          <!-- Nút trái/phải -->
-          <button @click="prev" x-show="images.length > 1"
-            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/70">‹</button>
-          <button @click="next" x-show="images.length > 1"
-            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/70">›</button>
-
-          <!-- Thumbnail -->
-          <div x-show="images.length > 1"
-            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 flex justify-center space-x-2 overflow-x-auto">
-            <template x-for="(img, index) in images" :key="index">
-              <button @click="setIndex(index)" class="w-12 h-12 rounded-lg overflow-hidden border-2"
-                :class="index === currentIndex ? 'border-white' : 'border-transparent opacity-60 hover:opacity-80'">
-                <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover">
-              </button>
-            </template>
           </div>
         </div>
       </div>
-    </template>
+      <div class="px-4 py-2 border-t border-gray-100">
+        <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>45<!-- --> lượt
+              thích</span><span>12<!-- --> bình luận</span></div><span>8<!-- --> lượt chia sẻ</span>
+        </div>
+      </div>
+      <div class="px-4 py-3 border-t border-gray-100">
+        <div class="flex items-center justify-between sm:justify-around"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-red-600 hover:text-red-700"
+            x-data="likeButton" @click="toggleLike()"><i data-lucide="heart"
+              class="w-4 h-4 mr-2 fill-current"></i>Thích</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i
+              data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i
+              data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
+      </div>
+    </div>
   </div>
-  <div class="text-center py-6">
-    <button @click="loadMorePosts()"
-      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 btn-outline-primary w-full sm:w-auto">
-      Xem thêm bài viết
-    </button>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
+    <div class="p-0">
+      <div class="p-4 flex items-start justify-between gap-2">
+        <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
+            class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
+              class="aspect-square h-full w-full"
+              src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
+          <div class="min-w-0">
+            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+              <h3 class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
+                Trần Thị Bình</h3>
+              <div
+                class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-orange-100 text-orange-800">
+                <i data-lucide="house" class="w-4 h-4"></i><span class="ml-1">Bất động sản</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
+              <span>6 giờ trước</span><span>•</span>
+              <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin"
+                  class="w-3 h-3 mr-1"></i><span>Thuận An, Bình Dương</span></div>
+            </div>
+          </div>
+        </div><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
+          type="button" id="radix-:R8lpafnkq:" aria-haspopup="menu" aria-expanded="false" data-state="closed"><i
+            data-lucide="ellipsis" class="w-4 h-4"></i></button>
+      </div>
+      <div class="px-4 pb-4">
+        <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">Chia sẻ căn hộ 2PN tại
+          chung cư Moonlight Boulevard, view đẹp, giá tốt. Liên hệ ngay! 🏠</p>
+        <div class="bg-orange-50 rounded-lg p-3 mb-3 border border-orange-200">
+          <div class="flex items-center justify-between sm:justify-around">
+            <div>
+              <h4 class="font-semibold text-orange-800">Căn hộ 2PN Moonlight Boulevard</h4>
+              <p class="text-sm text-orange-600">70m²</p>
+            </div>
+            <div class="text-right">
+              <div class="font-semibold text-orange-700">2.5 tỷ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="post-gallery relative">
+          <img src="./../../assets/images/placeholder.svg?height=300&amp;width=500" alt="Post image 1"
+            class="w-full max-h-72 sm:max-h-96 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+            @click="openPostGallery($el, 0)">
+          <div
+            class="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm font-semibold cursor-pointer hover:bg-opacity-60 transition-all"
+            @click="openPostGallery($el, 0)">
+            +4
+          </div>
+          <!-- Ảnh ẩn - chỉ dùng cho modal -->
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+              alt="Post image 2" class="w-full h-full object-cover"></div>
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+              alt="Post image 3" class="w-full h-full object-cover"></div>
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+              alt="Post image 4" class="w-full h-full object-cover"></div>
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=500"
+              alt="Post image 5" class="w-full h-full object-cover"></div>
+        </div>
+      </div>
+      <div class="px-4 py-2 border-t border-gray-100">
+        <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>18<!-- --> lượt
+              thích</span><span>5<!-- --> bình luận</span></div><span>2<!-- --> lượt chia sẻ</span>
+        </div>
+      </div>
+      <div class="px-4 py-3 border-t border-gray-100">
+        <div class="flex items-center justify-between sm:justify-around"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-red-600"
+            x-data="likeButton" @click="toggleLike()"><i data-lucide="heart"
+              class="w-4 h-4 mr-2"></i>Thích</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i
+              data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i
+              data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
+      </div>
+    </div>
   </div>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
+    <div class="p-0">
+      <div class="p-4 flex items-start justify-between gap-2">
+        <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
+            class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
+              class="aspect-square h-full w-full"
+              src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
+          <div class="min-w-0">
+            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+              <h3 class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
+                Lê Minh Đức</h3>
+              <div
+                class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-purple-100 text-purple-800">
+                <i data-lucide="settings" class="w-4 h-4"></i><span class="ml-1">Dịch vụ</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
+              <span>8 giờ trước</span><span>•</span>
+              <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin"
+                  class="w-3 h-3 mr-1"></i><span>Bến Cát, Bình Dương</span></div>
+            </div>
+          </div>
+        </div><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
+          type="button" id="radix-:R8m9afnkq:" aria-haspopup="menu" aria-expanded="false" data-state="closed"><i
+            data-lucide="ellipsis" class="w-4 h-4"></i></button>
+      </div>
+      <div class="px-4 pb-4">
+        <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">Dịch vụ sửa chữa điện tử
+          tại nhà, uy tín - chất lượng. Bảo hành 6 tháng, giá cả hợp lý. Phục vụ 24/7! ⚡</p>
+        <div class="bg-purple-50 rounded-lg p-3 mb-3 border border-purple-200">
+          <div class="flex items-center justify-between sm:justify-around">
+            <div>
+              <h4 class="font-semibold text-purple-800">Sửa chữa điện tử</h4>
+              <div class="flex items-center flex-wrap gap-x-2 gap-y-1"><i data-lucide="star"
+                  class="w-4 h-4 text-yellow-500"></i><span class="text-sm text-purple-600">4.8</span></div>
+            </div>
+            <div class="text-right">
+              <div class="font-semibold text-purple-700">Từ 50k</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2 border-t border-gray-100">
+        <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>12<!-- --> lượt
+              thích</span><span>3<!-- --> bình luận</span></div><span>1<!-- --> lượt chia sẻ</span>
+        </div>
+      </div>
+      <div class="px-4 py-3 border-t border-gray-100">
+        <div class="flex items-center justify-between sm:justify-around"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-red-600"
+            x-data="likeButton" @click="toggleLike()"><i data-lucide="heart"
+              class="w-4 h-4 mr-2"></i>Thích</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i
+              data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i
+              data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
+    <div class="p-0">
+      <div class="p-4 flex items-start justify-between gap-2">
+        <div class="flex items-start gap-3 sm:gap-4 min-w-0"><span
+            class="relative flex overflow-hidden rounded-full w-10 h-10 shrink-0"><img
+              class="aspect-square h-full w-full"
+              src="./../../assets/images/placeholder.svg?height=40&amp;width=40"></span>
+          <div class="min-w-0">
+            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+              <h3 class="font-semibold text-sm sm:text-base leading-tight truncate max-w-[60vw] sm:max-w-none">
+                Báo Bình Dương</h3><i data-lucide="circle-check-big" class="w-4 h-4 text-blue-500"></i>
+              <div
+                class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-xs bg-blue-100 text-blue-800">
+                <i data-lucide="newspaper" class="w-4 h-4"></i><span class="ml-1">Tin tức</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-500">
+              <span>1 ngày trước</span><span>•</span>
+              <div class="flex items-center truncate max-w-[60vw] sm:max-w-none"><i data-lucide="map-pin"
+                  class="w-3 h-3 mr-1"></i><span>Bình Dương</span></div>
+            </div>
+          </div>
+        </div><button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 shrink-0"
+          type="button" id="radix-:R8mpafnkq:" aria-haspopup="menu" aria-expanded="false" data-state="closed"><i
+            data-lucide="ellipsis" class="w-4 h-4"></i></button>
+      </div>
+      <div class="px-4 pb-4">
+        <p class="text-gray-800 whitespace-pre-wrap mb-3 text-[15px] sm:text-base">🔥 TIN HOT: Bình Dương sẽ
+          có thêm 3 khu công nghiệp mới trong năm 2024, tạo ra hàng nghìn việc làm cho người dân địa phương.
+        </p>
+        <div class="bg-blue-50 rounded-lg p-3 mb-3 border border-blue-200">
+          <div class="flex items-center justify-between sm:justify-around">
+            <div
+              class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-blue-700 border-blue-300">
+              Kinh tế</div>
+            <div class="flex items-center text-sm text-blue-600"><i data-lucide="eye" class="w-4 h-4 mr-1"></i><span>3
+                phút đọc</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="post-gallery relative">
+          <img src="./../../assets/images/placeholder.svg?height=250&amp;width=400" alt="Post image 1"
+            class="w-full max-h-72 sm:max-h-96 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+            @click="openPostGallery($el, 0)">
+          <div
+            class="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm font-semibold cursor-pointer hover:bg-opacity-60 transition-all"
+            @click="openPostGallery($el, 0)">
+            +3
+          </div>
+          <!-- Ảnh ẩn - chỉ dùng cho modal -->
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=250&amp;width=400"
+              alt="Post image 2" class="w-full h-full object-cover"></div>
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=250&amp;width=400"
+              alt="Post image 3" class="w-full h-full object-cover"></div>
+          <div class="hidden"><img src="./../../assets/images/placeholder.svg?height=250&amp;width=400"
+              alt="Post image 4" class="w-full h-full object-cover"></div>
+        </div>
+      </div>
+      <div class="px-4 py-2 border-t border-gray-100">
+        <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs sm:text-sm text-gray-500">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1"><span>156<!-- --> lượt
+              thích</span><span>34<!-- --> bình luận</span></div><span>28<!-- --> lượt chia sẻ</span>
+        </div>
+      </div>
+      <div class="px-4 py-3 border-t border-gray-100">
+        <div class="flex items-center justify-between sm:justify-around"><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-red-600 hover:text-red-700"
+            x-data="likeButton" @click="toggleLike()"><i data-lucide="heart"
+              class="w-4 h-4 mr-2 fill-current"></i>Thích</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-blue-600"><i
+              data-lucide="message-circle" class="w-4 h-4 mr-2"></i>Bình luận</button><button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 flex-1 text-gray-600 hover:text-green-600"><i
+              data-lucide="share2" class="w-4 h-4 mr-2"></i>Chia sẻ</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Modal for Posts -->
+  <template x-if="isOpen">
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80" @click="closeModal">
+      <div class="relative w-full max-w-5xl h-[90vh] bg-black rounded-lg overflow-hidden flex flex-col" @click.stop>
+
+        <!-- Header -->
+        <div
+          class="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/50 to-transparent p-4 flex justify-between text-white">
+          <div>
+            <h3 class="text-lg font-semibold" x-text="postTitle"></h3>
+            <p class="text-sm opacity-75" x-text="(currentIndex+1) + ' / ' + images.length"></p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button @click="handleDownload()" class="text-white hover:text-gray-300 p-2" title="Tải ảnh về máy">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7,10 12,15 17,10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+            <button class="text-white hover:text-gray-300 p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+              </svg>
+            </button>
+            <button @click="closeModal" class="text-white hover:text-gray-300 p-2">✕</button>
+          </div>
+        </div>
+
+        <!-- Ảnh chính -->
+        <div class="flex-1 flex items-center justify-center">
+          <img :src="images[currentIndex]?.src" :alt="images[currentIndex]?.alt"
+            class="max-h-full max-w-full object-contain">
+        </div>
+
+        <!-- Nút trái/phải -->
+        <button @click="prev" x-show="images.length > 1"
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/70">‹</button>
+        <button @click="next" x-show="images.length > 1"
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/70">›</button>
+
+        <!-- Thumbnail -->
+        <div x-show="images.length > 1"
+          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 flex justify-center space-x-2 overflow-x-auto">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="setIndex(index)" class="w-12 h-12 rounded-lg overflow-hidden border-2"
+              :class="index === currentIndex ? 'border-white' : 'border-transparent opacity-60 hover:opacity-80'">
+              <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover">
+            </button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
+<div class="text-center py-6">
+  <button @click="loadMorePosts()"
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 btn-outline-primary w-full sm:w-auto">
+    Xem thêm bài viết
+  </button>
+</div>

@@ -1,0 +1,395 @@
+<section id="list" class="tab-content lg:col-span-6 min-w-0" data-tab-content="list">
+  <div class="space-y-2 sm:space-y-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
+      <div class="relative h-7 sm:h-10 w-full sm:max-w-sm">
+        <i data-lucide="search"
+          class="w-3 h-3 absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 sm:w-4 sm:h-4 text-gray-400"></i>
+        <input
+          class="flex w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-7 sm:pl-10 text-xs sm:text-sm h-7 sm:h-10"
+          placeholder="Tìm địa điểm theo tên, danh mục, địa chỉ…" value="">
+      </div>
+      <div class="flex gap-1 sm:gap-2">
+        <button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground py-2 bg-transparent text-xs sm:text-sm px-2 sm:px-4 h-6 sm:h-auto">
+          <i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i>
+          <span class="hidden sm:inline">Bình Dương, Việt Nam</span><span class="sm:hidden">Bình Dương, VN</span>
+        </button>
+        <button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 py-2 btn-primary text-xs sm:text-sm px-2 sm:px-4 h-6 sm:h-auto">
+          <i data-lucide="plus" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i>
+          <span class="hidden sm:inline">Đăng địa điểm</span><span class="sm:hidden">Đăng tin</span>
+        </button>
+      </div>
+    </div>
+    <div class="flex gap-1 sm:gap-2 text-xs sm:text-sm overflow-x-auto pb-1 sm:pb-2">
+      <button
+        class="px-2 sm:px-3 py-1 sm:py-2 rounded-lg border transition-all whitespace-nowrap text-xs sm:text-sm bg-white hover:bg-gray-50">
+        <span class="inline-flex items-center gap-1">
+          <i data-lucide="landmark" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+          <span class="hidden sm:inline">Tất cả</span><span class="sm:hidden">Tất</span>
+        </span>
+      </button>
+      <button
+        class="px-2 sm:px-3 py-1 sm:py-2 rounded-lg border transition-all whitespace-nowrap text-xs sm:text-sm bg-white hover:bg-gray-50">
+        <span class="inline-flex items-center gap-1">
+          <i data-lucide="building-2" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+          <span class="hidden sm:inline">Hành chính</span><span class="sm:hidden">Hành</span>
+        </span>
+      </button>
+      <button
+        class="px-2 sm:px-3 py-1 sm:py-2 rounded-lg border transition-all whitespace-nowrap text-xs sm:text-sm bg-white hover:bg-gray-50">
+        <span class="inline-flex items-center gap-1">
+          <i data-lucide="utensils-crossed" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+          <span class="hidden sm:inline">Ăn uống</span><span class="sm:hidden">Ăn</span>
+        </span>
+      </button>
+      <button
+        class="px-2 sm:px-3 py-1 sm:py-2 rounded-lg border transition-all whitespace-nowrap text-xs sm:text-sm bg-white hover:bg-gray-50">
+        <span class="inline-flex items-center gap-1">
+          <i data-lucide="camera" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+          <span class="hidden sm:inline">Du lịch</span><span class="sm:hidden">Du</span>
+        </span>
+      </button>
+      <button
+        class="px-2 sm:px-3 py-1 sm:py-2 rounded-lg border transition-all whitespace-nowrap text-xs sm:text-sm bg-white hover:bg-gray-50">
+        <span class="inline-flex items-center gap-1">
+          <i data-lucide="trees" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+          <span class="hidden sm:inline">Công viên</span><span class="sm:hidden">Công</span>
+        </span>
+      </button>
+      <button
+        class="px-2 sm:px-3 py-1 sm:py-2 rounded-lg border transition-all whitespace-nowrap text-xs sm:text-sm bg-white hover:bg-gray-50">
+        <span class="inline-flex items-center gap-1">
+          <i data-lucide="hotel" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+          <span class="hidden sm:inline">Khách sạn</span><span class="sm:hidden">Khách</span>
+        </span>
+      </button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Khu du lịch Đại Nam"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Khu du lịch Đại Nam</h3>
+              <div class="group__card-badge badge-success">
+                Đã xác minh</div>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">Phường Hiệp An, TP. Thủ Dầu Một</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.5</span><span
+                  class="group-location__card-rating-count">(1203)</span>
+              </div>
+              <div class="group-location__card-category">travel</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Công viên</div>
+              <div class="group__card-tag badge badge-secondary">
+                Biển nhân tạo</div>
+              <div class="group__card-tag badge badge-secondary">
+                Vườn thú</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Công viên thành phố mới"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Công viên thành phố mới</h3>
+              <div class="group__card-badge badge-success">
+                Đã xác minh</div>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">TP. Thủ Dầu Một</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.6</span><span
+                  class="group-location__card-rating-count">(856)</span>
+              </div>
+              <div class="group-location__card-category">park</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Chụp ảnh</div>
+              <div class="group__card-tag badge badge-secondary">
+                Đi dạo</div>
+              <div class="group__card-tag badge badge-secondary">
+                Sự kiện</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Aeon Mall Bình Dương Canary"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Aeon Mall Bình Dương Canary</h3>
+              <div class="group__card-badge badge-success">
+                Đã xác minh</div>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">Số 1 Đại lộ Bình Dương, TP. Thuận An</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.7</span><span
+                  class="group-location__card-rating-count">(2456)</span>
+              </div>
+              <div class="group-location__card-category">food</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Mua sắm</div>
+              <div class="group__card-tag badge badge-secondary">
+                Ăn uống</div>
+              <div class="group__card-tag badge badge-secondary">
+                Giải trí</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Cafe Bờ Sông Bạch Đằng"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Cafe Bờ Sông Bạch Đằng</h3>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">Đường Bạch Đằng, TP. Thủ Dầu Một</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.2</span><span
+                  class="group-location__card-rating-count">(210)</span>
+              </div>
+              <div class="group-location__card-category">food</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Cà phê</div>
+              <div class="group__card-tag badge badge-secondary">
+                View sông</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Khách sạn The Mira"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Khách sạn The Mira</h3>
+              <div class="group__card-badge badge-success">
+                Đã xác minh</div>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">555B Đại lộ Bình Dương, TP. Thủ Dầu Một</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.4</span><span
+                  class="group-location__card-rating-count">(432)</span>
+              </div>
+              <div class="group-location__card-category">hotel</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                4 sao</div>
+              <div class="group__card-tag badge badge-secondary">
+                Trung tâm</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="KCN VSIP 1"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">KCN VSIP 1</h3>
+              <div class="group__card-badge badge-success">
+                Đã xác minh</div>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">Thuận An, Bình Dương</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.1</span><span
+                  class="group-location__card-rating-count">(320)</span>
+              </div>
+              <div class="group-location__card-category">government</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Khu công nghiệp</div>
+              <div class="group__card-tag badge badge-secondary">
+                Việc làm</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Chợ Thủ Dầu Một"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Chợ Thủ Dầu Một</h3>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">Đường Yersin, TP. Thủ Dầu Một</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4</span><span
+                  class="group-location__card-rating-count">(980)</span>
+              </div>
+              <div class="group-location__card-category">food</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Ẩm thực</div>
+              <div class="group__card-tag badge badge-secondary">
+                Đặc sản</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="p-0">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+            alt="Hồ Dầu Tiếng (cửa ngõ Bình Dương)" class="w-full h-44 object-cover rounded-t-lg">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Hồ Dầu Tiếng (cửa ngõ Bình Dương)</h3>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">Hướng Bến Cát, giáp Tây Ninh</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.3</span><span
+                  class="group-location__card-rating-count">(540)</span>
+              </div>
+              <div class="group-location__card-category">travel</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Cắm trại</div>
+              <div class="group__card-tag badge badge-secondary">
+                Dã ngoại</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Chung cư Biconsi Tower"
+            class="group__card-image">
+          <div class="group__card-body">
+            <div class="group-location__card-header">
+              <h3 class="group__card-title">Chung cư Biconsi Tower</h3>
+              <div class="group__card-badge badge-success">
+                Đã xác minh</div>
+            </div>
+            <p class="group-location__card-address text-muted-foreground">Phú Lợi, TP. Thủ Dầu Một</p>
+            <div class="group-location__card-meta">
+              <div class="group-location__card-rating">
+                <i data-lucide="star" class="group-location__card-rating-icon"></i>
+                <span class="group-location__card-rating-score">4.2</span><span
+                  class="group-location__card-rating-count">(160)</span>
+              </div>
+              <div class="group-location__card-category">real-estate</div>
+            </div>
+            <div class="group-location__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Căn hộ</div>
+              <div class="group__card-tag badge badge-secondary">
+                Trung tâm</div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="map-pin" class="group__card-action-icon"></i>
+                Chỉ đường
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

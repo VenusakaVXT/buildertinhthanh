@@ -55,13 +55,48 @@
 
 </head>
 
-<body class="min-h-screen bg-white">
+<body class="min-h-[100dvh] bg-gray-50">
 	<!-- header -->
 	<!-- include:./blocks/header.html -->
 
 	<!-- Main Content Area -->
-	<main class="min-h-screen bg-gray-50">
+	<main class="container mx-auto px-4 pb-14">
+		<div class="tabs min-h-[60vh]">
+			<div class="bg-white border-b rounded-lg overflow-hidden">
+				<!-- Cover Section -->
+				<!-- include:blocks/sections/group-detail/cover.html -->
 
+				<!-- Tabs -->
+				<div class="mt-4 sm:mt-10 px-1 sm:px-3 md:px-0">
+					<div class="tab-menus items-center justify-center rounded-md bg-muted p-1 text-muted-foreground w-full grid grid-cols-4 h-8 sm:h-auto">
+						<div class="tab-menu active" data-tab="posts">Bài viết</div>
+						<div class="tab-menu" data-tab="list">Bất động sản</div>
+						<div class="tab-menu" data-tab="members">Thành viên</div>
+						<div class="tab-menu" data-tab="intro">Giới thiệu</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-1 sm:gap-4 lg:gap-6 mt-2 sm:mt-6">
+				<!-- Left Sidebar -->
+				<!-- include:blocks/sections/group-detail/left-sidebar.html -->
+
+				<!-- Posts Section -->
+				<!-- include:blocks/sections/group-detail/posts.html -->
+
+				<!-- List Real Estates Section -->
+				<!-- include:blocks/sections/group-detail/list-real-estates.html -->
+
+				<!-- Members Section -->
+				<!-- include:blocks/sections/group-detail/members.html -->
+
+				<!-- Intro Section -->
+				<!-- include:blocks/sections/group-detail/intro.html -->
+
+				<!-- Right Sidebar -->
+				<!-- include:blocks/sections/group-detail/right-sidebar.html -->
+			</div>
+		</div>
 	</main>
 
 	<!-- Footer -->

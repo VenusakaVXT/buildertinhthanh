@@ -1,0 +1,651 @@
+<section id="list" class="tab-content lg:col-span-6 min-w-0" data-tab-content="list">
+  <div class="space-y-2 sm:space-y-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
+      <div class="relative h-7 sm:h-10 w-full sm:max-w-sm">
+        <i data-lucide="search"
+          class="w-3 h-3 absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 sm:w-4 sm:h-4 text-gray-400"></i>
+        <input
+          class="flex w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-7 sm:pl-10 text-xs sm:text-sm h-7 sm:h-10"
+          placeholder="Tìm dịch vụ theo tên, danh mục, khu vực…" value="">
+      </div>
+      <div class="flex gap-1 sm:gap-2">
+        <button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground py-2 bg-transparent text-xs sm:text-sm px-2 sm:px-4 h-6 sm:h-auto">
+          <i data-lucide="map-pin" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i>
+          <span class="hidden sm:inline">Bình Dương, Việt Nam</span><span class="sm:hidden">Bình Dương, VN</span>
+        </button>
+        <button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 py-2 btn-primary text-xs sm:text-sm px-2 sm:px-4 h-6 sm:h-auto">
+          <i data-lucide="plus" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i>
+          <span class="hidden sm:inline">Đăng dịch vụ</span><span class="sm:hidden">Đăng tin</span>
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+              alt="Thiết kế website chuyên nghiệp" class="w-full h-44 object-cover rounded-t-lg">
+            <div class="group__card-badge group-service__card-badge-hot badge-hot">
+              HOT</div>
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Thiết kế website chuyên nghiệp</h3>
+            <p class="group-service__card-description text-muted-foreground">Thiết kế website responsive, SEO-friendly
+              cho doanh
+              nghiệp và cá nhân</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">5 - 20 triệu VNĐ</div>
+              <div class="group-service__card-location">TP. Thủ Dầu Một</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Website</div>
+              <div class="group__card-tag badge badge-secondary">
+                Responsive</div>
+              <div class="group__card-tag badge badge-secondary">
+                SEO</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Nguyễn Văn A">
+              <div class="group-service__card-author-name">Nguyễn Văn A</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.8</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">45 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+              alt="Dịch vụ SEO tăng thứ hạng Google" class="w-full h-44 object-cover rounded-t-lg">
+            <div class="group__card-badge group-service__card-badge-hot badge-hot">
+              HOT</div>
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ SEO tăng thứ hạng Google</h3>
+            <p class="group-service__card-description text-muted-foreground">Tối ưu hóa website lên TOP Google, tăng
+              traffic và
+              doanh số bán hàng</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">3 - 15 triệu VNĐ</div>
+              <div class="group-service__card-location">TP. Dĩ An</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                SEO</div>
+              <div class="group__card-tag badge badge-secondary">
+                Google</div>
+              <div class="group__card-tag badge badge-secondary">
+                Marketing</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Trần Thị B">
+              <div class="group-service__card-author-name">Trần Thị B</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.9</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">67 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+              alt="Chụp ảnh sản phẩm chuyên nghiệp" class="w-full h-44 object-cover rounded-t-lg">
+            <div class="group__card-badge group-service__card-badge-hot badge-hot">
+              HOT</div>
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Chụp ảnh sản phẩm chuyên nghiệp</h3>
+            <p class="group-service__card-description text-muted-foreground">Chụp ảnh sản phẩm cho shop online, catalog,
+              quảng cáo
+              với chất lượng cao</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">500k - 2 triệu VNĐ</div>
+              <div class="group-service__card-location">TP. Thuận An</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Chụp ảnh</div>
+              <div class="group__card-tag badge badge-secondary">
+                Sản phẩm</div>
+              <div class="group__card-tag badge badge-secondary">
+                Studio</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Lê Văn C">
+              <div class="group-service__card-author-name">Lê Văn C</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.7</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">89 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
+              alt="Thiết kế logo và nhận diện thương hiệu" class="w-full h-44 object-cover rounded-t-lg">
+            <div class="group__card-badge group-service__card-badge-hot badge-hot">
+              HOT</div>
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Thiết kế logo và nhận diện thương hiệu</h3>
+            <p class="group-service__card-description text-muted-foreground">Thiết kế logo độc đáo, bộ nhận diện thương
+              hiệu hoàn
+              chỉnh cho doanh nghiệp</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">1 - 5 triệu VNĐ</div>
+              <div class="group-service__card-location">Bến Cát</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Logo</div>
+              <div class="group__card-tag badge badge-secondary">
+                Branding</div>
+              <div class="group__card-tag badge badge-secondary">
+                Thiết kế</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Phạm Thị D">
+              <div class="group-service__card-author-name">Phạm Thị D</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.6</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">34 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ kế toán doanh nghiệp"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-hot badge-hot">
+              HOT</div>
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ kế toán doanh nghiệp</h3>
+            <p class="group-service__card-description text-muted-foreground">Dịch vụ kế toán trọn gói cho doanh nghiệp
+              vừa và nhỏ,
+              báo cáo thuế</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">2 - 8 triệu VNĐ</div>
+              <div class="group-service__card-location">TP. Thủ Dầu Một</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Kế toán</div>
+              <div class="group__card-tag badge badge-secondary">
+                Thuế</div>
+              <div class="group__card-tag badge badge-secondary">
+                Doanh nghiệp</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Hoàng Văn E">
+              <div class="group-service__card-author-name">Hoàng Văn E</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.8</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">56 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ quay phim sự kiện"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-hot badge-hot">
+              HOT</div>
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ quay phim sự kiện</h3>
+            <p class="group-service__card-description text-muted-foreground">Quay phim cưới hỏi, sự kiện doanh nghiệp,
+              tiệc sinh
+              nhật với chất lượng 4K</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">3 - 12 triệu VNĐ</div>
+              <div class="group-service__card-location">TP. Dĩ An</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Quay phim</div>
+              <div class="group__card-tag badge badge-secondary">
+                Sự kiện</div>
+              <div class="group__card-tag badge badge-secondary">
+                4K</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Nguyễn Thị F">
+              <div class="group-service__card-author-name">Nguyễn Thị F</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.9</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">78 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ dọn dẹp nhà cửa"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ dọn dẹp nhà cửa</h3>
+            <p class="group-service__card-description text-muted-foreground">Dọn dẹp nhà cửa, văn phòng chuyên nghiệp,
+              nhanh chóng
+              và sạch sẽ</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">200k - 1 triệu VNĐ</div>
+              <div class="group-service__card-location">Tân Uyên</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Dọn dẹp</div>
+              <div class="group__card-tag badge badge-secondary">
+                Vệ sinh</div>
+              <div class="group__card-tag badge badge-secondary">
+                Nhà cửa</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Trần Văn G">
+              <div class="group-service__card-author-name">Trần Văn G</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.5</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">123 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ sửa chữa điện tử"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ sửa chữa điện tử</h3>
+            <p class="group-service__card-description text-muted-foreground">Sửa chữa điện thoại, laptop, máy tính bảng
+              tại nhà
+              hoặc cửa hàng</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">100k - 2 triệu VNĐ</div>
+              <div class="group-service__card-location">TP. Thuận An</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Sửa chữa</div>
+              <div class="group__card-tag badge badge-secondary">
+                Điện tử</div>
+              <div class="group__card-tag badge badge-secondary">
+                Tại nhà</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Lê Thị H">
+              <div class="group-service__card-author-name">Lê Thị H</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.4</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">67 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ gia sư toán lý hóa"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ gia sư toán lý hóa</h3>
+            <p class="group-service__card-description text-muted-foreground">Gia sư kinh nghiệm dạy toán, lý, hóa cấp 2,
+              cấp 3 tại
+              nhà học sinh</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">150k - 500k VNĐ/buổi</div>
+              <div class="group-service__card-location">TP. Thủ Dầu Một</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Gia sư</div>
+              <div class="group__card-tag badge badge-secondary">
+                Toán</div>
+              <div class="group__card-tag badge badge-secondary">
+                Lý</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Phạm Văn I">
+              <div class="group-service__card-author-name">Phạm Văn I</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.7</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">45 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ trang trí tiệc cưới"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ trang trí tiệc cưới</h3>
+            <p class="group-service__card-description text-muted-foreground">Trang trí tiệc cưới, sinh nhật, khai trương
+              với phong
+              cách hiện đại</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">5 - 30 triệu VNĐ</div>
+              <div class="group-service__card-location">Bến Cát</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Trang trí</div>
+              <div class="group__card-tag badge badge-secondary">
+                Tiệc cưới</div>
+              <div class="group__card-tag badge badge-secondary">
+                Sự kiện</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Hoàng Thị J">
+              <div class="group-service__card-author-name">Hoàng Thị J</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.8</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">92 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ vận chuyển hàng hóa"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ vận chuyển hàng hóa</h3>
+            <p class="group-service__card-description text-muted-foreground">Vận chuyển hàng hóa nội thành và liên tỉnh,
+              an toàn và
+              nhanh chóng</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">50k - 500k VNĐ</div>
+              <div class="group-service__card-location">TP. Dĩ An</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Vận chuyển</div>
+              <div class="group__card-tag badge badge-secondary">
+                Giao hàng</div>
+              <div class="group__card-tag badge badge-secondary">
+                Nhanh</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Nguyễn Văn K">
+              <div class="group-service__card-author-name">Nguyễn Văn K</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.3</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">156 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group__card bg-card text-card-foreground card-hover">
+        <div class="group__card-content">
+          <div class="group__card-image-container">
+            <img src="./../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Dịch vụ massage tại nhà"
+              class="group__card-image">
+            <div class="group__card-badge group-service__card-badge-success badge-success">
+              <i data-lucide="circle-check-big" class="group__card-badge-icon"></i>
+              Đã xác minh
+            </div>
+          </div>
+          <div class="group-service__card-body">
+            <h3 class="group__card-title">Dịch vụ massage tại nhà</h3>
+            <p class="group-service__card-description text-muted-foreground">Massage thư giãn, trị liệu tại nhà với kỹ
+              thuật chuyên
+              nghiệp</p>
+            <div class="group-service__card-price-section">
+              <div class="group-service__card-price">300k - 800k VNĐ</div>
+              <div class="group-service__card-location">Tân Uyên</div>
+            </div>
+            <div class="group-service__card-tags">
+              <div class="group__card-tag badge badge-secondary">
+                Massage</div>
+              <div class="group__card-tag badge badge-secondary">
+                Tại nhà</div>
+              <div class="group__card-tag badge badge-secondary">
+                Thư giãn</div>
+            </div>
+            <div class="group-service__card-author">
+              <img src="./../../assets/images/placeholder.svg?height=40&amp;width=40"
+                class="group-service__card-author-avatar" alt="Trần Thị L">
+              <div class="group-service__card-author-name">Trần Thị L</div>
+              <div class="group-service__card-rating">
+                <span class="group-service__card-rating-stars">
+                  <i data-lucide="star" class="group-service__card-rating-icon"></i>
+                  <span class="group-service__card-rating-score">4.6</span>
+                </span>
+                <span class="group-service__card-rating-separator">•</span><span
+                  class="group-service__card-rating-count">78 đánh giá</span>
+              </div>
+            </div>
+            <div class="group__card-actions">
+              <button class="group__card-action-primary btn-primary">Xem
+                chi tiết</button>
+              <button class="group__card-action-secondary">
+                <i data-lucide="message-circle" class="group__card-action-icon"></i>
+                Liên hệ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

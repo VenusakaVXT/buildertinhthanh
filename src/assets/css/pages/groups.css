@@ -1,0 +1,135 @@
+/* ========================================================================
+   GROUPS.CSS - Group List Page Styles
+   ======================================================================== */
+
+/* Group Cards - Common Styles */
+.group-grid__card,
+.group-list__card {
+  @apply rounded-lg border shadow-sm overflow-hidden;
+}
+
+.group-grid__card-badge,
+.group-list__card-badge {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent shrink-0;
+}
+
+.group-grid__card-meta-item,
+.group-list__card-meta-item {
+  @apply inline-flex items-center gap-1;
+}
+
+.group-grid__card-meta-icon,
+.group-list__card-meta-icon {
+  @apply w-3.5 h-3.5;
+}
+
+.group-grid__card-title,
+.group-list__card-title {
+  @apply font-medium line-clamp-1;
+}
+
+.group-grid__card-title-link,
+.group-list__card-title-link {
+  @apply block hover:underline;
+}
+
+.group-grid__card-action-primary,
+.group-list__card-action-primary {
+  @apply flex-1;
+}
+
+.group-grid__card-action-secondary,
+.group-list__card-action-secondary {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 bg-transparent border;
+}
+
+.group-grid__card-action-icon,
+.group-list__card-action-icon {
+  @apply w-4 h-4 mr-1;
+}
+
+/* Group Grid Card - Specific Styles */
+.group-grid__card-content {
+  @apply p-0 h-full flex flex-col;
+}
+
+.group-grid__card-image {
+  @apply w-full h-32 sm:h-40 object-cover;
+}
+
+.group-grid__card-body {
+  @apply p-4 flex flex-col flex-1;
+}
+
+.group-grid__card-main {
+  @apply flex-1 space-y-2;
+}
+
+.group-grid__card-header {
+  @apply flex items-center justify-between gap-3;
+}
+
+.group-grid__card-title-link {
+  @apply flex-1;
+}
+
+.group-grid__card-meta {
+  @apply text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2;
+}
+
+.group-grid__card-description {
+  @apply text-sm line-clamp-2;
+}
+
+.group-grid__card-tags {
+  @apply flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden;
+}
+
+.group-grid__card-tag {
+  @apply inline-flex items-center rounded-full text-xs font-medium px-2.5 py-[2px] leading-tight;
+}
+
+.group-grid__card-actions {
+  @apply flex items-center gap-2 pt-2;
+}
+
+/* Group List Card - Specific Styles */
+.group-list__card-content {
+  @apply flex;
+}
+
+.group-list__card-image {
+  @apply w-28 sm:w-40 h-28 sm:h-28 object-cover;
+}
+
+.group-list__card-body {
+  @apply p-4 flex-1 space-y-2;
+}
+
+.group-list__card-header {
+  @apply flex items-start justify-between gap-3;
+}
+
+.group-list__card-title-section {
+  @apply min-w-0;
+}
+
+.group-list__card-meta {
+  @apply text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1;
+}
+
+.group-list__card-description {
+  @apply text-sm line-clamp-1 sm:line-clamp-2;
+}
+
+.group-list__card-tags {
+  @apply flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden;
+}
+
+.group-list__card-tag {
+  @apply inline-flex items-center rounded-full text-xs font-medium px-2 py-[1px] leading-tight;
+}
+
+.group-list__card-actions {
+  @apply flex items-center gap-2;
+}

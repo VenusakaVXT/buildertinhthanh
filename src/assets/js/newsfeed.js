@@ -598,6 +598,83 @@ document.addEventListener('alpine:init', () => {
             this.currentIndex = index
         },
 
+        async handleDownload() {
+            if (!this.images || this.images.length === 0) {
+                console.warn('No images available to download');
+                return;
+            }
+
+            const currentImage = this.images[this.currentIndex];
+            if (!currentImage || !currentImage.src) {
+                console.warn('Current image not found');
+                return;
+            }
+
+            try {
+                console.log('Starting download for:', currentImage.src);
+
+                // Tạo tên file từ URL hoặc tạo tên mặc định
+                let filename = 'image.jpg';
+                try {
+                    const url = new URL(currentImage.src);
+                    const pathname = url.pathname;
+                    const urlFilename = pathname.split('/').pop() || 'image';
+
+                    // Nếu không có extension, thêm .jpg
+                    const hasExtension = urlFilename.includes('.');
+                    filename = hasExtension ? urlFilename : `${urlFilename}.jpg`;
+                } catch (urlError) {
+                    console.warn('Error parsing URL, using default filename:', urlError);
+                }
+
+                // Thử tải ảnh bằng fetch để xử lý CORS
+                try {
+                    const response = await fetch(currentImage.src);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+
+                    // Tạo link download
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = filename;
+                    link.style.display = 'none';
+
+                    // Thêm vào DOM, click và xóa
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    // Giải phóng URL object
+                    window.URL.revokeObjectURL(url);
+
+                    console.log(`Successfully downloaded: ${filename}`);
+                } catch (fetchError) {
+                    console.warn('Fetch failed, trying direct download:', fetchError);
+
+                    // Fallback: thử tải trực tiếp
+                    const link = document.createElement('a');
+                    link.href = currentImage.src;
+                    link.download = filename;
+                    link.target = '_blank';
+                    link.style.display = 'none';
+
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    console.log(`Direct download attempted: ${filename}`);
+                }
+            } catch (error) {
+                console.error('Error downloading image:', error);
+
+                // Fallback cuối cùng: mở ảnh trong tab mới
+                window.open(currentImage.src, '_blank');
+            }
+        },
     }));
 });
 

@@ -129,6 +129,7 @@ utensils-crossed
 credit-card
 user-round
 sparkles
+circle-help
 layout-grid
 folder
 save

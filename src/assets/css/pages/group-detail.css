@@ -1,0 +1,296 @@
+/* ========================================================================
+   GROUP-DETAIL.CSS - Group Detail Page Styles
+   ======================================================================== */
+
+/* Config Group */
+.tab-content {
+  @apply !pt-0 !mt-0;
+}
+
+/* Group Common Card */
+.group__card {
+  @apply rounded-lg border shadow-sm;
+}
+
+.group__card-content {
+  @apply p-0;
+}
+
+.group__card-image-container {
+  @apply relative;
+}
+
+.group__card-image {
+  @apply w-full h-44 object-cover rounded-t-lg;
+}
+
+.group__card-body {
+  @apply p-4 space-y-2;
+}
+
+.group__card-title {
+  @apply font-medium line-clamp-1;
+}
+
+.group__card-badge {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent;
+}
+
+.group__card-badge-icon {
+  @apply w-3 h-3;
+}
+
+.group__card-tag {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent;
+}
+
+.group__card-tag-icon {
+  @apply w-3 h-3 mr-1;
+}
+
+.group__card-actions {
+  @apply flex gap-2 pt-2;
+}
+
+.group__card-action-primary {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 flex-1;
+}
+
+.group__card-action-secondary {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 bg-transparent border;
+}
+
+.group__card-action-icon {
+  @apply w-4 h-4 mr-1;
+}
+
+
+
+
+/* Group Real Estate Card - Specific Styles */
+.group-real-estate__card-badge-hot {
+  @apply absolute top-3 left-3;
+}
+
+.group-real-estate__card-badge-success {
+  @apply absolute top-3 right-3 flex items-center gap-1;
+}
+
+.group-real-estate__card-location {
+  @apply h-[40px] text-sm line-clamp-2;
+}
+
+.group-real-estate__card-price-section {
+  @apply flex items-center justify-between;
+}
+
+.group-real-estate__card-price {
+  @apply text-green-600 font-semibold;
+}
+
+.group-real-estate__card-area {
+  @apply text-xs text-gray-600;
+}
+
+.group-real-estate__card-tags {
+  @apply flex flex-wrap gap-2 pt-1;
+}
+
+.group-real-estate__card-actions {
+  @apply flex gap-2 pt-3;
+}
+
+
+
+
+/* Group Job Card - Specific Styles */
+.group-job__card-body {
+  @apply p-4 space-y-2;
+}
+
+.group-job__card-header {
+  @apply flex items-start gap-3;
+}
+
+.group-job__card-logo {
+  @apply w-10 h-10 rounded-lg object-cover;
+}
+
+.group-job__card-title-section {
+  @apply min-w-0;
+}
+
+.group-job__card-company {
+  @apply text-sm line-clamp-1;
+}
+
+.group-job__card-meta {
+  @apply flex items-center gap-4 text-sm;
+}
+
+.group-job__card-salary {
+  @apply text-green-600 font-semibold;
+}
+
+.group-job__card-salary-icon {
+  @apply w-4 h-4 inline mr-1;
+}
+
+.group-job__card-location {
+  @apply text-gray-600;
+}
+
+.group-job__card-location-icon {
+  @apply w-4 h-4 inline mr-1;
+}
+
+.group-job__card-tags {
+  @apply flex flex-wrap gap-2 h-14 overflow-hidden items-start;
+}
+
+.group-job__card-actions {
+  @apply flex gap-2 pt-1;
+}
+
+
+
+
+/* Group Service Card - Specific Styles */
+.group-service__card-body {
+  @apply p-4 space-y-3;
+}
+
+.group-service__card-badge-hot {
+  @apply absolute top-3 left-3;
+}
+
+.group-service__card-badge-success {
+  @apply absolute top-3 right-3 flex items-center gap-1;
+}
+
+.group-service__card-description {
+  @apply text-sm line-clamp-2;
+}
+
+.group-service__card-price-section {
+  @apply flex items-center justify-between text-sm;
+}
+
+.group-service__card-price {
+  @apply text-green-600 font-semibold;
+}
+
+.group-service__card-location {
+  @apply text-xs text-gray-600;
+}
+
+.group-service__card-tags {
+  @apply flex flex-wrap gap-2;
+}
+
+.group-service__card-author {
+  @apply flex items-center gap-3 pt-1;
+}
+
+.group-service__card-author-avatar {
+  @apply w-8 h-8 rounded-full;
+}
+
+.group-service__card-author-name {
+  @apply text-sm font-medium truncate;
+}
+
+.group-service__card-rating {
+  @apply text-xs text-gray-500 flex items-center gap-2;
+}
+
+.group-service__card-rating-stars {
+  @apply flex items-center gap-1;
+}
+
+.group-service__card-rating-icon {
+  @apply w-3 h-3 text-yellow-500 fill-current;
+}
+
+.group-service__card-rating-score {
+  @apply text-xs;
+}
+
+.group-service__card-rating-separator {
+  @apply text-xs;
+}
+
+.group-service__card-rating-count {
+  @apply text-xs;
+}
+
+
+
+
+/* Group Location Card - Specific Styles */
+.group-location__card-header {
+  @apply flex items-center justify-between;
+}
+
+.group-location__card-address {
+  @apply text-sm line-clamp-2;
+}
+
+.group-location__card-meta {
+  @apply flex items-center justify-between text-sm;
+}
+
+.group-location__card-rating {
+  @apply flex items-center gap-1;
+}
+
+.group-location__card-rating-icon {
+  @apply w-4 h-4 text-yellow-500 fill-current;
+}
+
+.group-location__card-rating-score {
+  @apply text-sm;
+}
+
+.group-location__card-rating-count {
+  @apply text-xs text-gray-500;
+}
+
+.group-location__card-category {
+  @apply text-xs text-gray-600 capitalize;
+}
+
+.group-location__card-tags {
+  @apply flex flex-wrap gap-2 pt-1 min-h-[48px] max-h-[48px] overflow-hidden;
+}
+
+
+
+/* Member Card - Specific Styles */
+.member__card {
+  @apply p-3 border rounded-lg;
+}
+
+.member__card-content {
+  @apply flex items-center gap-3;
+}
+
+.member__card-avatar {
+  @apply w-10 h-10 rounded-full;
+}
+
+.member__card-info {
+  @apply min-w-0;
+}
+
+.member__card-name {
+  @apply font-medium truncate;
+}
+
+.member__card-role {
+  @apply text-xs text-gray-500 flex items-center gap-1 truncate;
+}
+
+.member__card-action {
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors h-9 rounded-md px-3 w-full mt-3 bg-transparent border;
+}

@@ -1,504 +1,555 @@
 <section class="tabs tabs-btn col-span-6 min-w-0">
-    <div class="flex items-center justify-between p-3 mb-4 bg-white rounded-lg border">
-      <div class="text-sm text-gray-700">Tổng cộng có <span class="font-semibold">22</span> nhóm</div>
-      <div class="tabs-menus flex items-center gap-2">
-        <button class="tab-menu active" data-tab="grid">
-          <i data-lucide="layout-grid" class="w-4 h-4"></i>
-        </button>
-        <button class="tab-menu" data-tab="list">
-          <i data-lucide="list" class="w-4 h-4"></i>
-        </button>
-      </div>
+  <div class="flex items-center justify-between p-3 mb-4 bg-white rounded-lg border">
+    <div class="text-sm text-gray-700">Tổng cộng có <span class="font-semibold">22</span> nhóm</div>
+    <div class="tabs-menus flex items-center gap-2">
+      <button class="tab-menu active" data-tab="grid">
+        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+      </button>
+      <button class="tab-menu" data-tab="list">
+        <i data-lucide="list" class="w-4 h-4"></i>
+      </button>
     </div>
+  </div>
 
-    <!-- Group Grid -->
-    <div id="group-grid" class="tab-content active" data-tab-content="grid">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-                alt="Việc Làm Bình Dương" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/viec-lam-binh-duong">
-                      <h3 class="font-medium line-clamp-1">Việc Làm Bình Dương</h3>
-                    </a>
-                    <div
-                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                      12 mới</div>
-                  </div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 28.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Việc làm</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">Chia sẻ &amp; tuyển dụng việc làm khu vực Bình
-                    Dương.</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#IT</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#Fulltime</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#HR</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1" href="/group/viec-lam-binh-duong"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
+  <!-- Group Grid -->
+  <div id="group-grid" class="tab-content active" data-tab-content="grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+            alt="Việc Làm Bình Dương" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1"
+                  href="/group/viec-lam-binh-duong">
+                  <h3 class="group-grid__card-title">Việc Làm Bình Dương</h3>
+                </a>
+                <div class="group-grid__card-badge badge-hot">
+                  12 mới</div>
+              </div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  28.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe"
+                    class="group-list__card-meta-icon"></i> Công khai</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Việc làm</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">Chia sẻ &amp; tuyển dụng việc làm khu vực
+                Bình
+                Dương.</p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#IT</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#Fulltime</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#HR</span>
               </div>
             </div>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg"
-                alt="Bất Động Sản Bình Dương" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/bat-dong-san-binh-duong">
-                      <h3 class="font-medium line-clamp-1">Bất Động Sản Bình Dương</h3>
-                    </a>
-                    <div
-                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                      7 mới</div>
-                  </div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 51.200 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Bất động sản</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">Mua bán/cho thuê nhà đất, căn hộ, đất nền.</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#CănHộ</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#ĐấtNền</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#ChoThuê</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1"
-                    href="/group/bat-dong-san-binh-duong"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-                alt="Dịch Vụ Thành Viên Bình Dương" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/dich-vu-thanh-vien-binh-duong">
-                      <h3 class="font-medium line-clamp-1">Dịch Vụ Thành Viên Bình Dương</h3>
-                    </a>
-                    <div
-                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                      4 mới</div>
-                  </div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 18.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Riêng tư</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Dịch vụ</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">Giới thiệu dịch vụ địa phương: sửa chữa, vệ
-                    sinh, thiết kế…</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#SửaChữa</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#ThiếtKế</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1"
-                    href="/group/dich-vu-thanh-vien-binh-duong"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-                alt="Địa Điểm Bình Dương" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/dia-diem-binh-duong">
-                      <h3 class="font-medium line-clamp-1">Địa Điểm Bình Dương</h3>
-                    </a></div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 12.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Địa điểm</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">Ăn uống, du lịch, khách sạn, vui chơi — review
-                    có tâm.</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#ĂnUống</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#Café</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#DuLịch</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1" href="/group/dia-diem-binh-duong"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-                alt="Cộng đồng IT Bình Dương" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/it-binh-duong">
-                      <h3 class="font-medium line-clamp-1">Cộng đồng IT Bình Dương</h3>
-                    </a>
-                    <div
-                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                      3 mới</div>
-                  </div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 9.200 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Việc làm</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">IT career talk, tuyển dụng, chia sẻ kinh
-                    nghiệm.</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#ReactJS</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#NodeJS</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#Python</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1" href="/group/it-binh-duong"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-                alt="BD Real Estate Pro" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/bd-real-estate-pro">
-                      <h3 class="font-medium line-clamp-1">BD Real Estate Pro</h3>
-                    </a>
-                    <div
-                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                      1 mới</div>
-                  </div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 7.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Riêng tư</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Bất động sản</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">Nhóm chuyên gia tư vấn và phân tích BĐS Bình
-                    Dương.</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#PhápLý</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#ĐầuTư</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1" href="/group/bd-real-estate-pro"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-                alt="Service Providers BD" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/service-providers-bd">
-                      <h3 class="font-medium line-clamp-1">Service Providers BD</h3>
-                    </a></div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 5.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Dịch vụ</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">Dịch vụ doanh nghiệp &amp; cá nhân — đặt lịch
-                    dễ dàng.</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#Marketing</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#VệSinh</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#ChụpẢnh</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1" href="/group/service-providers-bd"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-            <div class="p-0 h-full flex flex-col"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-                alt="Explore Bình Dương" class="w-full h-32 sm:h-40 object-cover">
-              <div class="p-4 flex flex-col flex-1">
-                <div class="flex-1 space-y-2">
-                  <div class="flex items-center justify-between gap-3"><a class="block hover:underline flex-1"
-                      href="/group/explore-binh-duong">
-                      <h3 class="font-medium line-clamp-1">Explore Bình Dương</h3>
-                    </a>
-                    <div
-                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                      9 mới</div>
-                  </div>
-                  <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-1 w-full mt-2 pt-2">
-                    <span class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 8.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Địa điểm</span>
-                  </div>
-                  <p class="text-sm text-muted-foreground line-clamp-2">Khám phá điểm đến, công viên, hoạt động cuối
-                    tuần.</p>
-                  <div class="flex flex-wrap gap-1.5 min-h-[40px] max-h-[40px] overflow-hidden"><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#CắmTrại</span><span
-                      class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-[2px] leading-tight">#CôngViên</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 pt-2"><a class="flex-1" href="/group/explore-binh-duong"><button
-                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                      nhóm</button></a><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-              </div>
-            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/viec-lam-binh-duong"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
           </div>
         </div>
+      </div>
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg"
+            alt="Bất Động Sản Bình Dương" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1"
+                  href="/group/bat-dong-san-binh-duong">
+                  <h3 class="group-grid__card-title">Bất Động Sản Bình Dương</h3>
+                </a>
+                <div class="group-grid__card-badge badge-hot">
+                  7 mới</div>
+              </div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  51.200 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe"
+                    class="group-list__card-meta-icon"></i> Công khai</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Bất động sản</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">Mua bán/cho thuê nhà đất, căn hộ, đất nền.
+              </p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#CănHộ</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#ĐấtNền</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#ChoThuê</span>
+              </div>
+            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/bat-dong-san-binh-duong"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+            alt="Dịch Vụ Thành Viên Bình Dương" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1"
+                  href="/group/dich-vu-thanh-vien-binh-duong">
+                  <h3 class="group-grid__card-title">Dịch Vụ Thành Viên Bình Dương</h3>
+                </a>
+                <div class="group-grid__card-badge badge-hot">
+                  4 mới</div>
+              </div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  18.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="lock"
+                    class="group-list__card-meta-icon"></i> Riêng tư</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Dịch vụ</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">Giới thiệu dịch vụ địa phương: sửa chữa, vệ
+                sinh, thiết kế…</p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#SửaChữa</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#ThiếtKế</span>
+              </div>
+            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/dich-vu-thanh-vien-binh-duong"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+            alt="Địa Điểm Bình Dương" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1"
+                  href="/group/dia-diem-binh-duong">
+                  <h3 class="group-grid__card-title">Địa Điểm Bình Dương</h3>
+                </a></div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  12.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe"
+                    class="group-list__card-meta-icon"></i> Công khai</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Địa điểm</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">Ăn uống, du lịch, khách sạn, vui chơi —
+                review
+                có tâm.</p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#ĂnUống</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#Café</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#DuLịch</span>
+              </div>
+            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/dia-diem-binh-duong"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+            alt="Cộng đồng IT Bình Dương" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1" href="/group/it-binh-duong">
+                  <h3 class="group-grid__card-title">Cộng đồng IT Bình Dương</h3>
+                </a>
+                <div class="group-grid__card-badge badge-hot">
+                  3 mới</div>
+              </div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  9.200 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe"
+                    class="group-list__card-meta-icon"></i> Công khai</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Việc làm</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">IT career talk, tuyển dụng, chia sẻ kinh
+                nghiệm.</p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#ReactJS</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#NodeJS</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#Python</span>
+              </div>
+            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/it-binh-duong"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+            alt="BD Real Estate Pro" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1"
+                  href="/group/bd-real-estate-pro">
+                  <h3 class="group-grid__card-title">BD Real Estate Pro</h3>
+                </a>
+                <div class="group-grid__card-badge badge-hot">
+                  1 mới</div>
+              </div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  7.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="lock"
+                    class="group-list__card-meta-icon"></i> Riêng tư</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Bất động sản</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">Nhóm chuyên gia tư vấn và phân tích BĐS Bình
+                Dương.</p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#PhápLý</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#ĐầuTư</span>
+              </div>
+            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/bd-real-estate-pro"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+            alt="Service Providers BD" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1"
+                  href="/group/service-providers-bd">
+                  <h3 class="group-grid__card-title">Service Providers BD</h3>
+                </a></div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  5.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe"
+                    class="group-list__card-meta-icon"></i> Công khai</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Dịch vụ</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">Dịch vụ doanh nghiệp &amp; cá nhân — đặt
+                lịch
+                dễ dàng.</p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#Marketing</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#VệSinh</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#ChụpẢnh</span>
+              </div>
+            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/service-providers-bd"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="group-grid__card bg-card text-card-foreground card-hover">
+        <div class="group-grid__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+            alt="Explore Bình Dương" class="group-grid__card-image">
+          <div class="group-grid__card-body">
+            <div class="group-grid__card-main">
+              <div class="group-grid__card-header"><a class="block hover:underline flex-1"
+                  href="/group/explore-binh-duong">
+                  <h3 class="group-grid__card-title">Explore Bình Dương</h3>
+                </a>
+                <div class="group-grid__card-badge badge-hot">
+                  9 mới</div>
+              </div>
+              <div class="group-grid__card-meta">
+                <span class="group-grid__card-meta-item"><i data-lucide="users" class="group-list__card-meta-icon"></i>
+                  8.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe"
+                    class="group-list__card-meta-icon"></i> Công khai</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="folder" class="group-list__card-meta-icon"></i>
+                  Địa điểm</span>
+              </div>
+              <p class="group-grid__card-description text-muted-foreground">Khám phá điểm đến, công viên, hoạt động cuối
+                tuần.</p>
+              <div class="group-grid__card-tags"><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#CắmTrại</span><span
+                  class="group-grid__card-tag bg-gray-100 text-gray-700">#CôngViên</span>
+              </div>
+            </div>
+            <div class="group-grid__card-actions"><a class="group-list__card-action-primary"
+                href="/group/explore-binh-duong"><button class="btn btn-primary w-full">Xem
+                  nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                  class="group-list__card-action-icon"></i> Quản lý</button></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Group List -->
-    <div id="group-list" class="tab-content space-y-3 hidden" data-tab-content="list">
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg" alt="Việc Làm Bình Dương"
-            class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/viec-lam-binh-duong">
-                  <h3 class="font-medium line-clamp-1">Việc Làm Bình Dương</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 28.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Việc làm</span></div>
-              </div>
-              <div
-                class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                12 mới</div>
+  <!-- Group List -->
+  <div id="group-list" class="tab-content space-y-3 hidden" data-tab-content="list">
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg" alt="Việc Làm Bình Dương"
+          class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline"
+                href="/group/viec-lam-binh-duong">
+                <h3 class="group-list__card-title">Việc Làm Bình Dương</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 28.400 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="globe" class="group-list__card-meta-icon"></i>
+                  Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Việc làm</span></div>
             </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">Chia sẻ &amp; tuyển dụng việc
-              làm khu vực
-              Bình Dương.</p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#IT</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#Fulltime</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#HR</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1" href="/group/viec-lam-binh-duong"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
+            <div class="group-list__card-badge badge-hot">
+              12 mới</div>
           </div>
-        </div>
-      </div>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-            alt="Bất Động Sản Bình Dương" class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/bat-dong-san-binh-duong">
-                  <h3 class="font-medium line-clamp-1">Bất Động Sản Bình Dương</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 51.200 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Bất động sản</span></div>
-              </div>
-              <div
-                class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                7 mới</div>
-            </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">Mua bán/cho thuê nhà đất, căn
-              hộ, đất nền.
-            </p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#CănHộ</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#ĐấtNền</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#ChoThuê</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1" href="/group/bat-dong-san-binh-duong"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
+          <p class="group-list__card-description text-muted-foreground">Chia sẻ &amp; tuyển dụng việc
+            làm khu vực
+            Bình Dương.</p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#IT</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#Fulltime</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#HR</span>
           </div>
-        </div>
-      </div>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-            alt="Dịch Vụ Thành Viên Bình Dương" class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/dich-vu-thanh-vien-binh-duong">
-                  <h3 class="font-medium line-clamp-1">Dịch Vụ Thành Viên Bình Dương</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 18.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Riêng tư</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Dịch vụ</span></div>
-              </div>
-              <div
-                class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                4 mới</div>
-            </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">Giới thiệu dịch vụ địa phương:
-              sửa chữa,
-              vệ sinh, thiết kế…</p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#SửaChữa</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#ThiếtKế</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1"
-                href="/group/dich-vu-thanh-vien-binh-duong"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-            alt="Địa Điểm Bình Dương" class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/dia-diem-binh-duong">
-                  <h3 class="font-medium line-clamp-1">Địa Điểm Bình Dương</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 12.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Địa điểm</span></div>
-              </div>
-            </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">Ăn uống, du lịch, khách sạn, vui
-              chơi —
-              review có tâm.</p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#ĂnUống</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#Café</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#DuLịch</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1" href="/group/dia-diem-binh-duong"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-            alt="Cộng đồng IT Bình Dương" class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/it-binh-duong">
-                  <h3 class="font-medium line-clamp-1">Cộng đồng IT Bình Dương</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 9.200 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Việc làm</span></div>
-              </div>
-              <div
-                class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                3 mới</div>
-            </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">IT career talk, tuyển dụng, chia
-              sẻ kinh
-              nghiệm.</p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#ReactJS</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#NodeJS</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#Python</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1" href="/group/it-binh-duong"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-            alt="Explore Bình Dương" class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/explore-binh-duong">
-                  <h3 class="font-medium line-clamp-1">Explore Bình Dương</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 8.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Địa điểm</span></div>
-              </div>
-              <div
-                class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                9 mới</div>
-            </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">Khám phá điểm đến, công viên,
-              hoạt động
-              cuối tuần.</p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#CắmTrại</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#CôngViên</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1" href="/group/explore-binh-duong"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-            alt="BD Real Estate Pro" class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/bd-real-estate-pro">
-                  <h3 class="font-medium line-clamp-1">BD Real Estate Pro</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 7.400 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Riêng tư</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Bất động sản</span></div>
-              </div>
-              <div
-                class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 badge-hot shrink-0">
-                1 mới</div>
-            </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">Nhóm chuyên gia tư vấn và phân
-              tích BĐS
-              Bình Dương.</p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#PhápLý</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#ĐầuTư</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1" href="/group/bd-real-estate-pro"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover overflow-hidden">
-        <div class="flex"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
-            alt="Service Providers BD" class="w-28 sm:w-40 h-28 sm:h-28 object-cover">
-          <div class="p-4 flex-1 space-y-2">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0"><a class="block hover:underline" href="/group/service-providers-bd">
-                  <h3 class="font-medium line-clamp-1">Service Providers BD</h3>
-                </a>
-                <div class="text-xs text-gray-600 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1"><span
-                    class="inline-flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> 5.600 thành viên</span><span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Dịch vụ</span></div>
-              </div>
-            </div>
-            <p class="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">Dịch vụ doanh nghiệp &amp; cá
-              nhân — đặt
-              lịch dễ dàng.</p>
-            <div class="flex flex-wrap gap-1 min-h-[28px] max-h-[28px] overflow-hidden"><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#Marketing</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#VệSinh</span><span
-                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 text-xs font-medium px-2 py-[1px] leading-tight">#ChụpẢnh</span>
-            </div>
-            <div class="flex items-center gap-2"><a class="flex-1" href="/group/service-providers-bd"><button
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary w-full">Xem
-                  nhóm</button></a><button
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 bg-transparent"><i data-lucide="shield" class="w-4 h-4 mr-1"></i> Quản lý</button></div>
-          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/viec-lam-binh-duong"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
         </div>
       </div>
     </div>
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+          alt="Bất Động Sản Bình Dương" class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline"
+                href="/group/bat-dong-san-binh-duong">
+                <h3 class="group-list__card-title">Bất Động Sản Bình Dương</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 51.200 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="globe" class="group-list__card-meta-icon"></i>
+                  Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Bất động sản</span></div>
+            </div>
+            <div class="group-list__card-badge badge-hot">
+              7 mới</div>
+          </div>
+          <p class="group-list__card-description text-muted-foreground">Mua bán/cho thuê nhà đất, căn
+            hộ, đất nền.
+          </p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#CănHộ</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#ĐấtNền</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#ChoThuê</span>
+          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/bat-dong-san-binh-duong"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+          alt="Dịch Vụ Thành Viên Bình Dương" class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline"
+                href="/group/dich-vu-thanh-vien-binh-duong">
+                <h3 class="group-list__card-title">Dịch Vụ Thành Viên Bình Dương</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 18.600 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="lock" class="group-list__card-meta-icon"></i>
+                  Riêng tư</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Dịch vụ</span></div>
+            </div>
+            <div class="group-list__card-badge badge-hot">
+              4 mới</div>
+          </div>
+          <p class="group-list__card-description text-muted-foreground">Giới thiệu dịch vụ địa phương:
+            sửa chữa,
+            vệ sinh, thiết kế…</p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#SửaChữa</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#ThiếtKế</span>
+          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/dich-vu-thanh-vien-binh-duong"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+          alt="Địa Điểm Bình Dương" class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline"
+                href="/group/dia-diem-binh-duong">
+                <h3 class="group-list__card-title">Địa Điểm Bình Dương</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 12.600 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="globe" class="group-list__card-meta-icon"></i>
+                  Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Địa điểm</span></div>
+            </div>
+          </div>
+          <p class="group-list__card-description text-muted-foreground">Ăn uống, du lịch, khách sạn, vui
+            chơi —
+            review có tâm.</p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#ĂnUống</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#Café</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#DuLịch</span>
+          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/dia-diem-binh-duong"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+          alt="Cộng đồng IT Bình Dương" class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline" href="/group/it-binh-duong">
+                <h3 class="group-list__card-title">Cộng đồng IT Bình Dương</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 9.200 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="globe" class="group-list__card-meta-icon"></i>
+                  Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Việc làm</span></div>
+            </div>
+            <div class="group-list__card-badge badge-hot">
+              3 mới</div>
+          </div>
+          <p class="group-list__card-description text-muted-foreground">IT career talk, tuyển dụng, chia
+            sẻ kinh
+            nghiệm.</p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#ReactJS</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#NodeJS</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#Python</span>
+          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/it-binh-duong"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+          alt="Explore Bình Dương" class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline"
+                href="/group/explore-binh-duong">
+                <h3 class="group-list__card-title">Explore Bình Dương</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 8.400 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="globe" class="group-list__card-meta-icon"></i>
+                  Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Địa điểm</span></div>
+            </div>
+            <div class="group-list__card-badge badge-hot">
+              9 mới</div>
+          </div>
+          <p class="group-list__card-description text-muted-foreground">Khám phá điểm đến, công viên,
+            hoạt động
+            cuối tuần.</p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#CắmTrại</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#CôngViên</span>
+          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/explore-binh-duong"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+          alt="BD Real Estate Pro" class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline"
+                href="/group/bd-real-estate-pro">
+                <h3 class="group-list__card-title">BD Real Estate Pro</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 7.400 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="lock" class="group-list__card-meta-icon"></i>
+                  Riêng tư</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Bất động sản</span></div>
+            </div>
+            <div class="group-list__card-badge badge-hot">
+              1 mới</div>
+          </div>
+          <p class="group-list__card-description text-muted-foreground">Nhóm chuyên gia tư vấn và phân
+            tích BĐS
+            Bình Dương.</p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#PhápLý</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#ĐầuTư</span>
+          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/bd-real-estate-pro"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="group-list__card bg-card text-card-foreground card-hover">
+      <div class="group-list__card-content"><img src="./../../assets/images/placeholder.svg?height=300&amp;width=600"
+          alt="Service Providers BD" class="group-list__card-image">
+        <div class="group-list__card-body">
+          <div class="group-list__card-header">
+            <div class="group-list__card-title-section"><a class="block hover:underline"
+                href="/group/service-providers-bd">
+                <h3 class="group-list__card-title">Service Providers BD</h3>
+              </a>
+              <div class="group-list__card-meta"><span class="group-list__card-meta-item"><i data-lucide="users"
+                    class="group-list__card-meta-icon"></i> 5.600 thành viên</span><span
+                  class="inline-flex items-center gap-1"><i data-lucide="globe" class="group-list__card-meta-icon"></i>
+                  Công khai</span><span class="inline-flex items-center gap-1"><i data-lucide="folder"
+                    class="group-list__card-meta-icon"></i> Dịch vụ</span></div>
+            </div>
+          </div>
+          <p class="group-list__card-description text-muted-foreground">Dịch vụ doanh nghiệp &amp; cá
+            nhân — đặt
+            lịch dễ dàng.</p>
+          <div class="group-list__card-tags"><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#Marketing</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#VệSinh</span><span
+              class="group-list__card-tag bg-gray-100 text-gray-700">#ChụpẢnh</span>
+          </div>
+          <div class="group-list__card-actions"><a class="group-list__card-action-primary"
+              href="/group/service-providers-bd"><button class="btn btn-primary w-full">Xem
+                nhóm</button></a><button class="group-list__card-action-secondary"><i data-lucide="shield"
+                class="group-list__card-action-icon"></i> Quản lý</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Pagination -->
-    <div class="flex justify-center mt-6 sm:mt-8">
-      <div class="flex items-center gap-1 sm:gap-2">
-        <button class="btn btn-outline">Trước</button>
-        <button class="btn btn-primary">1</button>
-        <button class="btn btn-outline">2</button>
-        <button class="btn btn-outline">3</button>
-        <button class="btn btn-outline">Sau</button>
-      </div>
+  <!-- Pagination -->
+  <div class="flex justify-center mt-6 sm:mt-8">
+    <div class="flex items-center gap-1 sm:gap-2">
+      <button class="btn btn-outline">Trước</button>
+      <button class="btn btn-primary">1</button>
+      <button class="btn btn-outline">2</button>
+      <button class="btn btn-outline">3</button>
+      <button class="btn btn-outline">Sau</button>
     </div>
+  </div>
 </section>
