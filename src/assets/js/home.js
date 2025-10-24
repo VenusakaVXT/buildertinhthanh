@@ -296,8 +296,6 @@ document.addEventListener('alpine:init', () => {
         isLoading: true,
 
         init() {
-            console.log('Homepage component initialized.');
-
             // Yêu cầu user data từ header
             window.dispatchEvent(new CustomEvent('get-user-data'));
 

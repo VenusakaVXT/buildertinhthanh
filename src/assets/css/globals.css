@@ -1326,6 +1326,10 @@
         @apply rounded-md border shadow-sm hover:shadow-lg transition-shadow;
     }
 
+    .news-item__header {
+        @apply flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-2;
+    }
+
     .news-card {
         @apply rounded-md border shadow-sm hover:shadow-lg transition-shadow;
     }

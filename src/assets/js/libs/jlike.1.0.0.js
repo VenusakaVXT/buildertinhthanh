@@ -18,7 +18,6 @@ class jLikeManager {
   init(selector, options = {}) {
     const elements = document.querySelectorAll(selector);
     if (elements.length === 0) {
-      console.warn(`jLike: No elements found with selector "${selector}"`);
       return this;
     }
 
@@ -50,10 +49,8 @@ class jLikeManager {
         if (iconElement) {
           if (isInitiallyLiked) {
             iconElement.classList.add('fill-current');
-            console.log(`jLike: Initialized ${likeId} as LIKED - added fill-current to icon`);
           } else {
             iconElement.classList.remove('fill-current');
-            console.log(`jLike: Initialized ${likeId} as NOT LIKED - removed fill-current from icon`);
           }
         } else {
           console.warn(`jLike: No icon with data-lucide found in button ${likeId}`);
@@ -166,10 +163,8 @@ class jLikeManager {
     if (iconElement) {
       if (isLiked) {
         iconElement.classList.add('fill-current');
-        console.log(`jLike: ${likeId} LIKED - added fill-current to icon`);
       } else {
         iconElement.classList.remove('fill-current');
-        console.log(`jLike: ${likeId} UNLIKED - removed fill-current from icon`);
       }
     } else {
       console.warn(`jLike: No icon with data-lucide found in button ${likeId}`);
@@ -274,8 +269,6 @@ class jLikeManager {
 
     // Force sync all button states after initialization
     this.forceSyncAllStates();
-
-    console.log(`jLike: Auto-initialized ${likeElements.length} like button(s)`);
   }
 
   /**
@@ -292,10 +285,8 @@ class jLikeManager {
       if (iconElement) {
         if (hasActiveClass && !hasFillCurrent) {
           iconElement.classList.add('fill-current');
-          console.log(`jLike: Force sync ${likeId} - added fill-current to icon`);
         } else if (!hasActiveClass && hasFillCurrent) {
           iconElement.classList.remove('fill-current');
-          console.log(`jLike: Force sync ${likeId} - removed fill-current from icon`);
         }
       }
     });
@@ -324,24 +315,18 @@ class jLikeManager {
    * Verify and fix all like button states
    */
   verifyAndFixStates() {
-    console.log('jLike: Verifying all like button states...');
-
     this.likes.forEach((like, likeId) => {
       const { element } = like;
       const iconElement = element.querySelector('i[data-lucide]');
       const hasActiveClass = element.classList.contains('active');
       const hasFillCurrent = iconElement && iconElement.classList.contains('fill-current');
 
-      console.log(`jLike: ${likeId} - Button active: ${hasActiveClass}, Icon fill-current: ${hasFillCurrent}`);
-
       // Fix inconsistencies
       if (iconElement) {
         if (hasActiveClass && !hasFillCurrent) {
           iconElement.classList.add('fill-current');
-          console.log(`jLike: FIXED ${likeId} - added fill-current to icon`);
         } else if (!hasActiveClass && hasFillCurrent) {
           iconElement.classList.remove('fill-current');
-          console.log(`jLike: FIXED ${likeId} - removed fill-current from icon`);
         } else {
           console.log(`jLike: ${likeId} - state is correct`);
         }

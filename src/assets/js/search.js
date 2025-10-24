@@ -32,8 +32,6 @@ document.addEventListener('alpine:init', () => {
             this.userLatitude = position.coords.latitude;
             this.userLongitude = position.coords.longitude;
 
-            console.log('Tọa độ người dùng:', this.userLatitude, this.userLongitude);
-
             // Lưu tọa độ vào localStorage để sử dụng sau này
             localStorage.setItem('userLatitude', this.userLatitude);
             localStorage.setItem('userLongitude', this.userLongitude);
@@ -42,7 +40,6 @@ document.addEventListener('alpine:init', () => {
               window.fastNotice.show('Đã lấy được vị trí của bạn!', 'success');
             }
 
-            console.log('Xử lý vị trí người dùng:', this.userLatitude, this.userLongitude);
             this.isGettingLocation = false;
           },
           (error) => {
@@ -64,8 +61,6 @@ document.addEventListener('alpine:init', () => {
                 break;
             }
 
-            console.error('Lỗi lấy vị trí:', errorMessage);
-
             if (window.fastNotice) {
               window.fastNotice.show(errorMessage, 'error');
             }
@@ -78,7 +73,7 @@ document.addEventListener('alpine:init', () => {
           }
         );
       } else {
-        console.log('Trình duyệt không hỗ trợ Geolocation API');
+        console.error('Trình duyệt không hỗ trợ Geolocation API');
         if (window.fastNotice) {
           window.fastNotice.show('Trình duyệt của bạn không hỗ trợ định vị GPS', 'warning');
         }

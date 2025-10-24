@@ -13,7 +13,6 @@ document.addEventListener('alpine:init', () => {
         scrollAmount: 200, // Số pixel scroll mỗi lần click
 
         init() {
-            console.log('Stories Drag component initialized.');
             this.container = this.$el.querySelector('.stories-container');
             if (this.container) {
                 this.setupDragListeners();
@@ -103,7 +102,6 @@ document.addEventListener('alpine:init', () => {
             if (!this.container) return false;
             const maxScroll = this.container.scrollWidth - this.container.clientWidth;
             const canNext = this.container.scrollLeft < maxScroll - 5;
-            console.log('canScrollNext:', canNext, 'scrollLeft:', this.container.scrollLeft, 'maxScroll:', maxScroll);
             return canNext;
         },
 
@@ -112,7 +110,6 @@ document.addEventListener('alpine:init', () => {
             // Luôn hiện nút Prev nếu có nội dung để scroll (trừ khi ở vị trí đầu)
             const hasContent = this.container.scrollWidth > this.container.clientWidth;
             const canPrev = hasContent; // Luôn hiện nếu có nội dung
-            console.log('canScrollPrev:', canPrev, 'scrollLeft:', this.container.scrollLeft, 'hasContent:', hasContent);
             return canPrev;
         }
     }));
@@ -256,8 +253,6 @@ document.addEventListener('alpine:init', () => {
         hasMorePosts: true,
 
         init() {
-            console.log('Newsfeed component initialized.');
-
             // Yêu cầu user data từ header
             window.dispatchEvent(new CustomEvent('get-user-data'));
 
@@ -265,7 +260,6 @@ document.addEventListener('alpine:init', () => {
             window.addEventListener('user-data-ready', (event) => {
                 this.user = event.detail.user;
                 this.isLoading = false;
-                console.log('Newsfeed received user data:', this.user);
             });
 
             // Load initial posts
@@ -338,8 +332,6 @@ document.addEventListener('alpine:init', () => {
 
         viewStory() {
             this.viewed = true;
-            // Add story viewing logic here
-            console.log('Story viewed');
         },
 
         getStoryClass() {
@@ -361,15 +353,12 @@ document.addEventListener('alpine:init', () => {
         progressWidth: 0,
 
         init() {
-            console.log('Story Modal component initialized.');
             this.loadStories();
-            console.log('Stories loaded:', this.stories);
         },
 
         loadStories() {
             // Load stories from static HTML
             const storyElements = document.querySelectorAll('.story-item[data-story]');
-            console.log('Found story elements:', storyElements.length);
             this.stories = Array.from(storyElements).map((element, index) => {
                 const storyData = JSON.parse(element.getAttribute('data-story'));
                 return {
@@ -378,26 +367,17 @@ document.addEventListener('alpine:init', () => {
                     index: index
                 };
             });
-            console.log('Stories processed:', this.stories);
         },
 
         openStory(storyElement) {
-            console.log('openStory called with:', storyElement);
-            console.log('Current modal state before opening:', this.isOpen);
-
             const storyData = JSON.parse(storyElement.getAttribute('data-story'));
-            console.log('Parsed story data:', storyData);
 
             this.currentStory = storyData;
             this.currentIndex = this.stories.findIndex(s => s.id === storyData.id);
-            console.log('Current index:', this.currentIndex);
-
             this.isOpen = true;
-            console.log('Modal opened, isOpen:', this.isOpen);
 
             // Mark story as viewed
             this.markStoryAsViewed(storyData.id);
-
             this.startProgress();
         },
 
@@ -541,7 +521,6 @@ document.addEventListener('alpine:init', () => {
             const storyElement = document.querySelector(`[data-story*='"id":${storyId}']`);
             if (storyElement) {
                 storyElement.classList.add('viewed');
-                console.log(`Marked story ${storyId} as viewed`);
             }
         }
     }));
@@ -611,9 +590,6 @@ document.addEventListener('alpine:init', () => {
             }
 
             try {
-                console.log('Starting download for:', currentImage.src);
-
-                // Tạo tên file từ URL hoặc tạo tên mặc định
                 let filename = 'image.jpg';
                 try {
                     const url = new URL(currentImage.src);
@@ -624,7 +600,7 @@ document.addEventListener('alpine:init', () => {
                     const hasExtension = urlFilename.includes('.');
                     filename = hasExtension ? urlFilename : `${urlFilename}.jpg`;
                 } catch (urlError) {
-                    console.warn('Error parsing URL, using default filename:', urlError);
+                    console.error('Error parsing URL, using default filename:', urlError);
                 }
 
                 // Thử tải ảnh bằng fetch để xử lý CORS
@@ -650,11 +626,7 @@ document.addEventListener('alpine:init', () => {
 
                     // Giải phóng URL object
                     window.URL.revokeObjectURL(url);
-
-                    console.log(`Successfully downloaded: ${filename}`);
                 } catch (fetchError) {
-                    console.warn('Fetch failed, trying direct download:', fetchError);
-
                     // Fallback: thử tải trực tiếp
                     const link = document.createElement('a');
                     link.href = currentImage.src;
@@ -665,12 +637,8 @@ document.addEventListener('alpine:init', () => {
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
-
-                    console.log(`Direct download attempted: ${filename}`);
                 }
             } catch (error) {
-                console.error('Error downloading image:', error);
-
                 // Fallback cuối cùng: mở ảnh trong tab mới
                 window.open(currentImage.src, '_blank');
             }
@@ -682,14 +650,10 @@ document.addEventListener('alpine:init', () => {
 // GLOBAL STORY FUNCTIONS
 // ===========================================
 window.openStoryModal = function (storyElement) {
-    console.log('openStoryModal called with:', storyElement);
-    console.log('Story element data-story:', storyElement.getAttribute('data-story'));
-
     // Dispatch event to open story modal
     const event = new CustomEvent('open-story-modal', {
         detail: { storyElement: storyElement }
     });
-    console.log('Dispatching event:', event);
     window.dispatchEvent(event);
 };
 

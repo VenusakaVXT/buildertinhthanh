@@ -33,7 +33,6 @@ document.addEventListener('alpine:init', () => {
         errors: {},
 
         init() {
-            console.log('User Profile component initialized.');
             // Store original data for comparison
             this.originalUserInfo = { ...this.userInfo };
         },

@@ -10,8 +10,6 @@ document.addEventListener('alpine:init', () => {
     isFavorite: false,
 
     init() {
-      console.log('Location detail component initialized');
-
       // Cập nhật text và class cho tất cả các ngày
       this.$nextTick(() => {
         const days = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật'];

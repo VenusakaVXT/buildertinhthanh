@@ -158,8 +158,6 @@ document.addEventListener('alpine:init', () => {
         event.target.reset();
 
       } catch (error) {
-        console.error('Schedule visit error:', error);
-
         if (window.fastNotice) {
           window.fastNotice.show('Có lỗi xảy ra. Vui lòng thử lại.', 'error');
         } else {
@@ -209,8 +207,6 @@ document.addEventListener('alpine:init', () => {
         event.target.reset();
 
       } catch (error) {
-        console.error('Contact submit error:', error);
-
         if (window.fastNotice) {
           window.fastNotice.show('Có lỗi xảy ra. Vui lòng thử lại.', 'error');
         } else {
@@ -249,8 +245,6 @@ document.addEventListener('alpine:init', () => {
           }
         }
       } catch (error) {
-        console.error('Share error:', error);
-
         // Fallback cuối cùng: hiển thị URL
         const currentUrl = window.location.href;
         if (window.fastNotice) {

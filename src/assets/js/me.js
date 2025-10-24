@@ -156,8 +156,6 @@ document.addEventListener('alpine:init', () => {
       }
 
       try {
-        console.log('Starting download for:', currentImage.src);
-
         // Tạo tên file từ URL hoặc tạo tên mặc định
         let filename = 'image.jpg';
         try {
@@ -169,7 +167,7 @@ document.addEventListener('alpine:init', () => {
           const hasExtension = urlFilename.includes('.');
           filename = hasExtension ? urlFilename : `${urlFilename}.jpg`;
         } catch (urlError) {
-          console.warn('Error parsing URL, using default filename:', urlError);
+          console.error('Error parsing URL, using default filename:', urlError);
         }
 
         // Thử tải ảnh bằng fetch để xử lý CORS
@@ -195,10 +193,8 @@ document.addEventListener('alpine:init', () => {
 
           // Giải phóng URL object
           window.URL.revokeObjectURL(url);
-
-          console.log(`Successfully downloaded: ${filename}`);
         } catch (fetchError) {
-          console.warn('Fetch failed, trying direct download:', fetchError);
+          console.error('Fetch failed, trying direct download:', fetchError);
 
           // Fallback: thử tải trực tiếp
           const link = document.createElement('a');
@@ -210,8 +206,6 @@ document.addEventListener('alpine:init', () => {
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
-
-          console.log(`Direct download attempted: ${filename}`);
         }
       } catch (error) {
         console.error('Error downloading image:', error);
@@ -263,7 +257,7 @@ document.addEventListener('alpine:init', () => {
           const hasExtension = urlFilename.includes('.');
           filename = hasExtension ? urlFilename : `${urlFilename}.jpg`;
         } catch (urlError) {
-          console.warn('Error parsing URL, using default filename:', urlError);
+          console.error('Error parsing URL, using default filename:', urlError);
         }
 
         try {
@@ -285,11 +279,7 @@ document.addEventListener('alpine:init', () => {
           document.body.removeChild(link);
 
           window.URL.revokeObjectURL(url);
-
-          console.log(`Successfully downloaded: ${filename}`);
         } catch (fetchError) {
-          console.warn('Fetch failed, trying direct download:', fetchError);
-
           const link = document.createElement('a');
           link.href = imageUrl;
           link.download = filename;
@@ -299,8 +289,6 @@ document.addEventListener('alpine:init', () => {
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
-
-          console.log(`Direct download attempted: ${filename}`);
         }
       } catch (error) {
         console.error('Error downloading image:', error);

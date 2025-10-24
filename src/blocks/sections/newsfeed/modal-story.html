@@ -2,7 +2,7 @@
     x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
     x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
-    @open-story-modal.window="console.log('Event received:', $event); openStory($event.detail.storyElement)"
+    @open-story-modal.window="openStory($event.detail.storyElement)"
     @keydown.escape="closeStory()" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
     style="display: none;">
 

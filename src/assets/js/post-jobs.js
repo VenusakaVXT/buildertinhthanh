@@ -87,10 +87,7 @@ document.addEventListener('alpine:init', () => {
         removeBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           skillElement.remove();
-          console.log('Skill removed:', skillText);
         });
-
-        console.log('Skill added:', skillText);
       };
 
       // Add skill on button click
