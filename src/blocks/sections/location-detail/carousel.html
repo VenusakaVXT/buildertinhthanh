@@ -1,23 +1,72 @@
 <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-	<div class="relative h-96">
-		<img alt="UBND Tỉnh Đồng Nai" loading="lazy" decoding="async" data-nimg="fill" class="object-cover"
-			src="./../../assets/images/placeholder.svg?height=400&amp;width=600&amp;text=Sảnh+chính"
-			style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
-		<button
-			class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+	<div class="blaze-slider bslider-image" data-blaze-slider>
+		<!-- Navigation buttons -->
+		<button aria-label="prev button" class="blaze-prev">
 			<i data-lucide="chevron-left" class="w-5 h-5"></i>
 		</button>
-		<button
-			class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+		<button aria-label="next button" class="blaze-next">
 			<i data-lucide="chevron-right" class="w-5 h-5"></i>
 		</button>
-		<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2"><button
-				class="w-2 h-2 rounded-full transition-colors bg-white/50"></button><button
-				class="w-2 h-2 rounded-full transition-colors bg-white/50"></button><button
-				class="w-2 h-2 rounded-full transition-colors bg-white/50"></button><button
-				class="w-2 h-2 rounded-full transition-colors bg-white/50"></button><button
-				class="w-2 h-2 rounded-full transition-colors bg-white"></button></div>
-		<div class="absolute top-4 left-4 flex space-x-2"><span class="badge-primary">Cơ quan hành chính</span><span
-				class="badge-success">Đã xác minh</span></div>
+
+		<!-- Slider container -->
+		<div class="blaze-container">
+			<div class="blaze-track-container">
+				<div class="blaze-track">
+					<!-- Slide 1 -->
+					<div class="blaze-slide">
+						<div class="relative h-96">
+							<img alt="UBND Tỉnh Đồng Nai - Sảnh chính" loading="lazy" decoding="async"
+								class="object-cover w-full h-full"
+								src="./../../assets/images/placeholder.svg?height=400&amp;width=600&amp;text=Sảnh+chính">
+						</div>
+					</div>
+
+					<!-- Slide 2 -->
+					<div class="blaze-slide">
+						<div class="relative h-96">
+							<img alt="UBND Tỉnh Đồng Nai - Phòng họp" loading="lazy" decoding="async"
+								class="object-cover w-full h-full"
+								src="./../../assets/images/placeholder.svg?height=400&amp;width=600&amp;text=Phòng+họp">
+						</div>
+					</div>
+
+					<!-- Slide 3 -->
+					<div class="blaze-slide">
+						<div class="relative h-96">
+							<img alt="UBND Tỉnh Đồng Nai - Khu vực làm việc" loading="lazy" decoding="async"
+								class="object-cover w-full h-full"
+								src="./../../assets/images/placeholder.svg?height=400&amp;width=600&amp;text=Khu+vực+làm+việc">
+						</div>
+					</div>
+
+					<!-- Slide 4 -->
+					<div class="blaze-slide">
+						<div class="relative h-96">
+							<img alt="UBND Tỉnh Đồng Nai - Sảnh phụ" loading="lazy" decoding="async"
+								class="object-cover w-full h-full"
+								src="./../../assets/images/placeholder.svg?height=400&amp;width=600&amp;text=Sảnh+phụ">
+						</div>
+					</div>
+
+					<!-- Slide 5 -->
+					<div class="blaze-slide">
+						<div class="relative h-96">
+							<img alt="UBND Tỉnh Đồng Nai - Khu vực tiếp khách" loading="lazy" decoding="async"
+								class="object-cover w-full h-full"
+								src="./../../assets/images/placeholder.svg?height=400&amp;width=600&amp;text=Khu+vực+tiếp+khách">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Pagination dots -->
+		<div class="blaze-pagination absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2"></div>
+
+		<!-- Badge chung cho tất cả slides -->
+		<div class="absolute top-4 left-4 flex space-x-2 z-10">
+			<span class="badge-primary">Cơ quan hành chính</span>
+			<span class="badge-success">Đã xác minh</span>
+		</div>
 	</div>
 </div>

@@ -49,45 +49,8 @@
    ======================================================================== */
 @layer components {
 
-    /* Container */
-    .container {
-        @apply mx-auto px-4;
-    }
-
     .hidden {
         display: none;
-    }
-
-    @media (min-width: 640px) {
-        .container {
-            max-width: 640px;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .container {
-            max-width: 768px;
-            @apply px-6;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .container {
-            max-width: 1240px;
-            @apply px-8;
-        }
-    }
-
-    @media (min-width: 1280px) {
-        .container {
-            max-width: 1280px;
-        }
-    }
-
-    @media (min-width: 1536px) {
-        .container {
-            max-width: 1536px;
-        }
     }
 
     /* Title section */
@@ -237,6 +200,18 @@
 
     .btn-cta {
         @apply justify-center whitespace-nowrap text-sm font-medium transition-colors h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2;
+    }
+
+    .btn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    .btn.disabled:hover {
+        background-color: inherit;
+        border-color: inherit;
+        color: inherit;
     }
 
     /* Button Slider */
@@ -528,6 +503,21 @@
         background-color: rgba(59, 113, 202, .1);
     }
 
+    /* Mobile Responsive - Hide tab buttons and list view on mobile */
+    @media (max-width: 767px) {
+        .tabs.tabs-btn .tabs-menus {
+            display: none !important;
+        }
+
+        .tabs .tab-content[data-tab-content="list"] {
+            display: none !important;
+        }
+
+        .tabs .tab-content[data-tab-content="grid"] {
+            display: block !important;
+        }
+    }
+
     @media (max-width: 640px) {
         .tabs .tabs-menus {
             @apply overflow-x-auto;
@@ -551,7 +541,7 @@
         - Chỉ áp dụng khi container có thêm class `tabs-button`
     ======================================================================== */
     .tabs.tabs-button .tabs-menus {
-        @apply bg-transparent p-0 gap-1 justify-start;
+        @apply bg-transparent p-0 gap-1 justify-start overflow-x-auto;
     }
 
     .tabs.tabs-button .tab-menu {
@@ -712,23 +702,6 @@
 
     .dropdown-item {
         @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer;
-    }
-
-    /* Pagination Styles */
-    .pagination {
-        @apply flex items-center justify-center space-x-2;
-    }
-
-    .pagination-item {
-        @apply flex items-center justify-center w-10 h-10 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700;
-    }
-
-    .pagination-item.active {
-        @apply text-white bg-blue-600 border-blue-600;
-    }
-
-    .pagination-item.disabled {
-        @apply opacity-50 cursor-not-allowed;
     }
 
     /* Alert Styles */

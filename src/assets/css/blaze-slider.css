@@ -120,6 +120,38 @@
     background-color: #fff;
 }
 
+.bslider-image .blaze-prev {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.bslider-image .blaze-prev:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bslider-image .blaze-next {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.bslider-image .blaze-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 /* Responsive adjustments */
 @media (max-width: 767px) {
     .blaze-slider {
@@ -245,5 +277,61 @@
 @media (min-width: 1023px) {
     .bslider-3.blaze-slider {
         --slides-to-show: 3;
+    }
+}
+
+/* Image pagination styles */
+.blaze-pagination-image {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.blaze-pagination-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.blaze-pagination-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blaze-pagination-item.active {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.blaze-pagination-item img {
+    width: 100%;
+    height: 64px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.blaze-pagination-item:hover img {
+    opacity: 0.9;
+}
+
+/* Responsive image pagination */
+@media (max-width: 640px) {
+    .blaze-pagination-image {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+
+    .blaze-pagination-item img {
+        height: 48px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .blaze-pagination-image {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

@@ -3,44 +3,47 @@
   <div class="py-6 bg-white border-b">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
-        <div class="tabs-menus">
-          <button class="location__btn-filter tab-menu active" data-tab="Tất cả">
-            <i data-lucide="map-pin" class="w-4 h-4"></i>
-            Tất cả
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Cơ quan hành chính">
-            <i data-lucide="building-2" class="w-4 h-4"></i>
-            Cơ quan hành chính
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Y tế">
-            <i data-lucide="heart" class="w-4 h-4"></i>
-            Y tế
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Giáo dục">
-            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-            Giáo dục
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Ăn uống">
-            <i data-lucide="utensils-crossed" class="w-4 h-4"></i>
-            Ăn uống
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Mua sắm">
-            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-            Mua sắm
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Du lịch">
-            <i data-lucide="camera" class="w-4 h-4"></i>
-            Du lịch
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Giao thông">
-            <i data-lucide="car" class="w-4 h-4"></i>
-            Giao thông
-          </button>
-          <button class="location__btn-filter tab-menu" data-tab="Ngân hàng">
-            <i data-lucide="credit-card" class="w-4 h-4"></i>
-            Ngân hàng
-          </button>
+        <div class="tabs-menus w-full lg:w-auto overflow-x-auto scrollbar-hide">
+          <div class="flex flex-nowrap gap-2 min-w-max">
+            <button class="location__btn-filter tab-menu active flex-shrink-0" data-tab="Tất cả">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              Tất cả
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Cơ quan hành chính">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+              Cơ quan hành chính
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Y tế">
+              <i data-lucide="heart" class="w-4 h-4"></i>
+              Y tế
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Giáo dục">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+              Giáo dục
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Ăn uống">
+              <i data-lucide="utensils-crossed" class="w-4 h-4"></i>
+              Ăn uống
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Mua sắm">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+              Mua sắm
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Du lịch">
+              <i data-lucide="camera" class="w-4 h-4"></i>
+              Du lịch
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Giao thông">
+              <i data-lucide="car" class="w-4 h-4"></i>
+              Giao thông
+            </button>
+            <button class="location__btn-filter tab-menu flex-shrink-0" data-tab="Ngân hàng">
+              <i data-lucide="credit-card" class="w-4 h-4"></i>
+              Ngân hàng
+            </button>
+          </div>
         </div>
+
         <div class="flex gap-3">
           <select class="select select-white">
             <option>Tên A-Z</option>
@@ -61,12 +64,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">9</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Sân bay Long Thành"
-                  class="location__item-image"></a>
+                  alt="Sân bay Long Thành" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="car" class="w-3 h-3 mr-1"></i>
@@ -101,12 +102,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Khu du lịch Núi Chứa Chan"
-                  class="location__item-image"></a>
+                  alt="Khu du lịch Núi Chứa Chan" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="camera" class="w-3 h-3 mr-1"></i>
@@ -141,12 +140,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Bệnh viện Đa khoa Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="Bệnh viện Đa khoa Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="heart" class="w-3 h-3 mr-1"></i>
@@ -181,12 +178,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Nhà hàng Sài Gòn - Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="Nhà hàng Sài Gòn - Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="utensils-crossed" class="w-3 h-3 mr-1"></i>
@@ -221,12 +216,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Đại học Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="Đại học Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
@@ -261,12 +254,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/9"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Trường THPT Biên Hòa"
-                  class="location__item-image"></a>
+                  alt="Trường THPT Biên Hòa" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
@@ -301,12 +292,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="UBND tỉnh Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="UBND tỉnh Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="building-2" class="w-3 h-3 mr-1"></i>
@@ -341,12 +330,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Vietcombank Biên Hòa"
-                  class="location__item-image"></a>
+                  alt="Vietcombank Biên Hòa" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="credit-card" class="w-3 h-3 mr-1"></i>
@@ -381,12 +368,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Chợ Tân Long"
-                  class="location__item-image"></a>
+                  alt="Chợ Tân Long" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="shopping-bag" class="w-3 h-3 mr-1"></i>
@@ -430,12 +415,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/1"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="UBND tỉnh Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="UBND tỉnh Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="building-2" class="w-3 h-3 mr-1"></i>
@@ -482,12 +465,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/2"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Bệnh viện Đa khoa Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="Bệnh viện Đa khoa Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="heart" class="w-3 h-3 mr-1"></i>
@@ -534,12 +515,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">2</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/3"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Đại học Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="Đại học Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
@@ -574,12 +553,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/9"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Trường THPT Biên Hòa"
-                  class="location__item-image"></a>
+                  alt="Trường THPT Biên Hòa" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="graduation-cap" class="w-3 h-3 mr-1"></i>
@@ -626,12 +603,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/6"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Nhà hàng Sài Gòn - Đồng Nai"
-                  class="location__item-image"></a>
+                  alt="Nhà hàng Sài Gòn - Đồng Nai" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="utensils-crossed" class="w-3 h-3 mr-1"></i>
@@ -678,12 +653,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/4"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Chợ Tân Long"
-                  class="location__item-image"></a>
+                  alt="Chợ Tân Long" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="shopping-bag" class="w-3 h-3 mr-1"></i>
@@ -727,12 +700,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/5"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Khu du lịch Núi Chứa Chan"
-                  class="location__item-image"></a>
+                  alt="Khu du lịch Núi Chứa Chan" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="camera" class="w-3 h-3 mr-1"></i>
@@ -779,12 +750,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/7"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Sân bay Long Thành"
-                  class="location__item-image"></a>
+                  alt="Sân bay Long Thành" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="car" class="w-3 h-3 mr-1"></i>
@@ -831,12 +800,10 @@
           <h2 class="text-xl font-semibold">Tìm thấy <span class="text-blue-600">1</span> địa điểm</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div
-            class="location__item group bg-card text-card-foreground card-hover">
+          <div class="location__item group bg-card text-card-foreground card-hover">
             <div class="img-wrap">
               <a href="/dia-diem/8"><img src="./../../assets/images/placeholder.svg?height=200&amp;width=300"
-                  alt="Vietcombank Biên Hòa"
-                  class="location__item-image"></a>
+                  alt="Vietcombank Biên Hòa" class="location__item-image"></a>
               <div class="absolute top-3 left-3">
                 <span class="badge-primary">
                   <i data-lucide="credit-card" class="w-3 h-3 mr-1"></i>
