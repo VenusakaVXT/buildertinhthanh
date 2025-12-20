@@ -1,0 +1,338 @@
+<div class="bg-white rounded-2xl shadow-lg p-8">
+	<div class="flex items-start justify-between mb-6">
+		<div>
+			<h1 class="text-3xl font-bold text-gray-900 mb-2">UBND Tỉnh Đồng Nai</h1>
+			<div class="flex items-center space-x-4 text-sm text-gray-600">
+				<div class="flex items-center space-x-1">
+					<i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+					<span class="font-medium">4.2</span><span>(156 đánh giá)</span>
+				</div>
+				<span class="text-green-600 font-medium">Đã đóng cửa</span>
+			</div>
+		</div>
+		<div class="flex space-x-2">
+			<button @click="toggleFavorite()"
+				:class="isFavorite ? 'btn btn-outline-red-500 btn-sm border border-red-500 text-red-500 hover:bg-red-50' : 'btn btn-outline-primary btn-sm'">
+				<i data-lucide="heart" :class="isFavorite ? 'w-4 h-4 fill-current' : 'w-4 h-4'"></i>
+			</button>
+			<div class="relative group">
+				<button @click="handleShare()" class="btn btn-outline-primary btn-sm">
+					<i data-lucide="share2" class="w-4 h-4"></i>
+				</button>
+				<!-- <div
+					class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+					<div class="flex space-x-2">
+						<button class="p-2 hover:bg-gray-100 rounded">
+							<i data-lucide="facebook" class="w-4 h-4 text-blue-600"></i>
+						</button>
+						<button class="p-2 hover:bg-gray-100 rounded">
+							<i data-lucide="twitter" class="w-4 h-4 text-blue-400"></i>
+						</button>
+						<button class="p-2 hover:bg-gray-100 rounded">
+							<i data-lucide="copy" class="w-4 h-4 text-gray-600"></i>
+						</button>
+					</div>
+					</div> -->
+			</div>
+		</div>
+	</div>
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+		<div class="space-y-4">
+			<div class="flex items-start space-x-3">
+				<i data-lucide="map-pin" class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"></i>
+				<div>
+					<p class="font-medium text-gray-900">Địa chỉ</p>
+					<p class="text-gray-600">2 Nguyễn Ái Quốc, Tân Tiến, Biên Hòa, Đồng Nai</p>
+				</div>
+			</div>
+			<div class="flex items-center space-x-3">
+				<i data-lucide="phone" class="w-5 h-5 text-blue-600 flex-shrink-0"></i>
+				<div>
+					<p class="font-medium text-gray-900">Điện thoại</p>
+					<a href="tel:0251.3836.666" class="text-blue-600 hover:text-blue-800">0251.3836.666</a>
+				</div>
+			</div>
+		</div>
+		<div class="space-y-4">
+			<div class="flex items-center space-x-3">
+				<i data-lucide="mail" class="w-5 h-5 text-blue-600 flex-shrink-0"></i>
+				<div>
+					<p class="font-medium text-gray-900">Email</p>
+					<a href="mailto:ubnd@dongnai.gov.vn" class="text-blue-600 hover:text-blue-800">ubnd@dongnai.gov.vn</a>
+				</div>
+			</div>
+			<div class="flex items-center space-x-3">
+				<i data-lucide="globe" class="w-5 h-5 text-blue-600 flex-shrink-0"></i>
+				<div>
+					<p class="font-medium text-gray-900">Website</p>
+					<a href="https://dongnai.gov.vn" target="_blank" rel="noopener noreferrer"
+						class="text-blue-600 hover:text-blue-800">https://dongnai.gov.vn</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-wrap gap-3 mb-8">
+		<a href="tel:0251.3836.666" class="btn btn-primary btn-sm flex items-center">
+			<i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+			Gọi điện
+		</a>
+		<a href="mailto:ubnd@dongnai.gov.vn" class="btn btn-secondary btn-sm flex items-center">
+			<i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+			Gửi email
+		</a>
+		<a href="https://dongnai.gov.vn" target="_blank" rel="noopener noreferrer"
+			class="btn btn-outline-primary btn-sm flex items-center">
+			<i data-lucide="globe" class="w-4 h-4 mr-2"></i>
+			Website
+		</a>
+		<button @click="scrollToMap()" class="btn btn-ghost btn-sm flex items-center">
+			<i data-lucide="navigation" class="w-4 h-4 mr-2"></i>
+			Chỉ đường
+		</button>
+	</div>
+	<div class="mb-8">
+		<h3 class="text-xl font-semibold text-gray-900 mb-4">Giới thiệu</h3>
+		<p class="text-gray-600 leading-relaxed">UBND tỉnh Đồng Nai là cơ quan hành chính nhà nước cấp tỉnh, thực hiện chức
+			năng quản lý nhà nước trên địa bàn tỉnh theo quy định của pháp luật. Đây là nơi tiếp nhận và giải quyết các thủ
+			tục hành chính của người dân và doanh nghiệp trên địa bàn tỉnh.
+		</p>
+	</div>
+	<div class="mb-8">
+		<h3 class="text-xl font-semibold text-gray-900 mb-4">Dịch vụ cung cấp</h3>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div class="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex-center">
+						<i data-lucide="file-text" class="w-5 h-5 text-blue-600"></i>
+					</div>
+					<div>
+						<h4 class="font-medium text-gray-900 mb-1">Cấp giấy chứng nhận đầu tư</h4>
+						<p class="text-sm text-gray-600">Thủ tục đầu tư trong và ngoài nước</p>
+					</div>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex-center">
+						<i data-lucide="map-pin" class="w-5 h-5 text-blue-600"></i>
+					</div>
+					<div>
+						<h4 class="font-medium text-gray-900 mb-1">Thủ tục đất đai</h4>
+						<p class="text-sm text-gray-600">Cấp sổ đỏ, chuyển nhượng đất</p>
+					</div>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex-center">
+						<i data-lucide="briefcase" class="w-5 h-5 text-blue-600"></i>
+					</div>
+					<div>
+						<h4 class="font-medium text-gray-900 mb-1">Giấy phép kinh doanh</h4>
+						<p class="text-sm text-gray-600">Đăng ký kinh doanh các ngành nghề</p>
+					</div>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex-center">
+						<i data-lucide="building" class="w-5 h-5 text-blue-600"></i>
+					</div>
+					<div>
+						<h4 class="font-medium text-gray-900 mb-1">Thủ tục xây dựng</h4>
+						<p class="text-sm text-gray-600">Giấy phép xây dựng, quy hoạch</p>
+					</div>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex-center">
+						<i data-lucide="users" class="w-5 h-5 text-blue-600"></i>
+					</div>
+					<div>
+						<h4 class="font-medium text-gray-900 mb-1">Tiếp dân định kỳ</h4>
+						<p class="text-sm text-gray-600">Giải đáp thắc mắc của người dân</p>
+					</div>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex-center">
+						<i data-lucide="message-square" class="w-5 h-5 text-blue-600"></i>
+					</div>
+					<div>
+						<h4 class="font-medium text-gray-900 mb-1">Giải quyết khiếu nại</h4>
+						<p class="text-sm text-gray-600">Xử lý khiếu nại, tố cáo</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mb-8">
+		<h3 class="text-xl font-semibold text-gray-900 mb-4">Các phòng ban</h3>
+		<div class="space-y-3">
+			<div class="p-4 bg-gray-50 rounded-xl">
+				<div class="flex-between mb-2">
+					<h4 class="font-medium text-gray-900">Văn phòng UBND</h4>
+					<a href="tel:0251.3836.668" class="flex items-center btn btn-primary btn-sm">
+						<i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+						0251.3836.668
+					</a>
+				</div>
+				<div class="flex items-center space-x-4 text-sm text-gray-600"><span>Tầng 2</span><span>Trưởng phòng: Ông Nguyễn
+						Văn A</span>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl">
+				<div class="flex-between mb-2">
+					<h4 class="font-medium text-gray-900">Sở Kế hoạch và Đầu tư</h4>
+					<a href="tel:0251.3836.669" class="flex items-center btn btn-primary btn-sm">
+						<i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+						0251.3836.669
+					</a>
+				</div>
+				<div class="flex items-center space-x-4 text-sm text-gray-600"><span>Tầng 3</span><span>Trưởng phòng: Bà Trần
+						Thị B</span>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl">
+				<div class="flex-between mb-2">
+					<h4 class="font-medium text-gray-900">Sở Tài nguyên và Môi trường</h4>
+					<a href="tel:0251.3836.670" class="flex items-center btn btn-primary btn-sm">
+						<i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+						0251.3836.670
+					</a>
+				</div>
+				<div class="flex items-center space-x-4 text-sm text-gray-600"><span>Tầng 4</span><span>Trưởng phòng: Ông Lê Văn
+						C</span>
+				</div>
+			</div>
+			<div class="p-4 bg-gray-50 rounded-xl">
+				<div class="flex-between mb-2">
+					<h4 class="font-medium text-gray-900">Sở Xây dựng</h4>
+					<a href="tel:0251.3836.671" class="flex items-center btn btn-primary btn-sm">
+						<i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+						0251.3836.671
+					</a>
+				</div>
+				<div class="flex items-center space-x-4 text-sm text-gray-600"><span>Tầng 5</span><span>Trưởng phòng: Bà Phạm
+						Thị D</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mb-8">
+		<h3 class="text-xl font-semibold text-gray-900 mb-4">Thủ tục hành chính</h3>
+		<div class="space-y-6">
+			<div class="border border-gray-200 rounded-xl p-6">
+				<h4 class="text-lg font-semibold text-gray-900 mb-4">Cấp giấy chứng nhận đầu tư</h4>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+					<div class="flex items-center space-x-3">
+						<i data-lucide="clock" class="w-5 h-5 text-blue-600"></i>
+						<div>
+							<p class="text-sm text-gray-600">Thời gian xử lý</p>
+							<p class="font-medium text-gray-900">15 ngày làm việc</p>
+						</div>
+					</div>
+					<div class="flex items-center space-x-3">
+						<i data-lucide="dollar-sign" class="w-5 h-5 text-green-600"></i>
+						<div>
+							<p class="text-sm text-gray-600">Lệ phí</p>
+							<p class="font-medium text-gray-900">500.000 VNĐ</p>
+						</div>
+					</div>
+				</div>
+				<div class="mb-4">
+					<h5 class="font-medium text-gray-900 mb-2">Hồ sơ cần thiết:</h5>
+					<ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
+						<li>Đơn đề nghị</li>
+						<li>Bản sao CMND</li>
+						<li>Giấy tờ pháp lý dự án</li>
+					</ul>
+				</div>
+				<div>
+					<h5 class="font-medium text-gray-900 mb-2">Quy trình thực hiện:</h5>
+					<div class="flex flex-wrap gap-2"><span class="badge-primary">1. Nộp hồ sơ tại bộ phận một cửa</span><span
+							class="badge-primary">2. Thẩm định hồ sơ</span><span class="badge-primary">3. Cấp giấy chứng nhận</span>
+					</div>
+				</div>
+			</div>
+			<div class="border border-gray-200 rounded-xl p-6">
+				<h4 class="text-lg font-semibold text-gray-900 mb-4">Cấp sổ đỏ</h4>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+					<div class="flex items-center space-x-3">
+						<i data-lucide="clock" class="w-5 h-5 text-blue-600"></i>
+						<div>
+							<p class="text-sm text-gray-600">Thời gian xử lý</p>
+							<p class="font-medium text-gray-900">20 ngày làm việc</p>
+						</div>
+					</div>
+					<div class="flex items-center space-x-3">
+						<i data-lucide="dollar-sign" class="w-5 h-5 text-green-600"></i>
+						<div>
+							<p class="text-sm text-gray-600">Lệ phí</p>
+							<p class="font-medium text-gray-900">300.000 VNĐ</p>
+						</div>
+					</div>
+				</div>
+				<div class="mb-4">
+					<h5 class="font-medium text-gray-900 mb-2">Hồ sơ cần thiết:</h5>
+					<ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
+						<li>Đơn đề nghị</li>
+						<li>Hợp đồng mua bán</li>
+						<li>Giấy tờ chứng minh quyền sử dụng đất</li>
+					</ul>
+				</div>
+				<div>
+					<h5 class="font-medium text-gray-900 mb-2">Quy trình thực hiện:</h5>
+					<div class="flex flex-wrap gap-2"><span class="badge-primary">1. Tiếp nhận hồ sơ</span><span
+							class="badge-primary">2. Thẩm định và kiểm tra thực địa</span><span class="badge-primary">3. Cấp sổ
+							đỏ</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mb-8">
+		<h3 class="text-xl font-semibold text-gray-900 mb-4">Thông tin liên hệ chi tiết</h3>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+				<div class="w-8 h-8 bg-blue-100 rounded-lg flex-center">
+					<i data-lucide="phone" class="w-4 h-4 text-blue-600"></i>
+				</div>
+				<div>
+					<p class="text-sm text-gray-600">Đường dây nóng</p>
+					<p class="font-medium text-gray-900">0251.3836.999</p>
+					<p class="text-xs text-green-600">24/7</p>
+				</div>
+			</div>
+			<div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+				<div class="w-8 h-8 bg-blue-100 rounded-lg flex-center">
+					<i data-lucide="phone" class="w-4 h-4 text-blue-600"></i>
+				</div>
+				<div>
+					<p class="text-sm text-gray-600">Fax</p>
+					<p class="font-medium text-gray-900">0251.3836.888</p>
+				</div>
+			</div>
+			<div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+				<div class="w-8 h-8 bg-blue-100 rounded-lg flex-center">
+					<i data-lucide="phone" class="w-4 h-4 text-blue-600"></i>
+				</div>
+				<div>
+					<p class="text-sm text-gray-600">Mã bưu điện</p>
+					<p class="font-medium text-gray-900">76000</p>
+				</div>
+			</div>
+			<div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+				<div class="w-8 h-8 bg-blue-100 rounded-lg flex-center">
+					<i data-lucide="phone" class="w-4 h-4 text-blue-600"></i>
+				</div>
+				<div>
+					<p class="text-sm text-gray-600">Facebook</p>
+					<p class="font-medium text-gray-900">https://facebook.com/ubnddongnai</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

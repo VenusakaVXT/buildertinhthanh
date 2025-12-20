@@ -3,53 +3,57 @@ const { icons } = require('lucide');
 const { minify } = require('terser');
 
 // Đọc danh sách icons đã sử dụng
-const usedIcons = fs.readFileSync('icons-used.txt', 'utf8').trim().split('\n');
+const usedIcons = fs.readFileSync('icons-used.txt', 'utf8')
+  .trim()
+  .split('\n')
+  .map(icon => icon.trim()) // Loại bỏ khoảng trắng thừa
+  .filter(icon => icon.length > 0); // Loại bỏ dòng trống
 
 // Hàm convert tên icon từ slug sang PascalCase
 function slugToPascalCase(slug) {
-    return slug
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join('');
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
 }
 
 // Hàm tìm icon trong lucide với fallback
 function findIconInLucide(iconName) {
-    // Thử convert trực tiếp
-    let pascalName = slugToPascalCase(iconName);
-    if (icons[pascalName]) {
-        return pascalName;
+  // Thử convert trực tiếp
+  let pascalName = slugToPascalCase(iconName);
+  if (icons[pascalName]) {
+    return pascalName;
+  }
+
+  // Thử các biến thể khác
+  const variations = [
+    // Thử với số ở cuối
+    pascalName.replace(/(\d+)$/, '$1'),
+    // Thử với số ở giữa
+    pascalName.replace(/(\d+)/, '$1'),
+    // Thử với các từ viết tắt phổ biến
+    pascalName.replace(/2/g, '2'),
+    pascalName.replace(/3/g, '3'),
+    // Thử với các từ đặc biệt
+    pascalName.replace(/Circle/g, 'Circle'),
+    pascalName.replace(/Square/g, 'Square'),
+    pascalName.replace(/Triangle/g, 'Triangle'),
+  ];
+
+  for (const variation of variations) {
+    if (icons[variation]) {
+      return variation;
     }
-    
-    // Thử các biến thể khác
-    const variations = [
-        // Thử với số ở cuối
-        pascalName.replace(/(\d+)$/, '$1'),
-        // Thử với số ở giữa
-        pascalName.replace(/(\d+)/, '$1'),
-        // Thử với các từ viết tắt phổ biến
-        pascalName.replace(/2/g, '2'),
-        pascalName.replace(/3/g, '3'),
-        // Thử với các từ đặc biệt
-        pascalName.replace(/Circle/g, 'Circle'),
-        pascalName.replace(/Square/g, 'Square'),
-        pascalName.replace(/Triangle/g, 'Triangle'),
-    ];
-    
-    for (const variation of variations) {
-        if (icons[variation]) {
-            return variation;
-        }
-    }
-    
-    // Thử tìm kiếm gần đúng
-    const availableIcons = Object.keys(icons);
-    const similarIcon = availableIcons.find(icon => 
-        icon.toLowerCase().includes(iconName.toLowerCase()) ||
-        iconName.toLowerCase().includes(icon.toLowerCase())
-    );
-    
-    return similarIcon || null;
+  }
+
+  // Thử tìm kiếm gần đúng
+  const availableIcons = Object.keys(icons);
+  const similarIcon = availableIcons.find(icon =>
+    icon.toLowerCase().includes(iconName.toLowerCase()) ||
+    iconName.toLowerCase().includes(icon.toLowerCase())
+  );
+
+  return similarIcon || null;
 }
 
 // Tạo object chỉ chứa các icon đã sử dụng
@@ -57,56 +61,56 @@ const customIcons = {};
 const notFoundIcons = [];
 
 usedIcons.forEach(iconName => {
-    const lucideName = findIconInLucide(iconName);
-    if (lucideName && icons[lucideName]) {
-        customIcons[iconName] = icons[lucideName];
-        //console.log(`✅ ${iconName} -> ${lucideName}`);
-    } else {
-        notFoundIcons.push(iconName);
-        //console.warn(`❌ Icon "${iconName}" không tìm thấy trong lucide`);
-    }
+  const lucideName = findIconInLucide(iconName);
+  if (lucideName && icons[lucideName]) {
+    customIcons[iconName] = icons[lucideName];
+    //console.log(`✅ ${iconName} -> ${lucideName}`);
+  } else {
+    notFoundIcons.push(iconName);
+    //console.warn(`❌ Icon "${iconName}" không tìm thấy trong lucide`);
+  }
 });
 
 if (notFoundIcons.length > 0) {
-    //console.log(`\n⚠️  ${notFoundIcons.length} icons không tìm thấy:`);
-    notFoundIcons.forEach(icon => console.log(`   - ${icon}`));
-    //console.log('\n💡 Gợi ý: Kiểm tra tên icon tại https://lucide.dev/icons/');
+  console.log(`\n⚠️  ${notFoundIcons.length} icons không tìm thấy:`);
+  notFoundIcons.forEach(icon => console.log(`   - ${icon}`));
+  console.log('\n💡 Gợi ý: Kiểm tra tên icon tại https://lucide.dev/icons/');
 }
 
 // Tạo SVG sprite từ customIcons
 function attrsToString(attrs) {
-    return Object.keys(attrs || {})
-        .map((k) => `${k}="${String(attrs[k]).replace(/"/g, '&quot;')}"`)
-        .join(' ');
+  return Object.keys(attrs || {})
+    .map((k) => `${k}="${String(attrs[k]).replace(/"/g, '&quot;')}"`)
+    .join(' ');
 }
 
 function createSymbol(iconName, iconNode) {
-    const defaultAttrs = {
-        viewBox: '0 0 24 24',
-        fill: 'none',
-        stroke: 'currentColor',
-        'stroke-width': 2,
-        'stroke-linecap': 'round',
-        'stroke-linejoin': 'round'
-    };
-    const children = (iconNode || [])
-        .map(([tag, attrs]) => `<${tag} ${attrsToString(attrs)} />`)
-        .join('');
-    return `<symbol id="${iconName}" ${attrsToString(defaultAttrs)}>${children}</symbol>`;
+  const defaultAttrs = {
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    'stroke-width': 2,
+    'stroke-linecap': 'round',
+    'stroke-linejoin': 'round'
+  };
+  const children = (iconNode || [])
+    .map(([tag, attrs]) => `<${tag} ${attrsToString(attrs)} />`)
+    .join('');
+  return `<symbol id="${iconName}" ${attrsToString(defaultAttrs)}>${children}</symbol>`;
 }
 
 function buildSvgSprite(customIconsMap) {
-    const fs = require('fs');
-    const path = require('path');
-    const destDir = path.join('dist', 'assets', 'icons');
-    fs.mkdirSync(destDir, { recursive: true });
-    const symbols = Object.entries(customIconsMap)
-        .map(([slugName, iconNode]) => createSymbol(slugName, iconNode))
-        .join('\n');
-    const sprite = `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">\n${symbols}\n</svg>`;
-    const outPath = path.join(destDir, 'lucide-custom.svg');
-    fs.writeFileSync(outPath, sprite);
-    return outPath;
+  const fs = require('fs');
+  const path = require('path');
+  const destDir = path.join('dist', 'assets', 'icons');
+  fs.mkdirSync(destDir, { recursive: true });
+  const symbols = Object.entries(customIconsMap)
+    .map(([slugName, iconNode]) => createSymbol(slugName, iconNode))
+    .join('\n');
+  const sprite = `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">\n${symbols}\n</svg>`;
+  const outPath = path.join(destDir, 'lucide-custom.svg');
+  fs.writeFileSync(outPath, sprite);
+  return outPath;
 }
 
 // Tạo file JS theo format Lucide gốc
@@ -270,34 +274,34 @@ if (document.readyState === 'loading') {
 
 // Hàm minify sử dụng terser
 async function minifyJS(code) {
-    try {
-        const result = await minify(code, {
-            compress: {
-                drop_console: false,
-                drop_debugger: true,
-                pure_funcs: ['console.log', 'console.info', 'console.debug'],
-            },
-            mangle: {
-                keep_fnames: true, // Giữ tên function để tránh lỗi
-            },
-            format: {
-                comments: false, // Loại bỏ comments
-            }
-        });
-        return result.code;
-    } catch (error) {
-        console.warn('⚠️  Terser minify failed, using fallback:', error.message);
-        // Fallback minify đơn giản nếu terser lỗi
-        return code
-            .replace(/\/\*[\s\S]*?\*\//g, '')
-            .replace(/\/\/.*$/gm, '')
-            .replace(/\s+/g, ' ')
-            .replace(/\s*([{}();,=])\s*/g, '$1')
-            .replace(/;\s*}/g, '}')
-            .replace(/,\s*}/g, '}')
-            .replace(/,\s*]/g, ']')
-            .trim();
-    }
+  try {
+    const result = await minify(code, {
+      compress: {
+        drop_console: false,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+      },
+      mangle: {
+        keep_fnames: true, // Giữ tên function để tránh lỗi
+      },
+      format: {
+        comments: false, // Loại bỏ comments
+      }
+    });
+    return result.code;
+  } catch (error) {
+    console.warn('⚠️  Terser minify failed, using fallback:', error.message);
+    // Fallback minify đơn giản nếu terser lỗi
+    return code
+      .replace(/\/\*[\s\S]*?\*\//g, '')
+      .replace(/\/\/.*$/gm, '')
+      .replace(/\s+/g, ' ')
+      .replace(/\s*([{}();,=])\s*/g, '$1')
+      .replace(/;\s*}/g, '}')
+      .replace(/,\s*}/g, '}')
+      .replace(/,\s*]/g, ']')
+      .trim();
+  }
 }
 
 // Lưu file gốc
@@ -305,28 +309,28 @@ fs.writeFileSync('./dist/assets/js/lucide-custom.js', jsContent);
 
 // Tạo file minified
 (async () => {
-    try {
-        const minifiedContent = await minifyJS(jsContent);
-        fs.writeFileSync('./dist/assets/js/lucide-custom.min.js', minifiedContent);
-        /*
-        console.log(`✅ Đã tạo file lucide-custom.js với ${Object.keys(customIcons).length} icons`);
-        console.log(`📁 File: ./dist/assets/js/lucide-custom.js`);
-        console.log(`📊 Kích thước: ${(fs.statSync('./dist/assets/js/lucide-custom.js').size / 1024).toFixed(2)} KB`);
+  try {
+    const minifiedContent = await minifyJS(jsContent);
+    fs.writeFileSync('./dist/assets/js/lucide-custom.min.js', minifiedContent);
+    /*
+    console.log(`✅ Đã tạo file lucide-custom.js với ${Object.keys(customIcons).length} icons`);
+    console.log(`📁 File: ./dist/assets/js/lucide-custom.js`);
+    console.log(`📊 Kích thước: ${(fs.statSync('./dist/assets/js/lucide-custom.js').size / 1024).toFixed(2)} KB`);
 
-        console.log(`✅ Đã tạo file lucide-custom.min.js (minified)`);
-        console.log(`📁 File: ./dist/assets/js/lucide-custom.min.js`);
-        console.log(`📊 Kích thước: ${(fs.statSync('./dist/assets/js/lucide-custom.min.js').size / 1024).toFixed(2)} KB`);
-        */
-    } catch (error) {
-        console.error('❌ Error creating minified file:', error.message);
-        process.exit(1);
-    }
+    console.log(`✅ Đã tạo file lucide-custom.min.js (minified)`);
+    console.log(`📁 File: ./dist/assets/js/lucide-custom.min.js`);
+    console.log(`📊 Kích thước: ${(fs.statSync('./dist/assets/js/lucide-custom.min.js').size / 1024).toFixed(2)} KB`);
+    */
+  } catch (error) {
+    console.error('❌ Error creating minified file:', error.message);
+    process.exit(1);
+  }
 })();
 
 // Tạo SVG sprite cho icon usage bằng <use href="#icon-name" />
 try {
-    const spritePath = buildSvgSprite(customIcons);
-    //console.log(`✅ SVG sprite created: ${spritePath}`);
+  const spritePath = buildSvgSprite(customIcons);
+  //console.log(`✅ SVG sprite created: ${spritePath}`);
 } catch (e) {
-    console.warn('⚠️  Could not create SVG sprite:', e.message);
+  console.warn('⚠️  Could not create SVG sprite:', e.message);
 }

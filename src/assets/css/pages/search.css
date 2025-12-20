@@ -597,11 +597,11 @@
 }
 
 .search__location-card__container {
-  @apply flex flex-col sm:flex-row gap-3 sm:gap-4;
+  @apply flex flex-col sm:flex-row;
 }
 
 .search__location-card__image-container {
-  @apply w-full sm:w-48 h-32 sm:h-48 relative flex-shrink-0 overflow-hidden;
+  @apply w-full sm:w-48 h-32 sm:h-auto sm:self-stretch relative flex-shrink-0 overflow-hidden;
 }
 
 .search__location-card__image {

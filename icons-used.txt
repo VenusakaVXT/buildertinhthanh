@@ -79,12 +79,13 @@ lock
 alert-circle
 mail
 shield-check
+arrow-left
+message-circle
 grid3x3
 list
 arrow-right
 chevron-left
 eye
-message-circle
 camera
 video
 share2
@@ -106,7 +107,13 @@ printer
 bell
 square-check-big
 copy
-message-square
+footprints
+bag
+truck
+rotate-ccw
+credit-card
+gift
+wind
 cloud
 lightbulb
 shield
@@ -126,7 +133,6 @@ ruler
 image
 link
 utensils-crossed
-credit-card
 user-round
 sparkles
 circle-help
@@ -138,7 +144,6 @@ eye-off
 circle-x
 user-pen
 upload
-truck
 palette
 scale
 flame
@@ -152,7 +157,6 @@ play
 smile
 school
 loader-2
-footprints
 bike
 bus
 sliders-horizontal
