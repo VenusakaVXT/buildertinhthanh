@@ -15,9 +15,21 @@ class TabManager {
     init() {
         // Tìm tất cả các tab containers
         const tabContainers = document.querySelectorAll('.tabs');
-        
+
         tabContainers.forEach((container, index) => {
             this.initTabContainer(container, index);
+        });
+
+        // Kiểm tra overflow cho tabs-menus
+        this.checkTabsMenusOverflow();
+
+        // Kiểm tra lại khi resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                this.checkTabsMenusOverflow();
+            }, 100);
         });
     }
 
@@ -29,7 +41,7 @@ class TabManager {
     initTabContainer(container, index) {
         const tabMenus = container.querySelectorAll('.tab-menu');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         if (tabMenus.length === 0 || tabContents.length === 0) {
             console.warn(`Tab container ${index} không có tab-menu hoặc tab-content`);
             return;
@@ -69,11 +81,11 @@ class TabManager {
      */
     ensureFirstTabActive(tabSystem) {
         const { menus, contents } = tabSystem;
-        
+
         // Tìm tab đã có class active
         let activeMenu = null;
         let activeContent = null;
-        
+
         // Tìm menu active
         menus.forEach(menu => {
             if (menu.classList.contains('active')) {
@@ -81,21 +93,21 @@ class TabManager {
                 tabSystem.activeTab = menu.getAttribute('data-tab');
             }
         });
-        
+
         // Tìm content active
         contents.forEach(content => {
             if (content.classList.contains('active')) {
                 activeContent = content;
             }
         });
-        
+
         // Nếu không có tab nào active, active tab đầu tiên
         if (!activeMenu && menus.length > 0) {
             activeMenu = menus[0];
             activeMenu.classList.add('active');
             tabSystem.activeTab = activeMenu.getAttribute('data-tab');
         }
-        
+
         if (!activeContent && contents.length > 0) {
             // Tìm content tương ứng với active menu
             const activeTabName = tabSystem.activeTab;
@@ -114,7 +126,7 @@ class TabManager {
      */
     switchTabByName(tabSystem, tabName) {
         const { menus, contents, activeTab } = tabSystem;
-        
+
         // Nếu đã active thì không làm gì
         if (tabName === activeTab) {
             return;
@@ -123,7 +135,7 @@ class TabManager {
         // Tìm menu và content tương ứng
         const targetMenu = Array.from(menus).find(menu => menu.getAttribute('data-tab') === tabName);
         const targetContent = Array.from(contents).find(content => content.getAttribute('data-tab-content') === tabName);
-        
+
         if (!targetMenu || !targetContent) {
             console.warn(`Tab "${tabName}" không tồn tại`);
             return;
@@ -159,7 +171,7 @@ class TabManager {
                 content: Array.from(tabSystem.contents).find(content => content.getAttribute('data-tab-content') === newTabName)
             }
         });
-        
+
         tabSystem.container.dispatchEvent(event);
     }
 
@@ -193,13 +205,35 @@ class TabManager {
         const tabSystem = this.getTabSystem(container);
         return tabSystem ? tabSystem.activeTab : null;
     }
+
+    /**
+     * Kiểm tra overflow cho các tabs-menus và thêm class has-overflow khi cần
+     */
+    checkTabsMenusOverflow() {
+        const tabsMenus = document.querySelectorAll('.tabs.tabs-button .tabs-menus');
+
+        tabsMenus.forEach(menu => {
+            // Chỉ kiểm tra trên desktop (lg breakpoint)
+            if (window.innerWidth >= 1024) {
+                const hasOverflow = menu.scrollWidth > menu.clientWidth;
+
+                if (hasOverflow) {
+                    menu.classList.add('has-overflow');
+                } else {
+                    menu.classList.remove('has-overflow');
+                }
+            } else {
+                menu.classList.remove('has-overflow');
+            }
+        });
+    }
 }
 
 // Khởi tạo TabManager khi DOM ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Tạo global instance
     window.tabManager = new TabManager();
-    
+
     console.log('TabManager initialized');
 });
 

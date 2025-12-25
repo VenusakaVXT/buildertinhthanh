@@ -2,11 +2,11 @@
   class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4 bg-white p-3 sm:p-4 rounded-lg border">
   <div class="text-xs sm:text-sm text-gray-600">Hiển thị <span class="font-medium">1-12</span> trong <span
       class="font-medium">55</span> kết quả</div>
-  <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-    <div class="flex items-center gap-2 w-full sm:w-auto">
-      <span class="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Sắp xếp:</span>
-      <div>
-        <select class="select select-white w-full sm:w-[180px] h-8 sm:h-auto text-xs sm:text-sm">
+  <div class="flex flex-row items-start sm:items-center gap-2 sm:gap-4">
+    <div class="flex flex-row gap-2 sm:gap-3 w-full sm:w-auto">
+      <!-- Sort Dropdown -->
+      <div class="relative flex-[2] min-w-0">
+        <select class="select select-white w-full h-8 sm:h-auto text-xs sm:text-sm truncate">
           <option value="relevance">Liên quan</option>
           <option value="newest">Mới nhất</option>
           <option value="revenue-desc">Doanh thu cao → thấp</option>
@@ -18,19 +18,15 @@
           <option value="popular">Phổ biến</option>
         </select>
       </div>
-    </div>
-    <div class="flex items-center gap-2 w-full sm:w-auto">
-      <div>
-        <select class="select select-white w-16 sm:w-[120px] h-8 sm:h-auto text-xs sm:text-sm">
+
+      <!-- Items Per Page Dropdown -->
+      <div class="relative flex-1 min-w-0">
+        <select class="select select-white w-full h-8 sm:h-auto text-xs sm:text-sm">
           <option value="12">12 / trang</option>
           <option value="24">24 / trang</option>
           <option value="48">48 / trang</option>
         </select>
       </div>
-      <button
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 lg:hidden bg-transparent">
-        <i data-lucide="filter" class="w-4 h-4 mr-2"></i>Bộ lọc
-      </button>
     </div>
   </div>
 </div>

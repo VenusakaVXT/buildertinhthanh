@@ -7,6 +7,8 @@ document.addEventListener('alpine:init', () => {
     revenueMin: '',
     revenueMax: '',
     revenueError: '',
+    establishmentYear: '',
+    establishmentYearError: '',
 
     // Rating slider properties
     minRating: 0,
@@ -16,13 +18,17 @@ document.addEventListener('alpine:init', () => {
     ratingSliderWidth: 0,
     ratingSliderElement: null,
 
+    // Applied filters
+    appliedFilters: [],
+
     init() {
       this.handleSelectLocation();
       this.handleSelectIndustry();
 
-      // Initialize rating slider element reference
+      // Initialize rating slider element reference (for both mobile and desktop)
       this.$nextTick(() => {
-        this.ratingSliderElement = this.$refs.ratingSlider;
+        // Try desktop slider first, then mobile
+        this.ratingSliderElement = this.$refs.ratingSlider || this.$refs.ratingSliderMobile;
         if (this.ratingSliderElement) {
           this.ratingSliderWidth = this.ratingSliderElement.offsetWidth;
         }
@@ -35,79 +41,117 @@ document.addEventListener('alpine:init', () => {
     },
 
     handleSelectLocation() {
-      const provinceSelect = document.getElementById('province');
-      const districtSelect = document.getElementById('district');
+      // Handle both mobile and desktop selects
+      const provinceSelects = [
+        document.getElementById('province'),
+        document.getElementById('province-mobile'),
+        document.getElementById('province-desktop')
+      ].filter(el => el !== null);
+      
+      const districtSelects = [
+        document.getElementById('district'),
+        document.getElementById('district-mobile'),
+        document.getElementById('district-desktop')
+      ].filter(el => el !== null);
 
-      if (provinceSelect && districtSelect) {
+      provinceSelects.forEach(provinceSelect => {
         provinceSelect.addEventListener('change', function () {
           const selectedProvince = this.value;
-
-          // Reset district select
-          districtSelect.selectedIndex = 0;
-
-          if (selectedProvince) {
-            // Enable district select
-            districtSelect.disabled = false;
-
-            // Show/hide options based on selected province
-            const options = districtSelect.querySelectorAll('option[data-province]');
-            options.forEach(option => {
-              if (option.dataset.province === selectedProvince) {
-                option.style.display = 'block';
-              } else {
-                option.style.display = 'none';
-              }
-            });
+          const provinceId = this.id;
+          
+          // Find corresponding district select (mobile/desktop)
+          let districtSelect = null;
+          if (provinceId.includes('mobile')) {
+            districtSelect = document.getElementById('district-mobile');
+          } else if (provinceId.includes('desktop')) {
+            districtSelect = document.getElementById('district-desktop');
           } else {
-            // Disable district select
-            districtSelect.disabled = true;
+            districtSelect = document.getElementById('district');
+          }
 
-            // Hide all district options
-            const options = districtSelect.querySelectorAll('option[data-province]');
-            options.forEach(option => {
-              option.style.display = 'none';
-            });
+          if (districtSelect) {
+            // Reset district select
+            districtSelect.selectedIndex = 0;
+
+            if (selectedProvince) {
+              // Enable district select
+              districtSelect.disabled = false;
+
+              // Show/hide options based on selected province
+              const options = districtSelect.querySelectorAll('option[data-province]');
+              options.forEach(option => {
+                if (option.dataset.province === selectedProvince) {
+                  option.style.display = 'block';
+                } else {
+                  option.style.display = 'none';
+                }
+              });
+            } else {
+              // Disable district select
+              districtSelect.disabled = true;
+
+              // Hide all district options
+              const options = districtSelect.querySelectorAll('option[data-province]');
+              options.forEach(option => {
+                option.style.display = 'none';
+              });
+            }
           }
         });
-      }
+      });
     },
 
     handleSelectIndustry() {
-      const industrySelect = document.querySelector('select[class*="select-white"]:not(#province):not(#district)');
-      const subIndustrySelect = document.getElementById('subIndustry');
-
-      if (industrySelect && subIndustrySelect) {
+      // Handle both mobile and desktop industry selects
+      const industrySelects = [
+        document.querySelector('select[class*="select-white"]:not(#province):not(#district):not(#province-mobile):not(#district-mobile):not(#province-desktop):not(#district-desktop):not(#subIndustry):not(#subIndustry-mobile):not(#subIndustry-desktop)'),
+        document.getElementById('industry-desktop')
+      ].filter(el => el !== null);
+      
+      industrySelects.forEach(industrySelect => {
         industrySelect.addEventListener('change', function () {
           const selectedIndustry = this.value;
-
-          // Reset sub-industry select
-          subIndustrySelect.selectedIndex = 0;
-
-          if (selectedIndustry) {
-            // Enable sub-industry select
-            subIndustrySelect.disabled = false;
-
-            // Show/hide options based on selected industry
-            const options = subIndustrySelect.querySelectorAll('option[data-industry]');
-            options.forEach(option => {
-              if (option.dataset.industry === selectedIndustry) {
-                option.style.display = 'block';
-              } else {
-                option.style.display = 'none';
-              }
-            });
+          const industryId = this.id;
+          
+          // Find corresponding sub-industry select (mobile/desktop)
+          let subIndustrySelect = null;
+          if (industryId && industryId.includes('desktop')) {
+            subIndustrySelect = document.getElementById('subIndustry-desktop');
           } else {
-            // Disable sub-industry select
-            subIndustrySelect.disabled = true;
+            // Try to find mobile or default
+            subIndustrySelect = document.getElementById('subIndustry-mobile') || document.getElementById('subIndustry');
+          }
 
-            // Hide all sub-industry options
-            const options = subIndustrySelect.querySelectorAll('option[data-industry]');
-            options.forEach(option => {
-              option.style.display = 'none';
-            });
+          if (subIndustrySelect) {
+            // Reset sub-industry select
+            subIndustrySelect.selectedIndex = 0;
+
+            if (selectedIndustry) {
+              // Enable sub-industry select
+              subIndustrySelect.disabled = false;
+
+              // Show/hide options based on selected industry
+              const options = subIndustrySelect.querySelectorAll('option[data-industry]');
+              options.forEach(option => {
+                if (option.dataset.industry === selectedIndustry) {
+                  option.style.display = 'block';
+                } else {
+                  option.style.display = 'none';
+                }
+              });
+            } else {
+              // Disable sub-industry select
+              subIndustrySelect.disabled = true;
+
+              // Hide all sub-industry options
+              const options = subIndustrySelect.querySelectorAll('option[data-industry]');
+              options.forEach(option => {
+                option.style.display = 'none';
+              });
+            }
           }
         });
-      }
+      });
     },
 
     validateEmployees() {
@@ -205,7 +249,78 @@ document.addEventListener('alpine:init', () => {
     // Clear rating filter
     removeRating() {
       this.minRating = 0;
+    },
+
+    // Check if there are active filters
+    hasActiveFilters() {
+      return this.appliedFilters && this.appliedFilters.length > 0 || this.employeesMin || this.employeesMax || this.revenueMin || this.revenueMax || this.establishmentYear || this.minRating > 0;
+    },
+
+    // Clear all filters
+    clearAllFilters() {
+      this.employeesMin = '';
+      this.employeesMax = '';
+      this.employeesError = '';
+      this.revenueMin = '';
+      this.revenueMax = '';
+      this.revenueError = '';
+      this.establishmentYear = '';
+      this.establishmentYearError = '';
+      this.minRating = 0;
+      this.appliedFilters = [];
+      // Reset all checkboxes
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      // Reset all selects
+      const selects = document.querySelectorAll('select');
+      selects.forEach(select => {
+        select.selectedIndex = 0;
+      });
+    },
+
+    // Update establishment year
+    updateEstablishmentYear() {
+      // This method can be implemented to update URL parameters
+      // For now, it's a placeholder
+      if (this.establishmentYear) {
+        const year = parseInt(this.establishmentYear);
+        const currentYear = new Date().getFullYear();
+        if (year > currentYear) {
+          this.establishmentYearError = 'Năm thành lập không được lớn hơn năm hiện tại';
+        } else if (year < 1900) {
+          this.establishmentYearError = 'Năm thành lập không hợp lệ';
+        } else {
+          this.establishmentYearError = '';
+        }
+      } else {
+        this.establishmentYearError = '';
+      }
     }
 
+  }));
+
+  // Mobile Filter Drawer
+  Alpine.data('mobileFilterDrawer', () => ({
+    isOpen: false,
+
+    open() {
+      this.isOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+
+    close() {
+      this.isOpen = false;
+      document.body.style.overflow = '';
+    },
+
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
   }));
 });

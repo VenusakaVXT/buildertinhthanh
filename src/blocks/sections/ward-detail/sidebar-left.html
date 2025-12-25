@@ -1,10 +1,106 @@
-<div class="lg:col-span-1 space-y-6">
+<div class="lg:col-span-1 space-y-6" x-data="mobileTableOfContents()">
+  <!-- Mobile TOC Button -->
   <div class="lg:hidden mb-4">
-    <button class="w-full flex-between p-3 bg-gray-100 rounded-lg">
+    <button @click="toggle()"
+      class="w-full flex-between p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
       <span class="font-medium">Mục lục</span>
       <i data-lucide="menu" class="w-5 h-5"></i>
     </button>
   </div>
+
+  <!-- Mobile TOC Overlay & Panel -->
+  <div x-show="isOpen" x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity duration-300"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click.self="close()"
+    class="lg:hidden drawer-overlay" style="display: none;">
+    <div x-show="isOpen" x-transition:enter="transition-transform duration-300 ease-out"
+      x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition-transform duration-300 ease-in" x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+      class="fixed right-0 top-0 w-80 bg-white shadow-xl overflow-y-auto z-[101] mt-0"
+      style="height: 100vh; height: 100dvh; margin-top: 0 !important;">
+      <div class="drawer-header">
+        <div class="flex-between">
+          <h3 class="font-semibold text-gray-900">Mục lục</h3>
+          <button @click="close()" class="p-1 hover:bg-gray-100 rounded transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+      <nav class="drawer-body space-y-1" x-data="tabNavigation()">
+        <button @click="scrollToSection('gioi-thieu'); $root.close()"
+          :class="isActive('gioi-thieu') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Giới thiệu
+        </button>
+        <button @click="scrollToSection('lich-su'); $root.close()"
+          :class="isActive('lich-su') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Lịch sử
+        </button>
+        <button @click="scrollToSection('dong-thoi-gian'); $root.close()"
+          :class="isActive('dong-thoi-gian') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Dòng thời gian
+        </button>
+        <button @click="scrollToSection('dia-ly'); $root.close()"
+          :class="isActive('dia-ly') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Địa lý
+        </button>
+        <button @click="scrollToSection('dan-so'); $root.close()"
+          :class="isActive('dan-so') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Dân số
+        </button>
+        <button @click="scrollToSection('hanh-chinh'); $root.close()"
+          :class="isActive('hanh-chinh') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Hành chính
+        </button>
+        <button @click="scrollToSection('danh-sach-khu-pho'); $root.close()"
+          :class="isActive('danh-sach-khu-pho') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Danh sách khu phố
+        </button>
+        <button @click="scrollToSection('kinh-te'); $root.close()"
+          :class="isActive('kinh-te') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Kinh tế
+        </button>
+        <button @click="scrollToSection('giao-thong'); $root.close()"
+          :class="isActive('giao-thong') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Giao thông
+        </button>
+        <button @click="scrollToSection('giao-duc'); $root.close()"
+          :class="isActive('giao-duc') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Giáo dục
+        </button>
+        <button @click="scrollToSection('danh-sach-truong-hoc'); $root.close()"
+          :class="isActive('danh-sach-truong-hoc') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Danh sách trường học
+        </button>
+        <button @click="scrollToSection('y-te'); $root.close()"
+          :class="isActive('y-te') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Y tế
+        </button>
+        <button @click="scrollToSection('van-hoa'); $root.close()"
+          :class="isActive('van-hoa') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Văn hóa - Xã hội
+        </button>
+        <button @click="scrollToSection('co-so-van-hoa'); $root.close()"
+          :class="isActive('co-so-van-hoa') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium ml-4' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100 ml-4'">
+          Cơ sở văn hóa
+        </button>
+        <button @click="scrollToSection('danh-nhan'); $root.close()"
+          :class="isActive('danh-nhan') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Danh nhân
+        </button>
+        <button @click="scrollToSection('xem-them'); $root.close()"
+          :class="isActive('xem-them') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Xem thêm
+        </button>
+        <button @click="scrollToSection('tham-khao'); $root.close()"
+          :class="isActive('tham-khao') ? 'w-full text-left px-3 py-2 rounded text-sm transition-colors bg-blue-100 text-blue-700 font-medium' : 'w-full text-left px-3 py-2 rounded text-sm transition-colors text-gray-600 hover:bg-gray-100'">
+          Tham khảo
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Desktop TOC -->
   <div class="lg:block hidden">
     <div class="bg-white border rounded-lg p-4 sticky top-4">
       <div class="flex-between mb-4">
@@ -12,12 +108,6 @@
         <button class="lg:hidden">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
-      </div>
-      <div class="relative mb-4">
-        <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-        <input placeholder="Tìm kiếm..."
-          class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="text" value="">
       </div>
       <nav class="space-y-1 max-h-96 overflow-y-auto" x-data="tabNavigation()">
         <button @click="scrollToSection('gioi-thieu')"

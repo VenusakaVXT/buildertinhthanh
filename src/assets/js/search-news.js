@@ -72,4 +72,27 @@ document.addEventListener('alpine:init', () => {
       return true;
     },
   }));
+
+  // Mobile Filter Drawer
+  Alpine.data('mobileFilterDrawer', () => ({
+    isOpen: false,
+
+    open() {
+      this.isOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+
+    close() {
+      this.isOpen = false;
+      document.body.style.overflow = '';
+    },
+
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+  }));
 });

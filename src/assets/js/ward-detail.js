@@ -17,4 +17,28 @@ document.addEventListener('alpine:init', () => {
       return this.activeTab === sectionId;
     }
   }));
+
+  Alpine.data('mobileTableOfContents', () => ({
+    isOpen: false,
+
+    open() {
+      this.isOpen = true;
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    },
+
+    close() {
+      this.isOpen = false;
+      // Restore body scroll
+      document.body.style.overflow = '';
+    },
+
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+  }));
 });

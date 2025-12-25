@@ -29,6 +29,10 @@
         @apply hidden lg:flex items-center flex-1 max-w-md mx-8;
     }
 
+    .header__search>form {
+        @apply h-full;
+    }
+
     .header__actions {
         @apply flex items-center space-x-0 xl:space-x-3;
     }
@@ -43,7 +47,7 @@
     }
 
     .header__brand-logo {
-        @apply w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex-center;
+        @apply w-8 h-8 flex-center;
     }
 
     .header__brand-icon {

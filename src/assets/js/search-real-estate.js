@@ -29,41 +29,64 @@ document.addEventListener('alpine:init', () => {
     },
 
     handleSelectLocation() {
-      const provinceSelect = document.getElementById('province');
-      const districtSelect = document.getElementById('district');
+      // Handle both mobile and desktop selects
+      const provinceSelects = [
+        document.getElementById('province'),
+        document.getElementById('province-mobile'),
+        document.getElementById('province-desktop')
+      ].filter(el => el !== null);
+      
+      const districtSelects = [
+        document.getElementById('district'),
+        document.getElementById('district-mobile'),
+        document.getElementById('district-desktop')
+      ].filter(el => el !== null);
 
-      if (provinceSelect && districtSelect) {
+      provinceSelects.forEach(provinceSelect => {
         provinceSelect.addEventListener('change', function () {
           const selectedProvince = this.value;
-
-          // Reset district select
-          districtSelect.selectedIndex = 0;
-
-          if (selectedProvince) {
-            // Enable district select
-            districtSelect.disabled = false;
-
-            // Show/hide options based on selected province
-            const options = districtSelect.querySelectorAll('option[data-province]');
-            options.forEach(option => {
-              if (option.dataset.province === selectedProvince) {
-                option.style.display = 'block';
-              } else {
-                option.style.display = 'none';
-              }
-            });
+          const provinceId = this.id;
+          
+          // Find corresponding district select (mobile/desktop)
+          let districtSelect = null;
+          if (provinceId.includes('mobile')) {
+            districtSelect = document.getElementById('district-mobile');
+          } else if (provinceId.includes('desktop')) {
+            districtSelect = document.getElementById('district-desktop');
           } else {
-            // Disable district select
-            districtSelect.disabled = true;
+            districtSelect = document.getElementById('district');
+          }
 
-            // Hide all district options
-            const options = districtSelect.querySelectorAll('option[data-province]');
-            options.forEach(option => {
-              option.style.display = 'none';
-            });
+          if (districtSelect) {
+            // Reset district select
+            districtSelect.selectedIndex = 0;
+
+            if (selectedProvince) {
+              // Enable district select
+              districtSelect.disabled = false;
+
+              // Show/hide options based on selected province
+              const options = districtSelect.querySelectorAll('option[data-province]');
+              options.forEach(option => {
+                if (option.dataset.province === selectedProvince) {
+                  option.style.display = 'block';
+                } else {
+                  option.style.display = 'none';
+                }
+              });
+            } else {
+              // Disable district select
+              districtSelect.disabled = true;
+
+              // Hide all district options
+              const options = districtSelect.querySelectorAll('option[data-province]');
+              options.forEach(option => {
+                option.style.display = 'none';
+              });
+            }
           }
         });
-      }
+      });
     },
 
     validatePrice() {
@@ -146,6 +169,29 @@ document.addEventListener('alpine:init', () => {
     // Clear area filter
     removeArea() {
       this.areaMin = 0;
+    }
+  }));
+
+  // Mobile Filter Drawer
+  Alpine.data('mobileFilterDrawer', () => ({
+    isOpen: false,
+
+    open() {
+      this.isOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+
+    close() {
+      this.isOpen = false;
+      document.body.style.overflow = '';
+    },
+
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
     }
   }));
 });

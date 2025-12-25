@@ -12,9 +12,10 @@ document.addEventListener('alpine:init', () => {
     sliderElement: null,
 
     init() {
-      // Initialize slider element reference
+      // Initialize slider element reference (for both mobile and desktop)
       this.$nextTick(() => {
-        this.sliderElement = this.$refs.salarySlider;
+        // Try desktop slider first, then mobile
+        this.sliderElement = this.$refs.salarySlider || this.$refs.salarySliderMobile;
         if (this.sliderElement) {
           this.sliderWidth = this.sliderElement.offsetWidth;
         }
@@ -110,5 +111,28 @@ document.addEventListener('alpine:init', () => {
       });
     }
 
+  }));
+
+  // Mobile Filter Drawer
+  Alpine.data('mobileFilterDrawer', () => ({
+    isOpen: false,
+
+    open() {
+      this.isOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+
+    close() {
+      this.isOpen = false;
+      document.body.style.overflow = '';
+    },
+
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
   }));
 });

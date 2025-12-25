@@ -3,6 +3,8 @@ document.addEventListener('alpine:init', () => {
     keyword: '',
     priceMin: '',
     priceMax: '',
+    priceError: '',
+    contractTerm: '',
 
     // Rating slider properties
     minRating: 0,
@@ -12,10 +14,14 @@ document.addEventListener('alpine:init', () => {
     ratingSliderWidth: 0,
     ratingSliderElement: null,
 
+    // Applied filters
+    appliedFilters: [],
+
     init() {
-      // Initialize rating slider element reference
+      // Initialize rating slider element reference (for both mobile and desktop)
       this.$nextTick(() => {
-        this.ratingSliderElement = this.$refs.ratingSlider;
+        // Try desktop slider first, then mobile
+        this.ratingSliderElement = this.$refs.ratingSlider || this.$refs.ratingSliderMobile;
         if (this.ratingSliderElement) {
           this.ratingSliderWidth = this.ratingSliderElement.offsetWidth;
         }
@@ -106,7 +112,65 @@ document.addEventListener('alpine:init', () => {
     // Clear rating filter
     removeRating() {
       this.minRating = 0;
+    },
+
+    // Check if there are active filters
+    hasActiveFilters() {
+      return this.appliedFilters.length > 0 || this.priceMin || this.priceMax || this.minRating > 0 || this.contractTerm;
+    },
+
+    // Clear all filters
+    clearAllFilters() {
+      this.priceMin = '';
+      this.priceMax = '';
+      this.priceError = '';
+      this.minRating = 0;
+      this.contractTerm = '';
+      this.appliedFilters = [];
+      // Reset all checkboxes
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      // Reset all selects
+      const selects = document.querySelectorAll('select');
+      selects.forEach(select => {
+        select.selectedIndex = 0;
+      });
+    },
+
+    // Update contract term in URL
+    updateContractTermInURL() {
+      // This method can be implemented to update URL parameters
+      // For now, it's a placeholder
+      if (this.contractTerm) {
+        // Update URL logic here if needed
+        console.log('Contract term updated:', this.contractTerm);
+      }
     }
 
+  }));
+
+  // Mobile Filter Drawer
+  Alpine.data('mobileFilterDrawer', () => ({
+    isOpen: false,
+
+    open() {
+      this.isOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+
+    close() {
+      this.isOpen = false;
+      document.body.style.overflow = '';
+    },
+
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
   }));
 });

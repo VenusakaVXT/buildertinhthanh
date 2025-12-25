@@ -1,365 +1,781 @@
-<div class="hidden lg:block w-80 flex-shrink-0">
-  <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 sticky top-6">
-    <div class="space-y-4 sm:space-y-6">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <i data-lucide="filter" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600"></i>
-          <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Bộ lọc tìm kiếm</h3>
-        </div>
-        <button @click="clearAllFilters()"
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent rounded-md px-3 text-gray-500 hover:text-red-500 text-xs sm:text-sm h-6 sm:h-auto">Xóa
-          tất cả</button>
-      </div>
-      <div class="text-xs sm:text-sm text-gray-600">Tìm thấy <span class="font-semibold text-blue-600">50</span>
-        kết quả</div>
+<div x-data="mobileFilterDrawer()">
+  <!-- Mobile Filter Button -->
+  <div class="lg:hidden mb-4">
+    <button @click="toggle()" class="w-full btn btn-outline hover:bg-gray-200 transition-colors">
+      <span class="font-medium">Bộ lọc</span>
+      <i data-lucide="filter" class="w-5 h-5"></i>
+    </button>
+  </div>
 
-      <!-- Bộ lọc đang áp dụng -->
-      <div
-        x-show="selectedProvince || selectedDistrict || selectedRealEstateType || selectedFormType || priceMin || priceMax || areaMin > 0 || selectedBedrooms || selectedBathrooms || selectedDirection || selectedAmenities.length > 0"
-        x-cloak>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Bộ
-          lọc đang áp dụng</label>
-        <div class="flex flex-wrap gap-2">
-          <!-- Province filter -->
-          <div x-show="selectedProvince"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="selectedProvince"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- District filter -->
-          <div x-show="selectedDistrict"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="selectedDistrict"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Real Estate Type filter -->
-          <div x-show="selectedRealEstateType"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="selectedRealEstateType"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Form Type filter -->
-          <div x-show="selectedFormType"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="selectedFormType"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Price Range filter -->
-          <div x-show="priceMin || priceMax"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="getPriceRangeDisplay()"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Area Range filter -->
-          <div x-show="areaMin > 0"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="`Từ ${areaMin} m²`"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Bedrooms filter -->
-          <div x-show="selectedBedrooms"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="getBedroomsDisplayValue()"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Bathrooms filter -->
-          <div x-show="selectedBathrooms"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="getBathroomsDisplayValue()"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Direction filter -->
-          <div x-show="selectedDirection"
-            class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-            <span x-text="getDirectionDisplayValue()"></span>
-            <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-          </div>
-
-          <!-- Amenities filters -->
-          <template x-for="amenitySlug in selectedAmenities" :key="amenitySlug">
-            <div
-              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
-              <span x-text="getAmenityDisplayValue(amenitySlug)"></span>
-              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
-            </div>
-          </template>
+  <!-- Mobile Filter Drawer -->
+  <div x-show="isOpen" x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity duration-300"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click.self="close()"
+    class="lg:hidden drawer-overlay" style="display: none;">
+    <div x-show="isOpen" x-transition:enter="transition-transform duration-300 ease-out"
+      x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition-transform duration-300 ease-in" x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+      class="fixed right-0 top-0 w-80 bg-white shadow-xl overflow-y-auto z-[101]"
+      style="height: 100vh; height: 100dvh; margin-top: 0 !important;">
+      <div class="drawer-header">
+        <div class="flex-between">
+          <h3 class="font-semibold text-gray-900">Bộ lọc tìm kiếm</h3>
+          <button @click="close()" class="p-1 hover:bg-gray-100 rounded transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
         </div>
       </div>
+      <div class="drawer-body">
+        <!-- Mobile Filter Content -->
+        <div class="space-y-4 sm:space-y-6" x-data="searchRealEstateComponent">
+          <div class="text-xs sm:text-sm text-gray-600">Tìm thấy <span class="font-semibold text-blue-600">50</span>
+            kết quả</div>
 
-      <div class="space-y-4">
-        <!-- Tỉnh/Thành phố -->
-        <div>
-          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
-            for="province">Tỉnh/Thành phố</label>
-          <select id="province" class="select select-white w-full h-10 text-sm">
-            <option value="">Chọn tỉnh/thành phố</option>
-            <option value="binh-duong">Bình Dương</option>
-            <option value="tp-ho-chi-minh">TP.Hồ Chí Minh</option>
-            <option value="dong-nai">Đồng Nai</option>
-            <option value="long-an">Long An</option>
-            <option value="tay-ninh">Tây Ninh</option>
-          </select>
-        </div>
-
-        <!-- Quận/Huyện -->
-        <div>
-          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
-            for="district">Quận/Huyện</label>
-          <select id="district" class="select select-white w-full h-10 text-sm" disabled>
-            <option value="">Chọn quận/huyện</option>
-                <!-- Bình Dương Districts -->
-            <option value="tp-thu-dau-mot" data-province="binh-duong">TP. Thủ Dầu Một</option>
-            <option value="tp-di-an" data-province="binh-duong">TP. Dĩ An</option>
-            <option value="tp-thuan-an" data-province="binh-duong">TP. Thuận An</option>
-            <option value="ben-cat" data-province="binh-duong">Bến Cát</option>
-            <option value="tan-uyen" data-province="binh-duong">Tân Uyên</option>
-            <option value="bau-bang" data-province="binh-duong">Bàu Bàng</option>
-            <option value="phu-giao" data-province="binh-duong">Phú Giáo</option>
-            <option value="dau-tieng" data-province="binh-duong">Dầu Tiếng</option>
-            <option value="bac-tan-uyen" data-province="binh-duong">Bắc Tân Uyên</option>
-
-                <!-- TP.Hồ Chí Minh Districts -->
-            <option value="quan-1" data-province="tp-ho-chi-minh">Quận 1</option>
-            <option value="quan-2" data-province="tp-ho-chi-minh">Quận 2</option>
-            <option value="quan-3" data-province="tp-ho-chi-minh">Quận 3</option>
-            <option value="quan-4" data-province="tp-ho-chi-minh">Quận 4</option>
-            <option value="quan-5" data-province="tp-ho-chi-minh">Quận 5</option>
-            <option value="quan-6" data-province="tp-ho-chi-minh">Quận 6</option>
-            <option value="quan-7" data-province="tp-ho-chi-minh">Quận 7</option>
-            <option value="quan-8" data-province="tp-ho-chi-minh">Quận 8</option>
-            <option value="quan-9" data-province="tp-ho-chi-minh">Quận 9</option>
-            <option value="quan-10" data-province="tp-ho-chi-minh">Quận 10</option>
-            <option value="quan-11" data-province="tp-ho-chi-minh">Quận 11</option>
-            <option value="quan-12" data-province="tp-ho-chi-minh">Quận 12</option>
-            <option value="tp-thu-duc" data-province="tp-ho-chi-minh">TP. Thủ Đức</option>
-
-                <!-- Đồng Nai Districts -->
-            <option value="tp-bien-hoa" data-province="dong-nai">TP. Biên Hòa</option>
-            <option value="tp-long-khanh" data-province="dong-nai">TP. Long Khánh</option>
-            <option value="nhon-trach" data-province="dong-nai">Nhơn Trạch</option>
-            <option value="vinh-cuu" data-province="dong-nai">Vĩnh Cửu</option>
-            <option value="trang-bom" data-province="dong-nai">Trảng Bom</option>
-            <option value="thong-nhat" data-province="dong-nai">Thống Nhất</option>
-            <option value="cam-my" data-province="dong-nai">Cẩm Mỹ</option>
-            <option value="long-thanh" data-province="dong-nai">Long Thành</option>
-            <option value="xuan-loc" data-province="dong-nai">Xuân Lộc</option>
-            <option value="dinh-quan" data-province="dong-nai">Định Quán</option>
-            <option value="tan-phu" data-province="dong-nai">Tân Phú</option>
-
-                <!-- Long An Districts -->
-            <option value="tp-tan-an" data-province="long-an">TP. Tân An</option>
-            <option value="can-giuoc" data-province="long-an">Cần Giuộc</option>
-            <option value="can-duoc" data-province="long-an">Cần Đước</option>
-            <option value="chau-thanh" data-province="long-an">Châu Thành</option>
-            <option value="duc-hoa" data-province="long-an">Đức Hòa</option>
-            <option value="duc-hue" data-province="long-an">Đức Huệ</option>
-            <option value="moc-hoa" data-province="long-an">Mộc Hóa</option>
-            <option value="tan-hung" data-province="long-an">Tân Hưng</option>
-            <option value="tan-thanh" data-province="long-an">Tân Thạnh</option>
-            <option value="tan-tru" data-province="long-an">Tân Trụ</option>
-            <option value="thanh-hoa" data-province="long-an">Thạnh Hóa</option>
-            <option value="thu-thua" data-province="long-an">Thủ Thừa</option>
-            <option value="vinh-hung" data-province="long-an">Vĩnh Hưng</option>
-
-                <!-- Tây Ninh Districts -->
-            <option value="tp-tay-ninh" data-province="tay-ninh">TP. Tây Ninh</option>
-            <option value="ben-cau" data-province="tay-ninh">Bến Cầu</option>
-            <option value="chau-thanh-tn" data-province="tay-ninh">Châu Thành</option>
-            <option value="duong-minh-chau" data-province="tay-ninh">Dương Minh Châu</option>
-            <option value="go-dau" data-province="tay-ninh">Gò Dầu</option>
-            <option value="hoa-thanh" data-province="tay-ninh">Hòa Thành</option>
-            <option value="tan-bien" data-province="tay-ninh">Tân Biên</option>
-            <option value="tan-chau" data-province="tay-ninh">Tân Châu</option>
-            <option value="trang-bang" data-province="tay-ninh">Trảng Bàng</option>
-          </select>
-
-        </div>
-      </div>
-      <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
-          Loại bất động sản
-        </label>
-        <select class="select select-white w-full h-10 text-sm">
-          <option value="">Chọn loại BĐS</option>
-          <option value="can-ho">Căn hộ</option>
-          <option value="nha-pho">Nhà phố</option>
-          <option value="biet-thu">Biệt thự</option>
-          <option value="dat-nen">Đất nền</option>
-          <option value="shophouse">Shophouse</option>
-          <option value="nha-mat-tien">Nhà mặt tiền</option>
-        </select>
-      </div>
-      <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Hình
-          thức</label>
-        <select class="select select-white w-full h-10 text-sm">
-          <option value="">Chọn hình thức</option>
-          <option value="dang-ban">Đang bán</option>
-          <option value="cho-thue">Cho thuê</option>
-          <option value="sap-ban-giao">Sắp bàn giao</option>
-          <option value="sap-mo-ban">Sắp mở bán</option>
-        </select>
-      </div>
-      <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
-          Khoảng giá
-        </label>
-        <div class="grid grid-cols-2 gap-2">
-          <input type="number" x-model="priceMin" @input="validatePrice()"
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-            placeholder="Từ (VNĐ)">
-          <input type="number" x-model="priceMax" @input="validatePrice()"
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-            placeholder="Đến (VNĐ)">
-        </div>
-        <div x-show="priceError" class="text-red-500 text-sm mt-2">
-          <span x-text="priceError"></span>
-        </div>
-      </div>
-      <div>
-        <div class="flex flex-col space-y-1.5 pb-2 sm:pb-3 font-semibold text-xs sm:text-sm">
-          Diện tích (m²)
-        </div>
-        <div class="space-y-3 sm:space-y-4">
-          <!-- Custom slider container -->
-          <div class="relative" @mousedown="startDrag($event)" @touchstart="startDrag($event)"
-            @click="onSliderClick($event)" x-ref="areaSlider">
-
-          <!-- Slider track -->
-            <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
-            <!-- Active track (blue part) -->
-            <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
-              :style="`width: ${getAreaPercentage()}%`"></div>
-
-            <!-- Slider handle -->
-            <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
-              :style="`left: ${getAreaPercentage()}%`">
-              <!-- Handle circle -->
-              <div
-                class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
-                  @mousedown="startDrag($event)" @touchstart="startDrag($event)">
+          <!-- Bộ lọc đang áp dụng -->
+          <div
+            x-show="selectedProvince || selectedDistrict || selectedRealEstateType || selectedFormType || priceMin || priceMax || areaMin > 0 || selectedBedrooms || selectedBathrooms || selectedDirection || selectedAmenities.length > 0"
+            x-cloak>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Bộ
+              lọc đang áp dụng</label>
+            <div class="flex flex-wrap gap-2">
+              <!-- Province filter -->
+              <div x-show="selectedProvince"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="selectedProvince"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
               </div>
 
-              <!-- Value display tooltip -->
+              <!-- District filter -->
+              <div x-show="selectedDistrict"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="selectedDistrict"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Real Estate Type filter -->
+              <div x-show="selectedRealEstateType"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="selectedRealEstateType"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Form Type filter -->
+              <div x-show="selectedFormType"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="selectedFormType"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Price Range filter -->
+              <div x-show="priceMin || priceMax"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="getPriceRangeDisplay()"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Area Range filter -->
+              <div x-show="areaMin > 0"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="`Từ ${areaMin} m²`"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Bedrooms filter -->
+              <div x-show="selectedBedrooms"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="getBedroomsDisplayValue()"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Bathrooms filter -->
+              <div x-show="selectedBathrooms"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="getBathroomsDisplayValue()"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Direction filter -->
+              <div x-show="selectedDirection"
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="getDirectionDisplayValue()"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+
+              <!-- Amenities filters -->
+              <template x-for="amenitySlug in selectedAmenities" :key="amenitySlug">
+                <div
+                  class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                  <span x-text="getAmenityDisplayValue(amenitySlug)"></span>
+                  <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Tỉnh/Thành phố -->
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+                for="province-mobile">Tỉnh/Thành phố</label>
+              <select id="province-mobile" class="select select-white w-full h-10 text-sm">
+                <option value="">Chọn tỉnh/thành phố</option>
+                <option value="binh-duong">Bình Dương</option>
+                <option value="tp-ho-chi-minh">TP.Hồ Chí Minh</option>
+                <option value="dong-nai">Đồng Nai</option>
+                <option value="long-an">Long An</option>
+                <option value="tay-ninh">Tây Ninh</option>
+              </select>
+            </div>
+
+            <!-- Quận/Huyện -->
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+                for="district-mobile">Quận/Huyện</label>
+              <select id="district-mobile" class="select select-white w-full h-10 text-sm" disabled>
+                <option value="">Chọn quận/huyện</option>
+                <!-- Bình Dương Districts -->
+                <option value="tp-thu-dau-mot" data-province="binh-duong">TP. Thủ Dầu Một</option>
+                <option value="tp-di-an" data-province="binh-duong">TP. Dĩ An</option>
+                <option value="tp-thuan-an" data-province="binh-duong">TP. Thuận An</option>
+                <option value="ben-cat" data-province="binh-duong">Bến Cát</option>
+                <option value="tan-uyen" data-province="binh-duong">Tân Uyên</option>
+                <option value="bau-bang" data-province="binh-duong">Bàu Bàng</option>
+                <option value="phu-giao" data-province="binh-duong">Phú Giáo</option>
+                <option value="dau-tieng" data-province="binh-duong">Dầu Tiếng</option>
+                <option value="bac-tan-uyen" data-province="binh-duong">Bắc Tân Uyên</option>
+
+                <!-- TP.Hồ Chí Minh Districts -->
+                <option value="quan-1" data-province="tp-ho-chi-minh">Quận 1</option>
+                <option value="quan-2" data-province="tp-ho-chi-minh">Quận 2</option>
+                <option value="quan-3" data-province="tp-ho-chi-minh">Quận 3</option>
+                <option value="quan-4" data-province="tp-ho-chi-minh">Quận 4</option>
+                <option value="quan-5" data-province="tp-ho-chi-minh">Quận 5</option>
+                <option value="quan-6" data-province="tp-ho-chi-minh">Quận 6</option>
+                <option value="quan-7" data-province="tp-ho-chi-minh">Quận 7</option>
+                <option value="quan-8" data-province="tp-ho-chi-minh">Quận 8</option>
+                <option value="quan-9" data-province="tp-ho-chi-minh">Quận 9</option>
+                <option value="quan-10" data-province="tp-ho-chi-minh">Quận 10</option>
+                <option value="quan-11" data-province="tp-ho-chi-minh">Quận 11</option>
+                <option value="quan-12" data-province="tp-ho-chi-minh">Quận 12</option>
+                <option value="tp-thu-duc" data-province="tp-ho-chi-minh">TP. Thủ Đức</option>
+
+                <!-- Đồng Nai Districts -->
+                <option value="tp-bien-hoa" data-province="dong-nai">TP. Biên Hòa</option>
+                <option value="tp-long-khanh" data-province="dong-nai">TP. Long Khánh</option>
+                <option value="nhon-trach" data-province="dong-nai">Nhơn Trạch</option>
+                <option value="vinh-cuu" data-province="dong-nai">Vĩnh Cửu</option>
+                <option value="trang-bom" data-province="dong-nai">Trảng Bom</option>
+                <option value="thong-nhat" data-province="dong-nai">Thống Nhất</option>
+                <option value="cam-my" data-province="dong-nai">Cẩm Mỹ</option>
+                <option value="long-thanh" data-province="dong-nai">Long Thành</option>
+                <option value="xuan-loc" data-province="dong-nai">Xuân Lộc</option>
+                <option value="dinh-quan" data-province="dong-nai">Định Quán</option>
+                <option value="tan-phu" data-province="dong-nai">Tân Phú</option>
+
+                <!-- Long An Districts -->
+                <option value="tp-tan-an" data-province="long-an">TP. Tân An</option>
+                <option value="can-giuoc" data-province="long-an">Cần Giuộc</option>
+                <option value="can-duoc" data-province="long-an">Cần Đước</option>
+                <option value="chau-thanh" data-province="long-an">Châu Thành</option>
+                <option value="duc-hoa" data-province="long-an">Đức Hòa</option>
+                <option value="duc-hue" data-province="long-an">Đức Huệ</option>
+                <option value="moc-hoa" data-province="long-an">Mộc Hóa</option>
+                <option value="tan-hung" data-province="long-an">Tân Hưng</option>
+                <option value="tan-thanh" data-province="long-an">Tân Thạnh</option>
+                <option value="tan-tru" data-province="long-an">Tân Trụ</option>
+                <option value="thanh-hoa" data-province="long-an">Thạnh Hóa</option>
+                <option value="thu-thua" data-province="long-an">Thủ Thừa</option>
+                <option value="vinh-hung" data-province="long-an">Vĩnh Hưng</option>
+
+                <!-- Tây Ninh Districts -->
+                <option value="tp-tay-ninh" data-province="tay-ninh">TP. Tây Ninh</option>
+                <option value="ben-cau" data-province="tay-ninh">Bến Cầu</option>
+                <option value="chau-thanh-tn" data-province="tay-ninh">Châu Thành</option>
+                <option value="duong-minh-chau" data-province="tay-ninh">Dương Minh Châu</option>
+                <option value="go-dau" data-province="tay-ninh">Gò Dầu</option>
+                <option value="hoa-thanh" data-province="tay-ninh">Hòa Thành</option>
+                <option value="tan-bien" data-province="tay-ninh">Tân Biên</option>
+                <option value="tan-chau" data-province="tay-ninh">Tân Châu</option>
+                <option value="trang-bang" data-province="tay-ninh">Trảng Bàng</option>
+              </select>
+
+            </div>
+          </div>
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+              Loại bất động sản
+            </label>
+            <select class="select select-white w-full h-10 text-sm">
+              <option value="">Chọn loại BĐS</option>
+              <option value="can-ho">Căn hộ</option>
+              <option value="nha-pho">Nhà phố</option>
+              <option value="biet-thu">Biệt thự</option>
+              <option value="dat-nen">Đất nền</option>
+              <option value="shophouse">Shophouse</option>
+              <option value="nha-mat-tien">Nhà mặt tiền</option>
+            </select>
+          </div>
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Hình
+              thức</label>
+            <select class="select select-white w-full h-10 text-sm">
+              <option value="">Chọn hình thức</option>
+              <option value="dang-ban">Đang bán</option>
+              <option value="cho-thue">Cho thuê</option>
+              <option value="sap-ban-giao">Sắp bàn giao</option>
+              <option value="sap-mo-ban">Sắp mở bán</option>
+            </select>
+          </div>
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+              Khoảng giá
+            </label>
+            <div class="grid grid-cols-2 gap-2">
+              <input type="number" x-model="priceMin" @input="validatePrice()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                placeholder="Từ (VNĐ)">
+              <input type="number" x-model="priceMax" @input="validatePrice()"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                placeholder="Đến (VNĐ)">
+            </div>
+            <div x-show="priceError" class="text-red-500 text-sm mt-2">
+              <span x-text="priceError"></span>
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col space-y-1.5 pb-2 sm:pb-3 font-semibold text-xs sm:text-sm">
+              Diện tích (m²)
+            </div>
+            <div class="space-y-3 sm:space-y-4">
+              <!-- Custom slider container -->
+              <div class="relative" @mousedown="startDrag($event)" @touchstart="startDrag($event)"
+                @click="onSliderClick($event)" x-ref="areaSliderMobile">
+
+                <!-- Slider track -->
+                <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
+                  <!-- Active track (blue part) -->
+                  <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+                    :style="`width: ${getAreaPercentage()}%`"></div>
+
+                  <!-- Slider handle -->
+                  <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+                    :style="`left: ${getAreaPercentage()}%`">
+                    <!-- Handle circle -->
+                    <div
+                      class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                      @mousedown="startDrag($event)" @touchstart="startDrag($event)">
+                    </div>
+
+                    <!-- Value display tooltip -->
+                    <div
+                      class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                      x-show="isDragging || areaMin > 0" x-text="getAreaDisplayValue()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Min/Max labels -->
+              <div class="flex justify-between text-xs sm:text-sm text-gray-500">
+                <span x-text="areaMin > 0 ? areaMin + ' m²' : '0 m²'"></span>
+                <span>500 m²</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số phòng
+              ngủ (tối thiểu)</label>
+            <select class="select select-white w-full h-10 text-sm">
+              <option value="">Chọn số phòng ngủ</option>
+              <option value="1">1+ phòng</option>
+              <option value="2">2+ phòng</option>
+              <option value="3">3+ phòng</option>
+              <option value="4">4+ phòng</option>
+              <option value="5">5+ phòng</option>
+            </select>
+          </div>
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số WC (tối
+              thiểu)</label>
+            <select class="select select-white w-full h-10 text-sm">
+              <option value="">Chọn số WC</option>
+              <option value="1">1+ WC</option>
+              <option value="2">2+ WC</option>
+              <option value="3">3+ WC</option>
+              <option value="4">4+ WC</option>
+            </select>
+          </div>
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+              Hướng nhà
+            </label>
+            <select class="select select-white w-full h-10 text-sm">
+              <option value="">Chọn hướng</option>
+              <option value="dong">Đông</option>
+              <option value="tay">Tây</option>
+              <option value="nam">Nam</option>
+              <option value="bac">Bắc</option>
+              <option value="dong-nam">Đông Nam</option>
+              <option value="dong-bac">Đông Bắc</option>
+              <option value="tay-nam">Tây Nam</option>
+              <option value="tay-bac">Tây Bắc</option>
+            </select>
+          </div>
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+              Tiện ích
+            </label>
+            <div class="space-y-2 max-h-48 overflow-y-auto">
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Hồ bơi-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Hồ bơi-mobile">Hồ bơi</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Gym-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Gym-mobile">Gym</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Công viên-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Công viên-mobile">Công viên</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Siêu thị-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Siêu thị-mobile">Siêu thị</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Trường học-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Trường học-mobile">Trường học</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Bệnh viện-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Bệnh viện-mobile">Bệnh viện</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="An ninh 24/7-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="An ninh 24/7-mobile">An ninh 24/7</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Thang máy-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Thang máy-mobile">Thang máy</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Hầm để xe-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Hầm để xe-mobile">Hầm để xe</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Sân vườn-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Sân vườn-mobile">Sân vườn</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Gần KCN-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Gần KCN-mobile">Gần KCN</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Mặt tiền rộng-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Mặt tiền rộng-mobile">Mặt tiền rộng</label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  id="Giao thông thuận lợi-mobile">
+                <label class="font-medium text-sm cursor-pointer" for="Giao thông thuận lợi-mobile">Giao thông thuận
+                  lợi</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop Filter Content -->
+  <div class="hidden lg:block w-80 flex-shrink-0">
+    <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 sticky top-6">
+      <div class="space-y-4 sm:space-y-6" x-data="searchRealEstateComponent">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i data-lucide="filter" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600"></i>
+            <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Bộ lọc tìm kiếm</h3>
+          </div>
+          <button @click="clearAllFilters()"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent rounded-md px-3 text-gray-500 hover:text-red-500 text-xs sm:text-sm h-6 sm:h-auto">Xóa
+            tất cả</button>
+        </div>
+        <div class="text-xs sm:text-sm text-gray-600">Tìm thấy <span class="font-semibold text-blue-600">50</span>
+          kết quả</div>
+
+        <!-- Bộ lọc đang áp dụng -->
+        <div
+          x-show="selectedProvince || selectedDistrict || selectedRealEstateType || selectedFormType || priceMin || priceMax || areaMin > 0 || selectedBedrooms || selectedBathrooms || selectedDirection || selectedAmenities.length > 0"
+          x-cloak>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-2 block">Bộ
+            lọc đang áp dụng</label>
+          <div class="flex flex-wrap gap-2">
+            <!-- Province filter -->
+            <div x-show="selectedProvince"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="selectedProvince"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- District filter -->
+            <div x-show="selectedDistrict"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="selectedDistrict"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Real Estate Type filter -->
+            <div x-show="selectedRealEstateType"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="selectedRealEstateType"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Form Type filter -->
+            <div x-show="selectedFormType"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="selectedFormType"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Price Range filter -->
+            <div x-show="priceMin || priceMax"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="getPriceRangeDisplay()"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Area Range filter -->
+            <div x-show="areaMin > 0"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="`Từ ${areaMin} m²`"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Bedrooms filter -->
+            <div x-show="selectedBedrooms"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="getBedroomsDisplayValue()"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Bathrooms filter -->
+            <div x-show="selectedBathrooms"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="getBathroomsDisplayValue()"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Direction filter -->
+            <div x-show="selectedDirection"
+              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+              <span x-text="getDirectionDisplayValue()"></span>
+              <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+            </div>
+
+            <!-- Amenities filters -->
+            <template x-for="amenitySlug in selectedAmenities" :key="amenitySlug">
               <div
-                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
-                x-show="isDragging || areaMin > 0" x-text="getAreaDisplayValue()">
+                class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-1">
+                <span x-text="getAmenityDisplayValue(amenitySlug)"></span>
+                <i data-lucide="x" class="w-3 h-3 cursor-pointer"></i>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Tỉnh/Thành phố -->
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+              for="province-desktop">Tỉnh/Thành phố</label>
+            <select id="province-desktop" class="select select-white w-full h-10 text-sm">
+              <option value="">Chọn tỉnh/thành phố</option>
+              <option value="binh-duong">Bình Dương</option>
+              <option value="tp-ho-chi-minh">TP.Hồ Chí Minh</option>
+              <option value="dong-nai">Đồng Nai</option>
+              <option value="long-an">Long An</option>
+              <option value="tay-ninh">Tây Ninh</option>
+            </select>
+          </div>
+
+          <!-- Quận/Huyện -->
+          <div>
+            <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+              for="district-desktop">Quận/Huyện</label>
+            <select id="district-desktop" class="select select-white w-full h-10 text-sm" disabled>
+              <option value="">Chọn quận/huyện</option>
+              <!-- Bình Dương Districts -->
+              <option value="tp-thu-dau-mot" data-province="binh-duong">TP. Thủ Dầu Một</option>
+              <option value="tp-di-an" data-province="binh-duong">TP. Dĩ An</option>
+              <option value="tp-thuan-an" data-province="binh-duong">TP. Thuận An</option>
+              <option value="ben-cat" data-province="binh-duong">Bến Cát</option>
+              <option value="tan-uyen" data-province="binh-duong">Tân Uyên</option>
+              <option value="bau-bang" data-province="binh-duong">Bàu Bàng</option>
+              <option value="phu-giao" data-province="binh-duong">Phú Giáo</option>
+              <option value="dau-tieng" data-province="binh-duong">Dầu Tiếng</option>
+              <option value="bac-tan-uyen" data-province="binh-duong">Bắc Tân Uyên</option>
+
+              <!-- TP.Hồ Chí Minh Districts -->
+              <option value="quan-1" data-province="tp-ho-chi-minh">Quận 1</option>
+              <option value="quan-2" data-province="tp-ho-chi-minh">Quận 2</option>
+              <option value="quan-3" data-province="tp-ho-chi-minh">Quận 3</option>
+              <option value="quan-4" data-province="tp-ho-chi-minh">Quận 4</option>
+              <option value="quan-5" data-province="tp-ho-chi-minh">Quận 5</option>
+              <option value="quan-6" data-province="tp-ho-chi-minh">Quận 6</option>
+              <option value="quan-7" data-province="tp-ho-chi-minh">Quận 7</option>
+              <option value="quan-8" data-province="tp-ho-chi-minh">Quận 8</option>
+              <option value="quan-9" data-province="tp-ho-chi-minh">Quận 9</option>
+              <option value="quan-10" data-province="tp-ho-chi-minh">Quận 10</option>
+              <option value="quan-11" data-province="tp-ho-chi-minh">Quận 11</option>
+              <option value="quan-12" data-province="tp-ho-chi-minh">Quận 12</option>
+              <option value="tp-thu-duc" data-province="tp-ho-chi-minh">TP. Thủ Đức</option>
+
+              <!-- Đồng Nai Districts -->
+              <option value="tp-bien-hoa" data-province="dong-nai">TP. Biên Hòa</option>
+              <option value="tp-long-khanh" data-province="dong-nai">TP. Long Khánh</option>
+              <option value="nhon-trach" data-province="dong-nai">Nhơn Trạch</option>
+              <option value="vinh-cuu" data-province="dong-nai">Vĩnh Cửu</option>
+              <option value="trang-bom" data-province="dong-nai">Trảng Bom</option>
+              <option value="thong-nhat" data-province="dong-nai">Thống Nhất</option>
+              <option value="cam-my" data-province="dong-nai">Cẩm Mỹ</option>
+              <option value="long-thanh" data-province="dong-nai">Long Thành</option>
+              <option value="xuan-loc" data-province="dong-nai">Xuân Lộc</option>
+              <option value="dinh-quan" data-province="dong-nai">Định Quán</option>
+              <option value="tan-phu" data-province="dong-nai">Tân Phú</option>
+
+              <!-- Long An Districts -->
+              <option value="tp-tan-an" data-province="long-an">TP. Tân An</option>
+              <option value="can-giuoc" data-province="long-an">Cần Giuộc</option>
+              <option value="can-duoc" data-province="long-an">Cần Đước</option>
+              <option value="chau-thanh" data-province="long-an">Châu Thành</option>
+              <option value="duc-hoa" data-province="long-an">Đức Hòa</option>
+              <option value="duc-hue" data-province="long-an">Đức Huệ</option>
+              <option value="moc-hoa" data-province="long-an">Mộc Hóa</option>
+              <option value="tan-hung" data-province="long-an">Tân Hưng</option>
+              <option value="tan-thanh" data-province="long-an">Tân Thạnh</option>
+              <option value="tan-tru" data-province="long-an">Tân Trụ</option>
+              <option value="thanh-hoa" data-province="long-an">Thạnh Hóa</option>
+              <option value="thu-thua" data-province="long-an">Thủ Thừa</option>
+              <option value="vinh-hung" data-province="long-an">Vĩnh Hưng</option>
+
+              <!-- Tây Ninh Districts -->
+              <option value="tp-tay-ninh" data-province="tay-ninh">TP. Tây Ninh</option>
+              <option value="ben-cau" data-province="tay-ninh">Bến Cầu</option>
+              <option value="chau-thanh-tn" data-province="tay-ninh">Châu Thành</option>
+              <option value="duong-minh-chau" data-province="tay-ninh">Dương Minh Châu</option>
+              <option value="go-dau" data-province="tay-ninh">Gò Dầu</option>
+              <option value="hoa-thanh" data-province="tay-ninh">Hòa Thành</option>
+              <option value="tan-bien" data-province="tay-ninh">Tân Biên</option>
+              <option value="tan-chau" data-province="tay-ninh">Tân Châu</option>
+              <option value="trang-bang" data-province="tay-ninh">Trảng Bàng</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Loại bất động sản
+          </label>
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Chọn loại BĐS</option>
+            <option value="can-ho">Căn hộ</option>
+            <option value="nha-pho">Nhà phố</option>
+            <option value="biet-thu">Biệt thự</option>
+            <option value="dat-nen">Đất nền</option>
+            <option value="shophouse">Shophouse</option>
+            <option value="nha-mat-tien">Nhà mặt tiền</option>
+          </select>
+        </div>
+        <div>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Hình
+            thức</label>
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Chọn hình thức</option>
+            <option value="dang-ban">Đang bán</option>
+            <option value="cho-thue">Cho thuê</option>
+            <option value="sap-ban-giao">Sắp bàn giao</option>
+            <option value="sap-mo-ban">Sắp mở bán</option>
+          </select>
+        </div>
+        <div>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+            Khoảng giá
+          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <input type="number" x-model="priceMin" @input="validatePrice()"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+              placeholder="Từ (VNĐ)">
+            <input type="number" x-model="priceMax" @input="validatePrice()"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+              placeholder="Đến (VNĐ)">
+          </div>
+          <div x-show="priceError" class="text-red-500 text-sm mt-2">
+            <span x-text="priceError"></span>
+          </div>
+        </div>
+        <div>
+          <div class="flex flex-col space-y-1.5 pb-2 sm:pb-3 font-semibold text-xs sm:text-sm">
+            Diện tích (m²)
+          </div>
+          <div class="space-y-3 sm:space-y-4">
+            <!-- Custom slider container -->
+            <div class="relative" @mousedown="startDrag($event)" @touchstart="startDrag($event)"
+              @click="onSliderClick($event)" x-ref="areaSlider">
+
+              <!-- Slider track -->
+              <div class="relative h-2 w-full bg-gray-200 rounded-full cursor-pointer">
+                <!-- Active track (blue part) -->
+                <div class="absolute h-full bg-blue-500 rounded-full transition-all duration-150"
+                  :style="`width: ${getAreaPercentage()}%`"></div>
+
+                <!-- Slider handle -->
+                <div class="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-150"
+                  :style="`left: ${getAreaPercentage()}%`">
+                  <!-- Handle circle -->
+                  <div
+                    class="h-5 w-5 rounded-full border-2 border-blue-500 bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                    @mousedown="startDrag($event)" @touchstart="startDrag($event)">
+                  </div>
+
+                  <!-- Value display tooltip -->
+                  <div
+                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap z-10"
+                    x-show="isDragging || areaMin > 0" x-text="getAreaDisplayValue()">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Min/Max labels -->
-          <div class="flex justify-between text-xs sm:text-sm text-gray-500">
-            <span x-text="areaMin > 0 ? areaMin + ' m²' : '0 m²'"></span>
-            <span>500 m²</span>
+            <!-- Min/Max labels -->
+            <div class="flex justify-between text-xs sm:text-sm text-gray-500">
+              <span x-text="areaMin > 0 ? areaMin + ' m²' : '0 m²'"></span>
+              <span>500 m²</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số phòng
-          ngủ (tối thiểu)</label>
-        <select class="select select-white w-full h-10 text-sm">
-          <option value="">Chọn số phòng ngủ</option>
-          <option value="1">1+ phòng</option>
-          <option value="2">2+ phòng</option>
-          <option value="3">3+ phòng</option>
-          <option value="4">4+ phòng</option>
-          <option value="5">5+ phòng</option>
-        </select>
-      </div>
-      <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số WC (tối
-          thiểu)</label>
-        <select class="select select-white w-full h-10 text-sm">
-          <option value="">Chọn số WC</option>
-          <option value="1">1+ WC</option>
-          <option value="2">2+ WC</option>
-          <option value="3">3+ WC</option>
-          <option value="4">4+ WC</option>
-        </select>
-      </div>
-      <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
-          Hướng nhà
-        </label>
-        <select class="select select-white w-full h-10 text-sm">
-          <option value="">Chọn hướng</option>
-          <option value="dong">Đông</option>
-          <option value="tay">Tây</option>
-          <option value="nam">Nam</option>
-          <option value="bac">Bắc</option>
-          <option value="dong-nam">Đông Nam</option>
-          <option value="dong-bac">Đông Bắc</option>
-          <option value="tay-nam">Tây Nam</option>
-          <option value="tay-bac">Tây Bắc</option>
-        </select>
-      </div>
-      <div>
-        <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
-          Tiện ích
-        </label>
-        <div class="space-y-2 max-h-48 overflow-y-auto">
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Hồ bơi">
-            <label class="font-medium text-sm cursor-pointer" for="Hồ bơi">Hồ bơi</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Gym">
-            <label class="font-medium text-sm cursor-pointer" for="Gym">Gym</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Công viên">
-            <label class="font-medium text-sm cursor-pointer" for="Công viên">Công viên</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Siêu thị">
-            <label class="font-medium text-sm cursor-pointer" for="Siêu thị">Siêu thị</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Trường học">
-            <label class="font-medium text-sm cursor-pointer" for="Trường học">Trường học</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Bệnh viện">
-            <label class="font-medium text-sm cursor-pointer" for="Bệnh viện">Bệnh viện</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="An ninh 24/7">
-            <label class="font-medium text-sm cursor-pointer" for="An ninh 24/7">An ninh 24/7</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Thang máy">
-            <label class="font-medium text-sm cursor-pointer" for="Thang máy">Thang máy</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Hầm để xe">
-            <label class="font-medium text-sm cursor-pointer" for="Hầm để xe">Hầm để xe</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Sân vườn">
-            <label class="font-medium text-sm cursor-pointer" for="Sân vườn">Sân vườn</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Gần KCN">
-            <label class="font-medium text-sm cursor-pointer" for="Gần KCN">Gần KCN</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Mặt tiền rộng">
-            <label class="font-medium text-sm cursor-pointer" for="Mặt tiền rộng">Mặt tiền rộng</label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" id="Giao thông thuận lợi">
-            <label class="font-medium text-sm cursor-pointer" for="Giao thông thuận lợi">Giao thông thuận
-              lợi</label>
+        <div>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số phòng
+            ngủ (tối thiểu)</label>
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Chọn số phòng ngủ</option>
+            <option value="1">1+ phòng</option>
+            <option value="2">2+ phòng</option>
+            <option value="3">3+ phòng</option>
+            <option value="4">4+ phòng</option>
+            <option value="5">5+ phòng</option>
+          </select>
+        </div>
+        <div>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">Số WC (tối
+            thiểu)</label>
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Chọn số WC</option>
+            <option value="1">1+ WC</option>
+            <option value="2">2+ WC</option>
+            <option value="3">3+ WC</option>
+            <option value="4">4+ WC</option>
+          </select>
+        </div>
+        <div>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium">
+            Hướng nhà
+          </label>
+          <select class="select select-white w-full h-10 text-sm">
+            <option value="">Chọn hướng</option>
+            <option value="dong">Đông</option>
+            <option value="tay">Tây</option>
+            <option value="nam">Nam</option>
+            <option value="bac">Bắc</option>
+            <option value="dong-nam">Đông Nam</option>
+            <option value="dong-bac">Đông Bắc</option>
+            <option value="tay-nam">Tây Nam</option>
+            <option value="tay-bac">Tây Bắc</option>
+          </select>
+        </div>
+        <div>
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium mb-3 block">
+            Tiện ích
+          </label>
+          <div class="space-y-2 max-h-48 overflow-y-auto">
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Hồ bơi-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Hồ bơi-desktop">Hồ bơi</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Gym-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Gym-desktop">Gym</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Công viên-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Công viên-desktop">Công viên</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Siêu thị-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Siêu thị-desktop">Siêu thị</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Trường học-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Trường học-desktop">Trường học</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Bệnh viện-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Bệnh viện-desktop">Bệnh viện</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="An ninh 24/7-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="An ninh 24/7-desktop">An ninh 24/7</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Thang máy-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Thang máy-desktop">Thang máy</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Hầm để xe-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Hầm để xe-desktop">Hầm để xe</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Sân vườn-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Sân vườn-desktop">Sân vườn</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Gần KCN-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Gần KCN-desktop">Gần KCN</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Mặt tiền rộng-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Mặt tiền rộng-desktop">Mặt tiền rộng</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                id="Giao thông thuận lợi-desktop">
+              <label class="font-medium text-sm cursor-pointer" for="Giao thông thuận lợi-desktop">Giao thông thuận
+                lợi</label>
+            </div>
           </div>
         </div>
       </div>
