@@ -741,7 +741,7 @@
 
 /* Real Estate Grid Card Styles */
 .search__real-estate-grid-card {
-  @apply rounded-lg border shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer;
+  @apply rounded-lg border shadow-sm hover:shadow-lg transition-all duration-300;
 }
 
 .search__real-estate-grid-card__container {
