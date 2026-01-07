@@ -116,6 +116,23 @@ document.addEventListener("alpine:init", () => {
         },
     }));
 
+    // Alpine.js component for real estates list toggle
+    Alpine.data("realEstatesToggle", () => ({
+        showAll: false,
+
+        toggleRealEstates() {
+            this.showAll = !this.showAll;
+        },
+
+        getButtonText() {
+            return this.showAll ? "Thu gọn" : "Xem tất cả bất động sản";
+        },
+
+        getButtonIcon() {
+            return this.showAll ? "chevron-up" : "chevron-down";
+        }
+    }));
+
     // Alpine.js component for services list toggle
     Alpine.data("servicesToggle", () => ({
         showAll: false,

@@ -1,0 +1,598 @@
+<section id="real_estates" class="scroll-mt-32">
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl font-bold">Bất động sản của công ty</h3>
+        <div
+          class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 badge-primary bg-blue-100 text-blue-700">
+          15 bất động sản
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4 mb-6">
+        <div class="flex-1">
+          <div class="relative">
+            <i data-lucide="search"
+              class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10"
+              placeholder="Tìm kiếm bất động sản..." value="">
+          </div>
+        </div>
+        <select class="select select-white w-[250px]">
+          <option value="">Tất cả loại hình</option>
+          <option>Căn hộ</option>
+          <option>Nhà phố</option>
+          <option>Biệt thự</option>
+          <option>Đất nền</option>
+          <option>Shophouse</option>
+          <option>Nhà mặt tiền</option>
+          <option>Chung cư</option>
+          <option>Văn phòng</option>
+        </select>
+      </div>
+      <div x-data="realEstatesToggle()">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                alt="Căn hộ cao cấp Midtown Sakura Park" class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Căn hộ</div>
+                <div class="badge badge-hot">Hot</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Căn hộ cao cấp Midtown Sakura Park</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Phú Hữu, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">2.8 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">75m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  2 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  2 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  21/12/2024
+                </span>
+                <a href="/bat-dong-san/1"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Nhà phố 3 tầng hiện đại"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Nhà phố</div>
+                <div class="badge badge-featured">Nổi bật</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Nhà phố 3 tầng hiện đại</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Phú Mỹ, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">5.5 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">120m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  4 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  3 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  18/12/2024
+                </span>
+                <a href="/bat-dong-san/2"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                alt="Biệt thự đơn lập Lavilla Green City" class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Biệt thự</div>
+                <div class="badge badge-hot">Hot</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Biệt thự đơn lập Lavilla Green City</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Tân Uyên, Bình Dương</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">12.5 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">250m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  5 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  4 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  15/12/2024
+                </span>
+                <a href="/bat-dong-san/3"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Đất nền dự án An Phú"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Đất nền</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Đất nền dự án An Phú</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">An Phú, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">1.2 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">100m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="text-gray-400">Đất nền</span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  12/12/2024
+                </span>
+                <a href="/bat-dong-san/4"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                alt="Shophouse mặt tiền đường lớn" class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Shophouse</div>
+                <div class="badge badge-featured">Nổi bật</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Shophouse mặt tiền đường lớn</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Đường 30/4, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">8.5 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">150m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  3 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  2 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  10/12/2024
+                </span>
+                <a href="/bat-dong-san/5"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Căn hộ studio tiện nghi"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Căn hộ</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Căn hộ studio tiện nghi</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Bình An, TP. Dĩ An</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">1.8 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">45m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  1 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  1 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  08/12/2024
+                </span>
+                <a href="/bat-dong-san/6"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Nhà mặt tiền kinh doanh"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Nhà mặt tiền</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Nhà mặt tiền kinh doanh</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Phú Lợi, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">6.2 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">110m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  3 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  2 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  05/12/2024
+                </span>
+                <a href="/bat-dong-san/7"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300"
+                alt="Chung cư cao cấp The Grand" class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Chung cư</div>
+                <div class="badge badge-hot">Hot</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Chung cư cao cấp The Grand</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Tân Định, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">3.5 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">85m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  2 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  2 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  03/12/2024
+                </span>
+                <a href="/bat-dong-san/8"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Văn phòng cho thuê"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Văn phòng</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Văn phòng cho thuê</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Phú Cường, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">15 triệu/tháng</span>
+                <span class="text-sm text-gray-500">60m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="text-gray-400">Văn phòng</span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  01/12/2024
+                </span>
+                <a href="/bat-dong-san/9"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Biệt thự song lập"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Biệt thự</div>
+                <div class="badge badge-featured">Nổi bật</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Biệt thự song lập</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Bến Cát, Bình Dương</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">9.8 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">200m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  4 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  3 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  28/11/2024
+                </span>
+                <a href="/bat-dong-san/10"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Căn hộ 2 phòng ngủ"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Căn hộ</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Căn hộ 2 phòng ngủ</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Hiệp Thành, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">2.2 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">65m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  2 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  1 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  25/11/2024
+                </span>
+                <a href="/bat-dong-san/11"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Nhà phố 4 tầng"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Nhà phố</div>
+                <div class="badge badge-hot">Hot</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Nhà phố 4 tầng</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Chánh Nghĩa, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">7.5 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">140m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  5 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  4 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  22/11/2024
+                </span>
+                <a href="/bat-dong-san/12"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Đất nền dự án Sunshine"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Đất nền</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Đất nền dự án Sunshine</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Dầu Tiếng, Bình Dương</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">950 triệu VNĐ</span>
+                <span class="text-sm text-gray-500">80m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="text-gray-400">Đất nền</span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  20/11/2024
+                </span>
+                <a href="/bat-dong-san/13"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Shophouse 2 tầng"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Shophouse</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Shophouse 2 tầng</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Tân Bình, TP. Dĩ An</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">6.8 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">130m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  3 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  2 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  18/11/2024
+                </span>
+                <a href="/bat-dong-san/14"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm card-hover flex flex-col"
+            x-show="showAll">
+            <div class="p-4 flex flex-col flex-1">
+              <img src="./../../../assets/images/placeholder.svg?height=200&amp;width=300" alt="Căn hộ penthouse"
+                class="w-full h-32 object-cover rounded-lg mb-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Căn hộ</div>
+                <div class="badge badge-featured">Nổi bật</div>
+              </div>
+              <h4 class="font-semibold mb-2 line-clamp-2 h-10">Căn hộ penthouse</h4>
+              <p class="text-sm text-gray-600 mb-2 flex items-center min-h-[2.5rem]">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 flex-shrink-0"></i>
+                <span class="line-clamp-2">Phú Hữu, TP. Thủ Dầu Một</span>
+              </p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-blue-600">4.5 tỷ VNĐ</span>
+                <span class="text-sm text-gray-500">95m²</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                <span class="flex items-center">
+                  <i data-lucide="bed" class="w-3 h-3 mr-1"></i>
+                  3 PN
+                </span>
+                <span class="flex items-center">
+                  <i data-lucide="bath" class="w-3 h-3 mr-1"></i>
+                  2 WC
+                </span>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-xs text-gray-500">
+                  <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                  15/11/2024
+                </span>
+                <a href="/bat-dong-san/15"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 btn-primary">Xem
+                    chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-6">
+          <button @click="toggleRealEstates()"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 transition-all duration-300">
+            <span x-text="getButtonText()">Xem tất cả bất động sản</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 ml-1" x-show="!showAll"></i>
+            <i data-lucide="chevron-up" class="w-4 h-4 ml-1" x-show="showAll"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
