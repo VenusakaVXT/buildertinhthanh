@@ -2,99 +2,255 @@
 <html lang="vi">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bình Dương - Tin Tức & Tiện Ích</title>
-	<meta name="description"
-		content="Cổng thông tin tổng hợp về tỉnh Bình Dương, cung cấp tin tức, bất động sản, việc làm và các tiện ích thiết yếu.">
-	<script type="text/javascript">
-		const API_URL = "https://panel.dongnai.net/api/v2/";
-	</script>
-	<!-- all css -->
-	<link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Không Tìm Thấy Trang | Bình Dương</title>
+  <meta name="description"
+    content="Trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển. Vui lòng kiểm tra lại đường dẫn hoặc quay về trang chủ.">
+  <script type="text/javascript">
+    const API_URL = "https://panel.dongnai.net/api/v2/";
+  </script>
+  <!-- all css -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
-	<!-- 1. CAC THU VIEN CAN SU DUNG -->
-	<!-- Notification Library -->
-	<script src="assets/js/libs/notification.js" defer></script>
-	<!-- Initialize FastNotice -->
-	<script>
-		// Khởi tạo FastNotice với cấu hình tùy chỉnh sau khi DOM sẵn sàng
-		document.addEventListener('DOMContentLoaded', function () {
-			window.fastNotice = new FastNotice({
-				position: 'top-center',    // Vị trí mặc định
-				duration: 3000,            // Thời gian hiển thị (ms)
-				maxNotifications: 3        // Số notification tối đa
-			});
-		});
-	</script>
-	<!-- Lucide Icons - Custom Build -->
-	<script src="assets/js/lucide-custom.min.js" defer></script>
-	<!-- jModal manager -->
-	<script src="assets/js/libs/jmodal.1.1.0.js" defer></script>
-	<!-- Load BlazeSlider Library -->
-	<script src="assets/js/libs/blaze-slider.js" defer></script>
-	<!-- Libs Tabs JS Thuần -->
-	<script src="assets/js/libs/tabs.js" defer></script>
-	<!-- Image Fallback Utility -->
-	<script src="assets/js/libs/image-fallback.js" defer></script>
+  <!-- 1. CAC THU VIEN CAN SU DUNG -->
+  <!-- Notification Library -->
+  <script src="assets/js/libs/notification.js" defer></script>
+  <!-- Initialize FastNotice -->
+  <script>
+    // Khởi tạo FastNotice với cấu hình tùy chỉnh sau khi DOM sẵn sàng
+    document.addEventListener('DOMContentLoaded', function () {
+      window.fastNotice = new FastNotice({
+        position: 'top-center',    // Vị trí mặc định
+        duration: 3000,            // Thời gian hiển thị (ms)
+        maxNotifications: 3        // Số notification tối đa
+      });
+    });
+  </script>
+  <!-- Lucide Icons - Custom Build -->
+  <script src="assets/js/lucide-custom.min.js" defer></script>
+  <!-- jModal manager -->
+  <script src="assets/js/libs/jmodal.1.1.0.js" defer></script>
+  <!-- Load BlazeSlider Library -->
+  <script src="assets/js/libs/blaze-slider.js" defer></script>
+  <!-- Libs Tabs JS Thuần -->
+  <script src="assets/js/libs/tabs.js" defer></script>
+  <!-- Image Fallback Utility -->
+  <script src="assets/js/libs/image-fallback.js" defer></script>
 
+  <!-- 2. CAC CODE JS TU VIET. -->
+  <!-- Header Component JS. Vi no goi Cart nen nam sau Cart -->
+  <script src="assets/js/header.js" defer></script>
+  <!-- Homepage Component JS -->
+  <script src="assets/js/home.js" defer></script>
+  <!-- Run BlazeSlider -->
+  <script src="assets/js/sliders.js" defer></script>
 
-	<!-- 2. CAC CODE JS TU VIET. -->
+  <!-- Alpine.js CDN. Nam duoi cung vi chay Defer va vi no AutoRun nen can load sau cung truoc -->
+  <script src="assets/js/libs/alpinejs.3.15.0.js" defer></script>
 
-	<!-- Header Component JS. Vi no goi Cart nen nam sau Cart -->
-	<script src="assets/js/header.js" defer></script>
-	<!-- Homepage Component JS -->
-	<script src="assets/js/home.js" defer></script>
-	<!-- Run BlazeSlider -->
-	<script src="assets/js/sliders.js" defer></script>
+  <style>
+    /* Custom styles for 404 page */
+    .not-found-container {
+      min-height: calc(100vh - 200px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
 
-	<!-- Alpine.js CDN. Nam duoi cung vi chay Defer va vi no AutoRun nen can load sau cung truoc -->
-	<script src="assets/js/libs/alpinejs.3.15.0.js" defer></script>
+    /* SVG container */
+    .not-found-svg {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+    }
 
+    /* SVG paths with animated gradient stroke by default, static gradient on hover */
+    .not-found-svg path {
+      cursor: pointer;
+      pointer-events: all;
+      stroke: url(#gradient-animated);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .not-found-svg path:hover {
+      stroke: url(#gradient-blue-purple);
+      stroke-width: 2.5;
+    }
+
+    /* Gradient definitions */
+    .gradient-blue-purple {
+      fill: url(#gradient-blue-purple);
+    }
+
+    /* Default gray colors */
+    .path-gray-light {
+      fill: #FDFDFD;
+    }
+
+    .path-gray-light-2 {
+      fill: #FCFCFC;
+    }
+
+    .path-gray-light-3 {
+      fill: #F5F5F5;
+    }
+
+    .path-gray {
+      fill: #656465;
+    }
+
+    .path-gray-dark {
+      fill: #7A7A7A;
+    }
+  </style>
 </head>
 
 <body class="min-h-screen bg-white">
-	<!-- header -->
-	<!-- include:./blocks/header.html -->
+  <!-- header -->
+  <!-- include:./blocks/header.html -->
 
-		<!-- Main Content Area -->
-		<main class="min-h-screen bg-gray-50 flex items-center justify-center">
-			<div class="container mx-auto px-4 w-full">
-				<div class="flex flex-col items-center justify-center text-center">
-					<!-- 404 Number with Gradient -->
-					<h1
-						class="text-8xl sm:text-9xl md:text-[12rem] font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent leading-none">
-						404
-					</h1>
+  <!-- Main Content Area -->
+  <main class="not-found-container bg-gray-50">
+    <div class="container mx-auto px-4 w-full mt-8 mb-16">
+      <div class="flex flex-col items-center justify-center text-center">
+        <!-- SVG with hover effect -->
+        <div class="relative">
+          <svg id="not-found-svg" class="not-found-svg" width="517" height="517" viewBox="0 0 517 517" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Gradient Definitions -->
+            <defs>
+              <!-- Animated gradient for default state (chạy từ trái qua phải) -->
+              <linearGradient id="gradient-animated" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"
+                spreadMethod="repeat">
+                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#9333ea;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                <animateTransform attributeName="gradientTransform" type="translate" values="-300 0;517 0;-300 0"
+                  dur="4s" repeatCount="indefinite" />
+              </linearGradient>
 
-					<!-- Error Message -->
-					<h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
-						Không Tìm Thấy
-					</h2>
+              <!-- Static gradient for hover effect -->
+              <linearGradient id="gradient-blue-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
+              </linearGradient>
+              <!-- Original SVG gradients -->
+              <linearGradient id="a" x1="436.229" y1="45.5719" x2="636.256" y2="189.237" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F5F5F5" />
+                <stop offset="1" stop-color="#E0E0E0" />
+              </linearGradient>
+              <linearGradient id="c" x1="267.651" y1="139.69" x2="473.902" y2="284.287" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F5F5F5" />
+                <stop offset="1" stop-color="#E0E0E0" />
+              </linearGradient>
+              <linearGradient id="e" x1="99.3269" y1="239.782" x2="299.354" y2="383.447" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F5F5F5" />
+                <stop offset="1" stop-color="#E0E0E0" />
+              </linearGradient>
+            </defs>
+            <!-- SVG paths - only main paths (404 numbers), no background -->
+            <path
+              d="m496.334 134.473-.36.21-.08.04-8.4 4.82V16.1428l-19.29-11.22996-37.66 21.59996-.22.13-.13.28-92.94 197.6802-.08.18v22.82l-.07 13.37 19.36 11.18v.06l.43-.25 76.62-43.94v27.08l-.01.42.07.04 18.82 11.55 9.68-5.6 24.98-14.33.44-.25v-49.87l27.7-15.88.43-.25v-35.23l-19.29-11.23Zm-62.82 35.71-28.2 16.17 28.2-60.98v44.81Z"
+              fill="#F5F5F5" />
+            <path
+              d="m453.485 216.312-96.726 55.471.001-35.669 93.308-198.4783 37.378-21.436-.006 146.2783 28.247-16.199-.001 34.36-28.247 16.2-.002 50.069-33.954 19.472.002-50.068Zm.004-115.518.001-18.9803c-1.902 3.7088-3.9 8.0176-5.992 12.9264-1.142 2.3999-2.093 4.3634-2.854 5.8909-.571 1.418-1.617 3.654-3.139 6.708l-51.076 110.448 63.057-36.163.003-80.83Z"
+              fill="url(#a)" />
+            <path
+              d="M336.311 150.85c-4.16-8.21-9.2-14.2-15.11-17.97-.02-.02-.04-.03-.05-.03l-2.47-1.42-16.9-9.68h-.01c-4.06-2.59-8.53-4.12-13.41-4.61-11.82-1.53-25.25 2.02-40.29 10.65-15.23 8.73-28.76 20.64-40.58 35.73-11.84 14.89-21.27 33.32-28.31 55.24-7.04 21.94-10.55 46.96-10.55 75.03-.01 27.86 3.5 48.74 10.55 62.6 4.43 8.73 10.007 14.667 16.347 18.507l15.839 8.926c3.54 2.03 11.344 6.237 15.474 6.767h.01c11.82 1.32 25.35-2.4 40.57-11.14 15.04-8.62 28.47-20.36 40.29-35.23h.01c12.02-15.22 21.55-33.81 28.59-55.74 7.04-21.94 10.55-46.85 10.55-74.7.01-28.08-3.5-49.07-10.55-62.93Zm-49.45 117.38c-2.64 13.84-7.15 26.34-13.53 37.52-6.35 11.14-14.76 19.72-25.27 25.75-5.49 3.14-10.39 4.97-14.73 5.48-2.07-3.55-3.74-7.87-4.99-12.98-2.64-10.82-3.96-24.15-3.96-39.98 0-15.83 1.32-30.67 3.97-44.53 1.32-7.02 3.1-13.69 5.36-19.99 2.26-6.31 4.98-12.25 8.17-17.85 6.35-11.35 14.85-20.1 25.55-26.24 5.28-3.03 10.02-4.77 14.24-5.23 2.18 3.67 3.91 8.18 5.19 13.55h.01c2.83 10.72 4.24 23.99 4.24 39.82 0 15.83-1.42 30.72-4.25 44.68Z"
+              fill="#F5F5F5" />
+            <path
+              d="M267.642 379.484c-15.213 8.724-28.713 12.443-40.502 11.157-11.789-1.504-21.201-9.156-28.236-22.956-7.035-13.8-10.552-34.62-10.551-62.46.001-28.058 3.52-53.022 10.556-74.891 7.036-21.87 16.449-40.21 28.239-55.018 11.79-15.026 25.291-26.902 40.503-35.626 15.022-8.615 28.427-12.17 40.216-10.666 11.98 1.177 21.487 8.666 28.522 22.466 7.034 13.8 10.551 34.729 10.55 62.786-.001 27.84-3.519 52.695-10.556 74.565-7.036 21.87-16.544 40.373-28.524 55.508-11.79 14.808-25.195 26.52-40.217 35.135Zm.001-35.887c10.648-6.107 19.205-14.821 25.671-26.141 6.465-11.32 11.029-23.942 13.692-37.867 2.853-14.033 4.279-28.988 4.28-44.866.001-15.877-1.425-29.197-4.277-39.959-2.662-11.088-7.225-18.584-13.69-22.489-6.465-4.122-15.021-3.13-25.67 2.977-10.838 6.216-19.49 15.092-25.956 26.63-6.465 11.32-11.029 24.051-13.692 38.193-2.662 13.924-3.994 28.825-3.995 44.703 0 15.877 1.33 29.251 3.992 40.122 2.662 10.871 7.225 18.259 13.69 22.163 6.465 3.905 15.116 2.75 25.955-3.466Z"
+              fill="url(#c)" />
+            <path
+              d="m159.23 328.818-.36.21-.08.04-8.4 4.82v-123.4l-19.29-11.23-37.66 21.6-.22.13-.13.28L.15 418.948l-.08.18v22.82L0 455.318l19.36 11.18v.06l.43-.25 76.62-43.94v27.08l-.01.42.07.04 18.82 11.55 9.68-5.6 24.98-14.33.44-.25v-49.87l27.7-15.88.43-.25v-35.23l-19.29-11.23Zm-62.82 35.71-28.2 16.17 28.2-60.98v44.81Z"
+              fill="#F5F5F5" />
+            <path
+              d="m116.582 410.522-96.7256 55.471.0014-35.669 93.3072-198.478 37.378-21.436-.005 146.278 28.247-16.199-.001 34.36-28.248 16.2-.002 50.069-33.954 19.472.002-50.068Zm.005-115.518v-18.98c-1.902 3.708-3.899 8.017-5.992 12.926-1.141 2.4-2.092 4.363-2.853 5.891-.571 1.418-1.617 3.654-3.139 6.708L53.5264 411.997l63.0576-36.163.003-80.83Z"
+              fill="url(#e)" />
+          </svg>
+        </div>
 
-					<!-- Description -->
-					<p class="text-gray-600 mb-8 max-w-md mx-auto text-sm sm:text-base">
-						Trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển. Vui lòng kiểm tra lại đường dẫn hoặc quay về trang
-						chủ.
-					</p>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+          Không Tìm Thấy Trang
+        </h1>
 
-					<!-- Action Buttons -->
-					<div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
-						<a href="/" class="btn btn-primary btn-lg">
-							<i data-lucide="home" class="w-5 h-5 mr-1"></i>
-							<span>Về Trang Chủ</span>
-						</a>
-						<button onclick="window.history.back()" class="btn btn-secondary btn-lg">
-							<i data-lucide="arrow-left" class="w-5 h-5 mr-1"></i>
-							<span>Quay Lại</span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</main>
+        <!-- Description -->
+        <p class="text-gray-600 mb-8 max-w-md mx-auto text-sm sm:text-base">
+          Trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển. Vui lòng kiểm tra lại đường dẫn hoặc quay về trang
+          chủ.
+        </p>
 
-	<!-- Footer -->
-	<!-- include:./blocks/footer.html -->
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <a href="/" class="btn btn-primary btn-lg">
+            <i data-lucide="home" class="w-5 h-5 mr-1"></i>
+            <span>Về Trang Chủ</span>
+          </a>
+          <button onclick="window.history.back()" class="btn btn-secondary btn-lg">
+            <i data-lucide="arrow-left" class="w-5 h-5 mr-1"></i>
+            <span>Quay Lại</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <!-- include:./blocks/footer.html -->
+
+  <script>
+    // Add hover effects to SVG paths (SVG already embedded in HTML)
+    document.addEventListener('DOMContentLoaded', function () {
+      const svgContainer = document.getElementById('not-found-svg');
+      if (!svgContainer) return;
+
+      // Get all paths in the SVG (already embedded)
+      const paths = svgContainer.querySelectorAll('path');
+
+      if (paths.length === 0) {
+        console.warn('No paths found in SVG');
+        return;
+      }
+
+      // Add animated gradient stroke and hover effects to each path
+      paths.forEach((path) => {
+        // Preserve all original attributes, especially fill
+        // Ensure path can receive mouse events
+        path.setAttribute('pointer-events', 'all');
+
+        // Add animated gradient stroke by default (chạy từ trái qua phải)
+        path.setAttribute('stroke', 'url(#gradient-animated)');
+        path.setAttribute('stroke-width', '1.5');
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-linejoin', 'round');
+
+        // CSS :hover will change stroke to static gradient
+      });
+
+      // Re-initialize Lucide icons
+      setTimeout(() => {
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      }, 100);
+    });
+
+    // Initialize Lucide icons after page load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Wait a bit for Alpine.js and other scripts to load
+      setTimeout(function () {
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      }, 100);
+    });
+  </script>
 </body>
 
 </html>
